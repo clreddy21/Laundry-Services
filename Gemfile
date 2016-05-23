@@ -30,7 +30,10 @@ gem 'grape'
 
 #For authentication
 gem 'devise'
-	
+
+#For mobile authentication	
+gem 'jwt'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -14,7 +14,7 @@ module Users
 			  requires :first_name, type:String
 			  requires :last_name, type:String
 			  requires :email, type:String
-			  requires :password, type:String, regexp: /^\A{6,128}$/
+			  requires :password, type:String, regexp: /\A[a-z0-9]{6,128}+\z/
 
 			  requires :mobile, type:String
 			  # requires :description, type:String
@@ -25,7 +25,7 @@ module Users
 			post do
 		    if User.exists?(email: params[:email])
 		      {"error": "Email is already taken", "success": false}
-				elsif User.exists?(mobile :params[:mobile])
+				elsif User.exists?(mobile: params[:mobile])
 		      {"error": "Mobile number is already taken", "success": false}
 	      elsif ![Customer, ServiceProvider, Logistic].include? params[:type]
 		      {"error": "Not a valid user type.", "success": false}
