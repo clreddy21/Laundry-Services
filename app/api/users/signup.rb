@@ -21,6 +21,8 @@ module Users
 			  # requires :description, type:String
 			  # requires :avatar, type:String
 			  requires :type, type:String
+			  optional :type, type:Float
+			  optional :type, type:Float
 			end
 			## This takes care of creating user
 			post do
