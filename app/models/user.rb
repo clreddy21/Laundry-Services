@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   after_create :send_otp_to_user
 
   reverse_geocoded_by :latitude, :longitude
-  after_validation :reverse_geocode  # auto-fetch address
+  # after_validation :reverse_geocode  # auto-fetch address
 
 
   private

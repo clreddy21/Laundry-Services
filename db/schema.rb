@@ -14,16 +14,16 @@
 ActiveRecord::Schema.define(version: 20160523173453) do
 
   create_table "service_types", force: :cascade do |t|
-    t.integer  "service_provider_id"
+    t.integer  "user_id"
     t.boolean  "wash"
     t.boolean  "iron"
     t.boolean  "wash_iron"
     t.boolean  "dry_cleaning"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  add_index "service_types", ["service_provider_id"], name: "index_service_types_on_service_provider_id"
+  add_index "service_types", ["user_id"], name: "index_service_types_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

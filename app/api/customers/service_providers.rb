@@ -13,14 +13,15 @@ module Customers
         service_type = params[:service_type].to_s
         case service_type
           when 'wash'
-            service_providers = ServiceType.where(:wash => true).collect(&:service_provider_id)
+            service_providers = ServiceType.where(:wash => true).collect(&:user_id)
           when 'iron'
-            service_providers = ServiceType.where(:iron => true).collect(&:service_provider_id)
+            service_providers = ServiceType.where(:iron => true).collect(&:user_id)
           when 'wash_iron'
-            service_providers = ServiceType.where(:wash_iron => true).collect(&:service_provider_id)
+            service_providers = ServiceType.where(:wash_iron => true).collect(&:user_id)
           when 'dry_cleaning'
-            service_providers = ServiceType.where(:dry_cleaning => true).collect(&:service_provider_id)
+            service_providers = ServiceType.where(:dry_cleaning => true).collect(&:user_id)
           end
+
         service_providers = ServiceProvider.where(id: service_providers)
         service_providers.near([params[:latitude], params[:longitude]], params[:distance], :units => :km)    # venues within 20 miles of a point
       end

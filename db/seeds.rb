@@ -7,5 +7,5 @@ service_provider_2 = ServiceProvider.create({email: 'sp_2@gmail.com', password: 
                                             mobile: '9999999996', first_name: 'fnsp_2', last_name: 'lnsp_2',
                                             latitude: '17.513012', longitude: '78.578103'})
 
-service_type_1 = ServiceType.create(wash: true, iron: true, wash_iron: false, dry_cleaning: false, service_provider_id: service_provider_1.id)
-service_type_2 = ServiceType.create(wash: false, iron: true, wash_iron: true, dry_cleaning: true, service_provider_id: service_provider_2.id)
+service_type_1 = ServiceType.create(wash: true, iron: true, wash_iron: false, dry_cleaning: false, user_id: service_provider_1.id)
+service_type_2 = ServiceType.create(wash: false, iron: true, wash_iron: true, dry_cleaning: true, user_id: service_provider_2.id)
