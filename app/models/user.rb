@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     user = "ravipenmetsa"
     pass = "mogallu"
     sender = "SETTAB"
-    phone = user.mobile
+    phone = self.mobile
 
     Curl.get('http://bhashsms.com/api/sendmsg.php', {
       :user => user,
