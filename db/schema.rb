@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20160523173453) do
     t.float    "average_review",         default: 0.0
     t.string   "type"
     t.string   "slug"
-    t.string   "latitude"
-    t.string   "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "gcm_id"
     t.string   "otp"
     t.datetime "created_at",                           null: false

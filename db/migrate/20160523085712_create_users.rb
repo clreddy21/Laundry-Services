@@ -11,8 +11,8 @@ class CreateUsers < ActiveRecord::Migration
       t.float :average_review, :default => 0.0
       t.string :type
       t.string :slug
-      t.string :float
-      t.string :float
+      t.float :latitude
+      t.float :longitude
       t.string :gcm_id
       t.string :otp
 
