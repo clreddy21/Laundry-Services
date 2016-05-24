@@ -3,4 +3,5 @@ class API < Grape::API
   version 'v1', using: :path
   mount Users::Login
   mount Users::Signup
+  mount Customers::ServiceProviders
 end

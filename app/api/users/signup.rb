@@ -37,6 +37,7 @@ module Users
 				    last_name:params[:last_name],
 				    email:params[:email],
 				    password:params[:password],
+				    password_confirmation:params[:password],
 				    mobile:params[:mobile],
 				    type:params[:type],
 						otp: otp
@@ -63,7 +64,13 @@ module Users
 				if user.otp.to_s == params[:otp]
 					user.update(:otp => '', :is_active => true)
 					user.save!
-					{:message => 'otp verified', :success => true}
+		    	payload = {:email => user.email}
+		    	rsa_private = OpenSSL::PKey::RSA.generate 2048
+					rsa_public = rsa_private.public_key
+					token = JWT.encode payload, rsa_private, 'RS128'
+					user.update(jwt: token)
+
+					{:message => 'otp verified', :success => true, :token => token}
 				end
 			end
 

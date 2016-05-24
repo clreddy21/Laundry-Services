@@ -34,6 +34,12 @@ gem 'devise'
 #For mobile authentication	
 gem 'jwt'
 
+# Use CURB to hit the SMS Endpoint
+gem 'curb', '0.9.3'
+
+#for checking the geo locations
+gem 'geocoder'
+
 
 # Web service api calls
 gem 'httparty'
