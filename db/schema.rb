@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523090147) do
+ActiveRecord::Schema.define(version: 20160523173453) do
+
+  create_table "service_types", force: :cascade do |t|
+    t.integer  "service_provider_id"
+    t.boolean  "wash"
+    t.boolean  "iron"
+    t.boolean  "wash_iron"
+    t.boolean  "dry_cleaning"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "service_types", ["service_provider_id"], name: "index_service_types_on_service_provider_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -19,20 +31,23 @@ ActiveRecord::Schema.define(version: 20160523090147) do
     t.string   "mobile"
     t.text     "jwt"
     t.boolean  "is_active"
-    t.text     "description"
     t.string   "avatar"
-    t.integer  "reviews_count"
-    t.float    "average_review"
+    t.integer  "reviews_count",          default: 0
+    t.float    "average_review",         default: 0.0
     t.string   "type"
     t.string   "slug"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "gcm_id"
+    t.string   "otp"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.string   "email",                  default: "",  null: false
+    t.string   "encrypted_password",     default: "",  null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,   null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
