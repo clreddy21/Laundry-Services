@@ -1,0 +1,2 @@
+class Logistic < User
+end

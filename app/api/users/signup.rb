@@ -1,4 +1,3 @@
-require 'securerandom'
 module Users
   class Signup < Grape::API
 
@@ -21,8 +20,8 @@ module Users
 			  # requires :description, type:String
 			  # requires :avatar, type:String
 			  requires :type, type:String
-			  optional :type, type:Float
-			  optional :type, type:Float
+			  optional :latitude, type:Float
+			  optional :longitude, type:Float
 			end
 			## This takes care of creating user
 			post do
@@ -30,10 +29,10 @@ module Users
 		      {:message => "Email is already taken", :success => false}
 				elsif User.exists?(mobile: params[:mobile])
 		      {:message => "Mobile number is already taken", :success => false}
-	      elsif ![Customer, ServiceProvider, Logistic].include? params[:type]
+	      elsif !['Customer', 'ServiceProvider', 'Logistic'].include? params[:type]
 		      {:message => "Not a valid user type.", :success => false}
 				else
-					otp = SecureRandom.hex(6)
+					otp = rand(1000..9999)
 					User.create!({
 				    first_name:params[:first_name],
 				    last_name:params[:last_name],
@@ -42,13 +41,18 @@ module Users
 				    password_confirmation:params[:password],
 				    mobile:params[:mobile],
 				    type:params[:type],
-						otp: otp
+						otp: otp,
+						latitude: params[:latitude],
+						longitude: params[:longitude]
 				    # description:params[:description],
 				    # avatar:params[:avatar],
 				  }).save(:validate => false)
 
-				  if User.save!
-				  	{:message => 'User saved successfully', :success => true}
+					user = User.find_by(:email => params[:email])
+				  if user.present?
+				  	{:message => 'User saved successfully', :success => true, :user_id => user.id}
+				  else
+				  	{:message => 'Not able to save user, Try again', :success => false}
 				  end
 			  end
 			end
@@ -56,13 +60,13 @@ module Users
 
 		resource :verify_otp do
 			params do
-				requires :email, type:String
+				requires :user_id, type:String
 				requires :otp, type:String
 				# requires :password, type:String, regexp: /\A[a-z0-9]{6,128}+\z/
 			end
 
 			get do
-				user = User.find_by(email: params[:email])
+				user = User.find(params[:user_id])
 				if user.otp.to_s == params[:otp]
 					user.update(:otp => '', :is_active => true)
 					user.save!
@@ -75,8 +79,6 @@ module Users
 					{:message => 'otp verified', :success => true, :token => token}
 				end
 			end
-
 		end
-
   end
 end
