@@ -22,7 +22,7 @@ module LaundryServices
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.web_console.whitelisted_ips = '183.82.97.251'
+
     
     config.active_record.raise_in_transactional_callbacks = true
   end
