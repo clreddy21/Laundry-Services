@@ -72,7 +72,7 @@ module Users
 				puts params.inspect
 				user = User.find(params[:user_id])
 				if user.otp.to_s == ''
-					{:message => 'User already verified.', :success => true}
+					{"message":"User already verified.", "success":true}
 				elsif user.otp.to_s == params[:otp]
 					user.update(:otp => '', :is_active => true)
 					user.save!
