@@ -1,3 +1,4 @@
+require 'json'
 module Users
   class Signup < Grape::API
 
@@ -25,6 +26,8 @@ module Users
 			end
 			## This takes care of creating user
 			post do
+				puts params.inspect
+				# params = JSON.parse params.inspect
 		    if User.exists?(email: params[:email])
 		      {:message => "Email is already taken", :success => false}
 				elsif User.exists?(mobile: params[:mobile])
@@ -50,7 +53,7 @@ module Users
 
 					user = User.find_by(:email => params[:email])
 				  if user.present?
-				  	{:message => 'User saved successfully', :success => true, :user_id => user.id}
+				  	{:message => 'Registration successfully', :success => true, :user_id => user.id}
 				  else
 				  	{:message => 'Not able to save user, Try again', :success => false}
 				  end
@@ -66,16 +69,18 @@ module Users
 			end
 
 			get do
+				puts params.inspect
 				user = User.find(params[:user_id])
-				if user.otp.to_s == params[:otp]
+				if user.otp.to_s == ''
+					{:message => 'User already verified.', :success => true}
+				elsif user.otp.to_s == params[:otp]
 					user.update(:otp => '', :is_active => true)
 					user.save!
 		    	payload = {:email => user.email}
 		    	rsa_private = OpenSSL::PKey::RSA.generate 2048
 					rsa_public = rsa_private.public_key
-					token = JWT.encode payload, rsa_private, 'RS128'
+					token = JWT.encode payload, rsa_private, 'RS256'
 					user.update(jwt: token)
-
 					{:message => 'otp verified', :success => true, :token => token}
 				end
 			end
