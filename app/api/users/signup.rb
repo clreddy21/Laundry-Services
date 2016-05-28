@@ -67,7 +67,7 @@ module Users
 				# requires :password, type:String, regexp: /\A[a-z0-9]{6,128}+\z/
 			end
 
-			put do
+			post do
 				puts params.inspect
 				user = User.find(params[:user_id])
 				if user.otp.to_s == ''
