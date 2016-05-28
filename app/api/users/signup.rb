@@ -1,4 +1,3 @@
-require 'json'
 module Users
   class Signup < Grape::API
 
@@ -68,7 +67,7 @@ module Users
 				# requires :password, type:String, regexp: /\A[a-z0-9]{6,128}+\z/
 			end
 
-			get do
+			put do
 				puts params.inspect
 				user = User.find(params[:user_id])
 				if user.otp.to_s == ''
