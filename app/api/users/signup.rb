@@ -82,7 +82,7 @@ module Users
 					rsa_public = rsa_private.public_key
 					token = JWT.encode payload, rsa_private, 'RS256'
 					user.update(jwt: token)
-					{:message => 'otp verified', :success => true, :token => token}
+					{:message => 'otp verified', :success => true, :token => user.jwt}
 				end
 			end
 		end
