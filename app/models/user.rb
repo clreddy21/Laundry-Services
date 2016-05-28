@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
   # after_validation :reverse_geocode  # auto-fetch address
 
 
+  def full_name
+    self.first_name + " " + self.last_name
+  end
   private
 
   def send_otp_to_user

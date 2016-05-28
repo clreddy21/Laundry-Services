@@ -9,6 +9,10 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  config.action_controller.allow_forgery_protection = false
+
+
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -36,6 +40,7 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
     config.web_console.whitelisted_ips = '183.82.97.251'
+    config.web_console.whitelisted_ips = '103.15.63.99'
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

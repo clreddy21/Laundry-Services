@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
+  get 'admin/customers' => 'admin#customers', as: 'customers'
 
 
 

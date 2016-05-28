@@ -27,5 +27,17 @@ module Customers
         service_providers.near([params[:latitude], params[:longitude]], params[:distance], :units => :km)    # venues within 20 miles of a point
       end
     end
+    resource :get_service_provider_item_prices do
+      desc "Get service provider's prices for different items."
+      params do
+        requires :service_provider_id, type:String
+      end
+      # This gets service providers in the specified distance and service type
+      get do
+        puts params.inspect
+        service_provider = ServiceProvider.find(params[:service_provider_id])
+
+      end
+    end
   end
 end

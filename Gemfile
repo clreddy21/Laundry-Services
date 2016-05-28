@@ -40,6 +40,8 @@ gem 'curb', '0.9.3'
 #for checking the geo locations
 gem 'geocoder'
 
+# Use Slim for templating
+gem 'slim-rails'
 
 # Web service api calls
 gem 'httparty'

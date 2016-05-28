@@ -53,7 +53,7 @@ module Users
 
 					user = User.find_by(:email => params[:email])
 				  if user.present?
-				  	{:message => 'Registration successfully', :success => true, :user_id => user.id}
+				  	{:message => 'Registration successful.', :success => true, :user_id => user.id}
 				  else
 				  	{:message => 'Not able to save user, Try again', :success => false}
 				  end
@@ -72,7 +72,7 @@ module Users
 				puts params.inspect
 				user = User.find(params[:user_id])
 				if user.otp.to_s == ''
-					{"message":"User already verified.", "success":true}
+					{:message => "User already verified.", :success => true}
 				elsif user.otp.to_s == params[:otp]
 					user.update(:otp => '', :is_active => true)
 					user.save!

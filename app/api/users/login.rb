@@ -18,12 +18,12 @@ module Users
 						rsa_public = rsa_private.public_key
 						token = JWT.encode payload, rsa_private, 'RS256'
 						user.update(jwt: token)
-						{"success":true, "email": params[:email], "token": token}
+						{:success => true, email => params[:email], :token => token}
 					else
-						{"success": false, "message": "Incorrect Password"}
+						{:success => false, :message => "Incorrect Password"}
 					end
 				else
-					{"success": false, "message": "Email is not registered."}
+					{:success => false, :message => "Email is not registered."}
 			  end
 			end
 		end
