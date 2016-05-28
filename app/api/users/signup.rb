@@ -70,7 +70,9 @@ module Users
 			post do
 				puts params.inspect
 				user = User.find(params[:user_id])
-				if user.otp.to_s == ''
+				if user.nil?
+					{:message => "No user exists with this user_id", :success => false}
+				elsif user.otp.to_s == ''
 					{:message => "User already verified.", :success => true}
 				elsif user.otp.to_s == params[:otp]
 					user.update(:otp => '', :is_active => true)

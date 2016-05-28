@@ -31,8 +31,8 @@
       <file leaf-file-name="signup.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/api/users/signup.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72397476" vertical-offset="714" max-vertical-offset="1598">
-              <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.45583597" vertical-offset="969" max-vertical-offset="1632">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -736,7 +736,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464454713868</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="minor refactoring">
+      <created>1464455220013</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1464455220013</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1170,8 +1176,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/users/signup.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72397476" vertical-offset="714" max-vertical-offset="1598">
-          <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.45583597" vertical-offset="969" max-vertical-offset="1632">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding />
         </state>
       </provider>
