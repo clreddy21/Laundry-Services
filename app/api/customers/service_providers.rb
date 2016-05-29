@@ -9,7 +9,7 @@ module Customers
         requires :service_type, type:String
       end
       # This gets service providers in the specified distance and service type
-      get do
+      post do
         puts params.inspect
         service_type = params[:service_type].to_s
         case service_type
@@ -39,5 +39,6 @@ module Customers
         item_types = ItemPrice.where(user_id: service_provider.id)
       end
     end
+
   end
 end
