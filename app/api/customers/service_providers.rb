@@ -33,10 +33,10 @@ module Customers
         requires :service_provider_id, type:String
       end
       # This gets service providers in the specified distance and service type
-      get do
+      put do
         puts params.inspect
         service_provider = ServiceProvider.find(params[:service_provider_id])
-
+        item_types = ItemPrice.where(user_id: service_provider.id)
       end
     end
   end

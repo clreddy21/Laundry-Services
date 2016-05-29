@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
   # after_validation :reverse_geocode  # auto-fetch address
 
+  has_many :items
+  has_many :item_prices
+
 
   def full_name
     self.first_name + " " + self.last_name
