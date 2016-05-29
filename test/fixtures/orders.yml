@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: 
+  service_provider_id: 
+  total_cost: 1.5
+  change_in_cost: 1.5
+  change_in_cost_reason: MyString
+  status: MyString
+
+two:
+  customer_id: 
+  service_provider_id: 
+  total_cost: 1.5
+  change_in_cost: 1.5
+  change_in_cost_reason: MyString
+  status: MyString

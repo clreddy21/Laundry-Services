@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  item_id: 
+  iron: 1.5
+  wash: 1.5
+  wash_iron: 1.5
+  dry_cleaning: 1.5
+
+two:
+  user_id: 
+  item_id: 
+  iron: 1.5
+  wash: 1.5
+  wash_iron: 1.5
+  dry_cleaning: 1.5
