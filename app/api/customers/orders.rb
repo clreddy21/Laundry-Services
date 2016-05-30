@@ -20,6 +20,8 @@ module Customers
       	params[:items].each do |item|
 					OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:quantity => item[:quantity], :amount => item[:amount])
       	end
+
+				{:message => 'Order Created Successfully', :success => true, :order_id => order.id}
       end
     end
   end
