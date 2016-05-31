@@ -25,7 +25,7 @@ module Customers
 
         service_providers = ServiceProvider.where(id: service_providers)
         service_providers.near([params[:latitude], params[:longitude]], params[:distance], :units => :km)   # venues within 20 miles of a point
-        service_providers.select(:id, :first_name, :last_name, :mobile, :average_review, :latitude, :longitude, :email)
+        service_providers.pluck(:id, :first_name, :last_name, :mobile,  :reviews_count, :average_review, :latitude, :longitude, :email)
       end
     end
     resource :get_service_provider_item_prices do
@@ -37,7 +37,19 @@ module Customers
       put do
         puts params.inspect
         service_provider = ServiceProvider.find(params[:service_provider_id])
-        item_types = ItemPrice.where(user_id: service_provider.id)
+        if service_provider.nil?
+          {:message => 'No service provider with the provided id', :success => false}
+        else
+          item_prices = ItemPrice.includes(:item).where(user_id: service_provider.id)
+          item_prices_hash = []
+          item_prices.each do |item_price|
+            item_prices_hash << {service_provider_id: params[:service_provider_id], item_id: item_price.item_id,
+                                 item_name: item_price.item.name, wash: item_price.wash, iron: item_price.iron,
+                                wah_iron: item_price.wash_iron, dry_cleaning: item_price.dry_cleaning}
+          end
+
+          item_prices_hash
+        end
       end
     end
 
