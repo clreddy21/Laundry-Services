@@ -25,7 +25,7 @@ module Customers
 
         service_providers = ServiceProvider.where(id: service_providers)
         service_providers.near([params[:latitude], params[:longitude]], params[:distance], :units => :km)   # venues within 20 miles of a point
-        service_providers.pluck(:id, :first_name, :last_name, :mobile,  :reviews_count, :average_review, :latitude, :longitude, :email)
+        service_providers.select(:id, :first_name, :last_name, :mobile,  :reviews_count, :average_review, :latitude, :longitude, :email)
       end
     end
     resource :get_service_provider_item_prices do
