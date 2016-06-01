@@ -1,3 +1,3 @@
 class ServiceType < ActiveRecord::Base
-  belongs_to :service_provider
+  has_many :item_prices
 end

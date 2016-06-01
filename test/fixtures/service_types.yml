@@ -1,15 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 
-  wash: false
-  iron: false
-  wash_iron: false
-  dry_cleaning: false
+  name: MyString
 
 two:
-  user_id: 
-  wash: false
-  iron: false
-  wash_iron: false
-  dry_cleaning: false
+  name: MyString

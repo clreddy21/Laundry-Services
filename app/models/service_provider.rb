@@ -1,3 +1,3 @@
 class ServiceProvider < User
-  has_one :service_type
+  has_many :item_prices
 end

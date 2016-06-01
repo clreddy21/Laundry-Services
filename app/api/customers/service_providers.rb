@@ -12,18 +12,10 @@ module Customers
       post do
         puts params.inspect
         service_type = params[:service_type].to_s
-        case service_type
-          when 'wash'
-            service_providers = ServiceType.where(:wash => true).collect(&:user_id)
-          when 'iron'
-            service_providers = ServiceType.where(:iron => true).collect(&:user_id)
-          when 'wash_iron'
-            service_providers = ServiceType.where(:wash_iron => true).collect(&:user_id)
-          when 'dry_cleaning'
-            service_providers = ServiceType.where(:dry_cleaning => true).collect(&:user_id)
-          end
+        service_type_id = ServiceType.find_by(:name => service_type)
 
-        service_providers = ServiceProvider.where(id: service_providers)
+        service_provider_ids = ItemPrice.where(service_type_id:service_type_id).pluck(:service_provider_id).uniq
+        service_providers = ServiceProvider.where(id: service_provider_ids)
         service_providers.near([params[:latitude], params[:longitude]], params[:distance], :units => :km)   # venues within 20 miles of a point
         service_providers.select(:id, :first_name, :last_name, :mobile,  :reviews_count, :average_review, :latitude, :longitude, :email)
       end
@@ -34,21 +26,36 @@ module Customers
         requires :service_provider_id, type:String
       end
       # This gets service providers in the specified distance and service type
-      put do
+      post do
         puts params.inspect
         service_provider = ServiceProvider.find(params[:service_provider_id])
         if service_provider.nil?
           {:message => 'No service provider with the provided id', :success => false}
         else
-          item_prices = ItemPrice.includes(:item).where(user_id: service_provider.id)
+          item_prices = service_provider.item_prices.includes(:item, :service_type)
           item_prices_hash = []
-          item_prices.each do |item_price|
-            item_prices_hash << {service_provider_id: params[:service_provider_id], item_id: item_price.item_id,
-                                 item_name: item_price.item.name, wash: item_price.wash, iron: item_price.iron,
-                                wah_iron: item_price.wash_iron, dry_cleaning: item_price.dry_cleaning}
+          item_type_ids = item_prices.pluck(:item_id).uniq
+          items = Item.find(item_type_ids)
+
+          items.each do |item|
+            prices = []
+            item_item_prices = item_prices.where(:item_id => item.id)
+            item_item_prices.each do |item_item_price|
+              prices << {service_type_id: item_item_price.service_type_id, service_type_name: item_item_price.service_type.name,
+               price: item_item_price.price}
+            end
+            item_prices_hash << {item_id: item.id, item_name: item.name, prices: prices}
           end
 
+
+          # item_prices.each do |item_price|
+          #   item_prices_hash << {item_id: item_price.item_id,
+          #                        item_name: item_price.item.name, service_type_id: item_price.service_type_id,
+          #                        service_type_name: item_price.service_type.name,price: item_price.price}
+          # end
+
           item_prices_hash
+          # raise 'boom'
         end
       end
     end
