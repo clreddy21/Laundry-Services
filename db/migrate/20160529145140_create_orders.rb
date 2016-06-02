@@ -8,6 +8,7 @@ class CreateOrders < ActiveRecord::Migration
       t.float :change_in_cost
       t.string :change_in_cost_reason
       t.string :status
+      t.string :comment
 
       t.timestamps null: false
     end

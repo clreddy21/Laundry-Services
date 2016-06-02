@@ -13,12 +13,12 @@ module Customers
 
       post do
       	order = Order.create(service_provider_id: params[:service_provider_id], customer_id: params[:customer_id], total_cost: 
-      		params[:total_cost], status: params[:status])
+      		params[:total_cost], status: params[:status], :comment => params[:comment])
 
       	items = []
       	params[:items].each do |item|
 					OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id], 
-						:quantity => item[:quantity], :amount => item[:amount])
+						:quantity => item[:quantity], :amount => item[:amount], :remarks => item[:remarks])
       	end
 
 				{:message => 'Order Created Successfully', :success => true, :order_id => order.id}

@@ -12,14 +12,25 @@ module Customers
       post do
         puts params.inspect
         service_type = params[:service_type].to_s
-        service_type_id = ServiceType.find_by(:name => service_type)
+        service_type_id = ServiceType.find_by(:name => service_type).id
 
-        service_provider_ids = ItemPrice.where(service_type_id:service_type_id).pluck(:service_provider_id).uniq
+        service_provider_ids = ItemPrice.where(:service_type_id => service_type_id).pluck(:service_provider_id).uniq
         service_providers = ServiceProvider.where(id: service_provider_ids)
-        service_providers.near([params[:latitude], params[:longitude]], params[:distance], :units => :km)   # venues within 20 miles of a point
+
+        # raise service_providers.inspect
+        service_providers = service_providers.near([params[:latitude], params[:longitude]], params[:distance], :units => :km)   # venues within 20 miles of a point
+
         service_providers.select(:id, :first_name, :last_name, :mobile,  :reviews_count, :average_review, :latitude, :longitude, :email)
+
+        service_providers_hash = []
+        service_providers.each do |sp|
+          service_providers_hash << {:id => sp.id, :first_name => sp.first_name, :last_name => sp.last_name, :reviews_count => sp.reviews_count,
+          :average_review => sp.average_review, :latitude => sp.latitude, :longitude => sp.longitude, :email => sp.email}
+        end
+        service_providers_hash
       end
     end
+
     resource :get_service_provider_item_prices do
       desc "Get service provider's prices for different items."
       params do
@@ -47,15 +58,8 @@ module Customers
             item_prices_hash << {item_id: item.id, item_name: item.name, prices: prices}
           end
 
-
-          # item_prices.each do |item_price|
-          #   item_prices_hash << {item_id: item_price.item_id,
-          #                        item_name: item_price.item.name, service_type_id: item_price.service_type_id,
-          #                        service_type_name: item_price.service_type.name,price: item_price.price}
-          # end
-
           item_prices_hash
-          # raise 'boom'
+
         end
       end
     end
