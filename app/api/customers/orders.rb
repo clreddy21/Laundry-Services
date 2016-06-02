@@ -17,10 +17,34 @@ module Customers
 
       	items = []
       	params[:items].each do |item|
-					OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:quantity => item[:quantity], :amount => item[:amount])
+					OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id], 
+						:quantity => item[:quantity], :amount => item[:amount])
       	end
 
 				{:message => 'Order Created Successfully', :success => true, :order_id => order.id}
+      end
+    end
+
+    resource :list_of_orders_of_customer do
+      desc "List of orders of customers"
+      params do
+        requires :customer_id, type:Integer
+  	  end
+
+      post do
+      	order = Order.where(customer_id: params[:customer_id])
+      end
+    end
+
+    resource :order_details do
+      desc "Order Details"
+      params do
+        requires :order_id, type:Integer
+  	  end
+
+      post do
+      	order = Order.includes(:order_items, :order_comments).find(params[:order_id])
+      	{:order_items => order.order_items, :order_comments => order.order_comments}
       end
     end
   end
