@@ -47,24 +47,6 @@ module Users
 				end
 			end
 		end
-		resource :forgot_password do
-			desc "Change Password"
-			params do
-				requires :user_id, type:Integer
-				requires :old_password, type:String, regexp: /\A[a-z0-9]{6,128}+\z/
-				requires :new_password, type:String, regexp: /\A[a-z0-9]{6,128}+\z/
-			end
 
-			put do
-				puts params.inspect
-				user = User.find(params[:user_id])
-				if user.valid_password?(params[:old_password])
-					current_user.update(password: params[:new_password])
-					{msg:'Password changed successfully', :success => true}
-				else
-					{msg:'Incorrect old Password', :success => false}
-				end
-			end
-		end
 	end
 end
