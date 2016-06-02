@@ -31,8 +31,17 @@ module Customers
         requires :customer_id, type:Integer
   	  end
 
-      post do
-      	order = Order.where(customer_id: params[:customer_id])
+      get do
+      	orders = Order.includes(:service_provider).where(customer_id: params[:customer_id])
+        orders_hash = []
+
+        orders.each do |order|
+
+          orders_hash << {:order_id => order.id, :service_provider_id => order.service_provider_id,
+                         :service_provider_name => order.service_provider.full_name, :total_cost => order.total_cost,
+              :mobile => order.service_provider.mobile, :comment => order.comment}
+        end
+        orders_hash
       end
     end
 
@@ -42,9 +51,10 @@ module Customers
         requires :order_id, type:Integer
   	  end
 
-      post do
+      get do
       	order = Order.includes(:order_items, :order_comments).find(params[:order_id])
-      	{:order_items => order.order_items, :order_comments => order.order_comments}
+      	{:order_items => order.order_items.select(:id, :item_id, :service_type_id, :quantity, :amount, :remarks),
+         :order_comments => order.order_comments.select(:id, :body, :comment_by_type, :comment_by)}
       end
     end
   end
