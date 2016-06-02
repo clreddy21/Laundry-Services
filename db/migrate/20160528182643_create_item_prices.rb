@@ -4,7 +4,7 @@ class CreateItemPrices < ActiveRecord::Migration
       t.references :service_provider, index: true, foreign_key: true
       t.references :item, index: true, foreign_key: true
       t.references :service_type, index: true, foreign_key: true
-      t.float :price
+      t.integer :price
 
       t.timestamps null: false
     end

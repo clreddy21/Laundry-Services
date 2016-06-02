@@ -64,7 +64,7 @@ module Users
 			params do
 				requires :user_id, type:String
 				requires :otp, type:String
-				# requires :password, type:String, regexp: /\A[a-z0-9]{6,128}+\z/
+
 			end
 
 			post do
