@@ -37,7 +37,7 @@ module Customers
         requires :service_provider_id, type:String
       end
       # This gets service providers in the specified distance and service type
-      post do
+      get do
         puts params.inspect
         service_provider = ServiceProvider.find(params[:service_provider_id])
         if service_provider.nil?
