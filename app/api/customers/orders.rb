@@ -13,7 +13,7 @@ module Customers
 
       post do
       	order = Order.create(service_provider_id: params[:service_provider_id], customer_id: params[:customer_id], total_cost: 
-      		params[:total_cost], status: params[:status], :comment => params[:comment])
+      		params[:total_cost], status: params[:status])
 
       	items = []
       	params[:items].each do |item|
