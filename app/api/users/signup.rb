@@ -69,7 +69,8 @@ module Users
 
 			post do
 				puts params.inspect
-				user = User.find(params[:user_id])
+				user = User.find_by(id: params[:user_id])
+
 				if user.nil?
 					{:message => "No user exists with this user_id", :success => false}
 				elsif user.otp.to_s == ''
