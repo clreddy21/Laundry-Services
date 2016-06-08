@@ -4,7 +4,7 @@ class CreateOrderComments < ActiveRecord::Migration
       t.references :order, index: true, foreign_key: true
       t.text :body
       t.string :comment_by_type
-      t.integer :comment_by
+      t.integer :comment_by_id
 
       t.timestamps null: false
     end
