@@ -25,9 +25,9 @@ module Customers
         # raise params[:schedule].inspect
         # raise params[:schedule][0][:date].inspect
 
-        Schedule.create(:order_id => order.id, :date => Date.parse(params[:schedule][0][:date]),
-                        :from_time => Time.parse(params[:schedule][0][:from_time]),
-                        :to_time => Time.parse(params[:schedule][0][:to_time]))
+        Schedule.create(:order_id => order.id, :date => Date.parse(params[:schedule][0][:date]))
+                        # :from_time => Time.parse(params[:schedule][0][:from_time]),
+                        # :to_time => Time.parse(params[:schedule][0][:to_time]))
 
 				{:message => 'Order Created Successfully', :success => true, :order_id => order.id}
       end
