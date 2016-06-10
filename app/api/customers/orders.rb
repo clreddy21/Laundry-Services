@@ -9,6 +9,7 @@ module Customers
         requires :status, type:String
         optional :comment, type:String
 				requires :items, type: Array
+				requires :schedule, type: Array
   	  end
 
       post do
@@ -19,7 +20,14 @@ module Customers
       	params[:items].each do |item|
 					OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id], 
 						:quantity => item[:quantity], :amount => item[:amount], :remarks => item[:remarks])
-      	end
+        end
+
+        # raise params[:schedule].inspect
+        # raise params[:schedule][0][:date].inspect
+
+        Schedule.create(:order_id => order.id, :date => Date.parse(params[:schedule][0][:date]),
+                        :from_time => Time.parse(params[:schedule][0][:from_time]),
+                        :to_time => Time.parse(params[:schedule][0][:to_time]))
 
 				{:message => 'Order Created Successfully', :success => true, :order_id => order.id}
       end
