@@ -10,6 +10,7 @@ module Customers
         optional :comment, type:String
 				requires :items, type: Array
 				requires :schedule_date, type: String
+				requires :address, type: String
   	  end
 
       post do
@@ -29,6 +30,7 @@ module Customers
                         # :from_time => Time.parse(params[:schedule][0][:from_time]),
                         # :to_time => Time.parse(params[:schedule][0][:to_time]))
 
+        Address.create(address: params[:address], :addressable  => order)
 				{:message => 'Order Created Successfully', :success => true, :order_id => order.id}
       end
     end
