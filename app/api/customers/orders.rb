@@ -9,7 +9,7 @@ module Customers
         requires :status, type:String
         optional :comment, type:String
 				requires :items, type: Array
-				requires :schedule, type: Array
+				requires :schedule_date, type: String
   	  end
 
       post do
@@ -25,7 +25,7 @@ module Customers
         # raise params[:schedule].inspect
         # raise params[:schedule][0][:date].inspect
 
-        Schedule.create(:order_id => order.id, :date => Date.parse(params[:schedule][0][:date]))
+        Schedule.create(:order_id => order.id, :date => Date.parse(params[:schedule_date]))
                         # :from_time => Time.parse(params[:schedule][0][:from_time]),
                         # :to_time => Time.parse(params[:schedule][0][:to_time]))
 
