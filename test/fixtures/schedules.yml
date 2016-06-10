@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_id: 
+  date: 2016-06-09
+  from_time: 2016-06-09 23:58:02
+  to_time: 2016-06-09 23:58:02
+
+two:
+  order_id: 
+  date: 2016-06-09
+  from_time: 2016-06-09 23:58:02
+  to_time: 2016-06-09 23:58:02
