@@ -11,11 +11,15 @@ module Customers
 				requires :items, type: Array
 				requires :schedule_date, type: String
 				requires :address, type: String
+				requires :service_provider_chooser, type: String
+				requires :payment_mode, type: String
+				requires :payment_status, type: String
+
   	  end
 
       post do
       	order = Order.create(service_provider_id: params[:service_provider_id], customer_id: params[:customer_id], total_cost: 
-      		params[:total_cost], status: params[:status])
+      		params[:total_cost], status: params[:status], :service_provider_chooser => params[:service_provider_chooser])
 
       	items = []
       	params[:items].each do |item|
@@ -31,6 +35,9 @@ module Customers
                         # :to_time => Time.parse(params[:schedule][0][:to_time]))
 
         Address.create(address: params[:address], :addressable  => order)
+        Payment.create(order_id: order.id, amount: params[:total_cost], mode: params[:payment_mode],
+        status: params[:payment_status])
+
 				{:message => 'Order Created Successfully', :success => true, :order_id => order.id}
       end
     end
