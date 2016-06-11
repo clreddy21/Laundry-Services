@@ -55,7 +55,7 @@ module Customers
         orders.each do |order|
 
           orders_hash << {:order_id => order.id, :service_provider_id => order.service_provider_id,
-                         :service_provider_name => order.service_provider.full_name, :total_cost => order.total_cost,
+                         :service_provider_name => order.service_provider.full_name, :total_cost => order.total_cost.to_i,
               :mobile => order.service_provider.mobile}
         end
         orders_hash
@@ -69,9 +69,12 @@ module Customers
   	  end
 
       get do
-      	order = Order.includes(:order_items, :order_comments).find(params[:order_id])
+      	order = Order.includes(:order_items, :order_comments, :payment, :schedule, :address).find(params[:order_id])
       	{:order_items => order.order_items.select(:id, :item_id, :service_type_id, :quantity, :amount, :remarks),
-         :order_comments => order.order_comments.select(:id, :body, :comment_by_type, :comment_by)}
+         :order_comments => order.order_comments.select(:id, :body, :comment_by_type, :comment_by),
+        :order_schedule => order.schedule.date, :order_payment => {:amount => order.payment.amount.to_i, :status =>
+            order.payment.status, :mode => order.payment.mode},
+        :order_address => order.address.address}
       end
     end
   end

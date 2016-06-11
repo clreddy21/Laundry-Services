@@ -54,4 +54,14 @@ item_price_30 = ItemPrice.create(service_provider_id: service_provider_2.id, ite
 item_price_31 = ItemPrice.create(service_provider_id: service_provider_2.id, item_id: item_4.id, service_type_id: service_type_3.id, price: 40)
 # item_price_32 = ItemPrice.create(service_provider_id: service_provider_2.id, item_id: item_4.id, service_type_id: service_type_4.id, price: 41)
 #
+puts "creating statuses"
+Status.create(name: "created")
+Status.create(name: "picked for service")
+Status.create(name: "started service")
+Status.create(name: "finished service")
+Status.create(name: "picked for delivery")
+Status.create(name: "order completed")
+
+
+
 puts "completed seeding of the data"
