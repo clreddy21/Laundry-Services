@@ -56,7 +56,7 @@ module Customers
 
           orders_hash << {:order_id => order.id, :service_provider_id => order.service_provider_id,
                          :service_provider_name => order.service_provider.full_name, :total_cost => order.total_cost,
-              :mobile => order.service_provider.mobile, :comment => order.comment}
+              :mobile => order.service_provider.mobile}
         end
         orders_hash
       end
