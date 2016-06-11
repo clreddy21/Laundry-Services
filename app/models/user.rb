@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # after_create :send_otp_to_user
+  after_create :send_otp_to_user
 
   reverse_geocoded_by :latitude, :longitude
   # after_validation :reverse_geocode  # auto-fetch address
