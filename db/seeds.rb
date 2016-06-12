@@ -7,6 +7,12 @@ service_provider_1 = ServiceProvider.create({first_name: 'Jaby', last_name: 'Koa
 service_provider_2 = ServiceProvider.create({first_name: 'Saint', last_name: 'John',email: 'sp_2@gmail.com', password: 'testtest1', password_confirmation: 'testtest1',
                                             mobile: '9999999996', latitude: 17.513012, longitude: 78.578103, reviews_count: 23, average_review:3.70})
 
+puts "creating logistics"
+
+logistic_1 = Logistic.create({first_name: 'Logistic', last_name: '1', email: 'l1@gmail.com', password: 'testtest1', password_confirmation: 'testtest1', mobile: '9999999995'})
+logistic_2 = Logistic.create({first_name: 'Logistic', last_name: '2', email: 'l2@gmail.com', password: 'testtest1', password_confirmation: 'testtest1', mobile: '9999999995'})
+
+
 puts "creating service types"
 service_type_1 = ServiceType.create(name: "wash")
 service_type_2 = ServiceType.create(name: "iron")
