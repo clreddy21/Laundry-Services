@@ -1,5 +1,18 @@
 module Logistics
   class Orders < Grape::API
+
+    resource :logistics do
+      desc "List of logistics for assigning order"
+      params do
+        # requires :order_id, type:Integer
+        # requires :logistic_id, type:Integer
+      end
+
+      get do
+        logistics = Logistic.all.select(:id, :first_name, :last_name, :mobile)
+      end
+    end
+
     resource :assign_logistic do
       desc "Assign a logistic to order"
       params do
