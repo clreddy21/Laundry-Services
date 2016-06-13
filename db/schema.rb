@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529171958) do
+ActiveRecord::Schema.define(version: 20160610193222) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "address"
+    t.string   "addressable_type"
+    t.integer  "addressable_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "item_prices", force: :cascade do |t|
     t.integer  "service_provider_id"
@@ -66,15 +74,44 @@ ActiveRecord::Schema.define(version: 20160529171958) do
     t.float    "change_in_cost"
     t.string   "change_in_cost_reason"
     t.string   "status"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "service_provider_chooser"
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id"
   add_index "orders", ["logistic_id"], name: "index_orders_on_logistic_id"
   add_index "orders", ["service_provider_id"], name: "index_orders_on_service_provider_id"
 
+  create_table "payments", force: :cascade do |t|
+    t.float    "amount"
+    t.integer  "order_id"
+    t.string   "status"
+    t.string   "mode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "payments", ["order_id"], name: "index_payments_on_order_id"
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer  "order_id"
+    t.date     "date"
+    t.time     "from_time"
+    t.time     "to_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "schedules", ["order_id"], name: "index_schedules_on_order_id"
+
   create_table "service_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
