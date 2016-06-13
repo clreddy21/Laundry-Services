@@ -1,3 +1,5 @@
+require 'gcm'
+
 module Users
   class Signup < Grape::API
 
@@ -20,6 +22,7 @@ module Users
 			  # requires :description, type:String
 			  # requires :avatar, type:String
 			  requires :type, type:String
+			  requires :devise_id, type:String
 			  optional :latitude, type:Float
 			  optional :longitude, type:Float
 			end
@@ -45,14 +48,20 @@ module Users
 				    type:params[:type],
 						otp: otp,
 						latitude: params[:latitude],
-						longitude: params[:longitude]
+						longitude: params[:longitude],
+						gcm_id: params[:devise_id]
 				    # description:params[:description],
 				    # avatar:params[:avatar],
 				  }).save(:validate => false)
 
 					user = User.find_by(:email => params[:email])
 				  if user.present?
-				  	{:message => 'Registration successful.', :success => true, :user_id => user.id}
+						gcm = GCM.new("AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM")
+						registration_id = params[:devise_id]
+						options = {data: {score: "123"}, collapse_key: "updated_score"}
+						response = gcm.send(registration_id, options)
+
+						{:message => 'Registration successful.', :success => true, :user_id => user.id}
 				  else
 				  	{:message => 'Not able to save user, Try again', :success => false}
 				  end
