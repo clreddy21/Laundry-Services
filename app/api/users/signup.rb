@@ -49,7 +49,7 @@ module Users
 						otp: otp,
 						latitude: params[:latitude],
 						longitude: params[:longitude],
-						gcm_id: params[:devise_id]
+						gcm_id: params[:device_id]
 				    # description:params[:description],
 				    # avatar:params[:avatar],
 				  }).save(:validate => false)
@@ -57,7 +57,7 @@ module Users
 					user = User.find_by(:email => params[:email])
 				  if user.present?
 						gcm = GCM.new("AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM")
-						registration_id = params[:devise_id]
+						registration_id = params[:device_id]
 						options = {data: {score: "123"}, collapse_key: "updated_score"}
 						response = gcm.send(registration_id, options)
 
