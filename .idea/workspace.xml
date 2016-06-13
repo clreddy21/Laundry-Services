@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="minor refactoring">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/users/signup.rb" afterPath="$PROJECT_DIR$/app/api/users/signup.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -41,8 +41,8 @@
       <file leaf-file-name="signup.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/api/users/signup.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72397476" vertical-offset="544" max-vertical-offset="1802">
-              <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+            <state vertical-scroll-proportion="-0.1340694" vertical-offset="493" max-vertical-offset="1802">
+              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -864,7 +864,13 @@
       <option name="project" value="LOCAL" />
       <updated>1465834577443</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="minor refactoring">
+      <created>1465834670824</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1465834670824</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1309,8 +1315,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/users/signup.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72397476" vertical-offset="544" max-vertical-offset="1802">
-          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+        <state vertical-scroll-proportion="-0.1340694" vertical-offset="493" max-vertical-offset="1802">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
           <folding />
         </state>
       </provider>

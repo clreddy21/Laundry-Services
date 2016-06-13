@@ -22,7 +22,7 @@ module Users
 			  # requires :description, type:String
 			  # requires :avatar, type:String
 			  requires :type, type:String
-			  requires :devise_id, type:String
+			  requires :device_id, type:String
 			  optional :latitude, type:Float
 			  optional :longitude, type:Float
 			end
