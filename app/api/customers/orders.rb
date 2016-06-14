@@ -1,5 +1,24 @@
 module Customers
   class Orders < Grape::API
+
+
+    resource :test_gcm do
+      desc "assa"
+      params do
+        requires :id, type: String
+      end
+      get do
+        gcm = GCM.new("AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM")
+
+        registration_id = [params[:id].to_s]
+
+        options = {data: {score: "123"}, collapse_key: "updated_score"}
+        # raise options.inspect
+        response = gcm.send(registration_id, options)
+        raise response.inspect
+
+      end
+    end
     resource :create_order do
       desc "Create a new order"
       params do
