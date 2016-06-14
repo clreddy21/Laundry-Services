@@ -27,8 +27,6 @@ module Customers
 						:quantity => item[:quantity], :amount => item[:amount], :remarks => item[:remarks])
         end
 
-        # raise params[:schedule].inspect
-        # raise params[:schedule][0][:date].inspect
 
         Schedule.create(:order_id => order.id, :date => Date.parse(params[:schedule_date]))
                         # :from_time => Time.parse(params[:schedule][0][:from_time]),
