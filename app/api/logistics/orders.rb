@@ -12,12 +12,14 @@ module Logistics
         orders = Order.includes(:service_provider, :customer).where(logistic_id: params[:logistic_id])
         orders_hash = []
 
-        orders.each do |order|
+        if !orders.blank?
+          orders.each do |order|
 
-          orders_hash << {:order_id => order.id, :customer_id => order.customer_id, :service_provider_id => order.service_provider_id,
-                         :customer_name => order.customer.full_name, :service_provider_name => order.service_provider.full_name,
-                         :total_cost => order.total_cost.to_i, :customer_mobile => order.customer.mobile,
-                         :service_provider_mobile => order.service_provider.mobile, :status_id => order.status}
+            orders_hash << {:order_id => order.id, :customer_id => order.customer_id, :service_provider_id => order.service_provider_id,
+                           :customer_name => order.customer.full_name, :service_provider_name => order.service_provider.full_name,
+                           :total_cost => order.total_cost.to_i, :customer_mobile => order.customer.mobile,
+                           :service_provider_mobile => order.service_provider.mobile, :status_id => order.status}
+          end
         end
         orders_hash
       end

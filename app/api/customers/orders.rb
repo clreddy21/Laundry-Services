@@ -68,12 +68,13 @@ module Customers
       get do
       	orders = Order.includes(:service_provider).where(customer_id: params[:customer_id])
         orders_hash = []
+        if !orders.blank?
+          orders.each do |order|
 
-        orders.each do |order|
-
-          orders_hash << {:order_id => order.id, :service_provider_id => order.service_provider_id,
-                         :service_provider_name => order.service_provider.full_name, :total_cost => order.total_cost.to_i,
-              :mobile => order.service_provider.mobile, :status_id => order.status}
+            orders_hash << {:order_id => order.id, :service_provider_id => order.service_provider_id,
+                           :service_provider_name => order.service_provider.full_name, :total_cost => order.total_cost.to_i,
+                :mobile => order.service_provider.mobile, :status_id => order.status}
+          end
         end
         orders_hash
       end
