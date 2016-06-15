@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160615125849) do
     t.integer  "service_provider_id"
     t.integer  "item_id"
     t.integer  "service_type_id"
-    t.float    "price"
+    t.integer  "price"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -75,8 +75,9 @@ ActiveRecord::Schema.define(version: 20160615125849) do
     t.float    "change_in_cost"
     t.string   "change_in_cost_reason"
     t.string   "status"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "comment",                  default: ""
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "service_provider_chooser"
   end
 

@@ -6,5 +6,6 @@ class API < Grape::API
   mount Customers::ServiceProviders
   mount Customers::Orders
   mount ServiceProviderDetails::Orders
+  mount ServiceProviderDetails::ItemPrices
   mount Logistics::Orders
 end
