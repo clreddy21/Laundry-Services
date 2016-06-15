@@ -74,9 +74,9 @@ module Customers
             logistic = order.logistic
 
             orders_hash << {:order_id => order.id, :service_provider_id => sp.id, :service_provider_name => sp.full_name,
-                           :logistic_id => (logistic.nil ? '' : logistic.id ), :logistic_name => (logistic.nil ? '' : logistic.full_name),
+                           :logistic_id => (logistic.nil? ? '' : logistic.id ), :logistic_name => (logistic.nil? ? '' : logistic.full_name),
                            :total_cost => order.total_cost.to_i,:service_provider_mobile => sp.mobile,
-                           :logistic_mobile => (logistic.nil ? '' : logistic.mobile), :status_id => order.status}
+                           :logistic_mobile => (logistic.nil? ? '' : logistic.mobile), :status_id => order.status}
           end
         end
         orders_hash
