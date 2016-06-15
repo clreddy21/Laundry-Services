@@ -70,10 +70,12 @@ module Customers
         orders_hash = []
         if !orders.blank?
           orders.each do |order|
+            sp = order.service_provider
+            logistic = order.logistic
 
-            orders_hash << {:order_id => order.id, :service_provider_id => order.service_provider_id,
-                           :service_provider_name => order.service_provider.full_name, :total_cost => order.total_cost.to_i,
-                :mobile => order.service_provider.mobile, :status_id => order.status}
+            orders_hash << {:order_id => order.id, :service_provider_id => sp.id, :service_provider_name => sp.full_name,
+                           :logistic_id => logistic.id, :logistic_name => logistic.full_name, :total_cost => order.total_cost.to_i,
+                :service_provider_mobile => sp.mobile, :logistic_mobile => logistic.mobile, :status_id => order.status}
           end
         end
         orders_hash
@@ -88,10 +90,24 @@ module Customers
 
       get do
       	order = Order.includes(:order_items, :order_comments, :payment, :schedule, :address).find(params[:order_id])
-      	{:order_items => order.order_items.select(:id, :item_id, :service_type_id, :quantity, :amount, :remarks),
-         :order_comments => order.order_comments.select(:id, :body, :comment_by_type, :comment_by),
-        :order_schedule => order.schedule.date, :order_payment => {:amount => order.payment.amount.to_i, :status =>
-            order.payment.status, :mode => order.payment.mode},
+        order_items_comments_hash = []
+        
+        order.order_items.includes(:service_type).each do |order_item|
+          order_item_hash = []
+          order_comments_hash = []
+
+          order_item_hash << {:order_item_id => order_item.id, :item_id => order_item.item_id, :item_type => order_item.item.name,
+           :service_type_id => order_item.service_type_id, :service_type_name => order_item.service_type.name, :quantity => order_item.quantity,
+           :amount => order_item.amount}
+
+          order_item.order_comments.each do |comment|
+            order_comments_hash << {:order_comment_id => comment.id, :comment_body => comment.body, :comment_by_type => comment.comment_by_type,
+              :comment_by_id => comment.comment_by, :comment_by_name => User.find(comment.comment_by).full_name}
+          end
+          order_items_comments_hash << {order_item_hash: order_item_hash, order_comments_hash: order_comments_hash}
+        end
+        {:order_items_comments_hash => order_items_comments_hash, :order_schedule => order.schedule.date,
+        :order_payment => {:amount => order.payment.amount.to_i, :payment_status => order.payment.status, :mode => order.payment.mode},
         :order_address => order.address.address}
       end
     end

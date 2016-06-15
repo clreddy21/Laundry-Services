@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610193222) do
+ActiveRecord::Schema.define(version: 20160615125849) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160610193222) do
     t.integer  "comment_by"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "order_item_id"
   end
 
   add_index "order_comments", ["order_id"], name: "index_order_comments_on_order_id"
