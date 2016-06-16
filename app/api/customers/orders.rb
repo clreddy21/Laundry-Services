@@ -99,7 +99,7 @@ module Customers
 
           order_item_hash << {:order_item_id => order_item.id, :item_id => order_item.item_id, :item_type => order_item.item.name,
            :service_type_id => order_item.service_type_id, :service_type_name => order_item.service_type.name, :quantity => order_item.quantity,
-           :amount => order_item.amount}
+           :amount => order_item.amount.to_i}
 
           order_item.order_comments.each do |comment|
             order_comments_hash << {:order_comment_id => comment.id, :comment_body => comment.body, :comment_by_type => comment.comment_by_type,
