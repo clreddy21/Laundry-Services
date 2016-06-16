@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added reviews to service provider">
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/service_provider_details/item_prices.rb" afterPath="$PROJECT_DIR$/app/api/service_provider_details/item_prices.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/laundry_services.iml" afterPath="$PROJECT_DIR$/.idea/laundry_services.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/service_provider_details/reviews.rb" afterPath="$PROJECT_DIR$/app/api/service_provider_details/reviews.rb" />
@@ -737,7 +737,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466101301243</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="added reviews to service provider">
+      <created>1466101317016</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1466101317016</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
