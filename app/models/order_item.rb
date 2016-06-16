@@ -3,4 +3,7 @@ class OrderItem < ActiveRecord::Base
   belongs_to :item
   belongs_to :service_type
   has_many :order_comments
+  delegate :name, to: :service_type, prefix: true
+  delegate :name, to: :order, prefix: true
+
 end

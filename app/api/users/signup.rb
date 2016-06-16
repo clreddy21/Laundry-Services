@@ -4,11 +4,6 @@ module Users
   class Signup < Grape::API
 
     resource :users do
-      # desc "List all Users"
-      # get do
-      #   User.all
-      # end
-    
 		
 			desc "Create a new user"
 			## This takes care of parameter validation
@@ -82,7 +77,7 @@ module Users
 
 				if user.nil?
 					{:message => "No user exists with this user_id", :success => false}
-				elsif user.otp.to_s == ''
+				elsif user.otp.blamk?
 					{:message => "User already verified.", :success => true}
 				elsif user.otp.to_s == params[:otp]
 					user.update(:otp => '', :is_active => true)

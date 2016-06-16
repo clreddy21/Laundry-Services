@@ -37,12 +37,12 @@ module Customers
   	  end
 
       post do
-      	order = Order.create(service_provider_id: params[:service_provider_id], customer_id: params[:customer_id], total_cost: 
-      		params[:total_cost], status: params[:status], :service_provider_chooser => params[:service_provider_chooser])
+      	order = Order.create(service_provider_id: params[:service_provider_id], customer_id: params[:customer_id],
+               total_cost: params[:total_cost], status: params[:status], :service_provider_chooser => params[:service_provider_chooser])
 
       	items = []
       	params[:items].each do |item|
-					OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id], 
+					OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id],
 						:quantity => item[:quantity], :amount => item[:amount], :remarks => item[:remarks])
         end
 
@@ -92,13 +92,12 @@ module Customers
       get do
       	order = Order.includes(:order_items, :order_comments, :payment, :schedule, :address).find(params[:order_id])
         order_items_comments_hash = []
-        
         order.order_items.includes(:service_type).each do |order_item|
           order_item_hash = []
           order_comments_hash = []
 
-          order_item_hash << {:order_item_id => order_item.id, :item_id => order_item.item_id, :item_type => order_item.item.name,
-           :service_type_id => order_item.service_type_id, :service_type_name => order_item.service_type.name, :quantity => order_item.quantity,
+          order_item_hash << {:order_item_id => order_item.id, :item_id => order_item.item_id, :item_type => order_item.item_name,
+           :service_type_id => order_item.service_type_id, :service_type_name => order_item.service_type_name, :quantity => order_item.quantity,
            :amount => order_item.amount.to_i}
 
           order_item.order_comments.each do |comment|
@@ -107,9 +106,9 @@ module Customers
           end
           order_items_comments_hash << {order_item_hash: order_item_hash, order_comments_hash: order_comments_hash}
         end
-        {:order_items_comments_hash => order_items_comments_hash, :order_schedule => order.schedule.date,
-        :order_payment => {:amount => order.payment.amount.to_i, :payment_status => order.payment.status, :mode => order.payment.mode},
-        :order_address => order.address.address}
+        {:order_items_comments_hash => order_items_comments_hash, :order_schedule => order.schedule_date,
+        :order_payment => {:amount => order.payment_amount.to_i, :payment_status => order.payment_status, :mode => order.payment_mode},
+        :order_address => order.address_address}
       end
     end
   end

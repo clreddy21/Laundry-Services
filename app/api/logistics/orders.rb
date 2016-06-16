@@ -98,14 +98,14 @@ module Logistics
       params do
         requires :order_id, type:Integer
         requires :comment, type:String
-        requires :comment_by_id, type:Integer        
+        requires :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
         order.update(status: "4")
         commenter = User.find(params[:comment_by_id])
-        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])        
+        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
         {:message => 'Finished service', :success => true, :order_status => "4"}
       end
     end
@@ -123,7 +123,7 @@ module Logistics
         order = Order.find(params[:order_id])
         order.update(status: "5")
         commenter = User.find(params[:comment_by_id])
-        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])        
+        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
         {:message => 'Picked up for delivery.', :success => true, :order_status => "5"}
       end
     end
@@ -134,14 +134,14 @@ module Logistics
       params do
         requires :order_id, type:Integer
         requires :comment, type:String
-        requires :comment_by_id, type:Integer        
+        requires :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
         order.update(status: "6")
         commenter = User.find(params[:comment_by_id])
-        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])        
+        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
         {:message => 'Completed Order', :success => true, :order_status => "6"}
       end
     end

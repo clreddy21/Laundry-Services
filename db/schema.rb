@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615125849) do
+ActiveRecord::Schema.define(version: 20160616180221) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
@@ -95,6 +95,16 @@ ActiveRecord::Schema.define(version: 20160615125849) do
   end
 
   add_index "payments", ["order_id"], name: "index_payments_on_order_id"
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "rating"
+    t.integer  "reviewable_id"
+    t.string   "reviewable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "reviews", ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id"
 
   create_table "schedules", force: :cascade do |t|
     t.integer  "order_id"

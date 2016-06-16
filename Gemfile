@@ -76,3 +76,6 @@ end
 gem 'gcm'
 #For SSL error
 gem 'certified'
+
+gem "rails_best_practices"
+gem 'rubocop'
