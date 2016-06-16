@@ -725,7 +725,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466101179798</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="added reviews to service provider">
+      <created>1466101295511</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1466101295511</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
