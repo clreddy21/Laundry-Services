@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="minor refactoring&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20160616180221_create_reviews.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/review.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/review_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/api/service_provider_details/reviews.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/reviews.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/api.rb" afterPath="$PROJECT_DIR$/app/api/api.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/service_provider_details/item_prices.rb" afterPath="$PROJECT_DIR$/app/api/service_provider_details/item_prices.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/laundry_services.iml" afterPath="$PROJECT_DIR$/.idea/laundry_services.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/order.rb" afterPath="$PROJECT_DIR$/app/models/order.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/order_item.rb" afterPath="$PROJECT_DIR$/app/models/order_item.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/customers/orders.rb" afterPath="$PROJECT_DIR$/app/api/customers/orders.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/logistics/orders.rb" afterPath="$PROJECT_DIR$/app/api/logistics/orders.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/service_provider_details/reviews.rb" afterPath="$PROJECT_DIR$/app/api/service_provider_details/reviews.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/users/signup.rb" afterPath="$PROJECT_DIR$/app/api/users/signup.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -734,7 +719,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466095616721</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added reviews to service provider">
+      <created>1466101179798</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1466101179798</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -806,7 +797,8 @@
     <MESSAGE value="minor refactoring" />
     <MESSAGE value="added api for adding item prices by service provider" />
     <MESSAGE value="minor refactoring&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor refactoring&#10;" />
+    <MESSAGE value="added reviews to service provider" />
+    <option name="LAST_COMMIT_MESSAGE" value="added reviews to service provider" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
