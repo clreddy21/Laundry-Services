@@ -5,12 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/customers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/customers_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/devise.en.yml" afterPath="$PROJECT_DIR$/config/locales/devise.en.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/items_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/items_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/logistics_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/logistics_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/order.rb" afterPath="$PROJECT_DIR$/app/models/order.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/logistics/orders.rb" afterPath="$PROJECT_DIR$/app/api/logistics/orders.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/service_provider.rb" afterPath="$PROJECT_DIR$/app/models/service_provider.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/service_providers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/service_providers_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/service_types_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/service_types_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -1568,7 +1564,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466180941122</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="minor refactoring">
+      <created>1466183966123</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1466183966123</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1615,12 +1617,12 @@
     <MESSAGE value="working on getting service providers and sending otp to users." />
     <MESSAGE value="added get item prices api" />
     <MESSAGE value="created  all order related models&#10;filtered only required columns in get_list_of_service_providers api request" />
-    <MESSAGE value="minor refactoring" />
     <MESSAGE value="added api for adding item prices by service provider" />
     <MESSAGE value="minor refactoring&#10;" />
     <MESSAGE value="added reviews to service provider" />
     <MESSAGE value="cleaning code according to rubocop" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaning code according to rubocop" />
+    <MESSAGE value="minor refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
