@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/order.rb" afterPath="$PROJECT_DIR$/app/models/order.rb" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="minor refactoring">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/logistics/orders.rb" afterPath="$PROJECT_DIR$/app/api/logistics/orders.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -43,8 +41,8 @@
       <file leaf-file-name="orders.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/api/logistics/orders.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.60883284" vertical-offset="862" max-vertical-offset="3349">
-              <caret line="28" column="40" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="40" />
+            <state vertical-scroll-proportion="-0.9842271" vertical-offset="1406" max-vertical-offset="3247">
+              <caret line="46" column="95" selection-start-line="46" selection-start-column="95" selection-end-line="46" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -1612,7 +1610,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466184956359</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="minor refactoring">
+      <created>1466186145546</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1466186145546</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1663,9 +1667,9 @@
     <MESSAGE value="minor refactoring&#10;" />
     <MESSAGE value="added reviews to service provider" />
     <MESSAGE value="cleaning code according to rubocop" />
-    <MESSAGE value="minor refactoring" />
     <MESSAGE value="testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing" />
+    <MESSAGE value="minor refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2077,8 +2081,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/logistics/orders.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.60883284" vertical-offset="862" max-vertical-offset="3349">
-          <caret line="28" column="40" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="40" />
+        <state vertical-scroll-proportion="-0.9842271" vertical-offset="1406" max-vertical-offset="3247">
+          <caret line="46" column="95" selection-start-line="46" selection-start-column="95" selection-end-line="46" selection-end-column="95" />
           <folding />
         </state>
       </provider>

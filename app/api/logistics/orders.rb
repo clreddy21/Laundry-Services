@@ -44,7 +44,7 @@ module Logistics
 
         if params['is_accepted']
           order.update(status: '2')
-          {:message => 'Service Provider accepted order', :success => true, :order_status => '2'}
+          {:message => 'Service Provider accepted order', :success => true, :order_status => '1'}
         else
           order.update(status: '7')
           {:message => 'Service Provider declined order', :success => true, :order_status => '7'}
@@ -81,7 +81,6 @@ module Logistics
       desc 'Pick the items for service from customer by logistic'
       params do
         requires :order_id, type:Integer
-        requires :is_accepted, type:Boolean
         optional :comment, type:String
         optional :comment_by_id, type:Integer
       end
@@ -93,13 +92,8 @@ module Logistics
           order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
         end
 
-        if params['is_accepted']
           order.update(status: '2')
           {:message => 'Assigned logistic to order', :success => true, :order_status => '2'}
-        else
-          order.update(status: '7')
-          {:message => 'Rejected by service provider', :success => false, :order_status => '7'}
-        end
       end
     end
 
