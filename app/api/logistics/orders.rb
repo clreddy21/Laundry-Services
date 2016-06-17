@@ -111,8 +111,8 @@ module Logistics
           commenter = User.find(params[:comment_by_id])
           order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
         end
-        {message: 'Finished service', success: true, order_status: '4', orders_count: spd[:orders_count],
-        total_cost: spd[:total_cost]}
+        {message: 'Finished service', success: true, order_status: '4', orders_count: sps[:orders_count],
+        total_cost: sps[:total_cost]}
       end
     end
 
