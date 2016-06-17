@@ -1,0 +1,15 @@
+= @service_provider.full_name
+br
+= @service_provider.email
+br
+= @service_provider.mobile
+br
+= @service_provider.average_review
+br
+= @service_provider.reviews_count
+br
+= @service_provider.avatar
+br
+/= link_to 'Edit', edit_admin_service_provider_path(@service_provider)
+br
+= link_to 'Back', list_of_admin_service_providers_path

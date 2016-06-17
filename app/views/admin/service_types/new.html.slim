@@ -1,0 +1,3 @@
+= form_for @service_type, url: admin_service_types_path do |f|
+  = f.text_field :name, required: true
+  = f.submit 'Add Service Type'

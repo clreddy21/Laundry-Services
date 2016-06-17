@@ -1,0 +1,3 @@
+= form_for @item, url: admin_items_path do |f|
+  = f.text_field :name, required: true
+  = f.submit 'Add New Item'
