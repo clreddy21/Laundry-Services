@@ -3,16 +3,16 @@ module Customers
 
 
     resource :test_gcm do
-      desc "assa"
+      desc 'assa'
       params do
         requires :id, type: String
       end
       get do
-        gcm = GCM.new("AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM")
+        gcm = GCM.new('AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM')
 
         registration_id = [params[:id].to_s]
 
-        options = {data: {score: "123"}, collapse_key: "updated_score"}
+        options = {data: {score: '123'}, collapse_key: 'updated_score'}
         # raise options.inspect
         response = gcm.send(registration_id, options)
         raise response.inspect
@@ -20,7 +20,7 @@ module Customers
       end
     end
     resource :create_order do
-      desc "Create a new order"
+      desc 'Create a new order'
       params do
 				requires :service_provider_id, type:Integer
         requires :customer_id, type:Integer
@@ -60,7 +60,7 @@ module Customers
     end
 
     resource :list_of_orders_of_customer do
-      desc "List of orders of customers"
+      desc 'List of orders of customers'
       params do
         requires :customer_id, type:Integer
   	  end
@@ -84,7 +84,7 @@ module Customers
     end
 
     resource :order_details do
-      desc "Order Details"
+      desc 'Order Details'
       params do
         requires :order_id, type:Integer
   	  end

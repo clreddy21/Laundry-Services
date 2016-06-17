@@ -5,7 +5,7 @@ module Users
 
     resource :users do
 		
-			desc "Create a new user"
+			desc 'Create a new user'
 			## This takes care of parameter validation
 			params do
 			  requires :first_name, type:String
@@ -26,11 +26,11 @@ module Users
 				puts params.inspect
 				# params = JSON.parse params.inspect
 		    if User.exists?(email: params[:email])
-		      {:message => "Email is already taken", :success => false}
+		      {:message => 'Email is already taken', :success => false}
 				elsif User.exists?(mobile: params[:mobile])
-		      {:message => "Mobile number is already taken", :success => false}
+		      {:message => 'Mobile number is already taken', :success => false}
 	      elsif !['Customer', 'ServiceProvider', 'Logistic'].include? params[:type]
-		      {:message => "Not a valid user type.", :success => false}
+		      {:message => 'Not a valid user type.', :success => false}
 				else
 					otp = rand(1000..9999)
 					User.create!({
@@ -51,9 +51,9 @@ module Users
 
 					user = User.find_by(:email => params[:email])
 				  if user.present?
-						gcm = GCM.new("AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM")
+						gcm = GCM.new('AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM')
 						registration_id = params[:device_id]
-						options = {data: {score: "123"}, collapse_key: "updated_score"}
+						options = {data: {score: '123'}, collapse_key: 'updated_score'}
 						response = gcm.send(registration_id, options)
 
 						{:message => 'Registration successful.', :success => true, :user_id => user.id}
@@ -76,9 +76,9 @@ module Users
 				user = User.find_by(id: params[:user_id])
 
 				if user.nil?
-					{:message => "No user exists with this user_id", :success => false}
+					{:message => 'No user exists with this user_id', :success => false}
 				elsif user.otp.blamk?
-					{:message => "User already verified.", :success => true}
+					{:message => 'User already verified.', :success => true}
 				elsif user.otp.to_s == params[:otp]
 					user.update(:otp => '', :is_active => true)
 					user.save!

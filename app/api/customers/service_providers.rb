@@ -1,7 +1,7 @@
 module Customers
   class ServiceProviders < Grape::API
     resource :get_service_providers do
-      desc "Get service providers depending upon distance and service provided"
+      desc 'Get service providers depending upon distance and service provided'
       params do
         requires :latitude, type:Float
         requires :longitude, type:Float
@@ -32,7 +32,7 @@ module Customers
     end
 
     resource :get_service_provider_item_prices do
-      desc "Get service provider's prices for different items."
+      desc 'Get service providers prices for different items.'
       params do
         requires :service_provider_id, type:String
       end

@@ -17,16 +17,16 @@ class User < ActiveRecord::Base
 
 
   def full_name
-    self.first_name + " " + self.last_name
+    self.first_name + ' ' + self.last_name
   end
   private
 
   def send_otp_to_user
 
-    body = "Hi #{self.first_name}, #{self.otp} is your otp for verification. Please do not disclose it to anyone."
-    user = "ravipenmetsa"
-    pass = "mogallu"
-    sender = "SETTAB"
+    body = 'Hi #{self.first_name}, #{self.otp} is your otp for verification. Please do not disclose it to anyone.'
+    user = 'ravipenmetsa'
+    pass = 'mogallu'
+    sender = 'SETTAB'
     phone = self.mobile
 
     Curl.get('http://bhashsms.com/api/sendmsg.php', {

@@ -5,5 +5,5 @@ class OrderItem < ActiveRecord::Base
   has_many :order_comments
   delegate :name, to: :service_type, prefix: true
   delegate :name, to: :order, prefix: true
-
+  delegate :name, to: :item, prefix: true
 end

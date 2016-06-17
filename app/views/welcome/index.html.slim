@@ -1,6 +1,7 @@
-h1
-	= 'boom'
-= link_to "Edit Profile", edit_user_registration_path(current_user)
-= link_to "Signout", destroy_user_session_path, method: :delete
-= link_to "List of Customers", customers_path
-= link_to "List of Categories", categories_path
+= link_to 'Edit Profile', edit_user_registration_path
+= link_to 'Signout', destroy_user_session_path, method: :delete
+= link_to 'List of Customers', list_of_admin_customers_path
+= link_to 'List of Service Providers', list_of_admin_service_providers_path
+= link_to 'List of Logistics', list_of_admin_logistics_path
+= link_to 'List of Service Types', list_of_admin_service_types_path
+= link_to 'List of Items', list_of_admin_items_path

@@ -1,6 +1,8 @@
 h1
-  = "List of customers"
+  = 'List of customers'
 
 - @customers.each do |customer|
   = customer.full_name
   br
+
+= link_to 'Back', root_path

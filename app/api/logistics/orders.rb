@@ -3,7 +3,7 @@ module Logistics
 
 
     resource :list_of_orders_of_logistic do
-      desc "List of orders of logistic"
+      desc 'List of orders of logistic'
       params do
         requires :logistic_id, type:Integer
       end
@@ -26,10 +26,8 @@ module Logistics
     end
 
     resource :logistics do
-      desc "List of logistics for assigning order"
+      desc 'List of logistics for assigning order'
       params do
-        # requires :order_id, type:Integer
-        # requires :logistic_id, type:Integer
       end
 
       get do
@@ -38,7 +36,7 @@ module Logistics
     end
 
     resource :assign_logistic do
-      desc "Assign a logistic to order"
+      desc 'Assign a logistic to order'
       params do
         requires :order_id, type:Integer
         requires :logistic_id, type:Integer
@@ -52,12 +50,12 @@ module Logistics
     end
 
     resource :pick_for_service do
-      desc "Pick the items for service from customer by logistic"
+      desc 'Pick the items for service from customer by logistic'
       params do
         requires :order_id, type:Integer
         requires :is_accepted, type:Boolean
-        requires :comment, type:String
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :comment_by_id, type:Integer
       end
 
       post do
@@ -65,84 +63,84 @@ module Logistics
         commenter = User.find(params[:comment_by_id])
         order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
 
-        if params["is_accepted"]
-          order.update(status: "2")
-          {:message => 'Assigned logistic to order', :success => true, :order_status => "2"}
+        if params['is_accepted']
+          order.update(status: '2')
+          {:message => 'Assigned logistic to order', :success => true, :order_status => '2'}
         else
-          order.update(status: "7")
-          {:message => 'Rejected by service provider', :success => false, :order_status => "7"}
+          order.update(status: '7')
+          {:message => 'Rejected by service provider', :success => false, :order_status => '7'}
         end
       end
     end
 
     resource :start_service do
-      desc "Deliver order items to service provider by logistic and service started"
+      desc 'Deliver order items to service provider by logistic and service started'
       params do
         requires :order_id, type:Integer
-        requires :comment, type:String
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
-        order.update(status: "3")
+        order.update(status: '3')
         commenter = User.find(params[:comment_by_id])
         order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
-        {:message => 'Started service', :success => true, :order_status => "3"}
+        {:message => 'Started service', :success => true, :order_status => '3'}
       end
     end
 
 
     resource :finish_service do
-      desc "Service provider completed service and is ready for pickup."
+      desc 'Service provider completed service and is ready for pickup.'
       params do
         requires :order_id, type:Integer
-        requires :comment, type:String
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
-        order.update(status: "4")
+        order.update(status: '4')
         commenter = User.find(params[:comment_by_id])
         order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
-        {:message => 'Finished service', :success => true, :order_status => "4"}
+        {:message => 'Finished service', :success => true, :order_status => '4'}
       end
     end
 
 
     resource :pick_for_delivery do
-      desc "Logistic picked the order items from service provider."
+      desc 'Logistic picked the order items from service provider.'
       params do
         requires :order_id, type:Integer
-        requires :comment, type:String
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
-        order.update(status: "5")
+        order.update(status: '5')
         commenter = User.find(params[:comment_by_id])
         order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
-        {:message => 'Picked up for delivery.', :success => true, :order_status => "5"}
+        {:message => 'Picked up for delivery.', :success => true, :order_status => '5'}
       end
     end
 
 
     resource :completed_order do
-      desc "Deliver order items to customer by logistic and order completed."
+      desc 'Deliver order items to customer by logistic and order completed.'
       params do
         requires :order_id, type:Integer
-        requires :comment, type:String
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
-        order.update(status: "6")
+        order.update(status: '6')
         commenter = User.find(params[:comment_by_id])
         order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
-        {:message => 'Completed Order', :success => true, :order_status => "6"}
+        {:message => 'Completed Order', :success => true, :order_status => '6'}
       end
     end
 

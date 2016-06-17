@@ -1,0 +1,14 @@
+= link_to 'Create New Service Type', new_admin_service_type_path
+br
+
+h1
+  = 'List of service types'
+
+- @service_types.each do |service_type|
+  = service_type.name
+  = link_to 'Edit Service Type', edit_admin_service_type_path(service_type)
+
+  br
+  br
+
+= link_to 'Back', root_path

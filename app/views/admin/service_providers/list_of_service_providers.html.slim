@@ -1,0 +1,12 @@
+= link_to 'Add New Service Provider', new_admin_service_provider_path
+br
+
+h1
+  = 'List of service provider'
+
+- @service_providers.each do |service_provider|
+
+  = link_to service_provider.full_name, admin_service_provider_path(service_provider)
+  br
+
+= link_to 'Back', root_path

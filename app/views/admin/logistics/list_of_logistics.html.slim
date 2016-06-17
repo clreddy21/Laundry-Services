@@ -1,0 +1,8 @@
+h1
+  = 'List of logistics'
+
+- @logistics.each do |logistic|
+  = logistic.full_name
+  br
+
+= link_to 'Back', root_path

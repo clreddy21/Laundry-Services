@@ -2,7 +2,7 @@ module ServiceProviderDetails
   class Orders < Grape::API
 
     resource :list_of_orders_of_service_provider do
-      desc "List of orders of service provider"
+      desc 'List of orders of service provider'
       params do
         requires :sp_id, type:Integer
   	  end

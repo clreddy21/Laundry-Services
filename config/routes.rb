@@ -2,18 +2,48 @@ Rails.application.routes.draw do
 
   mount API => '/'
 
-  devise_for :users
+  Rails.application.routes.draw do
+    devise_for :users, controllers: {
+                         sessions: 'users/sessions', registrations: 'users/registrations'
+                     }
+  end
   get 'welcome/index'
   root 'welcome#index'
 
-  get 'admin/customers' => 'admin#customers', as: 'customers'
 
-
+#Configuring routes under Admin namespace
+  namespace :admin do
+    resources :customers, path: '' do
+      collection do
+        get 'list_of_customers', as: 'list_of'
+      end
+    end
+    resources :service_providers do
+      collection do
+        get 'list_of_service_providers', as: 'list_of'
+      end
+    end
+    resources :logistics do
+      collection do
+        get 'list_of_logistics', as: 'list_of'
+      end
+    end
+    resources :service_types do
+      collection do
+        get 'list_of_service_types', as: 'list_of'
+      end
+    end
+    resources :items do
+      collection do
+        get 'list_of_items', as: 'list_of'
+      end
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # See how all your routes lay out with 'rake routes'.
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with 'root'
   # root 'welcome#index'
 
   # Example of regular route:

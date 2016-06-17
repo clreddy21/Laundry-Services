@@ -2,7 +2,7 @@ module ServiceProviderDetails
   class ItemPrices < Grape::API
 
     resource :create_item_prices do
-      desc "Creating item prices of Service provider"
+      desc 'Creating item prices of Service provider'
       params do
         requires :sp_id, type:Integer
         requires :item_prices, type:Array

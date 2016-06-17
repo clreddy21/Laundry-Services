@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #For web services
 gem 'grape'
+gem 'rails-api'
+gem 'kaminari'
+gem 'api-pagination'
 
 #For authentication
 gem 'devise'
@@ -77,5 +80,5 @@ gem 'gcm'
 #For SSL error
 gem 'certified'
 
-gem "rails_best_practices"
+gem 'rails_best_practices'
 gem 'rubocop'
