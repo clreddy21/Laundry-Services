@@ -60,8 +60,10 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        commenter = User.find(params[:comment_by_id])
-        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
+        if params[:comment].present?
+          commenter = User.find(params[:comment_by_id])
+          order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
+        end
 
         if params['is_accepted']
           order.update(status: '2')
@@ -84,8 +86,10 @@ module Logistics
       post do
         order = Order.find(params[:order_id])
         order.update(status: '3')
-        commenter = User.find(params[:comment_by_id])
-        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
+        if params[:comment].present?
+          commenter = User.find(params[:comment_by_id])
+          order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
+        end
         {:message => 'Started service', :success => true, :order_status => '3'}
       end
     end
@@ -102,9 +106,13 @@ module Logistics
       post do
         order = Order.find(params[:order_id])
         order.update(status: '4')
-        commenter = User.find(params[:comment_by_id])
-        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
-        {:message => 'Finished service', :success => true, :order_status => '4'}
+        sps = order.service_provider_stats
+        if params[:comment].present?
+          commenter = User.find(params[:comment_by_id])
+          order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
+        end
+        {message: 'Finished service', success: true, order_status: '4', orders_count: spd[:orders_count],
+        total_cost: spd[:total_cost]}
       end
     end
 
@@ -120,8 +128,10 @@ module Logistics
       post do
         order = Order.find(params[:order_id])
         order.update(status: '5')
-        commenter = User.find(params[:comment_by_id])
-        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
+        if params[:comment].present?
+          commenter = User.find(params[:comment_by_id])
+          order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
+        end
         {:message => 'Picked up for delivery.', :success => true, :order_status => '5'}
       end
     end
@@ -138,9 +148,13 @@ module Logistics
       post do
         order = Order.find(params[:order_id])
         order.update(status: '6')
-        commenter = User.find(params[:comment_by_id])
-        order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
-        {:message => 'Completed Order', :success => true, :order_status => '6'}
+        if params[:comment].present?
+          commenter = User.find(params[:comment_by_id])
+          order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
+        end
+        logistic_stats = order.logistic_stats
+        {:message => 'Completed Order', :success => true, :order_status => '6',
+         orders_count: logistic_stats[:orders_count], total_cost: logistic_stats[:total_cost]}
       end
     end
 

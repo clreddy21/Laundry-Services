@@ -11,4 +11,20 @@ class Order < ActiveRecord::Base
   delegate :amount, :status, :mode, to: :payment, prefix: true
   delegate :date, to: :schedule, prefix: true
 
+  def service_provider_stats
+    service_provider = self.service_provider
+
+    orders_count = service_provider.orders.size
+    total_cost = service_provider.orders.pluck(:total_cost).sum
+    {orders_count: orders_count, total_cost: total_cost}
+  end
+
+  def logistic_stats
+    logistic = self.logistic
+
+    orders_count = logistic.orders.size
+    total_cost = logistic.orders.pluck(:total_cost).sum
+    {orders_count: orders_count, total_cost: total_cost}
+  end
+
 end
