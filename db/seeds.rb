@@ -9,8 +9,10 @@ service_provider_2 = ServiceProvider.create({first_name: 'Saint', last_name: 'Jo
 
 puts 'creating logistics'
 
-logistic_1 = Logistic.create({first_name: 'Logistic', last_name: '1', email: 'l1@gmail.com', password: 'testtest1', password_confirmation: 'testtest1', mobile: '9999999995'})
-logistic_2 = Logistic.create({first_name: 'Logistic', last_name: '2', email: 'l2@gmail.com', password: 'testtest1', password_confirmation: 'testtest1', mobile: '9999999994'})
+Logistic.create({first_name: 'Logistic', last_name: '1', email: 'l1@gmail.com', password: 'testtest1', password_confirmation: 'testtest1', mobile: '9999999995'})
+Logistic.create(first_name: 'Logistic', last_name: '2', email:
+                             'l2@gmail.com', password: 'testtest1', password_confirmation: 'testtest1',
+                             mobile: '9999999994')
 
 puts 'creating service types'
 service_type_1 = ServiceType.create(name: 'wash')
@@ -18,7 +20,7 @@ service_type_2 = ServiceType.create(name: 'iron')
 service_type_3 = ServiceType.create(name: 'wash iron')
 service_type_4 = ServiceType.create(name: 'dry cleaning')
 
-puts 'creating item prices'
+puts 'creating items'
 item_1 = Item.create(name: 'Jeans')
 item_2 = Item.create(name: 'Shirt')
 item_3 = Item.create(name: 'Kurta')

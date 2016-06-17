@@ -25,6 +25,34 @@ module Logistics
       end
     end
 
+
+    resource :service_providers_response do
+      desc "Service Provider's response to order request"
+      params do
+        requires :order_id, type:Integer
+        requires :is_accepted, type:Boolean
+        optional :comment, type:String
+        optional :comment_by_id, type:Integer
+      end
+
+      post do
+        order = Order.find(params[:order_id])
+        if params[:comment].present?
+          commenter = User.find(params[:comment_by_id])
+          order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
+        end
+
+        if params['is_accepted']
+          order.update(status: '2')
+          {:message => 'Service Provider accepted order', :success => true, :order_status => '2'}
+        else
+          order.update(status: '7')
+          {:message => 'Service Provider declined order', :success => true, :order_status => '7'}
+        end
+      end
+    end
+
+
     resource :logistics do
       desc 'List of logistics for assigning order'
       params do

@@ -21,8 +21,7 @@ class Order < ActiveRecord::Base
 
   def logistic_stats
     logistic = self.logistic
-    puts logistic.inspect
-    puts logistic.orders.inspect
+
     orders_count = logistic.orders.size
     total_cost = logistic.orders.pluck(:total_cost).sum
     {orders_count: orders_count, total_cost: total_cost}
