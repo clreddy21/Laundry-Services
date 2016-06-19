@@ -43,8 +43,8 @@ module Logistics
         end
 
         if params['is_accepted']
-          order.update(status: '2')
-          {:message => 'Service Provider accepted order', :success => true, :order_status => '1'}
+          order.update(status: '8')
+          {:message => 'Service Provider accepted order', :success => true, :order_status => '8'}
         else
           order.update(status: '7')
           {:message => 'Service Provider declined order', :success => true, :order_status => '7'}

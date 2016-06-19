@@ -29,17 +29,16 @@ class User < ActiveRecord::Base
     sender = 'SETTAB'
     phone = self.mobile
 
-    Curl.get('http://bhashsms.com/api/sendmsg.php', {
-      :user => user,
-      :pass => pass,
-      :sender => sender,
-      :phone => phone,
-      :text => body,
-      :priority => 'ndnd',
-      :stype => 'normal'
-    })
-
-    # HTTParty.get('?user=ravipenmetsa&pass=mogallu&sender=SETTAB&phone=8686638646&text=body&priority=ndnd&stype=normal')
+    Curl.get('http://bhashsms.com/api/sendmsg.php',
+      {
+        user: user,
+        pass: pass,
+        sender: sender,
+        phone: phone,
+        text: body,
+        priority: 'ndnd',
+        stype: 'normal'
+      }
+            )
   end
 end
-
