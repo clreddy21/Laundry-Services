@@ -1,0 +1,10 @@
+= form_for @logistic, url: admin_logistics_path do |f|
+  = f.text_field :first_name, placeholder: 'First Name', required: true
+  br
+  = f.text_field :last_name, placeholder: 'Last Name', required: true
+  br
+  = f.email_field :email, placeholder: 'Email', required: true
+  br
+  = f.text_field :mobile, placeholder: 'Mobile', required: true
+  br
+  = f.submit 'Create'

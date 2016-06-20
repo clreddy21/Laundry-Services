@@ -2,7 +2,10 @@ h1
   = 'List of customers'
 
 - @customers.each do |customer|
-  = customer.full_name
+  = link_to customer.full_name, admin_customer_path(customer)
   br
 
 = link_to 'Back', root_path
+
+
+

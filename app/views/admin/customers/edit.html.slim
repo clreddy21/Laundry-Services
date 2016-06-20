@@ -1,0 +1,10 @@
+= form_for @customer, url: admin_customer_path, method: 'put' do |f|
+  = f.text_field :first_name
+  br
+  = f.text_field :last_name
+  br
+  = f.email_field :email
+  br
+  = f.text_field :mobile
+  br
+  = f.submit 'Update'

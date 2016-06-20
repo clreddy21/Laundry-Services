@@ -1,0 +1,10 @@
+AllCops:
+  Excludes:
+    - config/unicorn.rb
+    - db/**
+    - db/migrate/**
+    - test/**
+    - config/**
+    - bin/**
+    - config/initializers/**
+    - config/environments/**

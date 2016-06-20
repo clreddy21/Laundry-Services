@@ -1,8 +1,12 @@
+= link_to 'Add New Logistic', new_admin_logistic_path
+br
+
 h1
   = 'List of logistics'
 
 - @logistics.each do |logistic|
-  = logistic.full_name
+
+  = link_to logistic.full_name, admin_logistic_path(logistic)
   br
 
 = link_to 'Back', root_path

@@ -109,5 +109,7 @@ Status.create(name: 'started service')
 Status.create(name: 'finished service')
 Status.create(name: 'picked for delivery')
 Status.create(name: 'order completed')
+Status.create(name: 'order denied by service provider')
+Status.create(name: 'order accepted by service provider')
 
 puts 'completed seeding of the data'
