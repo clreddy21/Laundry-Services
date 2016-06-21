@@ -11,6 +11,14 @@ Rails.application.routes.draw do
 
   # Configuring routes under Admin namespace
   namespace :admin do
+    resources :orders, path: '' do
+      collection do
+        get 'list_of_orders_without_service_provider', as: 'assign_service_provider'
+        get 'list_of_orders_without_logistic', as: 'assign_logistic'
+        put 'assign_service_provider_to_order'
+        put 'assign_logistic_to_order'
+      end
+    end
     resources :customers, path: '' do
       collection do
         get 'list_of_customers', as: 'list_of'
