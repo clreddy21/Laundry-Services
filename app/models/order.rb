@@ -11,10 +11,6 @@ class Order < ActiveRecord::Base
   delegate :amount, :status, :mode, to: :payment, prefix: true
   delegate :date, to: :schedule, prefix: true
 
-  scope :without_logistic, -> { where logistic_id: nil}
-  scope :without_service_provider, -> { where (service_provider_id: nil)}
-
-
   def without_logistic
     self.where(logistic_id: nil).where.not(status: '7')
   end
