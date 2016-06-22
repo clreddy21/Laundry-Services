@@ -33,12 +33,13 @@
 		br
 		br
 		br
-= form_tag(assign_service_provider_to_order_admin_orders_path, method: 'put') do
-	.form-group
-		.col-sm-4
-			= label_tag :select_logistic, nil, :class => "control-label"
-		.col-sm-8
-			= select_tag :logistic_id, options_from_collection_for_select(@logistics, "id", "full_name", "1"), :class => "form-control"
-	.form-group
-		.col-sm-offset-2.col-sm-10
-			button.btn.btn-success.pull-right type="submit"  Assign Logistic
+    = form_tag(assign_logistic_to_order_admin_orders_path, method: 'put') do
+        .form-group
+            .col-sm-4
+                = label_tag :select_logistic, nil, :class => "control-label"
+            .col-sm-8
+                = select_tag :logistic_id, options_from_collection_for_select(@logistics, "id", "full_name", "1"), :class => "form-control"
+                = hidden_field_tag :order_id, order.id
+        .form-group
+            .col-sm-offset-2.col-sm-10
+                button.btn.btn-success.pull-right type="submit"  Assign Logistic

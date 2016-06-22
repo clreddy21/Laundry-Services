@@ -10,6 +10,17 @@ br
 br
 = @service_provider.avatar
 br
+
+- @orders.each do |order|
+  a href=admin_order_path(order)
+    = "Customer: #{order.customer.full_name}" if !order.customer.nil?
+    - if !order.logistic.nil?
+      = "Logistic: #{order.logistic.full_name}"
+    = "Amount: #{order.total_cost}"
+    = "Status: #{order.status}"
+
+
+
 /= link_to 'Edit', edit_admin_service_provider_path(@service_provider)
 br
 = link_to 'Back', list_of_admin_service_providers_path

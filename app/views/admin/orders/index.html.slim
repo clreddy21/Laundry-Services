@@ -1,0 +1,23 @@
+- @orders.each do |order|
+  a href=admin_order_path(order)
+    = order.id
+    br
+    = order.customer.full_name
+    br
+    - if order.service_provider
+      = order.service_provider.full_name
+    - else
+      = "Not assignet yet"
+    br
+    - if order.logistic
+      = order.logistic.full_name
+    - else
+      = "Not assigned yet"
+    br
+    = order.total_cost
+    br
+    = order.service_provider_chooser
+    br
+    = order.status
+    br
+    br
