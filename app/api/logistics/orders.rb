@@ -37,12 +37,16 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        comment = params[:comment].present?? params[:comment] : ''
-        comment_by_id = params[:comment_by_id]
-        response = params[:is_accepted]
+        if order.present?
+          comment = params[:comment].present?? params[:comment] : ''
+          comment_by_id = params[:comment_by_id]
+          response = params[:is_accepted]
 
-        message = order.update_service_provider_response(comment, comment_by_id, response)
-        {:message => message, :success => true, :order_status => order.status_id}
+          message = order.update_service_provider_response(comment, comment_by_id, response)
+          {:message => message, :success => true, :order_status => order.status_id}
+        else
+          {:message => 'Order Id not valid', :success => false}
+        end
       end
     end
 
@@ -66,8 +70,12 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        message = order.assign_logistic(params[:logistic_id])
-        {:message => message, :success => true, :order_status => order.status_id}
+        if order.present?
+          message = order.assign_logistic(params[:logistic_id])
+          {:message => message, :success => true, :order_status => order.status_id}
+        else
+          {:message => 'Order Id not valid', :success => false}
+        end
       end
     end
 
@@ -81,10 +89,14 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        comment = params[:comment]
-        comment_by_id = params[:comment_by_id]
-        message = order.pick_for_service(comment, comment_by_id)
-        {:message => message, :success => true, :order_status => order.status_id}
+        if order.present?
+          comment = params[:comment]
+          comment_by_id = params[:comment_by_id]
+          message = order.pick_for_service(comment, comment_by_id)
+          {:message => message, :success => true, :order_status => order.status_id}
+        else
+          {:message => 'Order Id not valid', :success => false}
+        end
       end
     end
 
@@ -98,11 +110,15 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        comment = params[:comment]
-        comment_by_id = params[:comment_by_id]
-        message = order.start_service(comment, comment_by_id)
+        if order.present?
+          comment = params[:comment]
+          comment_by_id = params[:comment_by_id]
+          message = order.start_service(comment, comment_by_id)
 
-        {:message => message, :success => true, :order_status => order.status_id}
+          {:message => message, :success => true, :order_status => order.status_id}
+        else
+          {:message => 'Order Id not valid', :success => false}
+        end
       end
     end
 
@@ -117,13 +133,17 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        sps = order.service_provider_stats
-        comment = params[:comment]
-        comment_by_id = params[:comment_by_id]
-        message = order.finish_service(comment, comment_by_id)
+        if order.present?
+          sps = order.service_provider_stats
+          comment = params[:comment]
+          comment_by_id = params[:comment_by_id]
+          message = order.finish_service(comment, comment_by_id)
 
-        {:message => message, :success => true, :order_status => order.status_id, orders_count: sps[:orders_count],
-        total_cost: sps[:total_cost]}
+          {:message => message, :success => true, :order_status => order.status_id, orders_count: sps[:orders_count],
+          total_cost: sps[:total_cost]}
+        else
+          {:message => 'Order Id not valid', :success => false}
+        end
       end
     end
 
@@ -138,11 +158,15 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        comment = params[:comment]
-        comment_by_id = params[:comment_by_id]
-        message = order.finish_service(comment, comment_by_id)
+        if order.present?
+          comment = params[:comment]
+          comment_by_id = params[:comment_by_id]
+          message = order.finish_service(comment, comment_by_id)
 
-        {:message => message, :success => true, :order_status => order.status_id}
+          {:message => message, :success => true, :order_status => order.status_id}
+        else
+          {:message => 'Order Id not valid', :success => false}
+        end
       end
     end
 
@@ -157,12 +181,16 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        comment = params[:comment]
-        comment_by_id = params[:comment_by_id]
-        message = order.completed_order(comment, comment_by_id)
-        
-        {:message => message, :success => true, :order_status => order.status_id,
-         orders_count: logistic_stats[:orders_count], total_cost: logistic_stats[:total_cost]}
+        if order.present?
+          comment = params[:comment]
+          comment_by_id = params[:comment_by_id]
+          message = order.completed_order(comment, comment_by_id)
+          
+          {:message => message, :success => true, :order_status => order.status_id,
+           orders_count: logistic_stats[:orders_count], total_cost: logistic_stats[:total_cost]}
+        else
+          {:message => 'Order Id not valid', :success => false}
+        end
       end
     end
 
