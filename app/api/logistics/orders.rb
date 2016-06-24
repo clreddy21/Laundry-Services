@@ -46,7 +46,7 @@ module Logistics
           order.update(status_id: 8)
           {:message => 'Service Provider accepted order', :success => true, :order_status => '8'}
         else
-          order.update(status:_id: 7)
+          order.update(status_id: 7)
           {:message => 'Service Provider declined order', :success => true, :order_status => '7'}
         end
       end
