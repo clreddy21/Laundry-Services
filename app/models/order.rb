@@ -35,4 +35,103 @@ class Order < ActiveRecord::Base
     {orders_count: orders_count, total_cost: total_cost}
   end
 
+  def update_service_provider_response(comment, comment_by_id, response)
+	  if !comment.blank?
+	    commenter = User.find(comment_by_id)
+	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
+	  end
+
+	  if self.status_id == 1
+	  	if response
+	  		self.update(status_id: 8)
+	  		message = 'Service Provider accepted order'
+	  	else
+	  		self.update(status_id: 7)
+			  message = 'Service Provider declined order'
+	  	end
+  	else
+  		message = "Service provider cannot accept order now as status is #{Status.find(self.status_id).name}"
+  	end
+  end
+
+  def assign_logistic(logistic_id)
+	  if self.status_id == 1
+  		self.update(logistic_id: logistic_id)
+		  message = 'Assigned logistic to order'
+  	else
+  		message = "Logistic cannot be assigned to this order now as status is #{Status.find(self.status_id).name}"
+  	end
+  end
+
+
+  def pick_for_service(comment, comment_by_id)
+	  if !comment.blank?
+	    commenter = User.find(comment_by_id)
+	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
+	  end
+
+	  if self.status_id == 1
+  		self.update(status_id: 2)
+  		message = 'Logistic picked order items from customer.'
+  	else
+  		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
+  	end
+  end
+
+  def start_service(comment, comment_by_id)
+	  if !comment.blank?
+	    commenter = User.find(comment_by_id)
+	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
+	  end
+
+	  if self.status_id == 2
+  		self.update(status_id: 3)
+  		message = 'Logistic delivered order items to service provider and service started.'
+  	else
+  		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
+  	end
+  end
+
+  def finish_service(comment, comment_by_id)
+	  if !comment.blank?
+	    commenter = User.find(comment_by_id)
+	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
+	  end
+
+	  if self.status_id == 3
+  		self.update(status_id: 4)
+  		message = 'Service is completed by service provider and ready for pickup by logistic.'
+  	else
+  		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
+  	end
+  end
+
+  def pick_for_delivery(comment, comment_by_id)
+	  if !comment.blank?
+	    commenter = User.find(comment_by_id)
+	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
+	  end
+
+	  if self.status_id == 4
+  		self.update(status_id: 5)
+  		message = 'Logistic picked up the order items from service provider and is ready to deliver to customer.'
+  	else
+  		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
+  	end
+  end
+
+  def completed_order(comment, comment_by_id)
+	  if !comment.blank?
+	    commenter = User.find(comment_by_id)
+	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
+	  end
+
+	  if self.status_id == 5
+  		self.update(status_id: 6)
+  		message = 'Logistic delivered the order items to customer.'
+  	else
+  		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
+  	end
+  end
+
 end
