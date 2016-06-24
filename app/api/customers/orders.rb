@@ -26,7 +26,7 @@ module Customers
         requires :customer_id, type:Integer
         requires :total_cost, type:Float
         requires :status, type:String
-        optional :comment, type:String
+        requires :comment, type:String
 				requires :items, type: Array
 				requires :schedule_date, type: String
 				requires :address, type: String
@@ -108,7 +108,8 @@ module Customers
         end
         {:order_items_comments_hash => order_items_comments_hash, :order_schedule => order.schedule_date,
         :order_payment => {:amount => order.payment_amount.to_i, :payment_status => order.payment_status, :mode => order.payment_mode},
-        :order_address => order.address_address}
+        :order_address => order.address_address, customer_mobile: order.customer.mobile, 
+        service_provider_mobile: order.service_provider.mobile, service_provider_address: order.service_provider.address.address}
       end
     end
   end

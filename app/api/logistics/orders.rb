@@ -31,8 +31,8 @@ module Logistics
       params do
         requires :order_id, type:Integer
         requires :is_accepted, type:Boolean
-        optional :comment, type:String
-        optional :comment_by_id, type:Integer
+        requires :comment, type:String
+        requires :comment_by_id, type:Integer
       end
 
       post do
@@ -81,8 +81,8 @@ module Logistics
       desc 'Pick the items for service from customer by logistic'
       params do
         requires :order_id, type:Integer
-        optional :comment, type:String
-        optional :comment_by_id, type:Integer
+        requires :comment, type:String
+        requires :comment_by_id, type:Integer
       end
 
       post do
@@ -101,8 +101,8 @@ module Logistics
       desc 'Deliver order items to service provider by logistic and service started'
       params do
         requires :order_id, type:Integer
-        optional :comment, type:String
-        optional :comment_by_id, type:Integer
+        requires :comment, type:String
+        requires :comment_by_id, type:Integer
       end
 
       post do
@@ -121,8 +121,8 @@ module Logistics
       desc 'Service provider completed service and is ready for pickup.'
       params do
         requires :order_id, type:Integer
-        optional :comment, type:String
-        optional :comment_by_id, type:Integer
+        requires :comment, type:String
+        requires :comment_by_id, type:Integer
       end
 
       post do
@@ -143,8 +143,8 @@ module Logistics
       desc 'Logistic picked the order items from service provider.'
       params do
         requires :order_id, type:Integer
-        optional :comment, type:String
-        optional :comment_by_id, type:Integer
+        requires :comment, type:String
+        requires :comment_by_id, type:Integer
       end
 
       post do
@@ -163,8 +163,8 @@ module Logistics
       desc 'Deliver order items to customer by logistic and order completed.'
       params do
         requires :order_id, type:Integer
-        optional :comment, type:String
-        optional :comment_by_id, type:Integer
+        requires :comment, type:String
+        requires :comment_by_id, type:Integer
       end
 
       post do
