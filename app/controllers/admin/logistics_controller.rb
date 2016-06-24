@@ -10,7 +10,8 @@ class Admin::LogisticsController < ApplicationController
   end
 
   def show
-    @logistic = Logistic.find(params[:id])
+    @logistic = Logistic.includes(:orders).find(params[:id])
+    @amount = @customer.orders.pluck(:total_cost).sum
   end
 
   def edit

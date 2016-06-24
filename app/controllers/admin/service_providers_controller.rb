@@ -12,6 +12,7 @@ class Admin::ServiceProvidersController < ApplicationController
   def show
     @service_provider = ServiceProvider.find(params[:id])
     @orders = @service_provider.orders.includes(:customer, :logistic)
+    @amount = @orders.pluck(:total_cost).sum
   end
 
   def edit

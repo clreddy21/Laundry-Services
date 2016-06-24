@@ -10,6 +10,8 @@ br
 br
 = @service_provider.avatar
 br
+= @amount
+br
 
 - @orders.each do |order|
   a href=admin_order_path(order)
@@ -17,7 +19,7 @@ br
     - if !order.logistic.nil?
       = "Logistic: #{order.logistic.full_name}"
     = "Amount: #{order.total_cost}"
-    = "Status: #{order.status}"
+    = "Status: #{order.status_id}"
 
 
 

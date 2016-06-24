@@ -10,7 +10,8 @@ class Admin::CustomersController < ApplicationController
   end
 
   def show
-    @customer = Customer.find(params[:id])
+    @customer = Customer.includes(:orders).find(params[:id])
+    @amount = @customer.orders.pluck(:total_cost).sum
   end
 
   def edit

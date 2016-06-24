@@ -15,7 +15,7 @@ module ServiceProviderDetails
 
             orders_hash << {:order_id => order.id, :customer_id => order.customer_id,
                            :customer_name => order.customer.full_name, :total_cost => order.total_cost.to_i,
-                :customer_mobile => order.customer.mobile, :status_id => order.status}
+                :customer_mobile => order.customer.mobile, :status_id => order.status_id}
           end
         end
         orders_hash

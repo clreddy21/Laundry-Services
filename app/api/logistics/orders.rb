@@ -18,7 +18,7 @@ module Logistics
             orders_hash << {:order_id => order.id, :customer_id => order.customer_id, :service_provider_id => order.service_provider_id,
                            :customer_name => order.customer.full_name, :service_provider_name => order.service_provider.full_name,
                            :total_cost => order.total_cost.to_i, :customer_mobile => order.customer.mobile,
-                           :service_provider_mobile => order.service_provider.mobile, :status_id => order.status}
+                           :service_provider_mobile => order.service_provider.mobile, :status_id => order.status_id}
           end
         end
         orders_hash
@@ -43,10 +43,10 @@ module Logistics
         end
 
         if params['is_accepted']
-          order.update(status: '8')
+          order.update(status_id: 8)
           {:message => 'Service Provider accepted order', :success => true, :order_status => '8'}
         else
-          order.update(status: '7')
+          order.update(status:_id: 7)
           {:message => 'Service Provider declined order', :success => true, :order_status => '7'}
         end
       end
@@ -92,7 +92,7 @@ module Logistics
           order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
         end
 
-          order.update(status: '2')
+          order.update(status_id: 2)
           {:message => 'Assigned logistic to order', :success => true, :order_status => '2'}
       end
     end
@@ -107,7 +107,7 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        order.update(status: '3')
+        order.update(status_id: 3)
         if params[:comment].present?
           commenter = User.find(params[:comment_by_id])
           order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
@@ -127,7 +127,7 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        order.update(status: '4')
+        order.update(status_id: 4)
         sps = order.service_provider_stats
         if params[:comment].present?
           commenter = User.find(params[:comment_by_id])
@@ -149,7 +149,7 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        order.update(status: '5')
+        order.update(status_id: 5)
         if params[:comment].present?
           commenter = User.find(params[:comment_by_id])
           order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])
@@ -169,7 +169,7 @@ module Logistics
 
       post do
         order = Order.find(params[:order_id])
-        order.update(status: '6')
+        order.update(status_id: 6)
         if params[:comment].present?
           commenter = User.find(params[:comment_by_id])
           order.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: params[:comment])

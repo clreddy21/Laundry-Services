@@ -12,11 +12,11 @@ class Order < ActiveRecord::Base
   delegate :date, to: :schedule, prefix: true
 
   def self.without_logistic
-    self.where(logistic_id: nil).where.not(status: '7')
+    self.where(logistic_id: nil).where.not(status_id: 7)
   end
 
   def self.without_service_provider
-    self.where(service_provider_id: nil, status: '1', service_provider_chooser: 'admin')
+    self.where(service_provider_id: nil, status: 1, service_provider_chooser: 'admin')
   end
 
   def service_provider_stats

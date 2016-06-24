@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  string: MyString
+  body: MyString
+  text: MyString
+  is_read: MyString
+  boolean: MyString
+  user_id: 
+
+two:
+  subject: MyString
+  string: MyString
+  body: MyString
+  text: MyString
+  is_read: MyString
+  boolean: MyString
+  user_id: 

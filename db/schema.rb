@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616180221) do
+ActiveRecord::Schema.define(version: 20160624060103) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
@@ -36,9 +36,21 @@ ActiveRecord::Schema.define(version: 20160616180221) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "is_active",  default: true
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string   "subject"
+    t.text     "body"
+    t.boolean  "is_read"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id"
 
   create_table "order_comments", force: :cascade do |t|
     t.integer  "order_id"
@@ -74,10 +86,10 @@ ActiveRecord::Schema.define(version: 20160616180221) do
     t.float    "total_cost"
     t.float    "change_in_cost"
     t.string   "change_in_cost_reason"
-    t.string   "status"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "service_provider_chooser"
+    t.integer  "status_id",                default: 1
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id"
@@ -120,8 +132,9 @@ ActiveRecord::Schema.define(version: 20160616180221) do
 
   create_table "service_types", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "is_active",  default: true
   end
 
   create_table "statuses", force: :cascade do |t|
