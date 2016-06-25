@@ -55,6 +55,12 @@ module Customers
         Payment.create(order_id: order.id, amount: params[:total_cost], mode: params[:payment_mode],
         status: params[:payment_status])
 
+        if !params[:comment].blank?
+          commenter = User.find(params[:customer_id])
+          comment = User.find(params[:comment])
+          self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
+        end
+
 				{:message => 'Order Created Successfully', :success => true, :order_id => order.id}
       end
     end
