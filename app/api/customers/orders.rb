@@ -57,7 +57,7 @@ module Customers
 
         if !params[:comment].blank?
           commenter = User.find(params[:customer_id])
-          comment = User.find(params[:comment])
+          comment = params[:comment]
           self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
         end
 
