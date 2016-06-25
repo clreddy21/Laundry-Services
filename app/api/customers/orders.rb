@@ -26,7 +26,7 @@ module Customers
         requires :customer_id, type:Integer
         requires :total_cost, type:Float
         requires :status, type:String
-        requires :comment, type:String
+        # requires :comments, type:Array
 				requires :items, type: Array
 				requires :schedule_date, type: String
 				requires :address, type: String
@@ -41,9 +41,12 @@ module Customers
                total_cost: params[:total_cost], status_id: params[:status].to_i, :service_provider_chooser => params[:service_provider_chooser])
 
       	items = []
+        commenter = User.find(params[:customer_id])
       	params[:items].each do |item|
-					OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id],
+					order_item = OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id],
 						:quantity => item[:quantity], :amount => item[:amount], :remarks => item[:remarks])
+          OrderComment.create(order_id: order.id, body: item[:comment], comment_by_type: commenter.type,
+          comment_by: commenter.id, order_item_id: order_item.id)
         end
 
 
@@ -54,12 +57,6 @@ module Customers
         Address.create(address: params[:address], :addressable  => order)
         Payment.create(order_id: order.id, amount: params[:total_cost], mode: params[:payment_mode],
         status: params[:payment_status])
-
-        if !params[:comment].blank?
-          commenter = User.find(params[:customer_id])
-          comment = params[:comment]
-          self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
-        end
 
 				{:message => 'Order Created Successfully', :success => true, :order_id => order.id}
       end
