@@ -85,16 +85,16 @@ module Logistics
       desc 'Pick the items for service from customer by logistic'
       params do
         requires :order_id, type:Integer
-        requires :comment, type:String
+        requires :comments, type:Array
         requires :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
         if order.present?
-          comment = params[:comment]
+          comments = params[:comments]
           comment_by_id = params[:comment_by_id]
-          message = order.pick_for_service(comment, comment_by_id)
+          message = order.pick_for_service(comments, comment_by_id)
           {:message => message, :success => true, :order_status => order.status_id}
         else
           {:message => 'Order Id not valid', :success => false}
@@ -106,16 +106,16 @@ module Logistics
       desc 'Deliver order items to service provider by logistic and service started'
       params do
         requires :order_id, type:Integer
-        requires :comment, type:String
+        requires :comments, type:Array
         requires :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
         if order.present?
-          comment = params[:comment]
+          comments = params[:comments]
           comment_by_id = params[:comment_by_id]
-          message = order.start_service(comment, comment_by_id)
+          message = order.start_service(comments, comment_by_id)
 
           {:message => message, :success => true, :order_status => order.status_id}
         else
@@ -129,7 +129,7 @@ module Logistics
       desc 'Service provider completed service and is ready for pickup.'
       params do
         requires :order_id, type:Integer
-        requires :comment, type:String
+        requires :comments, type:Array
         requires :comment_by_id, type:Integer
       end
 
@@ -137,9 +137,9 @@ module Logistics
         order = Order.find(params[:order_id])
         if order.present?
           sps = order.service_provider_stats
-          comment = params[:comment]
+          comments = params[:comments]
           comment_by_id = params[:comment_by_id]
-          message = order.finish_service(comment, comment_by_id)
+          message = order.finish_service(comments, comment_by_id)
 
           {:message => message, :success => true, :order_status => order.status_id, orders_count: sps[:orders_count],
           total_cost: sps[:total_cost]}
@@ -154,16 +154,16 @@ module Logistics
       desc 'Logistic picked the order items from service provider.'
       params do
         requires :order_id, type:Integer
-        requires :comment, type:String
+        requires :comments, type:Array
         requires :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
         if order.present?
-          comment = params[:comment]
+          comments = params[:comments]
           comment_by_id = params[:comment_by_id]
-          message = order.finish_service(comment, comment_by_id)
+          message = order.finish_service(comments, comment_by_id)
 
           {:message => message, :success => true, :order_status => order.status_id}
         else
@@ -177,16 +177,17 @@ module Logistics
       desc 'Deliver order items to customer by logistic and order completed.'
       params do
         requires :order_id, type:Integer
-        requires :comment, type:String
+        requires :comments, type:Array
         requires :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
         if order.present?
-          comment = params[:comment]
+          comments = params[:comments]
+          logistic_stats = order.logistic_stats
           comment_by_id = params[:comment_by_id]
-          message = order.completed_order(comment, comment_by_id)
+          message = order.completed_order(comments, comment_by_id)
           
           {:message => message, :success => true, :order_status => order.status_id,
            orders_count: logistic_stats[:orders_count], total_cost: logistic_stats[:total_cost]}

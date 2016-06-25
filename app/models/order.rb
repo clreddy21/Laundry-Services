@@ -39,10 +39,7 @@ class Order < ActiveRecord::Base
 		commenter = User.find(comment_by_id)
 
 		if !comments.blank?
-			comments.each do |comment|
-	    	self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment[:body],
-				order_item_id: comment[:order_item_id])
-			end
+			add_comments(comments, commenter)
 	  end
 
 	  if self.status_id == 1
@@ -68,11 +65,12 @@ class Order < ActiveRecord::Base
   end
 
 
-  def pick_for_service(comment, comment_by_id)
-	  if !comment.blank?
-	    commenter = User.find(comment_by_id)
-	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
-	  end
+  def pick_for_service(comments, comment_by_id)
+		commenter = User.find(comment_by_id)
+
+		if !comments.blank?
+			add_comments(comments, commenter)
+		end
 
 	  if self.status_id == 1
   		self.update(status_id: 2)
@@ -82,11 +80,12 @@ class Order < ActiveRecord::Base
   	end
   end
 
-  def start_service(comment, comment_by_id)
-	  if !comment.blank?
-	    commenter = User.find(comment_by_id)
-	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
-	  end
+  def start_service(comments, comment_by_id)
+		commenter = User.find(comment_by_id)
+
+		if !comments.blank?
+			add_comments(comments, commenter)
+		end
 
 	  if self.status_id == 2
   		self.update(status_id: 3)
@@ -96,11 +95,12 @@ class Order < ActiveRecord::Base
   	end
   end
 
-  def finish_service(comment, comment_by_id)
-	  if !comment.blank?
-	    commenter = User.find(comment_by_id)
-	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
-	  end
+  def finish_service(comments, comment_by_id)
+		commenter = User.find(comment_by_id)
+
+		if !comments.blank?
+			add_comments(comments, commenter)
+		end
 
 	  if self.status_id == 3
   		self.update(status_id: 4)
@@ -110,12 +110,12 @@ class Order < ActiveRecord::Base
   	end
   end
 
-  def pick_for_delivery(comment, comment_by_id)
-	  if !comment.blank?
-	    commenter = User.find(comment_by_id)
-	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
-	  end
+  def pick_for_delivery(comments, comment_by_id)
+		commenter = User.find(comment_by_id)
 
+		if !comments.blank?
+			add_comments(comments, commenter)
+		end
 	  if self.status_id == 4
   		self.update(status_id: 5)
   		message = 'Logistic picked up the order items from service provider and is ready to deliver to customer.'
@@ -124,11 +124,12 @@ class Order < ActiveRecord::Base
   	end
   end
 
-  def completed_order(comment, comment_by_id)
-	  if !comment.blank?
-	    commenter = User.find(comment_by_id)
-	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
-	  end
+  def completed_order(comments, comment_by_id)
+		commenter = User.find(comment_by_id)
+
+		if !comments.blank?
+			add_comments(comments, commenter)
+		end
 
 	  if self.status_id == 5
   		self.update(status_id: 6)
@@ -136,6 +137,15 @@ class Order < ActiveRecord::Base
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
-  end
+	end
+
+	protected
+
+	def add_comments(comments, commenter)
+		comments.each do |comment|
+			self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment[:body],
+																 order_item_id: comment[:order_item_id])
+		end
+	end
 
 end
