@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/customers/orders.rb" afterPath="$PROJECT_DIR$/app/api/customers/orders.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/order.rb" afterPath="$PROJECT_DIR$/app/models/order.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/logistics/orders.rb" afterPath="$PROJECT_DIR$/app/api/logistics/orders.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -58,13 +59,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="order.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/order.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2431">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2499">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1466783696335" expanded="true" signature="4356:4362" placeholder=" ... end" />
+                <marker date="1466856525766" expanded="true" signature="4444:4450" placeholder=" ... end" />
               </folding>
             </state>
           </provider>
@@ -80,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orders.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="orders.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6714976" vertical-offset="365" max-vertical-offset="2125">
+            <state vertical-scroll-proportion="0.0" vertical-offset="671" max-vertical-offset="2125">
               <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
               <folding />
             </state>
@@ -113,8 +114,8 @@
       <file leaf-file-name="orders.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/api/logistics/orders.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="3485">
-              <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="3519">
+              <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -162,7 +163,6 @@
         <option value="$PROJECT_DIR$/app/models/service_provider.rb" />
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/.rubocop.yml" />
-        <option value="$PROJECT_DIR$/app/api/logistics/orders.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/logistics/show.html.slim" />
         <option value="$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim" />
         <option value="$PROJECT_DIR$/app/controllers/admin/logistics_controller.rb" />
@@ -178,7 +178,6 @@
         <option value="$PROJECT_DIR$/app/views/welcome/index.html.slim" />
         <option value="$PROJECT_DIR$/app/controllers/admin/orders.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/models/order.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/orders/list_of_orders_without_logistic.html.slim" />
         <option value="$PROJECT_DIR$/app/views/admin/orders/list_of_orders_without_service_provider.html.slim" />
         <option value="$PROJECT_DIR$/app/controllers/admin/service_providers_controller.rb" />
@@ -189,6 +188,8 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/api/users/signup.rb" />
         <option value="$PROJECT_DIR$/app/api/customers/orders.rb" />
+        <option value="$PROJECT_DIR$/app/api/logistics/orders.rb" />
+        <option value="$PROJECT_DIR$/app/models/order.rb" />
       </list>
     </option>
   </component>
@@ -981,12 +982,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00008" summary="added get item prices api">
-      <created>1464502473171</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1464502473171</updated>
-    </task>
     <task id="LOCAL-00009" summary="minor refactoring">
       <created>1464531329608</created>
       <option name="number" value="00009" />
@@ -1275,7 +1270,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466851231583</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="minor refactoring">
+      <created>1466851745416</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1466851745416</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1657,24 +1658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api/logistics/orders.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="3485">
-          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/order.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2431">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1466783696335" expanded="true" signature="4356:4362" placeholder=" ... end" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20160615125849_add_order_item_id_to_order_comment.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="634">
@@ -1699,6 +1682,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="671" max-vertical-offset="2125">
+          <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="688" max-vertical-offset="3162">
@@ -1707,11 +1698,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
+    <entry file="file://$PROJECT_DIR$/app/api/logistics/orders.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6714976" vertical-offset="365" max-vertical-offset="2125">
-          <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="3519">
+          <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/order.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2499">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1466856525766" expanded="true" signature="4444:4450" placeholder=" ... end" />
+          </folding>
         </state>
       </provider>
     </entry>

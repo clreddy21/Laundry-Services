@@ -35,10 +35,14 @@ class Order < ActiveRecord::Base
     {orders_count: orders_count, total_cost: total_cost}
   end
 
-  def update_service_provider_response(comment, comment_by_id, response)
-	  if !comment.blank?
-	    commenter = User.find(comment_by_id)
-	    self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
+  def update_service_provider_response(comments, comment_by_id, response)
+		commenter = User.find(comment_by_id)
+
+		if !comments.blank?
+			comments.each do |comment|
+	    	self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment[:body],
+				order_item_id: comment[:order_item_id])
+			end
 	  end
 
 	  if self.status_id == 1

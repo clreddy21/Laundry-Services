@@ -31,18 +31,20 @@ module Logistics
       params do
         requires :order_id, type:Integer
         requires :is_accepted, type:Boolean
-        requires :comment, type:String
+        requires :comments, type:Array
         requires :comment_by_id, type:Integer
       end
 
       post do
         order = Order.find(params[:order_id])
-        if order.present?
-          comment = params[:comment].present?? params[:comment] : ''
-          comment_by_id = params[:comment_by_id]
-          response = params[:is_accepted]
 
-          message = order.update_service_provider_response(comment, comment_by_id, response)
+        if order.present?
+          comments = params[:comments]
+
+          response = params[:is_accepted]
+          comment_by_id = params[:comment_by_id]
+
+          message = order.update_service_provider_response(comments, comment_by_id, response)
           {:message => message, :success => true, :order_status => order.status_id}
         else
           {:message => 'Order Id not valid', :success => false}
