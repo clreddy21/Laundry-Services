@@ -5,12 +5,12 @@ module Customers
     resource :test_gcm do
       desc 'assa'
       params do
-        requires :id, type: String
+        # requires :id, type: String
       end
       get do
-        gcm = GCM.new('AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM')
+        gcm = GCM.new('AIzaSyBrlyVq73okwDs9alAxtoiH5KLwmfgmRqg')
 
-        registration_id = [params[:id].to_s]
+        registration_id = ['etawmaXDXyw:APA91bF4TUPMea2DclG5idp90d79HM0ZCmw4JUhs2Fc4LhxpcgfJLMGvnjLTyC6PmuypWPmRBGBX4L9n4nc0mVSm0QlwKH6ZEHjHB465VwhO-NYEZ-ssgFp_6hGnziMV_svgnzK44q8g']
 
         options = {data: {score: '123'}, collapse_key: 'updated_score'}
         # raise options.inspect
