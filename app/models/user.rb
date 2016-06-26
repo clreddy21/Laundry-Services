@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 
   def send_otp_to_user
 
-    body = 'Hi #{self.first_name}, #{self.otp} is your otp for verification. Please do not disclose it to anyone.'
+    body = "Hi #{self.first_name}, #{self.otp} is your otp for verification. Please do not disclose it to anyone."
     user = 'ravipenmetsa'
     pass = 'mogallu'
     sender = 'SETTAB'

@@ -10,10 +10,11 @@ module Customers
       post do
         gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
 
-        registration_id = ['etawmaXDXyw:APA91bF4TUPMea2DclG5idp90d79HM0ZCmw4JUhs2Fc4LhxpcgfJLMGvnjLTyC6PmuypWPmRBGBX4L9n4nc0mVSm0QlwKH6ZEHjHB465VwhO-NYEZ-ssgFp_6hGnziMV_svgnzK44q8g']
+        registration_id = ['d4cPN9frd5c:APA91bGYB6PYKh4LXDZNZcy_fKr75O8xXq9mZOdUTU4ECRiRjhfkzHAZB7kUD1QITGZe9G4NkfNcNSiXFiP0tR4GmobVtN3OwBXJMpoV6p4nMTzAgs8FPCLHRl1IGzvSDV4YWcUJLO_n']
 
-        options = {data: {score: '123'}, collapse_key: 'updated_score'}
+        options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services'}, MessageType: '11', ttl: 'updated_score'}
         # raise options.inspect
+        # options = {message: "boomboomboom"}
         response = gcm.send(registration_id, options)
         raise response.inspect
 
