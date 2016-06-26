@@ -7,8 +7,8 @@ module Customers
       params do
         # requires :id, type: String
       end
-      get do
-        gcm = GCM.new('AIzaSyBrlyVq73okwDs9alAxtoiH5KLwmfgmRqg')
+      post do
+        gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
 
         registration_id = ['etawmaXDXyw:APA91bF4TUPMea2DclG5idp90d79HM0ZCmw4JUhs2Fc4LhxpcgfJLMGvnjLTyC6PmuypWPmRBGBX4L9n4nc0mVSm0QlwKH6ZEHjHB465VwhO-NYEZ-ssgFp_6hGnziMV_svgnzK44q8g']
 
