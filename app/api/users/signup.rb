@@ -80,7 +80,7 @@ module Users
 
 				if user.nil?
 					{:message => 'No user exists with this user_id', :success => false}
-				elsif user.otp.blamk?
+				elsif user.otp.blank?
 					{:message => 'User already verified.', :success => true}
 				elsif user.otp.to_s == params[:otp]
 					user.update(:otp => '', :is_active => true)
