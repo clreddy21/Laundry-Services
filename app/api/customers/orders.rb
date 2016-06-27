@@ -110,10 +110,53 @@ module Customers
           end
           order_items_comments_hash << {order_item_hash: order_item_hash, order_comments_hash: order_comments_hash}
         end
+
+        if order.payment
+          order_payment_amount = order.payment_amount.to_i
+          order_payment_status = order.payment_status
+          order_payment_mode = order.payment_mode
+        else
+          order_payment_amount = 0
+          order_payment_status = ''
+          order_payment_mode = ''
+        end
+
+        if order.address
+          order_address = order.address_address
+        else
+          order_address = ''
+        end
+
+        if !order.servive_provider.nil?
+          service_provider_mobile = order.service_provider.mobile
+          if order.logistic.address
+            service_provider_address = order.service_provider.address.address
+          else
+            service_provider_address = ''
+          end
+
+        else
+          service_provider_mobile = ''
+          service_provider_address = ''
+        end
+
+        if !order.logistic.nil?
+          logistic_mobile = order.logistic.mobile
+          if order.logistic.address
+            logistic_address = order.logistic.address.address
+          else
+            logistic_address = ''
+          end
+        else
+          logistic_mobile = ''
+          logistic_address = ''
+        end
+
         {:order_items_comments_hash => order_items_comments_hash, :order_schedule => order.schedule_date,
-        :order_payment => {:amount => order.payment_amount.to_i, :payment_status => order.payment_status, :mode => order.payment_mode},
-        :order_address => order.address_address, customer_mobile: order.customer.mobile, 
-        service_provider_mobile: order.service_provider.mobile, service_provider_address: order.service_provider.address.address}
+        :order_payment => {:amount => order_payment_amount, :payment_status => order_payment_status, :mode => order_payment_mode},
+        :order_address => order_address, customer_mobile: order.customer.mobile,
+        service_provider_mobile: service_provider_mobile, service_provider_address: service_provider_address,
+        logistic_mobile: logistic_mobile, logistic_address: logistic_address}
       end
     end
   end
