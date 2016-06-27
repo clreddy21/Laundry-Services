@@ -129,7 +129,7 @@ module Customers
 
         if !order.service_provider.nil?
           service_provider_mobile = order.service_provider.mobile
-          if order.logistic.address
+          if order.service_provider.address
             service_provider_address = order.service_provider.address.address
           else
             service_provider_address = ''
