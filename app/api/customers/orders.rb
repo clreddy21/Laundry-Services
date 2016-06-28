@@ -61,7 +61,7 @@ module Customers
 
         message = 'Order Created Successfully'
         customer.send_mobile_notification(message)
-				{:message => message, :success => true, :order_id => order.id}
+				{:message => message, :success => true, :order_id => order.id, status_id: order.status_id}
       end
     end
 
