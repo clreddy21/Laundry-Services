@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 
     options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services'}}
 
-    response = gcm.send(registration_id, options)
+    response = customer_gcm.send(registration_id, options)
   end
 
   private
