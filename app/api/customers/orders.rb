@@ -12,7 +12,7 @@ module Customers
 
         registration_id = ['d4cPN9frd5c:APA91bGYB6PYKh4LXDZNZcy_fKr75O8xXq9mZOdUTU4ECRiRjhfkzHAZB7kUD1QITGZe9G4NkfNcNSiXFiP0tR4GmobVtN3OwBXJMpoV6p4nMTzAgs8FPCLHRl1IGzvSDV4YWcUJLO_n']
 
-        options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services'}, MessageType: '11', ttl: 'updated_score'}
+        options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services'}}
 
         response = gcm.send(registration_id, options)
       end
@@ -36,7 +36,7 @@ module Customers
 
       post do
         customer = Customer.find(params[:customer_id])
-        service_provider = ServiceProvider.find(params[:customer_id])
+        service_provider = ServiceProvider.find(params[:service_provider_id])
       	order = Order.create(service_provider_id: service_provider.id, customer_id: customer.id,
                total_cost: params[:total_cost], status_id: params[:status].to_i,
                :service_provider_chooser => params[:service_provider_chooser])
