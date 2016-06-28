@@ -32,11 +32,21 @@ class User < ActiveRecord::Base
     response = customer_gcm.send(registration_id, options)
   end
 
-  private
+  def send_forgot_password_otp
+    body = "Hi , #{self.otp} is your otp for forgot password. Please do not disclose it to anyone."
+    send_message(body)
+  end
 
   def send_otp_to_user
-
     body = "Hi #{self.first_name}, #{self.otp} is your otp for verification. Please do not disclose it to anyone."
+    send_message(body)
+  end
+
+  private
+
+  def send_message(body)
+
+    # body = "Hi #{self.first_name}, #{self.otp} is your otp for verification. Please do not disclose it to anyone."
     user = 'ravipenmetsa'
     pass = 'mogallu'
     sender = 'SETTAB'

@@ -84,6 +84,8 @@ module Users
 				else
 					otp = rand(1000..9999)
 					user.update(otp: otp)
+					user.send_otp_to_user
+					{:message => 'OTP sent again', :success => true}
 				end
 			end
 		end
@@ -133,6 +135,44 @@ module Users
 					token = JWT.encode payload, rsa_private, 'RS256'
 					user.update(jwt: token)
 					{:message => 'otp verified', :success => true, :token => user.jwt}
+				end
+			end
+		end
+
+		resource :forgot_password_request do
+			params do
+				requires :mobile, type:String
+			end
+
+			post do
+				puts params.inspect
+				user = User.find_by(mobile: params[:mobile])
+				if user.nil?
+					{:message => 'No user exists with this mobile', :success => false}
+				else
+					user.send_forgot_password_otp
+					{:message => 'otp sent to mobile', :success => true}
+				end
+			end
+		end
+
+		resource :forgot_password_otp_verification do
+			params do
+				requires :mobile, type:String
+				requires :otp, type:String
+				requires :password, type:String, regexp: /\A[a-z0-9]{6,128}+\z/
+			end
+
+			post do
+				puts params.inspect
+				user = User.find_by(mobile: params[:mobile])
+				if user.nil?
+					{:message => 'No user exists with this mobile', :success => false}
+				elsif user.otp != params[:otp]
+					{:message => 'Wrong OTP, please try again', :success => false}
+				else
+					user.update(otp: nil, password: params[:password])
+					{:message => 'otp sent to mobile', :success => true}
 				end
 			end
 		end
