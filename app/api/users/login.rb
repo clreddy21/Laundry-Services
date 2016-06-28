@@ -37,7 +37,7 @@ module Users
 				requires :new_password, type:String, regexp: /\A[a-z0-9]{6,128}+\z/
 			end
 
-			put do
+			post do
 				puts params.inspect
 				user = User.find(params[:user_id])
 				if user.valid_password?(params[:old_password])
