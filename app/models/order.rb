@@ -49,7 +49,8 @@ class Order < ActiveRecord::Base
 	  	else
 	  		self.update(status_id: 7)
 			  message = 'Service Provider declined order'
-	  	end
+			end
+			customer.send_mobile_notification(message)
   	else
   		message = "Service provider cannot accept order now as status is #{Status.find(self.status_id).name}"
   	end
@@ -59,6 +60,7 @@ class Order < ActiveRecord::Base
 	  if self.status_id == 1
   		self.update(logistic_id: logistic_id)
 		  message = 'Assigned logistic to order'
+			customer.send_mobile_notification(message)
   	else
   		message = "Logistic cannot be assigned to this order now as status is #{Status.find(self.status_id).name}"
   	end
@@ -75,6 +77,7 @@ class Order < ActiveRecord::Base
 	  if self.status_id == 1
   		self.update(status_id: 2)
   		message = 'Logistic picked order items from customer.'
+			customer.send_mobile_notification(message)
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
@@ -90,6 +93,7 @@ class Order < ActiveRecord::Base
 	  if self.status_id == 2
   		self.update(status_id: 3)
   		message = 'Logistic delivered order items to service provider and service started.'
+			customer.send_mobile_notification(message)
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
@@ -105,6 +109,7 @@ class Order < ActiveRecord::Base
 	  if self.status_id == 3
   		self.update(status_id: 4)
   		message = 'Service is completed by service provider and ready for pickup by logistic.'
+			customer.send_mobile_notification(message)
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
@@ -119,6 +124,7 @@ class Order < ActiveRecord::Base
 	  if self.status_id == 4
   		self.update(status_id: 5)
   		message = 'Logistic picked up the order items from service provider and is ready to deliver to customer.'
+			customer.send_mobile_notification(message)
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
@@ -134,13 +140,17 @@ class Order < ActiveRecord::Base
 	  if self.status_id == 5
   		self.update(status_id: 6)
   		message = 'Logistic delivered the order items to customer.'
+			customer.send_mobile_notification(message)
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
 	end
 
 	protected
-
+	#
+	# def send_mobile_notifications
+	# end
+	
 	def add_comments(comments, commenter)
 		comments.each do |comment|
 			self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment[:body],

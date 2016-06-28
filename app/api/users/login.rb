@@ -41,7 +41,8 @@ module Users
 				puts params.inspect
 				user = User.find(params[:user_id])
 				if user.valid_password?(params[:old_password])
-					current_user.update(password: params[:new_password])
+					user.update(password: params[:new_password])
+					user.send_mobile_notification('Password changed successfully.')
 					{msg:'Password changed successfully', :success => true}
 				else
 					{msg:'Incorrect old Password', :success => false}

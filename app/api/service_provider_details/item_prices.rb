@@ -18,7 +18,10 @@ module ServiceProviderDetails
             service_provider.item_prices.create(item_id: item_price[:item_id],
                                                 service_type_id: item_price[:service_type_id], price: item_price[:price])
           end
-          {:message => 'Item price successfully update for service provider.', :success => true}
+
+          message = 'Item price successfully update for service provider.'
+          service_provider.send_mobile_notification(message)
+          {:message => message, :success => true}
         end
       end
     end

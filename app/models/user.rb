@@ -21,6 +21,17 @@ class User < ActiveRecord::Base
   def full_name
     self.first_name + ' ' + self.last_name
   end
+
+  def send_mobile_notification(message)
+    customer_gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
+
+    registration_id = ['d4cPN9frd5c:APA91bGYB6PYKh4LXDZNZcy_fKr75O8xXq9mZOdUTU4ECRiRjhfkzHAZB7kUD1QITGZe9G4NkfNcNSiXFiP0tR4GmobVtN3OwBXJMpoV6p4nMTzAgs8FPCLHRl1IGzvSDV4YWcUJLO_n']
+
+    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services'}}
+
+    response = gcm.send(registration_id, options)
+  end
+
   private
 
   def send_otp_to_user

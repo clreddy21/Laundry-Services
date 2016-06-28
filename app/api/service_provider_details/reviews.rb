@@ -28,8 +28,9 @@ module ServiceProviderDetails
           reviews << {:review_id => review.id, :review_ratind => review.rating, :review_body => review.body,
           :review_by_id => review.review_by_id, :review_by_name => User.find(review.review_by_id).full_name}
         end
-
-        {:message => 'Successfully submitted the rating to service provider', :success => true,
+        message = 'Successfully submitted the rating to service provider'
+        service_provider.send_mobile_notification(message)
+        {:message => message, :success => true,
          :average_review => average_rating, :reviews_count => total_ratings, :reviews => reviews}
       end
     end

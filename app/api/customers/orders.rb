@@ -13,11 +13,8 @@ module Customers
         registration_id = ['d4cPN9frd5c:APA91bGYB6PYKh4LXDZNZcy_fKr75O8xXq9mZOdUTU4ECRiRjhfkzHAZB7kUD1QITGZe9G4NkfNcNSiXFiP0tR4GmobVtN3OwBXJMpoV6p4nMTzAgs8FPCLHRl1IGzvSDV4YWcUJLO_n']
 
         options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services'}, MessageType: '11', ttl: 'updated_score'}
-        # raise options.inspect
-        # options = {message: "boomboomboom"}
-        response = gcm.send(registration_id, options)
-        raise response.inspect
 
+        response = gcm.send(registration_id, options)
       end
     end
     resource :create_order do
@@ -38,11 +35,14 @@ module Customers
   	  end
 
       post do
-      	order = Order.create(service_provider_id: params[:service_provider_id], customer_id: params[:customer_id],
-               total_cost: params[:total_cost], status_id: params[:status].to_i, :service_provider_chooser => params[:service_provider_chooser])
+        customer = Customer.find(params[:customer_id])
+        service_provider = ServiceProvider.find(params[:customer_id])
+      	order = Order.create(service_provider_id: service_provider.id, customer_id: customer.id,
+               total_cost: params[:total_cost], status_id: params[:status].to_i,
+               :service_provider_chooser => params[:service_provider_chooser])
 
       	items = []
-        commenter = User.find(params[:customer_id])
+        commenter = customer
       	params[:items].each do |item|
 					order_item = OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id],
 						:quantity => item[:quantity], :amount => item[:amount])
@@ -59,7 +59,9 @@ module Customers
         Payment.create(order_id: order.id, amount: params[:total_cost], mode: params[:payment_mode],
         status: params[:payment_status])
 
-				{:message => 'Order Created Successfully', :success => true, :order_id => order.id}
+        message = 'Order Created Successfully'
+        customer.send_mobile_notification(message)
+				{:message => message, :success => true, :order_id => order.id}
       end
     end
 

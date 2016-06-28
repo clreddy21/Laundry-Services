@@ -25,13 +25,28 @@ class Admin::OrdersController < ApplicationController
   def assign_service_provider_to_order
     order = Order.find(params[:order_id])
     order.update(service_provider_id: params[:service_provider_id])
-    redirect_to :back, notice: 'Successfully assigned service provider to the order.'
+
+    message = 'Successfully assigned service provider to the order.'
+    send_mobile_notifications(order, message)
+    redirect_to :back, notice: message
   end
 
   def assign_logistic_to_order
     order = Order.find(params[:order_id])
     order.update(logistic_id: params[:logistic_id])
-    redirect_to :back, notice: 'Successfully assigned logistic to the order.'
+
+    message = 'Successfully assigned logistic to the order.'
+    send_mobile_notifications(order, message)
+    redirect_to :back, notice: message
   end
+
+  protected
+
+  def send_mobile_notifications(order, message)
+    order.customer.send_mobile_notification(message)
+    order.service_provider.send_mobile_notification(message)
+    order.logistic.send_mobile_notification(message)
+  end
+
 
 end
