@@ -43,9 +43,9 @@ module Users
 				if user.valid_password?(params[:old_password])
 					user.update(password: params[:new_password])
 					user.send_mobile_notification('Password changed successfully.')
-					{msg:'Password changed successfully', :success => true}
+					{message:'Password changed successfully', :success => true}
 				else
-					{msg:'Incorrect old Password', :success => false}
+					{message:'Incorrect old Password', :success => false}
 				end
 			end
 		end
