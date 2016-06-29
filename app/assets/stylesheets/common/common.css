@@ -1,0 +1,13 @@
+.login-form, .signup-form, .forgot-password-new-form{
+    width: 350px !important;
+    margin-right: auto;
+    margin-left: auto;
+    height: 350px !important;
+    background-color: #fff !important;
+    margin-top: 100px !important;
+    text-align: center !important;
+}
+.body-bg{
+    background-image: url("paper.gif");
+    background-repeat: repeat-y;
+}

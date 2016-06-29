@@ -1,0 +1,57 @@
+.login-form.form-control
+  h2.grey-color
+    | Log in
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-horizontal
+      .form-group.m-t-20
+        .col-xs-offset-1.col-xs-10
+          = f.email_field :email, placeholder: "Email", class: "form-control", required: true, autofocus: true
+        .col-xs-1
+      .form-group
+        .col-xs-offset-1.col-xs-10
+          = f.password_field :password, placeholder: "Password", class: "form-control", required: true, pattern: ".{6,64}", title: "Length should be atleast 6 characters", autocomplete: "off"
+        .col-xs-1
+      - if devise_mapping.rememberable?
+        .form-group
+          .col-sm-12.remember-me
+            = f.check_box :remember_me
+            = f.label :remember_me, class: "control-label m-l-5"
+
+      .form-group
+        .col-sm-12
+          button.btn.btn-info.sign-in-btn type="submit"  Sign In
+  .extra-links.grey-color
+    = "Forgot Your Password? "
+    = link_to " Click here", new_password_path(resource_name)
+    br
+    = "New User? "
+    = link_to " Create account", new_registration_path(resource_name)
+
+
+
+/<h2>Log in</h2>
+/
+/<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+/  <div class='field'>
+/    <%= f.label :email %><br />
+/    <%= f.email_field :email, autofocus: true %>
+/  </div>
+/
+/  <div class='field'>
+/    <%= f.label :password %><br />
+/    <%= f.password_field :password, autocomplete: 'off' %>
+/  </div>
+/
+/  <% if devise_mapping.rememberable? -%>
+/    <div class='field'>
+/      <%= f.check_box :remember_me %>
+/      <%= f.label :remember_me %>
+/    </div>
+/  <% end -%>
+/
+/  <div class='actions'>
+/    <%= f.submit 'Log in' %>
+/  </div>
+/<% end %>
+/
+/<%= render 'devise/shared/links' %>
