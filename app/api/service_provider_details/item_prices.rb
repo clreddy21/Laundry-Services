@@ -20,7 +20,10 @@ module ServiceProviderDetails
           end
 
           message = 'Item price successfully update for service provider.'
-          service_provider.send_mobile_notification(message)
+          
+          options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services'}}
+
+          service_provider.send_mobile_notification(options)
           {:message => message, :success => true}
         end
       end

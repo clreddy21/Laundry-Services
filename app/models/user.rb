@@ -22,24 +22,10 @@ class User < ActiveRecord::Base
     self.first_name + ' ' + self.last_name
   end
 
-  def send_mobile_notification(message)
+
+  def send_mobile_notification(options)
     customer_gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
-
-    registration_id = ['d4cPN9frd5c:APA91bGYB6PYKh4LXDZNZcy_fKr75O8xXq9mZOdUTU4ECRiRjhfkzHAZB7kUD1QITGZe9G4NkfNcNSiXFiP0tR4GmobVtN3OwBXJMpoV6p4nMTzAgs8FPCLHRl1IGzvSDV4YWcUJLO_n']
-
-    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services'}}
-
-    response = customer_gcm.send(registration_id, options)
-  end
-
-  def send_mobile_notification(message, order)
-    customer_gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
-
     registration_id = [self.gcm_id]
-
-    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-    'orderId' => order.id}}
-
     response = customer_gcm.send(registration_id, options)
   end
 

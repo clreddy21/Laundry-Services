@@ -58,11 +58,13 @@ module Users
 						registration_id = params[:device_id]
 						options = {data: {score: '123'}, collapse_key: 'updated_score'}
 						response = gcm.send(registration_id, options)
+						message = 'Registration successful.'
+				    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services'}}
 
-						user.send_mobile_notification('Registration successful.')
-						{:message => 'Registration successful.', :success => true, :user_id => user.id}
+						user.send_mobile_notification(options)
+						{:message => message, :success => true, :user_id => user.id}
 					else
-						user.send_mobile_notification('Not able to save user, Try again')
+						# user.send_mobile_notification('Not able to save user, Try again')
 				  	{:message => 'Not able to save user, Try again', :success => false}
 				  end
 			  end
