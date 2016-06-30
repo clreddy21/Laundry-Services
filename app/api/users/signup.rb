@@ -92,17 +92,17 @@ module Users
 			end
 		end
 
-		resource :update_devise_id do
+		resource :update_device_id do
 			params do
 				requires :user_id
-				requires :devise_id
+				requires :device_id
 			end
 
 			post do
 				puts params.inpsect
 
 				user = User.find_by(id: params[:user_id])
-				gcm_id = params[:devise_id]
+				gcm_id = params[:device_id]
 
 				if user.nil?
 					{:message => 'No user exists with this user_id', :success => false}
