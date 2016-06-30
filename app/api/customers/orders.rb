@@ -29,6 +29,7 @@ module Customers
 				requires :items, type: Array
 				requires :schedule_date, type: String
 				requires :pickup_date, type: String
+				requires :pickup_time, type: String
 				requires :address, type: String
 				requires :service_provider_chooser, type: String
 				requires :payment_mode, type: String
@@ -57,8 +58,8 @@ module Customers
         end
 
 
-        Schedule.create(:order_id => order.id, :date => Date.parse(params[:pickup_date]))
-                        # :from_time => Time.parse(params[:schedule][0][:from_time]),
+        Schedule.create(:order_id => order.id, :date => Date.parse(params[:pickup_date]),
+                        :from_time => Time.parse(params[:pickup_time]))
                         # :to_time => Time.parse(params[:schedule][0][:to_time]))
 
         Address.create(address: params[:address], :addressable  => order)
@@ -163,7 +164,8 @@ module Customers
           logistic_address = ''
         end
 
-        {:order_items_comments_hash => order_items_comments_hash, :order_schedule => order.schedule_date,
+        {:order_items_comments_hash => order_items_comments_hash, :order_pickup_date => order.schedule_date,
+         :order_pickup_time => order.schedule_time,
         :order_payment => {:amount => order_payment_amount, :payment_status => order_payment_status, :mode => order_payment_mode},
         :order_address => order_address, customer_mobile: order.customer.mobile,
         service_provider_mobile: service_provider_mobile, service_provider_address: service_provider_address,
