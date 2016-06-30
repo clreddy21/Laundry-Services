@@ -107,8 +107,8 @@ module Users
 				if user.nil?
 					{:message => 'No user exists with this user_id', :success => false}
 				else
-
 					user.update(gcm_id: gcm_id)
+					{:message => 'Device Id of user updated successfully', :success => true}
 				end
 			end
 		end
