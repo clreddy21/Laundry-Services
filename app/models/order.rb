@@ -10,6 +10,7 @@ class Order < ActiveRecord::Base
   delegate :address, to: :address, prefix: true
   delegate :amount, :status, :mode, to: :payment, prefix: true
   delegate :date, to: :schedule, prefix: true
+  delegate :from_time, to: :schedule, prefix: true
 
   def self.without_logistic
     self.where(logistic_id: nil).where.not(status_id: 7)
