@@ -32,6 +32,17 @@ class User < ActiveRecord::Base
     response = customer_gcm.send(registration_id, options)
   end
 
+  def send_mobile_notification(message, order)
+    customer_gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
+
+    registration_id = [self.gcm_id]
+
+    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
+    'orderId' => order.id}}
+
+    response = customer_gcm.send(registration_id, options)
+  end
+
   def send_forgot_password_otp
     body = "Hi , #{self.otp} is your otp for forgot password. Please do not disclose it to anyone."
     send_message(body)

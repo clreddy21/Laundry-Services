@@ -10,9 +10,10 @@ module Customers
       post do
         gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
 
-        registration_id = ['d4cPN9frd5c:APA91bGYB6PYKh4LXDZNZcy_fKr75O8xXq9mZOdUTU4ECRiRjhfkzHAZB7kUD1QITGZe9G4NkfNcNSiXFiP0tR4GmobVtN3OwBXJMpoV6p4nMTzAgs8FPCLHRl1IGzvSDV4YWcUJLO_n']
+        registration_id = ['eDki207a-uk:APA91bGYsSgVAPqFUuPVPeUiG7-1IbiY-Pg2d5dryd5k8yT3sdg8ldgsTgBgswRZy37XSKjObmL9LjR2nEl_FGLPjyQfH6vpDV-MJcDqMs7HfTOkKIUgKZzRzWtXk-cMhwFY-qG-i6Ll']
 
-        options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services'}}
+        options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services','statusId' => '4','orderId' => 59},
+                   notification: { "click_action" => "OPEN_ACTIVITY_1"}}
 
         response = gcm.send(registration_id, options)
       end
@@ -60,7 +61,7 @@ module Customers
         status: params[:payment_status])
 
         message = 'Order Created Successfully'
-        customer.send_mobile_notification(message)
+        customer.send_mobile_notification(message, order)
 				{:message => message, :success => true, :order_id => order.id, status_id: order.status_id}
       end
     end

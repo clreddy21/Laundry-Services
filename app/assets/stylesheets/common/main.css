@@ -942,7 +942,7 @@ select {width: 150px;}
 	}
 	.navbar .brand .slogan {font-size:14px; color: #6b6b6b;}
 	.navbar .nav {
-		margin: 15px 10px 5px 90px;
+		margin: 15px 10px 5px 0px;
 	}
 
 	.navbar .nav > li {

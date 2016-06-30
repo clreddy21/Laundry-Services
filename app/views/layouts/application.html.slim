@@ -6,8 +6,304 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  body
+  body.body-bg
     #main
+      = render partial: 'layouts/header'
+      #wrapper.container
+        .row
+          /! Sidebar area
+          .span3
+            /! Responsive navigation button
+            .resBtn
+              a href="#"
+                span.icon16.minia-icon-list-3
+            /! Sidebar background
+            #sidebarbg
+            /! Sidebar content
+            #sidebar
+              .shortcuts
+                ul
+                  li
+                    a.tip href="support.html" title=("Support section")
+                      span.icon24.icomoon-icon-support
+                  li
+                    a.tip href="#" title=("Database backup")
+                      span.icon24.icomoon-icon-database
+                  li
+                    a.tip href="charts.html" title=("Sales statistics")
+                      span.icon24.icomoon-icon-pie-2
+                  li
+                    a.tip href="#" title=("Write post")
+                      span.icon24.icomoon-icon-pencil
+              /! End search
+              .sidenav
+                .sidebar-widget style=("margin: -1px 0 0 0;")
+                  h5.title style="margin-bottom:0"  Navigation
+                /! End .sidenav-widget
+                .mainnav
+                  ul
+                    li
+                      a href="charts.html"
+                        span.icon16.icomoon-icon-stats-up
+                        | Charts
+                    li
+                      a href="#"
+                        span.icon16.icomoon-icon-list-view-2
+                        | Forms
+                      ul.sub
+                        li
+                          a href="forms.html"
+                            span.icon16.icomoon-icon-file
+                            | Forms Stuff
+                        li
+                          a href="forms-validation.html"
+                            span.icon16.icomoon-icon-file
+                            | Validation
+                    li
+                      a href="#"
+                        span.icon16.icomoon-icon-grid
+                        | Tables
+                      ul.sub
+                        li
+                          a href="tables.html"
+                            span.icon16.icomoon-icon-arrow-right-2
+                            | Static
+                        li
+                          a href="data-table.html"
+                            span.icon16.icomoon-icon-arrow-right-2
+                            | Data table
+                    li
+                      a href="#"
+                        span.icon16.icomoon-icon-equalizer-2
+                        | UI Elements
+                      ul.sub
+                        li
+                          a href="icons.html"
+                            span.icon16.icomoon-icon-rocket
+                            | Icons
+                        li
+                          a href="buttons.html"
+                            span.icon16.icomoon-icon-file
+                            | Buttons
+                        li
+                          a href="elements.html"
+                            span.icon16.icomoon-icon-cogs
+                            | Elements
+                    li
+                      a href="typo.html"
+                        span.icon16.icomoon-icon-font
+                        | Typography
+                    li
+                      a href="grid.html"
+                        span.icon16.icomoon-icon-grid-view
+                        | Grid
+                    li
+                      a href="calendar.html"
+                        span.icon16.icomoon-icon-calendar
+                        | Calendar
+                    li
+                      a href="widgets.html"
+                        span.icon16.icomoon-icon-cube
+                        | Widgets
+                        span.notification.green 34
+                    li
+                      a href="file.html"
+                        span.icon16.icomoon-icon-upload
+                        | File Manager
+                    li
+                      a href="#"
+                        span.icon16.icomoon-icon-file
+                        | Error pages
+                        span.notification 6
+                      ul.sub
+                        li
+                          a href="403.html"
+                            span.icon16.icomoon-icon-file
+                            | Error 403
+                        li
+                          a href="404.html"
+                            span.icon16.icomoon-icon-file
+                            | Error 404
+                        li
+                          a href="405.html"
+                            span.icon16.icomoon-icon-file
+                            | Error 405
+                        li
+                          a href="500.html"
+                            span.icon16.icomoon-icon-file
+                            | Error 500
+                        li
+                          a href="503.html"
+                            span.icon16.icomoon-icon-file
+                            | Error 503
+                        li
+                          a href="offline.html"
+                            span.icon16.icomoon-icon-file
+                            | Offline page
+                    li
+                      a href="#"
+                        span.icon16.icomoon-icon-box
+                        | Other pages
+                        span.notification.blue 10
+                      ul.sub
+                        li
+                          a href="invoice.html"
+                            span.icon16.icomoon-icon-file
+                            | Invoice page
+                        li
+                          a href="profile.html"
+                            span.icon16.icomoon-icon-file
+                            | User profile
+                        li
+                          a href="search.html"
+                            span.icon16.icomoon-icon-search-3
+                            | Search page
+                        li
+                          a href="email.html"
+                            span.icon16.icomoon-icon-mail-3
+                            | Email page
+                        li
+                          a href="support.html"
+                            span.icon16.icomoon-icon-support
+                            | Support page
+                        li
+                          a href="faq.html"
+                            span.icon16.icomoon-icon-flag-3
+                            | FAQ page
+                        li
+                          a href="structure.html"
+                            span.icon16.icomoon-icon-file
+                            | Blank page
+                        li
+                          a href="fixed-topbar.html"
+                            span.icon16.icomoon-icon-file
+                            | Fixed topbar
+                        li
+                          a href="right-sidebar.html"
+                            span.icon16.icomoon-icon-file
+                            | Right sidebar
+              /! End sidenav
+              .sidebar-widget
+                h5.title Monthly Bandwidth Transfer
+                .content
+                  span.icon16.icomoon-icon-loop.left
+                  .progress.progress-mini.progress-danger.left.tip title="87%"
+                    .bar style=("width: 87%;")
+                  span.percent 87%
+                  .stat 19419.94 / 12000 MB
+              /! End .sidenav-widget
+              .sidebar-widget
+                h5.title Disk Space Usage
+                .content
+                  span.icon16.icomoon-icon-drive.left
+                  .progress.progress-mini.progress-success.left.tip title="16%"
+                    .bar style=("width: 16%;")
+                  span.percent 16%
+                  .stat 304.44 / 8000 MB
+              /! End .sidenav-widget
+              .sidebar-widget
+                h5.title Ad sense stats
+                .content
+                  .stats
+                    .item
+                      .head.clearfix
+                        .txt Advert View
+                      span.icon16.icomoon-icon-eye.left
+                      .number 21,501
+                      .change
+                        span.icon24.icomoon-icon-arrow-up-2.green
+                        | 5%
+                      span#stat1.spark
+                    .item
+                      .head.clearfix
+                        .txt Clicks
+                      span.icon16.icomoon-icon-thumbs-up.left
+                      .number 308
+                      .change
+                        span.icon24.icomoon-icon-arrow-down-2.red
+                        | 8%
+                      span#stat2.spark
+                    .item
+                      .head.clearfix
+                        .txt Page CTR
+                      span.icon16.icomoon-icon-heart.left
+                      .number 4%
+                      .change
+                        span.icon24.icomoon-icon-arrow-down-2.red
+                        | 1%
+                      span#stat3.spark
+                    .item
+                      .head.clearfix
+                        .txt Earn money
+                      span.icon16.icomoon-icon-coin.left
+                      .number $376
+                      .change
+                        span.icon24.icomoon-icon-arrow-up-2.green
+                        | 26%
+                      span#stat4.spark
+              /! End .sidenav-widget
+          .span9
+            /! Body content
+            #content.clearfix
+              .heading
+                h3 Blank page
+                .resBtnSearch
+                  a href="#"
+                    span.icon16.icomoon-icon-search-3
+                .search
+                  form#searchform action="search.html"
+                    input#tipue_search_input.top-search placeholder=("Search here ...") type="text" /
+                    input#tipue_search_button.search-btn type="submit" value="" /
+                /! End search
+                ul.breadcrumb
+                  li You are here:
+                  li
+                    a.tip href="#" title=("back to dashboard")
+                      span.icon16.icomoon-icon-screen-2
+                    span.divider
+                      span.icon16.icomoon-icon-arrow-right-2
+                  li.active Blank page
+              /! End .heading
+              /! Build page from here:
+              /! Page end here
+              #myModal1.modal.fade.hide
+                .modal-header
+                  button.close data-dismiss="modal" type="button"
+                    span.icon12.minia-icon-close
+                  h3 Chat layout
+                .modal-body
+                  ul.messages
+                    li.user.clearfix
+                      a.avatar href="#"
+                        img alt="" src="images/avatar2.jpeg" /
+                      .message
+                        .head.clearfix
+                          span.name
+                            strong Lazar
+                            | says:
+                          span.time 25 seconds ago
+                        p
+                          | Time to go i call you tomorrow.
+                    li.admin.clearfix
+                      a.avatar href="#"
+                        img alt="" src="images/avatar3.jpeg" /
+                      .message
+                        .head.clearfix
+                          span.name
+                            strong Sugge
+                            | says:
+                          span.time just now
+                        p
+                          | OK, have a nice day.
+                    li.sendMsg
+                      form.form-horizontal action="#"
+                        textarea#textarea1.elastic placeholder=("Enter your message ...") rows="1" style="width:98%;"
+                        button.btn.btn-info.marginT10 type="submit"  Send message
+                .modal-footer
+                  a.btn data-dismiss="modal" href="#"  Close
+      /! End .span9
+      /! End #wrapper .row
+      /! End .container
       #flash
         - flash.each do |type, message|
           - if type == 'notice'
