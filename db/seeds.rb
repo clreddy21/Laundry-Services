@@ -22,6 +22,14 @@ service_provider_2 = ServiceProvider.create(first_name: 'Saint', last_name:
                                             17.513012, longitude: 78.578103,
                                             reviews_count: 23,
                                             average_review: 3.70)
+admin_service_provider = ServiceProvider.create(first_name: 'Admin', last_name:
+                                            'SP', email: 'admin_sp@ls.com',
+                                            password: 'testtest1',
+                                            password_confirmation: 'testtest1',
+                                            mobile: '9999999990', latitude:
+                                            17.513012, longitude: 78.578103,
+                                            reviews_count: 23,
+                                            average_review: 3.70)
 
 puts 'creating logistics'
 
@@ -100,6 +108,42 @@ ItemPrice.create(service_provider_id: service_provider_2.id, item_id: item_4.id,
                  service_type_id: service_type_2.id, price: 39)
 ItemPrice.create(service_provider_id: service_provider_2.id, item_id: item_4.id,
                  service_type_id: service_type_3.id, price: 40)
+
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_1.id,
+                 service_type_id: service_type_1.id, price: 26)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_1.id,
+                 service_type_id: service_type_2.id, price: 27)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_1.id,
+                 service_type_id: service_type_3.id, price: 28)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_1.id,
+                 service_type_id: service_type_4.id, price: 28)
+
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_2.id,
+                 service_type_id: service_type_1.id, price: 30)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_2.id,
+                 service_type_id: service_type_2.id, price: 31)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_2.id,
+                 service_type_id: service_type_3.id, price: 32)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_2.id,
+                 service_type_id: service_type_4.id, price: 32)
+
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_3.id,
+                 service_type_id: service_type_1.id, price: 34)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_3.id,
+                 service_type_id: service_type_2.id, price: 35)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_3.id,
+                 service_type_id: service_type_3.id, price: 36)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_3.id,
+                 service_type_id: service_type_4.id, price: 36)
+
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_4.id,
+                 service_type_id: service_type_1.id, price: 38)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_4.id,
+                 service_type_id: service_type_2.id, price: 39)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_4.id,
+                 service_type_id: service_type_3.id, price: 40)
+ItemPrice.create(service_provider_id: admin_service_provider.id, item_id: item_4.id,
+                 service_type_id: service_type_4.id, price: 40)
 
 #
 puts 'creating statuses'

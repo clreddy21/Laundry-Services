@@ -37,7 +37,11 @@ module Customers
 
       post do
         customer = Customer.find(params[:customer_id])
-        service_provider = ServiceProvider.find(params[:service_provider_id])
+        if params[:service_provider_chooser] == 'admin'
+          service_provider = ServiceProvider.find_by(email: 'admin_sp@ls.com')
+        else
+          service_provider = ServiceProvider.find(params[:service_provider_id])
+        end
       	order = Order.create(service_provider_id: service_provider.id, customer_id: customer.id,
                total_cost: params[:total_cost], status_id: params[:status].to_i,
                :service_provider_chooser => params[:service_provider_chooser])
