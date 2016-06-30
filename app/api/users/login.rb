@@ -18,8 +18,9 @@ module Users
 						rsa_public = rsa_private.public_key
 						token = JWT.encode payload, rsa_private, 'RS256'
 						user.update(jwt: token)
+						address = user.address.address
 						{:success => true, :email => params[:email], :token => user.jwt, :name => user.first_name + user.last_name,
-						 :mobile_number => user.mobile, :user_id => user.id}
+						 :mobile_number => user.mobile, :user_id => user.id, :address => address}
 					else
 						{:success => false, :message => 'Incorrect Password'}
 					end

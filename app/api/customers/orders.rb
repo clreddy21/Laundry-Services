@@ -28,6 +28,7 @@ module Customers
         # requires :comments, type:Array
 				requires :items, type: Array
 				requires :schedule_date, type: String
+				requires :pickup_date, type: String
 				requires :address, type: String
 				requires :service_provider_chooser, type: String
 				requires :payment_mode, type: String
@@ -56,7 +57,7 @@ module Customers
         end
 
 
-        Schedule.create(:order_id => order.id, :date => Date.parse(params[:schedule_date]))
+        Schedule.create(:order_id => order.id, :date => Date.parse(params[:pickup_date]))
                         # :from_time => Time.parse(params[:schedule][0][:from_time]),
                         # :to_time => Time.parse(params[:schedule][0][:to_time]))
 
