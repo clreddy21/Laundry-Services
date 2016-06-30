@@ -35,11 +35,16 @@ module Customers
       desc 'Get service providers prices for different items.'
       params do
         requires :service_provider_id, type:String
+        requires :service_provider_chooser, type:String
       end
       # This gets service providers in the specified distance and service type
       get do
         puts params.inspect
-        service_provider = ServiceProvider.find(params[:service_provider_id])
+        if params[:service_provider_chooser] == 'admin'
+          service_provider = ServiceProvider.find_by(email: 'admin_sp@ls.com')
+        else
+          service_provider = ServiceProvider.find(params[:service_provider_id])
+        end
         if service_provider.nil?
           {:message => 'No service provider with the provided id', :success => false}
         else
