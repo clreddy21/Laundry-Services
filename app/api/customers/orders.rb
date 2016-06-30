@@ -166,7 +166,7 @@ module Customers
         pickup_date = order.schedule ? order.schedule_date : ''
         pickup_time = order.schedule ? order.schedule_from_time : ''
         {:order_items_comments_hash => order_items_comments_hash, :order_pickup_date => pickup_date,
-         :order_pickup_time => pickup_time,
+         :order_pickup_time => pickup_time, :order_schedule => order.schedule_date,
         :order_payment => {:amount => order_payment_amount, :payment_status => order_payment_status, :mode => order_payment_mode},
         :order_address => order_address, customer_mobile: order.customer.mobile,
         service_provider_mobile: service_provider_mobile, service_provider_address: service_provider_address,
