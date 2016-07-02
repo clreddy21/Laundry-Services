@@ -24,9 +24,10 @@ class User < ActiveRecord::Base
 
 
   def send_mobile_notification(options)
-    customer_gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
     registration_id = [self.gcm_id]
-    response = customer_gcm.send(registration_id, options)
+
+    gcm = get_gcm
+    response = gcm.send(registration_id, options)
   end
 
   def send_forgot_password_otp
@@ -60,5 +61,15 @@ class User < ActiveRecord::Base
         stype: 'normal'
       }
             )
+  end
+
+  def get_gcm
+    if self.type == 'Customer'
+      gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
+    elsif self.type == 'ServiceProvider'
+      gcm = GCM.new('AIzaSyBBZw8GkFC7yQyD4NV28dwP4E_AbYSKh80')
+    elsif self.type == 'Logistic'
+      gcm = GCM.new('AIzaSyB8s6F8MH27AFDBOLK99-3zo8Ed3I8FTc8')
+    end
   end
 end

@@ -31,20 +31,19 @@ module Logistics
       params do
         requires :order_id, type:Integer
         requires :is_accepted, type:Boolean
-        requires :comments, type:Array
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :user_id, type:Integer
       end
 
       post do
-        order = Order.find(params[:order_id])
+        order = Order.find_by(id: params[:order_id])
 
         if order.present?
-          comments = params[:comments]
-
           response = params[:is_accepted]
-          comment_by_id = params[:comment_by_id]
+          comment = params[:comment]
+          user_id = params[:user_id]
 
-          message = order.update_service_provider_response(comments, comment_by_id, response)
+          message = order.update_service_provider_response(comment, user_id, response)
           {:message => message, :success => true, :order_status => order.status_id}
         else
           {:message => 'Order Id not valid', :success => false}
@@ -71,7 +70,7 @@ module Logistics
       end
 
       post do
-        order = Order.find(params[:order_id])
+        order = Order.find_by(id: params[:order_id])
         if order.present?
           message = order.assign_logistic(params[:logistic_id])
           {:message => message, :success => true, :order_status => order.status_id}
@@ -85,16 +84,16 @@ module Logistics
       desc 'Pick the items for service from customer by logistic'
       params do
         requires :order_id, type:Integer
-        requires :comments, type:Array
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :user_id, type:Integer
       end
 
       post do
-        order = Order.find(params[:order_id])
+        order = Order.find_by(id: params[:order_id])
         if order.present?
-          comments = params[:comments]
-          comment_by_id = params[:comment_by_id]
-          message = order.pick_for_service(comments, comment_by_id)
+          comment = params[:comment]
+          user_id = params[:user_id]
+          message = order.pick_for_service(comment, user_id)
           {:message => message, :success => true, :order_status => order.status_id}
         else
           {:message => 'Order Id not valid', :success => false}
@@ -106,16 +105,16 @@ module Logistics
       desc 'Deliver order items to service provider by logistic and service started'
       params do
         requires :order_id, type:Integer
-        requires :comments, type:Array
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :user_id, type:Integer
       end
 
       post do
-        order = Order.find(params[:order_id])
+        order = Order.find_by(id: params[:order_id])
         if order.present?
-          comments = params[:comments]
-          comment_by_id = params[:comment_by_id]
-          message = order.start_service(comments, comment_by_id)
+          comment = params[:comment]
+          user_id = params[:user_id]
+          message = order.start_service(comment, user_id)
 
           {:message => message, :success => true, :order_status => order.status_id}
         else
@@ -129,17 +128,17 @@ module Logistics
       desc 'Service provider completed service and is ready for pickup.'
       params do
         requires :order_id, type:Integer
-        requires :comments, type:Array
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :user_id, type:Integer
       end
 
       post do
-        order = Order.find(params[:order_id])
+        order = Order.find_by(id: params[:order_id])
         if order.present?
           sps = order.service_provider_stats
-          comments = params[:comments]
-          comment_by_id = params[:comment_by_id]
-          message = order.finish_service(comments, comment_by_id)
+          comment = params[:comment]
+          user_id = params[:user_id]
+          message = order.finish_service(comment, user_id)
 
           {:message => message, :success => true, :order_status => order.status_id, orders_count: sps[:orders_count],
           total_cost: sps[:total_cost]}
@@ -154,16 +153,17 @@ module Logistics
       desc 'Logistic picked the order items from service provider.'
       params do
         requires :order_id, type:Integer
-        requires :comments, type:Array
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :user_id, type:Integer
       end
 
       post do
-        order = Order.find(params[:order_id])
+        order = Order.find_by(id: params[:order_id])
         if order.present?
-          comments = params[:comments]
-          comment_by_id = params[:comment_by_id]
-          message = order.finish_service(comments, comment_by_id)
+          comment = params[:comment]
+          user_id = params[:user_id]
+
+          message = order.pick_for_delivery(comment, user_id)
 
           {:message => message, :success => true, :order_status => order.status_id}
         else
@@ -177,17 +177,18 @@ module Logistics
       desc 'Deliver order items to customer by logistic and order completed.'
       params do
         requires :order_id, type:Integer
-        requires :comments, type:Array
-        requires :comment_by_id, type:Integer
+        optional :comment, type:String
+        optional :user_id, type:Integer
       end
 
       post do
-        order = Order.find(params[:order_id])
+        order = Order.find_by(id: params[:order_id])
         if order.present?
-          comments = params[:comments]
           logistic_stats = order.logistic_stats
-          comment_by_id = params[:comment_by_id]
-          message = order.completed_order(comments, comment_by_id)
+          comment = params[:comment]
+          user_id = params[:user_id]
+
+          message = order.completed_order(comment, user_id)
           
           {:message => message, :success => true, :order_status => order.status_id,
            orders_count: logistic_stats[:orders_count], total_cost: logistic_stats[:total_cost]}

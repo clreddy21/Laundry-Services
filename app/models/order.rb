@@ -36,11 +36,11 @@ class Order < ActiveRecord::Base
     {orders_count: orders_count, total_cost: total_cost}
   end
 
-  def update_service_provider_response(comments, comment_by_id, response)
-		commenter = User.find(comment_by_id)
+  def update_service_provider_response(comment, user_id, response)
 
-		if !comments.blank?
-			add_comments(comments, commenter)
+		if !comment.nil?
+			commenter = User.find(user_id)
+			add_comment(comment, commenter)
 	  end
 
 	  if self.status_id == 1
@@ -51,10 +51,11 @@ class Order < ActiveRecord::Base
 	  		self.update(status_id: 7)
 			  message = 'Service Provider declined order'
 			end
-	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-	    'orderId' => order.id}}
+	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
+	    'orderId' => self.id}}
 
-			send_mobile_notification(options)
+			send_mobile_notifications(options)
+			message
   	else
   		message = "Service provider cannot accept order now as status is #{Status.find(self.status_id).name}"
   	end
@@ -65,104 +66,111 @@ class Order < ActiveRecord::Base
   		self.update(logistic_id: logistic_id)
 		  message = 'Assigned logistic to order'
 
-      options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-    'orderId' => order.id}}
+      options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
+    'orderId' => self.id}}
 
 			send_mobile_notifications(options)
+			message
   	else
   		message = "Logistic cannot be assigned to this order now as status is #{Status.find(self.status_id).name}"
   	end
   end
 
 
-  def pick_for_service(comments, comment_by_id)
-		commenter = User.find(comment_by_id)
+  def pick_for_service(comment, user_id)
 
-		if !comments.blank?
-			add_comments(comments, commenter)
+		if !comment.nil?
+			commenter = User.find(user_id)
+			add_comment(comment, commenter)
 		end
 
-	  if self.status_id == 1
+	  if self.status_id == 8
   		self.update(status_id: 2)
   		message = 'Logistic picked order items from customer.'
-	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id, 'orderId' => order.id}}
+	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id, 'orderId' => self.id}}
 
 			send_mobile_notifications(options)
+			message
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
   end
 
-  def start_service(comments, comment_by_id)
-		commenter = User.find(comment_by_id)
+  def start_service(comment, user_id)
 
-		if !comments.blank?
-			add_comments(comments, commenter)
+		if !comment.nil?
+			commenter = User.find(user_id)
+			add_comment(comment, commenter)
 		end
 
 	  if self.status_id == 2
   		self.update(status_id: 3)
   		message = 'Logistic delivered order items to service provider and service started.'
-	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-    'orderId' => order.id}}
+	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
+    'orderId' => self.id}}
 
 			send_mobile_notifications(options)
+			message
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
   end
 
-  def finish_service(comments, comment_by_id)
-		commenter = User.find(comment_by_id)
+  def finish_service(comment, user_id)
 
-		if !comments.blank?
-			add_comments(comments, commenter)
+		if !comment.nil?
+			commenter = User.find(user_id)
+			add_comment(comment, commenter)
 		end
 
 	  if self.status_id == 3
   		self.update(status_id: 4)
   		message = 'Service is completed by service provider and ready for pickup by logistic.'
-			    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-    'orderId' => order.id}}
+			    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
+    'orderId' => self.id}}
 
 			send_mobile_notifications(options)
+			message
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
   end
 
-  def pick_for_delivery(comments, comment_by_id)
-		commenter = User.find(comment_by_id)
+  def pick_for_delivery(comment, user_id)
 
-		if !comments.blank?
-			add_comments(comments, commenter)
+		if !comment.nil?
+			commenter = User.find(user_id)
+			add_comment(comment, commenter)
 		end
+
 	  if self.status_id == 4
   		self.update(status_id: 5)
   		message = 'Logistic picked up the order items from service provider and is ready to deliver to customer.'
-	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-    'orderId' => order.id}}
+	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
+    'orderId' => self.id}}
 
 			send_mobile_notifications(options)
+			message
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
   end
 
-  def completed_order(comments, comment_by_id)
-		commenter = User.find(comment_by_id)
+  def completed_order(comment, user_id)
 
-		if !comments.blank?
-			add_comments(comments, commenter)
+		if !comment.nil?
+			commenter = User.find(user_id)
+			add_comment(comment, commenter)
 		end
 
-	  if self.status_id == 5
+		if self.status_id == 5
   		self.update(status_id: 6)
   		message = 'Logistic delivered the order items to customer.'
-	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-    'orderId' => order.id}}
+	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
+    'orderId' => self.id}}
 
 			send_mobile_notifications(options)
+			message
   	else
   		message = "This request is invalid as order's status is #{Status.find(self.status_id).name}"
   	end
@@ -171,16 +179,13 @@ class Order < ActiveRecord::Base
 	protected
 
 	def send_mobile_notifications(options)
-		order.customer.send_mobile_notification(options)
-		order.service_provider.send_mobile_notification(options) if order.service_provider
-		order.logistic.send_mobile_notification(options) if order.logistic
+		self.customer.send_mobile_notification(options)
+		self.service_provider.send_mobile_notification(options) if self.service_provider
+		self.logistic.send_mobile_notification(options) if self.logistic
 	end
 	
-	def add_comments(comments, commenter)
-		comments.each do |comment|
-			self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment[:body],
-																 order_item_id: comment[:order_item_id])
-		end
+	def add_comment(comment, commenter)
+		self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
 	end
 
 end
