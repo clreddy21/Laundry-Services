@@ -1,6 +1,20 @@
 module ServiceProviderDetails
   class ItemPrices < Grape::API
 
+    resource :get_all_item_prices do
+      desc 'Creating item prices of Service provider'
+      params do
+      end
+
+      get do
+        service_types = ServiceType.all.pluck(:id, :name)
+        item_types = Item.all.pluck(:id, :name)
+
+        {:service_types => service_types,:item_types => item_types, :success => true}
+
+      end
+    end
+
     resource :create_item_prices do
       desc 'Creating item prices of Service provider'
       params do
@@ -20,7 +34,7 @@ module ServiceProviderDetails
           end
 
           message = 'Item price successfully added for service provider.'
-          
+
           options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services'}}
 
           service_provider.send_mobile_notification(options)
