@@ -9,7 +9,15 @@ module ServiceProviderDetails
       get do
         service_types = ServiceType.all.pluck(:id, :name)
         item_types = Item.all.pluck(:id, :name)
-        {:service_types => service_types,:item_types => item_types, :success => true}
+        service_types_hash = []
+        items_hash =[]
+        service_types.each do |service_type|
+          service_types_hash <<{service_type_id: service_type[0], service_type_name: service_type[1]}
+        end
+        item_types.each do |item_type|
+          items_hash <<{item_type_id: item_type[0], item_type_name: item_type[1]}
+        end
+        {:service_types => service_types_hash,:item_types => items_hash, :success => true}
       end
     end
 
