@@ -2,7 +2,7 @@ module ServiceProviderDetails
   class ItemPrices < Grape::API
 
     resource :get_all_item_prices do
-      desc 'Creating item prices of Service provider'
+      desc 'Get all types and service types'
       params do
       end
 
