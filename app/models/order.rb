@@ -17,7 +17,9 @@ class Order < ActiveRecord::Base
   end
 
   def self.without_service_provider
-    self.where(service_provider_id: nil, status: 1, service_provider_chooser: 'admin')
+    o = self.where(service_provider_id: nil)
+
+		# raise o
   end
 
   def service_provider_stats

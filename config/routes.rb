@@ -19,7 +19,7 @@ Rails.application.routes.draw do
         put 'assign_logistic_to_order'
       end
     end
-    resources :customers, path: '' do
+    resources :customers do
       collection do
         get 'list_of_customers', as: 'list_of'
       end

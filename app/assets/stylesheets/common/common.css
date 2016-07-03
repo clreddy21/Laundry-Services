@@ -13,6 +13,10 @@
     margin-bottom: 20px !important;
 }
 
+.m-t-20{
+    margin-top: 20px !important;
+}
+
 .p-t-20{
     padding-top: 20px !important;
 }
@@ -40,4 +44,40 @@
 
 .m-l-0{
     margin-left: 0px !important;
+}
+
+
+.m-l-40{
+    margin-left: 40px !important;
+}
+
+.order_box{
+    border: 2px solid #ddd !important;
+    margin: 5px !important;
+}
+
+.side-nav-margin{
+    margin-left: -15px !important;
+    margin-right: 15px !important;
+}
+
+
+.player-div {
+    min-height: 360px;
+    background-color : white !important;
+    padding : 5px !important;
+    border : 1px solid #000;
+    border-radius : 5px;
+}
+
+
+.p-h-40 {
+    padding-left: 40px !important;
+    padding-right : 40px !important;
+}
+.order-detail{
+}
+
+#yield_height{
+    margin-bottom: 10vh !important;
 }

@@ -1,45 +1,77 @@
-- @orders.each do |order|
-	= order.id
-	br
-	= order.customer.full_name
-	br
-	- if order.service_provider
-		= order.service_provider.full_name
-	- else
-		= "Not assignet yet"
-	br
-	- if order.logistic
-		= order.logistic.full_name
-	- else
-		= "Not assigned yet"
-	br
-	= order.total_cost
-	br
-	= order.service_provider_chooser
-	br
-	= order.status_id
-	br
-	br
-	- order.order_items.each do |order_item|
-		= order_item.item.name
-		br
-		= order_item.service_type.name
-		br
-		= order_item.quantity
-		br
-		= order_item.amount
-		br
-		= order_item.remarks
-		br
-		br
-		br
-    = form_tag(assign_logistic_to_order_admin_orders_path, method: 'put') do
-        .form-group
-            .col-sm-4
-                = label_tag :select_logistic, nil, :class => "control-label"
-            .col-sm-8
-                = select_tag :logistic_id, options_from_collection_for_select(@logistics, "id", "full_name", "1"), :class => "form-control"
-                = hidden_field_tag :order_id, order.id
-        .form-group
-            .col-sm-offset-2.col-sm-10
-                button.btn.btn-success.pull-right type="submit"  Assign Logistic
+.row
+  - @orders.each do |order|
+    a href=admin_order_path(order)
+      .col-md-offset-1.col-md-5.order_box
+        .row
+          .col-md-6
+            = "Customer:"
+          .col-md-6
+            = order.customer.full_name.capitalize
+          br
+        .row
+          .col-md-6
+            = "Service Provider:"
+          .col-md-6
+            - if order.service_provider
+                = order.service_provider.full_name.capitalize
+            - else
+                = "Not assignet yet"
+          br
+        .row
+          .col-md-6
+            = "Logistic:"
+          .col-md-6
+            - if order.logistic
+                = order.logistic.full_name.capitalize
+            - else
+                = "Not assigned yet"
+          br
+        .row
+          .col-md-6
+            = "Total Cost:"
+          .col-md-6
+            = order.total_cost
+          br
+        .row
+          .col-md-6
+            = "Service Provider Chooser"
+          .col-md-6
+            = order.service_provider_chooser.capitalize
+          br
+        .row
+          .col-md-6
+            = "Status:"
+          .col-md-6
+            = Status.find(order.status_id).name.capitalize
+          br
+        .row
+          .col-md-6
+            = "Number of Items:"
+          .col-md-6
+            = order.order_items.count
+          br
+        /!
+          br
+            - order.order_items.each do |order_item|
+                = order_item.item.name
+                br
+                = order_item.service_type.name
+                br
+                = order_item.quantity
+                br
+                = order_item.amount
+                br
+                = order_item.remarks
+                br
+                br
+                br
+            = form_tag(assign_logistic_to_order_admin_orders_path, method: 'put') do
+                .form-group
+                    .col-sm-4
+                        = label_tag :select_logistic, nil, :class => "control-label"
+                    .col-sm-8
+                        = select_tag :logistic_id, options_from_collection_for_select(@logistics, "id", "full_name", "1"), :class => "form-control"
+                        = hidden_field_tag :order_id, order.id
+                .form-group
+                    .col-sm-offset-2.col-sm-10
+                        button.btn.btn-success.pull-right type="submit"  Assign Logistic

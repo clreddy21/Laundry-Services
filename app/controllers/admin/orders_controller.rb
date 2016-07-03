@@ -27,7 +27,10 @@ class Admin::OrdersController < ApplicationController
     order.update(service_provider_id: params[:service_provider_id])
 
     message = 'Successfully assigned service provider to the order.'
-    send_mobile_notifications(order, message)
+    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
+                      'orderId' => order.id}}
+
+    send_mobile_notifications(order, options)
     redirect_to :back, notice: message
   end
 
@@ -36,16 +39,20 @@ class Admin::OrdersController < ApplicationController
     order.update(logistic_id: params[:logistic_id])
 
     message = 'Successfully assigned logistic to the order.'
-    send_mobile_notifications(order, message)
+    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
+                      'orderId' => order.id}}
+
+    send_mobile_notifications(order, options)
+
     redirect_to :back, notice: message
   end
 
   protected
 
-  def send_mobile_notifications(order, message)
-    order.customer.send_mobile_notification(message)
-    order.service_provider.send_mobile_notification(message)
-    order.logistic.send_mobile_notification(message)
+  def send_mobile_notifications(order, options)
+    order.customer.send_mobile_notification(options)
+    order.service_provider.send_mobile_notification(options)
+    order.logistic.send_mobile_notification(options)
   end
 
 

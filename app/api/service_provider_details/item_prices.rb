@@ -36,7 +36,7 @@ module ServiceProviderDetails
           item_prices = params[:item_prices]
           item_prices.each do |item_price|
             already_present_item = service_provider.item_prices.where(item_id: item_price[:item_id],
-                                               service_type_id: item_price[:service_type_id], price: item_price[:price])
+                                               service_type_id: item_price[:service_type_id])
 
             if already_present_item.blank?
               service_provider.item_prices.create(item_id: item_price[:item_id],

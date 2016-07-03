@@ -28,10 +28,10 @@ html
       - else
         = render partial: 'layouts/header'
         #wrapper.container
-          .row.m-l-0
-            .span3
+          .row.white-bg
+            .col-md-3
               = render partial: 'layouts/side_nav'
-            .span9.white-bg
+            .col-md-9
               #flash
                 - flash.each do |type, message|
                   - if type == 'notice'
