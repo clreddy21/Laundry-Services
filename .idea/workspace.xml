@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="minor refactoring&#10;added ui for few pages">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/customers/list_of_customers.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/customers/list_of_customers.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/logistics/list_of_logistics.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/logistics/list_of_logistics.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notifications/_notification.html.slim" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notifications/index.html.slim" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/notifications_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -93,7 +93,7 @@
       <file leaf-file-name="list_of_service_providers.html.slim" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82564104" vertical-offset="188" max-vertical-offset="612">
+            <state vertical-scroll-proportion="1.3076923" vertical-offset="0" max-vertical-offset="612">
               <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
               <folding />
             </state>
@@ -1164,12 +1164,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00044" summary="minor refactoring">
-      <created>1466186336252</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1466186336252</updated>
-    </task>
     <task id="LOCAL-00045" summary="minor refactoring">
       <created>1466189298299</created>
       <option name="number" value="00045" />
@@ -1458,7 +1452,13 @@
       <option name="project" value="LOCAL" />
       <updated>1467550473825</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="minor refactoring&#10;added ui for few pages">
+      <created>1467550654692</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1467550654692</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1921,7 +1921,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82564104" vertical-offset="188" max-vertical-offset="612">
+        <state vertical-scroll-proportion="1.3076923" vertical-offset="0" max-vertical-offset="612">
           <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
           <folding />
         </state>
