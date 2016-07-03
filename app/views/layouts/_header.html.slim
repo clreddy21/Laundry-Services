@@ -105,7 +105,8 @@
             li.dropdown
               a.dropdown-toggle.avatar data-toggle="dropdown" href="#"
                 img.image alt="" src=asset_path('avatar.jpg')
-                span.txt admin@supr.com
+                span.txt
+                  = current_user.email
                 b.caret
               ul.dropdown-menu
                 li.menu
@@ -123,6 +124,6 @@
                         span.icon16.icomoon-icon-plus-2
                         | Add user
             li
-              a href="index.html"
-                span.icon16.icomoon-icon-exit
-                | Logout
+              = link_to 'Signout', destroy_user_session_path, method: :delete
+
+

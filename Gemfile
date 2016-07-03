@@ -82,3 +82,7 @@ gem 'certified'
 
 gem 'rails_best_practices'
 gem 'rubocop'
+
+
+#for showing links in notifications bodies
+gem 'rails_autolink'

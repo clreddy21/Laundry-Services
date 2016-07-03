@@ -1,3 +1,10 @@
-= form_for @item, url: admin_items_path do |f|
-  = f.text_field :name, required: true
-  = f.submit 'Add New Item'
+.center.m-t-60
+  = form_for @item, url: admin_items_path do |f|
+    .row
+      .col-md-offset-3.col-md-3
+        = f.label :name, class: 'control-label'
+      .col-md-3
+        = f.text_field :name, required: true, class: 'form-control'
+    .row
+      .col-md-offset-6.col-md-3
+        = f.submit 'Add New Item', class: 'btn btn-info'

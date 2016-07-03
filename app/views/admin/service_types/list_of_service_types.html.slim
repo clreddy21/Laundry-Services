@@ -1,14 +1,23 @@
-= link_to 'Create New Service Type', new_admin_service_type_path
-br
-
-h1
-  = 'List of service types'
-
-- @service_types.each do |service_type|
-  = service_type.name
-  = link_to 'Edit Service Type', edit_admin_service_type_path(service_type)
-
-  br
-  br
-
-= link_to 'Back', root_path
+.row
+  .section.p-t-0
+    .container
+      .section.p-t-0
+        .container
+          .row
+            .col-sm-8
+              .row
+                .col-md-7
+                  h3 List of Service Types
+                .col-md-5.m-t-25
+                  = link_to 'New Service Type', new_admin_service_type_path, class: 'btn btn-info'
+              table.table
+                thead
+                  tr
+                    th Item Name
+                tbody
+                  - @service_types.each do |service_type|
+                    tr
+                      td
+                        = service_type.name
+                      td
+                        = link_to 'Edit Service Type', edit_admin_service_type_path(service_type), class: 'btn btn-info'

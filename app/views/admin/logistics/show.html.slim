@@ -1,23 +1,85 @@
-= @logistic.full_name
-br
-= @logistic.email
-br
-= @logistic.mobile
-br
-= @logistic.avatar
-br
-= @amount
-
-br
-br
-- @orders.each do |order|
-  a href=admin_order_path(order)
-    = "Customer: #{order.customer.full_name}" if !order.customer.nil?
-    - if !order.logistic.nil?
-      = "Service provider: #{order.service_provider.full_name}"
-    = "Amount: #{order.total_cost}"
-    = "Status: #{order.status_id}"
-
-/= link_to 'Edit', edit_admin_service_provider_path(@service_provider)
-br
-= link_to 'Back', list_of_admin_logistics_path
+.row
+  .col-md-11
+    .center
+      h2
+        = "Logistic Details"
+    .row
+      .col-md-offset-3.col-md-3
+        = "Name"
+      .col-md-3
+        = @logistic.full_name
+    .row
+      .col-md-offset-3.col-md-3
+        = "Email"
+      .col-md-3
+        = @logistic.email
+    .row
+      .col-md-offset-3.col-md-3
+        = "Mobile"
+      .col-md-3
+        = @logistic.mobile
+    .row
+      .col-md-offset-3.col-md-3
+        = "Total earned amount"
+      .col-md-3
+        = @amount
+  .col-md-1.m-t-60
+    = link_to 'Back', list_of_admin_logistics_path
+    br
+    br
+    br
+    br
+h2.center
+  = "List of Orders"
+.row
+  - @logistic.orders.each do |order|
+    a href=admin_order_path(order)
+      .col-md-offset-1.col-md-5.order_box
+        .row
+          .col-md-6
+            = "Customer:"
+          .col-md-6
+            = order.customer.full_name.capitalize
+          br
+        .row
+          .col-md-6
+            = "Service Provider:"
+          .col-md-6
+            - if order.service_provider
+              = order.service_provider.full_name.capitalize
+            - else
+              = "Not assignet yet"
+          br
+        .row
+          .col-md-6
+            = "Logistic:"
+          .col-md-6
+            - if order.logistic
+              = order.logistic.full_name.capitalize
+            - else
+              = "Not assigned yet"
+          br
+        .row
+          .col-md-6
+            = "Total Cost:"
+          .col-md-6
+            = order.total_cost
+          br
+        .row
+          .col-md-6
+            = "Service Provider Chooser"
+          .col-md-6
+            = order.service_provider_chooser.capitalize
+          br
+        .row
+          .col-md-6
+            = "Status:"
+          .col-md-6
+            = Status.find(order.status_id).name.capitalize
+          br
+        .row
+          .col-md-6
+            = "Number of Items:"
+          .col-md-6
+            = order.order_items.count
+          br

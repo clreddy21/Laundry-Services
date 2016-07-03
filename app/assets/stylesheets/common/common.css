@@ -17,6 +17,14 @@
     margin-top: 20px !important;
 }
 
+.m-t-25{
+    margin-top: 25px !important;
+}
+
+.m-t-60{
+    margin-top: 60px !important;
+}
+
 .p-t-20{
     padding-top: 20px !important;
 }
@@ -63,11 +71,12 @@
 
 
 .player-div {
-    min-height: 360px;
+    min-height: 80px;
     background-color : white !important;
     padding : 5px !important;
     border : 1px solid #000;
     border-radius : 5px;
+    margin-bottom: 10px !important;
 }
 
 
@@ -81,3 +90,4 @@
 #yield_height{
     margin-bottom: 10vh !important;
 }
+

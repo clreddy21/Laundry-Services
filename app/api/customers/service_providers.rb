@@ -62,9 +62,7 @@ module Customers
             end
             item_prices_hash << {item_id: item.id, item_name: item.name, prices: prices}
           end
-
           item_prices_hash
-
         end
       end
     end

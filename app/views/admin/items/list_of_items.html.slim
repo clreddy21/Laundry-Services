@@ -1,19 +1,24 @@
-= link_to 'Create New Item', new_admin_item_path
-br
+.row
+  .section.p-t-0
+    .container
+      .section.p-t-0
+        .container
+          .row
+            .col-sm-8
+              .row
+                .col-md-7
+                  h3 List of Items
+                .col-md-5.m-t-25
+                  = link_to 'Create New Item', new_admin_item_path, class: 'btn btn-info'
+              table.table
+                thead
+                  tr
 
-h2
-  = 'List of Items'
-
-- @items.each do |item|
-  = item.name
-  /- if item.is_active
-  /  = 'Active'
-  /  = link_to 'Deactivate', delete_admin_items_path(item), method: 'put'
-  /- else
-  /  = 'InActive'
-  /  = link_to 'Activate', activate_admin_items_path(item), method: 'put'
-  = link_to 'Edit Item', edit_admin_item_path(item)
-
-  br
-  br
-= link_to 'Back', root_path
+                    th Item Name
+                tbody
+                  - @items.each do |item|
+                    tr
+                      td
+                        = item.name
+                      td
+                        = link_to 'Edit Item', edit_admin_item_path(item), class: 'btn btn-info'

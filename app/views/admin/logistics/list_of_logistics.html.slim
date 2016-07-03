@@ -1,12 +1,28 @@
-= link_to 'Add New Logistic', new_admin_logistic_path
-br
-
-h1
-  = 'List of logistics'
+.row
+  .col-md-8
+    h1
+      = 'List of Logistics'
+  .col-md-4.m-t-25
+    = link_to 'Add New Logistic', new_admin_logistic_path, class: 'btn btn-info'
 
 - @logistics.each do |logistic|
+  .col-md-offset-1.col-md-5.center
+    .player-div
+      a href=admin_logistic_path(logistic)
+        .row
+          .col-md-4
+            = "Name"
+          .col-md-8
+            = logistic.full_name
+        .row
+          .col-md-4
+            = "Mobile"
+          .col-md-8
+            = logistic.mobile
+        .row
+          .col-md-4
+            = "Email"
+          .col-md-8
+            = logistic.email
 
-  = link_to logistic.full_name, admin_logistic_path(logistic)
-  br
-
-= link_to 'Back', root_path
+= link_to 'Back', root_path, class: 'btn btn-info'

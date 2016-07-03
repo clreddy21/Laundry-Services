@@ -2,10 +2,23 @@ h1
   = 'List of customers'
 
 - @customers.each do |customer|
-  = link_to customer.full_name, admin_customer_path(customer)
-  br
+  .col-md-offset-1.col-md-5.center
+    .player-div
+      a href=admin_customer_path(customer)
+        .row
+          .col-md-4
+            = "Name"
+          .col-md-8
+            = customer.full_name
+        .row
+          .col-md-4
+            = "Mobile"
+          .col-md-8
+            = customer.mobile
+        .row
+          .col-md-4
+            = "Email"
+          .col-md-8
+            = customer.email
 
 = link_to 'Back', root_path
-
-
-

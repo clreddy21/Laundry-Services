@@ -1,12 +1,29 @@
-/= link_to 'Add New Service Provider', new_admin_service_provider_path
-br
-
 h1
-  = 'List of service provider'
+  = 'List of service providers'
 
 - @service_providers.each do |service_provider|
-
-  = link_to service_provider.full_name, admin_service_provider_path(service_provider)
-  br
+  .col-md-offset-1.col-md-5.center
+    .player-div
+      a href=admin_service_provider_path(service_provider)
+        .row
+          .col-md-4
+            = "Name"
+          .col-md-8
+            = service_provider.full_name
+        .row
+          .col-md-4
+            = "Mobile"
+          .col-md-8
+            = service_provider.mobile
+        .row
+          .col-md-4
+            = "Email"
+          .col-md-8
+            = service_provider.email
+        .row
+          .col-md-4
+            = "Average Review"
+          .col-md-8
+            = service_provider.average_review
 
 = link_to 'Back', root_path
