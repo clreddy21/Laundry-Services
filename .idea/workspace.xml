@@ -4,7 +4,6 @@
     <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notifications/_notification.html.slim" afterPath="$PROJECT_DIR$/app/views/notifications/_notification.html.slim" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notifications/index.html.slim" afterPath="$PROJECT_DIR$/app/views/notifications/index.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/users/login.rb" afterPath="$PROJECT_DIR$/app/api/users/login.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/notifications_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/notifications_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -1165,12 +1164,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00047" summary="added views and controller actions for customer and logistic">
-      <created>1466389248315</created>
-      <option name="number" value="00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1466389248315</updated>
-    </task>
     <task id="LOCAL-00048" summary="adding assign service provider and logistics to empty orders">
       <created>1466475372508</created>
       <option name="number" value="00048" />
@@ -1459,7 +1452,13 @@
       <option name="project" value="LOCAL" />
       <updated>1467653594092</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="minor refactoring&#10;added wallet to customer">
+      <created>1467654950933</created>
+      <option name="number" value="00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1467654950933</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="ToolWindowManager">
