@@ -44,7 +44,7 @@ module Customers
         else
           service_provider = ServiceProvider.find(params[:service_provider_id])
         end
-      	order = Order.create(service_provider_id: service_provider.id, customer_id: customer.id,
+      	order = Order.create(service_provider_id: nil, customer_id: customer.id,
                total_cost: params[:total_cost], status_id: params[:status].to_i,
                :service_provider_chooser => params[:service_provider_chooser])
 
