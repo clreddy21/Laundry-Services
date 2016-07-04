@@ -27,13 +27,14 @@ module Users
 						elsif user.is_service_provider?
 							service_provider = user
 							total_number_of_orders = service_provider.service_provider_stats[:orders_count]
-							total_amount_earned = service_provider.service_provider_stats[:total_cost]
+							total_amount_earned = service_provider.service_provider_stats[:total_cost].to_i
 							{:success => true, :email => params[:email], :token => user.jwt, :name => user.first_name + user.last_name,
 							 :mobile_number => user.mobile, :user_id => user.id, :address => address, :total_number_of_orders => total_number_of_orders,
 							:total_amount_earned => total_amount_earned}
 						elsif user.is_logistic?
+							logistic = user
 							total_number_of_orders= logistic.logistic_stats[:orders_count]
-							total_amount_earned = logistic.logistic_stats[:total_cost]
+							total_amount_earned = logistic.logistic_stats[:total_cost].to_i
 							{:success => true, :email => params[:email], :token => user.jwt, :name => user.first_name + user.last_name,
 							 :mobile_number => user.mobile, :user_id => user.id, :address => address, :total_number_of_orders => total_number_of_orders,
 							 :total_amount_earned => total_amount_earned}
