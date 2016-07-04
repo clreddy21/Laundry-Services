@@ -21,7 +21,7 @@ module Users
 						address = user.address ? user.address.address : ''
 
 						if user.is_customer?
-							wallet_amount = user.wallet.amount
+							wallet_amount = user.wallet.amount.to_i
 							{:success => true, :email => params[:email], :token => user.jwt, :name => user.first_name + user.last_name,
 							 :mobile_number => user.mobile, :user_id => user.id, :address => address, wallet_amount: wallet_amount}
 						elsif user.is_service_provider?
