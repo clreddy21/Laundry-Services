@@ -24,18 +24,12 @@ class Order < ActiveRecord::Base
 
   def service_provider_stats
     service_provider = self.service_provider
-
-    orders_count = service_provider.orders.size
-    total_cost = service_provider.orders.pluck(:total_cost).sum
-    {orders_count: orders_count, total_cost: total_cost}
+		service_provider.service_provider_stats
   end
 
   def logistic_stats
     logistic = self.logistic
-
-    orders_count = logistic.orders.size
-    total_cost = logistic.orders.pluck(:total_cost).sum
-    {orders_count: orders_count, total_cost: total_cost}
+		logistic.logistic_stats
   end
 
   def update_service_provider_response(comment, user_id, response)

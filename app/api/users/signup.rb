@@ -53,7 +53,7 @@ module Users
 					user = User.find_by(:email => params[:email])
 				  if user.present?
 						Address.create(address: params[:address], :addressable  => user)
-
+						Wallet.create(amount: 0.0, user_id: user.id)
 						gcm = GCM.new('AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM')
 						registration_id = params[:device_id]
 						options = {data: {score: '123'}, collapse_key: 'updated_score'}

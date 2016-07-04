@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :address, as: :addressable
+  has_one :wallet
 
   after_create :send_otp_to_user
 
@@ -20,6 +21,25 @@ class User < ActiveRecord::Base
 
   def full_name
     self.first_name + ' ' + self.last_name
+  end
+
+  def is_admin?
+    self.type == 'Admin'
+  end
+
+
+  def is_customer?
+    self.type == 'Customer'
+  end
+
+
+  def is_service_provider?
+    self.type == 'ServiceProvider'
+  end
+
+
+  def is_logistic?
+    self.type == 'Logistic'
   end
 
 
@@ -39,6 +59,7 @@ class User < ActiveRecord::Base
     body = "Hi #{self.first_name}, #{self.otp} is your otp for verification. Please do not disclose it to anyone."
     send_message(body)
   end
+
 
   private
 
