@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added refund request service for service provider&#10;added get wallet amount for all users&#10;changed code to delete order amount for customer on order create&#10;added refund model for storing refund requests from service provider">
-      <change type="MOVED" beforePath="C:\Sites\Freelance\laundry_services\app\api\service_provider_details\wallet.rb" afterPath="$PROJECT_DIR$/app/api/service_provider_details/wallets.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/api.rb" afterPath="$PROJECT_DIR$/app/api/api.rb" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/service_provider_details/wallets.rb" afterPath="$PROJECT_DIR$/app/api/service_provider_details/wallets.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -39,21 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wallets.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wallets.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/api/service_provider_details/wallets.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.02681388" vertical-offset="0" max-vertical-offset="634">
+              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="api.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/api/api.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2681388" vertical-offset="0" max-vertical-offset="634">
-              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -137,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/api/service_provider_details/reviews.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/common/common.js" />
         <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
@@ -188,6 +186,7 @@
         <option value="$PROJECT_DIR$/app/api/users/login.rb" />
         <option value="$PROJECT_DIR$/app/api/customers/orders.rb" />
         <option value="$PROJECT_DIR$/app/api/api.rb" />
+        <option value="$PROJECT_DIR$/app/api/service_provider_details/wallets.rb" />
       </list>
     </option>
   </component>
@@ -1163,12 +1162,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00052" summary="adding views for service provider details and orders">
-      <created>1466619503167</created>
-      <option name="number" value="00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1466619503167</updated>
-    </task>
     <task id="LOCAL-00053" summary="added address and lat longs for everyone">
       <created>1466705804391</created>
       <option name="number" value="00053" />
@@ -1457,7 +1450,13 @@
       <option name="project" value="LOCAL" />
       <updated>1467740258937</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="minor refactoring">
+      <created>1467740850033</created>
+      <option name="number" value="00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1467740850033</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1519,11 +1518,11 @@
     <MESSAGE value="minor refactoring&#10;" />
     <MESSAGE value="added pickup date&#10;added address in login response&#10;" />
     <MESSAGE value="updating the code from home machine" />
-    <MESSAGE value="minor refactoring" />
     <MESSAGE value="minor refactoring&#10;added ui for few pages" />
     <MESSAGE value="minor refactoring&#10;added wallet to customer" />
     <MESSAGE value="added refund request service for service provider&#10;added get wallet amount for all users&#10;changed code to delete order amount for customer on order create&#10;added refund model for storing refund requests from service provider" />
-    <option name="LAST_COMMIT_MESSAGE" value="added refund request service for service provider&#10;added get wallet amount for all users&#10;changed code to delete order amount for customer on order create&#10;added refund model for storing refund requests from service provider" />
+    <MESSAGE value="minor refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1844,14 +1843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api/service_provider_details/wallets.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1117" max-vertical-offset="1819">
@@ -1876,14 +1867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/wallet.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="634">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20160705161822_create_refunds.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="634">
@@ -1902,8 +1885,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/api.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2681388" vertical-offset="0" max-vertical-offset="634">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/wallet.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="634">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/service_provider_details/wallets.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02681388" vertical-offset="0" max-vertical-offset="634">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
           <folding />
         </state>
       </provider>

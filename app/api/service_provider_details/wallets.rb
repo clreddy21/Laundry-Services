@@ -1,5 +1,5 @@
 module ServiceProviderDetails
-  class Wallet < Grape::API
+  class Wallets < Grape::API
 
     resource :refund_amount do
       desc 'Refund amount to service provider from his wallet'
