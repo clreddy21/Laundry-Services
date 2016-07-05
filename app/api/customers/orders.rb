@@ -3,7 +3,7 @@ module Customers
 
 
     resource :test_gcm do
-      desc 'assa'
+      desc 'testing gcm'
       params do
         # requires :id, type: String
       end
@@ -38,40 +38,48 @@ module Customers
   	  end
 
       post do
-        customer = Customer.find(params[:customer_id])
-        if params[:service_provider_chooser] == 'admin'
-          service_provider = ServiceProvider.find_by(email: 'admin_sp@ls.com')
+        customer = Customer.includes(:wallet).find_by_id(params[:customer_id])
+        if params[:payment_mode] == 'wallet' && params[:total_cost] < customer.wallet.amount
+          {:message => 'Your wallet has insufficient funds.', :success => false}
         else
-          service_provider = ServiceProvider.find(params[:service_provider_id])
+
+          if params[:service_provider_chooser] == 'admin'
+            service_provider = ServiceProvider.find_by(email: 'admin_sp@ls.com')
+          else
+            service_provider = ServiceProvider.find(params[:service_provider_id])
+          end
+          order = Order.create(service_provider_id: nil, customer_id: customer.id,
+                 total_cost: params[:total_cost], status_id: params[:status].to_i,
+                 :service_provider_chooser => params[:service_provider_chooser])
+
+          items = []
+          commenter = customer
+          params[:items].each do |item|
+            order_item = OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id],
+              :quantity => item[:quantity], :amount => item[:amount])
+            OrderComment.create(order_id: order.id, body: item[:comment], comment_by_type: commenter.type,
+            comment_by: commenter.id, order_item_id: order_item.id)
+          end
+
+
+          Schedule.create(:order_id => order.id, :date => Date.parse(params[:pickup_date]),
+                          :from_time => Time.parse(params[:pickup_time]))
+                          # :to_time => Time.parse(params[:schedule][0][:to_time]))
+
+          Address.create(address: params[:address], :addressable  => order)
+          Payment.create(order_id: order.id, amount: params[:total_cost], mode: params[:payment_mode],
+          status: params[:payment_status])
+          customer.wallet.amount = customer.wallet.amount - params[:total_cost]
+          customer.wallet.save!
+
+          message = 'Order Created Successfully'
+          options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
+             'orderId' => order.id}}
+
+          customer.send_mobile_notification(options)
+          {:message => message, :success => true, :order_id => order.id, status_id: order.status_id}
+
         end
-      	order = Order.create(service_provider_id: nil, customer_id: customer.id,
-               total_cost: params[:total_cost], status_id: params[:status].to_i,
-               :service_provider_chooser => params[:service_provider_chooser])
-
-      	items = []
-        commenter = customer
-      	params[:items].each do |item|
-					order_item = OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id],
-						:quantity => item[:quantity], :amount => item[:amount])
-          OrderComment.create(order_id: order.id, body: item[:comment], comment_by_type: commenter.type,
-          comment_by: commenter.id, order_item_id: order_item.id)
-        end
-
-
-        Schedule.create(:order_id => order.id, :date => Date.parse(params[:pickup_date]),
-                        :from_time => Time.parse(params[:pickup_time]))
-                        # :to_time => Time.parse(params[:schedule][0][:to_time]))
-
-        Address.create(address: params[:address], :addressable  => order)
-        Payment.create(order_id: order.id, amount: params[:total_cost], mode: params[:payment_mode],
-        status: params[:payment_status])
-
-        message = 'Order Created Successfully'
-        options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-    'orderId' => order.id}}
-
-        customer.send_mobile_notification(options)
-				{:message => message, :success => true, :order_id => order.id, status_id: order.status_id}
       end
     end
 

@@ -71,5 +71,19 @@ module Users
 			end
 		end
 
+		resource :get_wallet_amount do
+			desc 'Get the current total amount in the wallet'
+			params do
+				requires :user_id, type:Integer
+			end
+
+			post do
+				puts params.inspect
+				user = User.find(params[:user_id])
+				wallet_amount = user.wallet.amount
+				{message:'Wallet Amount.', :success => true, wallet_amount: wallet_amount}
+			end
+		end
+
 	end
 end

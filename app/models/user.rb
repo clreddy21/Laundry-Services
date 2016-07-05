@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
 
   has_one :address, as: :addressable
   has_one :wallet
+  has_many :refunds
 
-  after_create :send_otp_to_user
+  after_create :send_otp_to_user, :create_wallet
 
 
   reverse_geocoded_by :latitude, :longitude
@@ -92,5 +93,9 @@ class User < ActiveRecord::Base
     elsif self.type == 'Logistic'
       gcm = GCM.new('AIzaSyB8s6F8MH27AFDBOLK99-3zo8Ed3I8FTc8')
     end
+  end
+
+  def create_wallet
+    Wallet.create(user_id: self.id, amount: 0.0)
   end
 end

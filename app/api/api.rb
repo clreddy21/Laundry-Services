@@ -8,5 +8,6 @@ class API < Grape::API
   mount ServiceProviderDetails::Orders
   mount ServiceProviderDetails::ItemPrices
   mount ServiceProviderDetails::Reviews
+  mount ServiceProviderDetails::Wallet
   mount Logistics::Orders
 end

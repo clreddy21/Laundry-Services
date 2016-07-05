@@ -174,7 +174,7 @@ module Users
 					{:message => 'Wrong OTP, please try again', :success => false}
 				else
 					user.update(otp: nil, password: params[:password])
-					{:message => 'otp sent to mobile', :success => true}
+					{:message => 'Password updated successfully.', :success => true}
 				end
 			end
 		end
