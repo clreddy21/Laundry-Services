@@ -77,7 +77,7 @@ module Users
 				requires :user_id, type:Integer
 			end
 
-			post do
+			get do
 				puts params.inspect
 				user = User.find(params[:user_id])
 				wallet_amount = user.wallet.amount
