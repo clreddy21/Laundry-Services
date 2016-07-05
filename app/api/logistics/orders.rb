@@ -135,6 +135,7 @@ module Logistics
       post do
         order = Order.find_by(id: params[:order_id])
         if order.present?
+          order.service_provider.wallet.amount = order.service_provider.wallet.amount + order.total_cost
           sps = order.service_provider_stats
           comment = params[:comment]
           user_id = params[:user_id]
@@ -184,6 +185,7 @@ module Logistics
       post do
         order = Order.find_by(id: params[:order_id])
         if order.present?
+          order.logistic.wallet.amount = order.logistic.wallet.amount + order.total_cost
           logistic_stats = order.logistic_stats
           comment = params[:comment]
           user_id = params[:user_id]
