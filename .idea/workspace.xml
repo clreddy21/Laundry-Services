@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added refund request service for service provider&#10;added get wallet amount for all users&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20160705161822_create_refunds.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/refund.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/refund_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/refunds.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/api/service_provider_details/wallet.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/api.rb" afterPath="$PROJECT_DIR$/app/api/api.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/users/login.rb" afterPath="$PROJECT_DIR$/app/api/users/login.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/customers/orders.rb" afterPath="$PROJECT_DIR$/app/api/customers/orders.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/users/signup.rb" afterPath="$PROJECT_DIR$/app/api/users/signup.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/service_provider_details/wallet.rb" afterPath="$PROJECT_DIR$/app/api/service_provider_details/wallet.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -1172,12 +1162,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00050" summary="minor refactoring">
-      <created>1466529164051</created>
-      <option name="number" value="00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1466529164063</updated>
-    </task>
     <task id="LOCAL-00051" summary="adding views for service provider details and orders">
       <created>1466619027048</created>
       <option name="number" value="00051" />
@@ -1466,13 +1450,20 @@
       <option name="project" value="LOCAL" />
       <updated>1467656305356</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="added refund request service for service provider&#10;added get wallet amount for all users&#10;changed code to delete order amount for customer on order create&#10;added refund model for storing refund requests from service provider">
+      <created>1467740253039</created>
+      <option name="number" value="00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1467740253082</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1489,7 +1480,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32930514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496329" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1531,7 +1521,8 @@
     <MESSAGE value="minor refactoring" />
     <MESSAGE value="minor refactoring&#10;added ui for few pages" />
     <MESSAGE value="minor refactoring&#10;added wallet to customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor refactoring&#10;added wallet to customer" />
+    <MESSAGE value="added refund request service for service provider&#10;added get wallet amount for all users&#10;changed code to delete order amount for customer on order create&#10;added refund model for storing refund requests from service provider" />
+    <option name="LAST_COMMIT_MESSAGE" value="added refund request service for service provider&#10;added get wallet amount for all users&#10;changed code to delete order amount for customer on order create&#10;added refund model for storing refund requests from service provider" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
