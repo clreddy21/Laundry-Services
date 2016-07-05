@@ -20,6 +20,9 @@ Rails.application.routes.draw do
       end
     end
     resources :customers do
+      member do
+        put 'add_funds_to_wallet', as: 'add_funds'
+      end
       collection do
         get 'list_of_customers', as: 'list_of'
       end

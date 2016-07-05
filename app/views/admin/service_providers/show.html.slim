@@ -2,7 +2,7 @@
   .col-md-11
     .center
       h2
-        = "Customer Details"
+        = "Service Provider Details"
     .row
       .col-md-offset-3.col-md-3
         = "Name"
@@ -33,6 +33,11 @@
         = "Total spent earned"
       .col-md-3
         = @amount
+    .row
+      .col-md-offset-3.col-md-3
+        = "Total funds in wallet"
+      .col-md-3
+        = @service_provider.wallet.amount
   .col-md-1.m-t-60
     = link_to 'Back', list_of_admin_service_providers_path, class: 'btn btn-info'
     br

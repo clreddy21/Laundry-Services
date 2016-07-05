@@ -37,6 +37,13 @@ class Admin::CustomersController < ApplicationController
     end
   end
 
+  def add_funds_to_wallet
+    customer = Customer.find(params[:id])
+    amount = customer.wallet.amount + params[:wallet][:amount].to_f
+    customer.wallet.update(amount: amount)
+    redirect_to :back, notice: 'Funds added to customer successfully.'
+  end
+
   def customer_params
     params.require(:customer).permit(:first_name, :last_name, :email, :mobile, :avatar)
   end

@@ -25,12 +25,32 @@
         = "Total spent amount"
       .col-md-3
         = @amount
+    .row
+      .col-md-offset-3.col-md-3
+        = "Total funds in wallet"
+      .col-md-3
+        = @customer.wallet.amount
   .col-md-1.m-t-60
     = link_to 'Back', list_of_admin_customers_path, class: 'btn btn-info'
     br
     br
     br
     br
+h2.center
+  = "Add funds to customer"
+.row
+  .center.m-t-60
+    = form_for @customer.wallet, url: add_funds_admin_customer_path(@customer), method: 'put' do |f|
+      .row
+        .col-md-offset-3.col-md-3
+          = f.label :amount, class: 'control-label'
+        .col-md-3
+          = f.number_field :amount, required: true, class: 'form-control'
+      .row
+        .col-md-offset-6.col-md-3
+          = f.submit 'Add Funds', class: 'btn btn-info'
+
+
 h2.center
   = "List of Orders"
 .row
