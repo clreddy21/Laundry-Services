@@ -25,7 +25,6 @@ module Customers
         requires :customer_id, type:Integer
         requires :total_cost, type:Float
         requires :status, type:String
-        # requires :comments, type:Array
 				requires :items, type: Array
 				requires :schedule_date, type: String
 				requires :pickup_date, type: String
@@ -39,7 +38,7 @@ module Customers
 
       post do
         customer = Customer.includes(:wallet).find_by_id(params[:customer_id])
-        if params[:payment_mode] == 'wallet' && params[:total_cost] < customer.wallet.amount
+        if params[:payment_mode] == 'wallet' && params[:total_cost] > customer.wallet.amount
           {:message => 'Your wallet has insufficient funds.', :success => false}
         else
 
@@ -71,6 +70,8 @@ module Customers
           status: params[:payment_status])
           customer.wallet.amount = customer.wallet.amount - params[:total_cost]
           customer.wallet.save!
+
+          Notification.create
 
           message = 'Order Created Successfully'
           options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
@@ -131,6 +132,8 @@ module Customers
           order_items_comments_hash << {order_item_hash: order_item_hash, order_comments_hash: order_comments_hash}
         end
 
+        order_comments = order.comments.where(item_id: nil)
+
         if order.payment
           order_payment_amount = order.payment_amount.to_i
           order_payment_status = order.payment_status
@@ -178,7 +181,7 @@ module Customers
         :order_payment => {:amount => order_payment_amount, :payment_status => order_payment_status, :mode => order_payment_mode},
         :order_address => order_address, customer_mobile: order.customer.mobile,
         service_provider_mobile: service_provider_mobile, service_provider_address: service_provider_address,
-        logistic_mobile: logistic_mobile, logistic_address: logistic_address}
+        logistic_mobile: logistic_mobile, logistic_address: logistic_address, order_comments: order_comments}
       end
     end
   end
