@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_one :address, as: :addressable
   has_one :wallet
   has_many :refunds
+  has_many :notifications
 
   after_create :send_otp_to_user, :create_wallet
 

@@ -72,7 +72,10 @@ module Customers
           customer.wallet.amount = customer.wallet.amount - params[:total_cost]
           customer.wallet.save!
 
-          Notification.create
+          # message = "A new order has been created. You can see the details <a href=#{admin_order_path(order)}>here</a>."
+          message = ''
+          Notification.send_notification('New Group Created', message, order)
+
 
           message = 'Order Created Successfully'
           options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
