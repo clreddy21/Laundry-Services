@@ -1068,12 +1068,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00057" summary="minor refactoring">
-      <created>1466851745416</created>
-      <option name="number" value="00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1466851745416</updated>
-    </task>
     <task id="LOCAL-00058" summary="minor refactoring">
       <created>1466856529446</created>
       <option name="number" value="00058" />
@@ -1362,13 +1356,20 @@
       <option name="project" value="LOCAL" />
       <updated>1467743001537</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="added notifications functionality and related views and tables">
+      <created>1467828676551</created>
+      <option name="number" value="00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1467828676570</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1385,7 +1386,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496329" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1430,7 +1430,8 @@
     <MESSAGE value="minor refactoring" />
     <MESSAGE value="adding money to wallets of service provider and logistic on order completions" />
     <MESSAGE value="added a way for admin to add funds to customer wallet&#10;added a way for customer to see the amount present in customer and service provider's wallet" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a way for admin to add funds to customer wallet&#10;added a way for customer to see the amount present in customer and service provider's wallet" />
+    <MESSAGE value="added notifications functionality and related views and tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="added notifications functionality and related views and tables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
