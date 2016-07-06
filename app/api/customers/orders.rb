@@ -61,8 +61,8 @@ module Customers
           end
 
 
-          Schedule.create(:order_id => order.id, :from_time => DateTime.parse(params[:pickup_time]))
-                          # :date => Date.parse(params[:pickup_date]),
+          Schedule.create(:order_id => order.id, :from_time => Time.parse(params[:pickup_time]))
+                          # :date => DateTime.parse(params[:pickup_date]),
                           # :to_time => Time.parse(params[:schedule][0][:to_time]))
 
           Address.create(address: params[:address], :addressable  => order)
