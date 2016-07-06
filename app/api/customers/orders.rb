@@ -47,7 +47,7 @@ module Customers
           else
             service_provider = ServiceProvider.find(params[:service_provider_id])
           end
-          srevice_provider_id = (params[:service_provider_chooser] == 'admin') ? nil : params[:service_provider_id]
+          service_provider_id = (params[:service_provider_chooser] == 'admin') ? nil : params[:service_provider_id]
           order = Order.create(service_provider_id: service_provider_id, customer_id: customer.id,
                  total_cost: params[:total_cost], status_id: params[:status].to_i,
                  :service_provider_chooser => params[:service_provider_chooser])
