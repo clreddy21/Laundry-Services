@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added a way for admin to add funds to customer wallet&#10;added a way for customer to see the amount present in customer and service provider's wallet">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/ok.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/kaminari/_first_page.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/kaminari/_last_page.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/kaminari/_next_page.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/kaminari/_page.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/kaminari/_paginator.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/kaminari/_prev_page.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notifications/index.js.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/kaminari_config.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/notifications.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/notifications.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notifications/_notification.html.slim" afterPath="$PROJECT_DIR$/app/views/notifications/_notification.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notifications/index.html.slim" afterPath="$PROJECT_DIR$/app/views/notifications/index.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/notification.rb" afterPath="$PROJECT_DIR$/app/models/notification.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/notifications_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/notifications_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/customers/orders.rb" afterPath="$PROJECT_DIR$/app/api/customers/orders.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notifications/index.js.erb" afterPath="$PROJECT_DIR$/app/views/notifications/index.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/notifications.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/notifications.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/notifications.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/notifications.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -1068,12 +1052,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00058" summary="minor refactoring">
-      <created>1466856529446</created>
-      <option name="number" value="00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1466856529446</updated>
-    </task>
     <task id="LOCAL-00059" summary="minor refactoring">
       <created>1466857505287</created>
       <option name="number" value="00059" />
@@ -1362,7 +1340,13 @@
       <option name="project" value="LOCAL" />
       <updated>1467828676570</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="added pagination functionality for notifications">
+      <created>1467828700205</created>
+      <option name="number" value="00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1467828700205</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1406,7 +1390,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="working on getting service providers and sending otp to users." />
     <MESSAGE value="added get item prices api" />
     <MESSAGE value="created  all order related models&#10;filtered only required columns in get_list_of_service_providers api request" />
     <MESSAGE value="added api for adding item prices by service provider" />
@@ -1431,7 +1414,8 @@
     <MESSAGE value="adding money to wallets of service provider and logistic on order completions" />
     <MESSAGE value="added a way for admin to add funds to customer wallet&#10;added a way for customer to see the amount present in customer and service provider's wallet" />
     <MESSAGE value="added notifications functionality and related views and tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="added notifications functionality and related views and tables" />
+    <MESSAGE value="added pagination functionality for notifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pagination functionality for notifications" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
