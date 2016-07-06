@@ -133,7 +133,8 @@ module Customers
           order_items_comments_hash << {order_item_hash: order_item_hash, order_comments_hash: order_comments_hash}
         end
 
-        order_comments = order.order_comments.where(item_id: nil)
+        order_comments = []
+        # order_comments = order.order_comments.where(item_id: nil)
 
         if order.payment
           order_payment_amount = order.payment_amount.to_i
