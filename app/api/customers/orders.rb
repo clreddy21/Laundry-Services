@@ -99,7 +99,7 @@ module Customers
             sp = order.service_provider
             logistic = order.logistic
 
-            orders_hash << {:order_id => order.id, :service_provider_id => sp.id, :service_provider_name => sp.full_name,
+            orders_hash << {:order_id => order.id, :service_provider_id => (sp.nil? ? '' : sp.id), :service_provider_name => (sp.nil? ? '' : sp.full_name),
                            :logistic_id => (logistic.nil? ? '' : logistic.id ), :logistic_name => (logistic.nil? ? '' : logistic.full_name),
                            :total_cost => order.total_cost.to_i,:service_provider_mobile => sp.mobile,
                            :logistic_mobile => (logistic.nil? ? '' : logistic.mobile), :status_id => order.status_id}
