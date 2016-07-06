@@ -79,7 +79,7 @@ module Customers
              'orderId' => order.id}}
 
           customer.send_mobile_notification(options)
-          {:message => message, :success => true, :order_id => order.id, status_id: order.status_id}
+          {:message => message, :success => true, :order_id => order.id, status_id: order.status_id, wallet_amount: customer.wallet}
 
         end
       end
