@@ -1,25 +1,50 @@
-h1
-  = 'List of customers'
+table#customers
+  caption
+    | List of Customers
+  thead
+    tr
+      th
+        | Name
+      th
+        | Mobile
+      th
+        | Email
+      th
+        | Details
+  tbody
+    - @customers.each do |customer|
+      tr
+        td
+          = customer.full_name
+        td
+          = customer.mobile
+        td
+          = customer.email
+        td
+          a href=admin_customer_path(customer) Details
 
-- @customers.each do |customer|
-  .col-md-offset-1.col-md-5.center
-    .player-div
-      a href=admin_customer_path(customer)
-        .row
-          .col-md-4
-            = "Name"
-          .col-md-8
-            = customer.full_name
-        .row
-          .col-md-4
-            = "Mobile"
-          .col-md-8
-            = customer.mobile
-        .row
-          .col-md-4
-            = "Email"
-          .col-md-8
-            = customer.email
+/!
+  h1
+    = 'List of customers'
+  - @customers.each do |customer|
+    .col-md-offset-1.col-md-5.center
+      .player-div
+        a href=admin_customer_path(customer)
+          .row
+            .col-md-4
+              = "Name"
+            .col-md-8
+              = customer.full_name
+          .row
+            .col-md-4
+              = "Mobile"
+            .col-md-8
+              = customer.mobile
+          .row
+            .col-md-4
+              = "Email"
+            .col-md-8
+              = customer.email
 .row
   .col-md-4
     = link_to 'Back', root_path, class: 'btn btn-info'

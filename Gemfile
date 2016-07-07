@@ -86,3 +86,7 @@ gem 'rubocop'
 
 #for showing links in notifications bodies
 gem 'rails_autolink'
+
+
+#for datatables
+gem 'jquery-datatables-rails'
