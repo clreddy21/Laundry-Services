@@ -148,10 +148,12 @@ module Users
 
 			post do
 				puts params.inspect
+				otp = rand(1000..9999)
 				user = User.find_by(mobile: params[:mobile])
 				if user.nil?
 					{:message => 'No user exists with this mobile', :success => false}
 				else
+					user.update(otp: otp)
 					user.send_forgot_password_otp
 					{:message => 'otp sent to mobile', :success => true}
 				end
