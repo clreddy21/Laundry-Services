@@ -27,22 +27,19 @@ html
           = yield
       - else
         = render partial: 'layouts/header'
-        #wrapper.container
-          .row.white-bg
-            .col-md-3
-              = render partial: 'layouts/side_nav'
-            .col-md-9
-              #flash
-                - flash.each do |type, message|
-                  - if type == 'notice'
-                    - msg_type = 'success'
-                  - elsif type == 'alert'
-                    -msg_type = 'warning'
-                  - elsif type == 'error'
-                    -msg_type = 'danger'
-                  .alert.alert-dismissible.text-center data-role= 'alert' data-class= 'alert-#{msg_type}'
-                    button.close data-dismiss= 'alert' data-type= 'button'
-                      span data-aria-hidden= 'true' ×
-                    = message.html_safe
-              #yield_height
-                = yield
+        .row.white-bg
+          .col-md-12
+            #flash
+              - flash.each do |type, message|
+                - if type == 'notice'
+                  - msg_type = 'success'
+                - elsif type == 'alert'
+                  -msg_type = 'warning'
+                - elsif type == 'error'
+                  -msg_type = 'danger'
+                .alert.alert-dismissible.text-center data-role= 'alert' data-class= 'alert-#{msg_type}'
+                  button.close data-dismiss= 'alert' data-type= 'button'
+                    span data-aria-hidden= 'true' ×
+                  = message.html_safe
+            #yield_height
+              = yield
