@@ -1,0 +1,18 @@
+#add_service_type.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+        h3.modal-title Add Service Type
+        .center
+          .modal-body.modal-body-height
+            = form_for @service_type, url: admin_service_types_path do |f|
+              .form-group.row
+                .col-sm-1
+                .col-sm-3.m-t-5
+                  = label_tag :name, nil, :class => "control-label"
+                .col-sm-7
+                  = text_field_tag :name, nil, :class => "form-control", placeholder: "Service Type Name", required: true
+              .form-group.row
+                .col-md-offset-6.col-md-3
+                  = f.submit 'Add Service Type', class: 'btn btn-info'

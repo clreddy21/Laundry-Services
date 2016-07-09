@@ -3,6 +3,7 @@ class Admin::ItemsController < ApplicationController
 
   def list_of_items
     @items = Item.all
+    @item = Item.new
   end
 
   def new
@@ -14,7 +15,7 @@ class Admin::ItemsController < ApplicationController
   end
 
   def create
-    item = Item.create(item_params)
+    item = Item.create(name: params[:name])
     if item.save!
       redirect_to list_of_admin_items_path, notice: 'Item added successfully.'
     else

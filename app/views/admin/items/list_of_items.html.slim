@@ -3,7 +3,8 @@
     h3
       | List of Items
   .col-md-offset-4.col-md-2
-    = link_to 'Add New Iten', new_admin_item_path, class: 'btn btn-info'
+    a.btn.btn-info data-target="#add_item" data-toggle="modal"
+      = 'Add New Item'
   .col-md-2
     = link_to 'Back', root_path, class: 'btn btn-info'
 .row
@@ -26,6 +27,8 @@
             td
               = link_to 'Edit Item', edit_admin_item_path(item), class: 'btn btn-info'
   .col-md-3
+
+  = render 'add_item'
 /.row
 /  .section.p-t-0
 /    .container

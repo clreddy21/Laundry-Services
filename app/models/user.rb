@@ -63,6 +63,14 @@ class User < ActiveRecord::Base
     send_message(body)
   end
 
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
+
 
   private
 

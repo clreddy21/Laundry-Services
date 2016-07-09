@@ -3,7 +3,8 @@
     h3
       | List of Service Types
   .col-md-offset-4.col-md-2
-    = link_to 'Add New Service Type', new_admin_service_type_path, class: 'btn btn-info'
+    a.btn.btn-info data-target="#add_service_type" data-toggle="modal"
+      = 'Add New Service Type'
   .col-md-2
     = link_to 'Back', root_path, class: 'btn btn-info'
 .row
@@ -26,6 +27,7 @@
             td
               = link_to 'Edit Service Type', edit_admin_service_type_path(service_type), class: 'btn btn-info'
   .col-md-3
+  = render 'add_service_type'
 /.row
 /  .section.p-t-0
 /    .container

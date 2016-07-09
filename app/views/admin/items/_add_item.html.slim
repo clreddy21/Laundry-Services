@@ -1,0 +1,18 @@
+#add_item.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+        h3.modal-title Add Item
+        .center
+          .modal-body.modal-body-height
+            = form_for @item, url: admin_items_path do |f|
+              .form-group.row
+                .col-sm-1
+                .col-sm-3.m-t-5
+                  = label_tag :name, nil, :class => "control-label"
+                .col-sm-7
+                  = text_field_tag :name, nil, :class => "form-control", placeholder: "Item Name", required: true
+              .form-group.row
+                .col-md-offset-6.col-md-3
+                  = f.submit 'Add New Item', class: 'btn btn-info'

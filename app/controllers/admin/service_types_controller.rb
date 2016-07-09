@@ -3,6 +3,7 @@ class Admin::ServiceTypesController < ApplicationController
 
   def list_of_service_types
     @service_types = ServiceType.all
+    @service_type = ServiceType.new
   end
 
 
@@ -15,7 +16,7 @@ class Admin::ServiceTypesController < ApplicationController
   end
 
   def create
-    service_type = ServiceType.create(service_type_params)
+    service_type = ServiceType.create(name: params[:name])
     if service_type.save!
       redirect_to list_of_admin_service_types_path, notice: 'service type added successfully.'
     else
