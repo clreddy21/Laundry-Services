@@ -54,7 +54,7 @@
             td
               = order.service_provider_chooser
             td
-              = Status.find_by(order.status_id).name
+              = Status.find_by(id: order.status_id).name
             td
               = order.created_at.strftime('%d/%m/%y')
             td
