@@ -3,7 +3,7 @@ class Admin::OrdersController < ApplicationController
 
 
   def index
-    @orders = Order.includes(:service_provider, :customer, :logistic).all
+    @orders = Order.includes(:service_provider, :customer, :logistic, :payment).all
   end
 
   def show

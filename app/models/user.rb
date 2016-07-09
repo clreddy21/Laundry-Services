@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_one :wallet
   has_many :refunds
   has_many :notifications
+  has_many :transactions
 
   after_create :send_otp_to_user, :create_wallet
 

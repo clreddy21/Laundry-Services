@@ -6,25 +6,24 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  body.body-bg
-
-
+  body
     #main
       - if current_user.nil?
-        #flash
-          - flash.each do |type, message|
-            - if type == 'notice'
-              - msg_type = 'success'
-            - elsif type == 'alert'
-              -msg_type = 'warning'
-            - elsif type == 'error'
-              -msg_type = 'danger'
-            .alert.alert-dismissible.text-center data-role= 'alert' data-class= 'alert-#{msg_type}'
-              button.close data-dismiss= 'alert' data-type= 'button'
-                span data-aria-hidden= 'true' ×
-              = message.html_safe
-        #yield_height
-          = yield
+        .body-bg
+          #flash
+            - flash.each do |type, message|
+              - if type == 'notice'
+                - msg_type = 'success'
+              - elsif type == 'alert'
+                -msg_type = 'warning'
+              - elsif type == 'error'
+                -msg_type = 'danger'
+              .alert.alert-dismissible.text-center data-role= 'alert' data-class= 'alert-#{msg_type}'
+                button.close data-dismiss= 'alert' data-type= 'button'
+                  span data-aria-hidden= 'true' ×
+                = message.html_safe
+          #yield_height
+            = yield
       - else
         = render partial: 'layouts/header'
         .row.white-bg

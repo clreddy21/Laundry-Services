@@ -1,50 +1,59 @@
-table#customers
-  caption
-    | List of Customers
-  thead
-    tr
-      th
-        | Name
-      th
-        | Mobile
-      th
-        | Email
-      th
-        | Details
-  tbody
-    - @customers.each do |customer|
-      tr
-        td
-          = customer.full_name
-        td
-          = customer.mobile
-        td
-          = customer.email
-        td
-          a href=admin_customer_path(customer) Details
-
-/!
-  h1
-    = 'List of customers'
-  - @customers.each do |customer|
-    .col-md-offset-1.col-md-5.center
-      .player-div
-        a href=admin_customer_path(customer)
-          .row
-            .col-md-4
-              = "Name"
-            .col-md-8
-              = customer.full_name
-          .row
-            .col-md-4
-              = "Mobile"
-            .col-md-8
-              = customer.mobile
-          .row
-            .col-md-4
-              = "Email"
-            .col-md-8
-              = customer.email
 .row
-  .col-md-4
+  .col-md-10
+  .col-md-2.m-t-20
     = link_to 'Back', root_path, class: 'btn btn-info'
+.row
+  .col-md-1
+  .col-md-10
+    table#customers
+      caption
+        | List of Customers
+      thead
+        tr
+          th
+            | Name
+          th
+            | Mobile
+          th
+            | Email
+          th
+            | Reg Date
+          th
+            | Last order date
+          th
+            | Wallet Balance
+          th
+            | Completed Orders
+          th
+            | Current Orders
+          th
+            | Details
+      tbody.text-center
+        - @customers.each do |customer|
+          tr
+            td
+              = customer.full_name
+            td
+              = customer.mobile
+            td
+              = customer.email
+            td
+              = customer.created_at.strftime('%d/%m/%y')
+            td
+              - if customer.orders.blank?
+                = "No orders yet."
+              - else
+                = customer.orders.last.created_at.strftime('%d/%m/%y')
+            td
+              a href=admin_wallet_path(customer)
+                = number_to_indian_currency(customer.wallet.amount)
+            td
+              a href='#'
+                = customer.orders.where(status_id: 6).count
+            td
+              a href='#'
+                = customer.orders.where.not(status_id: 6).count
+            td
+              a href=admin_customer_path(customer) Details
+
+  .col-md-1

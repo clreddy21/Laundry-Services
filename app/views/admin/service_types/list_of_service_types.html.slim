@@ -1,23 +1,51 @@
+.row.m-t-20
+  .col-md-offset-1.col-md-3
+    h3
+      | List of Service Types
+  .col-md-offset-4.col-md-2
+    = link_to 'Add New Service Type', new_admin_service_type_path, class: 'btn btn-info'
+  .col-md-2
+    = link_to 'Back', root_path, class: 'btn btn-info'
 .row
-  .section.p-t-0
-    .container
-      .section.p-t-0
-        .container
-          .row
-            .col-sm-8
-              .row
-                .col-md-7
-                  h3 List of Service Types
-                .col-md-5.m-t-25
-                  = link_to 'New Service Type', new_admin_service_type_path, class: 'btn btn-info'
-              table.table
-                thead
-                  tr
-                    th Item Name
-                tbody
-                  - @service_types.each do |service_type|
-                    tr
-                      td
-                        = service_type.name
-                      td
-                        = link_to 'Edit Service Type', edit_admin_service_type_path(service_type), class: 'btn btn-info'
+  .col-md-3
+  .col-md-6
+    table#customers
+      caption
+        | List of Service Types
+      thead
+        tr
+          th
+            | Name
+          th
+            | Edit
+      tbody.text-center
+        - @service_types.each do |service_type|
+          tr
+            td
+              = service_type.name
+            td
+              = link_to 'Edit Service Type', edit_admin_service_type_path(service_type), class: 'btn btn-info'
+  .col-md-3
+/.row
+/  .section.p-t-0
+/    .container
+/      .section.p-t-0
+/        .container
+/          .row
+/            .col-sm-8
+/              .row
+/                .col-md-7
+/                  h3 List of Service Types
+/                .col-md-5.m-t-25
+/                  = link_to 'New Service Type', new_admin_service_type_path, class: 'btn btn-info'
+/              table.table
+/                thead
+/                  tr
+/                    th Item Name
+/                tbody
+/                  - @service_types.each do |service_type|
+/                    tr
+/                      td
+/                        = service_type.name
+/                      td
+/                        = link_to 'Edit Service Type', edit_admin_service_type_path(service_type), class: 'btn btn-info'

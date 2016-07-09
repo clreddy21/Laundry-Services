@@ -91,3 +91,19 @@
     margin-bottom: 10vh !important;
 }
 
+.dataTable{
+    border: 1px solid #111;
+    /*padding: 5px !important;*/
+}
+
+td, th{
+    border: 1px solid #111;
+}
+
+input{
+    height: 30px !important;
+}
+
+.container-fluid{
+    padding: 0px !important;
+}

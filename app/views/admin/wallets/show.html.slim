@@ -1,0 +1,60 @@
+.row
+  .col-md-1
+  .col-md-10
+      .row
+        .col-md-4
+          .col-md-offset-4.col-md-2
+            = "Name"
+          .col-md-6
+            = @user.full_name
+        .col-md-4
+          .col-md-offset-4.col-md-2
+            = "Type"
+          .col-md-6
+            = @user.type
+        .col-md-4
+          .col-md-offset-2.col-md-5
+            = "Wallet Balance"
+          .col-md-5
+            = @user.wallet.amount
+
+
+  .col-md-1.m-t-20
+    /= link_to 'Back', root_path, class: 'btn btn-info'
+.row
+  .col-md-1
+  .col-md-10
+    table#customers
+      caption
+        | Transaction History
+      thead
+        tr
+          th
+            | Transaction Type
+          th
+            | Remarks
+          th
+            | Mode
+          th
+            | Amount
+          th
+            | Wallet Balance
+          th
+            | Date
+      tbody.text-center
+        - @transactions.each do |transaction|
+          tr
+            td
+              = transaction.type
+            td
+              = transaction.remarks
+            td
+              = transaction.mode
+            td
+              = transaction.amount
+            td
+              = transaction.balance
+            td
+              = transaction.created_at.strftime('%d/%m/%y')
+
+  .col-md-1

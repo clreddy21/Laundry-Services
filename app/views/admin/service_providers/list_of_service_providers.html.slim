@@ -1,31 +1,94 @@
-h1
-  = 'List of service providers'
-
-- @service_providers.each do |service_provider|
-  .col-md-offset-1.col-md-5.center
-    .player-div
-      a href=admin_service_provider_path(service_provider)
-        .row
-          .col-md-4
-            = "Name"
-          .col-md-8
-            = service_provider.full_name
-        .row
-          .col-md-4
-            = "Mobile"
-          .col-md-8
-            = service_provider.mobile
-        .row
-          .col-md-4
-            = "Email"
-          .col-md-8
-            = service_provider.email
-        .row
-          .col-md-4
-            = "Average Review"
-          .col-md-8
-            = service_provider.average_review
-
-.row
-  .col-md-4
+.row.m-t-20
+  .col-md-offset-1.col-md-3
+    h3
+      | List of Service Providers
+  .col-md-offset-4.col-md-2
+    = link_to 'Add New Service Provider', new_admin_service_provider_path, class: 'btn btn-info'
+  .col-md-2
     = link_to 'Back', root_path, class: 'btn btn-info'
+.row
+  .col-md-1
+  .col-md-10
+    table#customers
+      caption
+        | List of Service Providers
+      thead
+        tr
+          th
+            | Name
+          th
+            | Mobile
+          th
+            | Email
+          th
+            | Reg Date
+          th
+            | Last order date
+          th
+            | Generated Amount
+          th
+            | Completed Orders
+          th
+            | Current Orders
+          th
+            | Details
+      tbody.text-center
+        - @service_providers.each do |service_provider|
+          tr
+            td
+              = service_provider.full_name
+            td
+              = service_provider.mobile
+            td
+              = service_provider.email
+            td
+              = service_provider.created_at.strftime('%d/%m/%y')
+            td
+              - if service_provider.orders.blank?
+                = "No orders yet."
+              - else
+                = service_provider.orders.last.created_at.strftime('%d/%m/%y')
+            td
+              a href=admin_wallet_path(service_provider)
+                = number_to_indian_currency(service_provider.wallet.amount)
+            td
+              a href='#'
+                = service_provider.orders.where(status_id: 6).count
+            td
+              a href='#'
+                = service_provider.orders.where.not(status_id: 6).count
+            td
+              a href=admin_service_provider_path(service_provider) Details
+
+  .col-md-1
+/h1
+/  = 'List of service providers'
+/
+/- @service_providers.each do |service_provider|
+/  .col-md-offset-1.col-md-5.center
+/    .player-div
+/      a href=admin_service_provider_path(service_provider)
+/        .row
+/          .col-md-4
+/            = "Name"
+/          .col-md-8
+/            = service_provider.full_name
+/        .row
+/          .col-md-4
+/            = "Mobile"
+/          .col-md-8
+/            = service_provider.mobile
+/        .row
+/          .col-md-4
+/            = "Email"
+/          .col-md-8
+/            = service_provider.email
+/        .row
+/          .col-md-4
+/            = "Average Review"
+/          .col-md-8
+/            = service_provider.average_review
+/
+/.row
+/  .col-md-4
+/    = link_to 'Back', root_path, class: 'btn btn-info'

@@ -9,30 +9,29 @@
           span.icon-bar
           span.icon-bar
         a.navbar-brand[href="#"]
-          | Brand
+          | Laundry Services
       #navbar-collapse-2.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
           li
-            a[href="#"]
-              | Home
+            a[href=admin_orders_path]
+              | Orders
           li
-            a[href="#"]
-              | About
+            a[href=list_of_admin_customers_path]
+              | Customers
           li
-            a[href="#"]
-              | Services
+            a[href=list_of_admin_service_providers_path]
+              | Service Providers
           li
-            a[href="#"]
-              | Works
+            a[href=list_of_admin_logistics_path]
+              | Logistics
           li
-            a[href="#"]
-              | News
+            a[href=list_of_admin_items_path]
+              | Items
           li
-            a[href="#"]
-              | Contact
+            a[href=list_of_admin_service_types_path]
+              | Service Types
           li
-            a.btn.btn-default.btn-outline.btn-circle[data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2"]
-              | Sign in
+            = link_to "Sign out", destroy_user_session_path, :method => :delete
 /!
   #nav-collapse2.collapse.nav.navbar-nav.nav-collapse
     form.navbar-form.navbar-right.form-inline[role="form"]

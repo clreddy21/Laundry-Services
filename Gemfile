@@ -90,3 +90,7 @@ gem 'rails_autolink'
 
 #for datatables
 gem 'jquery-datatables-rails'
+
+#for turbolinks problem
+gem 'jquery-turbolinks'
+

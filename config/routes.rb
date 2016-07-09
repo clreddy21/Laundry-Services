@@ -47,6 +47,8 @@ Rails.application.routes.draw do
         get 'list_of_items', as: 'list_of'
       end
     end
+    resources :wallets, only: [:show]
+
   end
 
   resources :notifications, only: [:index]

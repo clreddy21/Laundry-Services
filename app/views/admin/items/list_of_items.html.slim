@@ -1,24 +1,52 @@
+.row.m-t-20
+  .col-md-offset-1.col-md-3
+    h3
+      | List of Items
+  .col-md-offset-4.col-md-2
+    = link_to 'Add New Iten', new_admin_item_path, class: 'btn btn-info'
+  .col-md-2
+    = link_to 'Back', root_path, class: 'btn btn-info'
 .row
-  .section.p-t-0
-    .container
-      .section.p-t-0
-        .container
-          .row
-            .col-sm-8
-              .row
-                .col-md-7
-                  h3 List of Items
-                .col-md-5.m-t-25
-                  = link_to 'Create New Item', new_admin_item_path, class: 'btn btn-info'
-              table.table
-                thead
-                  tr
-
-                    th Item Name
-                tbody
-                  - @items.each do |item|
-                    tr
-                      td
-                        = item.name
-                      td
-                        = link_to 'Edit Item', edit_admin_item_path(item), class: 'btn btn-info'
+  .col-md-3
+  .col-md-6
+    table#customers
+      caption
+        | List of Items
+      thead
+        tr
+          th
+            | Name
+          th
+            | Edit
+      tbody.text-center
+        - @items.each do |item|
+          tr
+            td
+              = item.name
+            td
+              = link_to 'Edit Item', edit_admin_item_path(item), class: 'btn btn-info'
+  .col-md-3
+/.row
+/  .section.p-t-0
+/    .container
+/      .section.p-t-0
+/        .container
+/          .row
+/            .col-sm-8
+/              .row
+/                .col-md-7
+/                  h3 List of Items
+/                .col-md-5.m-t-25
+/                  = link_to 'Create New Item', new_admin_item_path, class: 'btn btn-info'
+/              table.table
+/                thead
+/                  tr
+/
+/                    th Item Name
+/                tbody
+/                  - @items.each do |item|
+/                    tr
+/                      td
+/                        = item.name
+/                      td
+/                        = link_to 'Edit Item', edit_admin_item_path(item), class: 'btn btn-info'

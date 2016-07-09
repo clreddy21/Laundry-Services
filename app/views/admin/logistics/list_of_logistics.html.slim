@@ -1,30 +1,93 @@
-.row
-  .col-md-8
-    h1
-      = 'List of Logistics'
-  .col-md-4.m-t-25
+.row.m-t-20
+  .col-md-offset-1.col-md-3
+    h3
+      | List of logistics
+  .col-md-offset-4.col-md-2
     = link_to 'Add New Logistic', new_admin_logistic_path, class: 'btn btn-info'
-
-- @logistics.each do |logistic|
-  .col-md-offset-1.col-md-5.center
-    .player-div
-      a href=admin_logistic_path(logistic)
-        .row
-          .col-md-4
-            = "Name"
-          .col-md-8
-            = logistic.full_name
-        .row
-          .col-md-4
-            = "Mobile"
-          .col-md-8
-            = logistic.mobile
-        .row
-          .col-md-4
-            = "Email"
-          .col-md-8
-            = logistic.email
-
-.row
-  .col-md-4
+  .col-md-2
     = link_to 'Back', root_path, class: 'btn btn-info'
+.row
+  .col-md-1
+  .col-md-10
+    table#customers
+      caption
+        | List of Logistics
+      thead
+        tr
+          th
+            | Name
+          th
+            | Mobile
+          th
+            | Email
+          th
+            | Reg Date
+          th
+            | Last order date
+          th
+            | Generated Amount
+          th
+            | Completed Orders
+          th
+            | Current Orders
+          th
+            | Details
+      tbody.text-center
+        - @logistics.each do |logistic|
+          tr
+            td
+              = logistic.full_name
+            td
+              = logistic.mobile
+            td
+              = logistic.email
+            td
+              = logistic.created_at.strftime('%d/%m/%y')
+            td
+              - if logistic.orders.blank?
+                = "No orders yet."
+              - else
+                = logistic.orders.last.created_at.strftime('%d/%m/%y')
+            td
+              a href=admin_wallet_path(logistic)
+                = number_to_indian_currency(logistic.wallet.amount)
+            td
+              a href='#'
+                = logistic.orders.where(status_id: 6).count
+            td
+              a href='#'
+                = logistic.orders.where.not(status_id: 6).count
+            td
+              a href=admin_logistic_path(logistic) Details
+
+  .col-md-1
+/.row
+/  .col-md-8
+/    h1
+/      = 'List of Logistics'
+/  .col-md-4.m-t-25
+/    = link_to 'Add New Logistic', new_admin_logistic_path, class: 'btn btn-info'
+/
+/- @logistics.each do |logistic|
+/  .col-md-offset-1.col-md-5.center
+/    .player-div
+/      a href=admin_logistic_path(logistic)
+/        .row
+/          .col-md-4
+/            = "Name"
+/          .col-md-8
+/            = logistic.full_name
+/        .row
+/          .col-md-4
+/            = "Mobile"
+/          .col-md-8
+/            = logistic.mobile
+/        .row
+/          .col-md-4
+/            = "Email"
+/          .col-md-8
+/            = logistic.email
+/
+/.row
+/  .col-md-4
+/    = link_to 'Back', root_path, class: 'btn btn-info'
