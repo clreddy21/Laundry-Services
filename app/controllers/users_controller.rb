@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def change_status
     # raise params.inspect
-    user = User.find_by(params[:user_id])
+    user = User.find_by(id: params[:user_id])
     if params[:status] == 'Blacklist'
       user.update(status: 'balcklisted')
     elsif params[:status] == 'Suspend'
