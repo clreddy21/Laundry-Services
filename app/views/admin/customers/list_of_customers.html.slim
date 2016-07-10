@@ -27,6 +27,10 @@
           th
             | Current Orders
           th
+            | Status
+          th
+            | Change Status
+          th
             | Details
       tbody.text-center
         - @customers.each do |customer|
@@ -53,6 +57,16 @@
             td
               a href='#'
                 = customer.orders.where.not(status_id: 6).count
+            td
+              /- raise customer.status
+              = customer.status.capitalize
+            td
+              = link_to "#{root_url}users/#{customer.id}/change_status/#{alternate_statuses(customer)[0]}", method: 'put'
+                = alternate_statuses(customer)[0]
+              = '/'
+              = link_to "#{root_url}users/#{customer.id}/change_status/#{alternate_statuses(customer)[1]}", method: 'put'
+                = alternate_statuses(customer)[1]
+
             td
               a href=admin_customer_path(customer) Details
 

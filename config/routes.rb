@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
+
+  resources :users do
+    put '/change_status/:status' => 'users#change_status', as: 'change_status'
+  end
+
   # Configuring routes under Admin namespace
   namespace :admin do
     resources :orders, path: '' do
@@ -22,6 +27,7 @@ Rails.application.routes.draw do
     resources :customers do
       member do
         put 'add_funds_to_wallet', as: 'add_funds'
+        # put 'change_status/:status'
       end
       collection do
         get 'list_of_customers', as: 'list_of'
