@@ -45,10 +45,10 @@ module Users
 						otp: otp,
 						latitude: params[:latitude],
 						longitude: params[:longitude],
-						gcm_id: params[:device_id]
+						gcm_id: params[:device_id],
+				    status: 'active'
 				    # description:params[:description],
 				    # avatar:params[:avatar],
-				    status: 'active'
 				  }).save(:validate => false)
 
 					user = User.find_by(:email => params[:email])
