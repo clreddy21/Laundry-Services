@@ -31,6 +31,10 @@
           th
             | Current Orders
           th
+            | Status
+          th
+            | Change Status
+          th
             | Details
       tbody.text-center
         - @logistics.each do |logistic|
@@ -57,6 +61,14 @@
             td
               a href='#'
                 = logistic.orders.where.not(status_id: 6).count
+            td
+              = logistic.status.capitalize
+            td
+              = link_to "#{root_url}users/#{logistic.id}/change_status/#{alternate_statuses(logistic)[0]}", method: 'put'
+                = alternate_statuses(logistic)[0]
+              = '/'
+              = link_to "#{root_url}users/#{logistic.id}/change_status/#{alternate_statuses(logistic)[1]}", method: 'put'
+                = alternate_statuses(logistic)[1]
             td
               a href=admin_logistic_path(logistic) Details
 
