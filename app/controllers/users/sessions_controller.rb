@@ -25,7 +25,7 @@ before_action :check_if_admin, only: [:create]
   # end
 
   def check_if_admin
-    user = User.find_by(email: params[:user][:email])
+    user = User.find_by(email: params[:user][:login])
 
     if user.nil?
       redirect_to :back, notice: 'This email is not registered with us. Please correct and try again.'
