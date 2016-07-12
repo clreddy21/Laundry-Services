@@ -112,6 +112,23 @@ module Customers
       end
     end
 
+    resource :get_order_item_comments do
+      desc 'List of comments for order item'
+      params do
+        requires :order_item_id, type:Integer
+  	  end
+
+      get do
+      	order_item = OrderItem.find_by(id: params[:order_item_id])
+        if order_item.nil?
+          {:message => 'Invalid order item id', :success => false}
+        else
+          comments = order_item.order_comments.pluck(:body)
+          {comments: comments, success: true}
+        end
+      end
+    end
+
     resource :order_details do
       desc 'Order Details'
       params do
