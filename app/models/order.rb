@@ -13,6 +13,8 @@ class Order < ActiveRecord::Base
   delegate :from_time, to: :schedule, prefix: true
   delegate :mode, to: :payment, prefix: true
 
+	after_create :add_reference_id
+
   def self.without_logistic
     self.where(logistic_id: nil).where.not(status_id: 7)
   end
@@ -184,5 +186,12 @@ class Order < ActiveRecord::Base
 	def add_comment(comment, commenter)
 		self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
 	end
+
+
+	def add_reference_id
+		reference_id = self.id + 1000000000
+		self.update(reference_id: reference_id)
+	end
+
 
 end

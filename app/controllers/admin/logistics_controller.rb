@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class Admin::LogisticsController < ApplicationController
   before_action :authenticate_user!
 
@@ -19,8 +21,11 @@ class Admin::LogisticsController < ApplicationController
   end
 
   def create
-    logistic = Logistic.create(logistic_params)
+    password = 	SecureRandom.hex(3)
+    logistic = Logistic.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email],
+                               mobile: params[:mobile], password: password, status: 'active')
     if logistic.save!
+      Address.create(address: params[:address], addressable: logistic)
       redirect_to list_of_admin_logistics_path, notice: 'Logistic added successfully.'
     else
       redirect_to new_admin_logistic_path, notice: 'Failed to add Logistic, please try again.'

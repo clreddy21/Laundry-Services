@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_many :transactions
 
   after_create :send_otp_to_user, :create_wallet
+  after_create :add_reference_id
 
 
   reverse_geocoded_by :latitude, :longitude
@@ -121,6 +122,11 @@ class User < ActiveRecord::Base
     elsif self.type == 'Logistic'
       gcm = GCM.new('AIzaSyB8s6F8MH27AFDBOLK99-3zo8Ed3I8FTc8')
     end
+  end
+
+  def add_reference_id
+    reference_id = self.id + 1000000000
+    self.update(reference_id: reference_id)
   end
 
   def create_wallet

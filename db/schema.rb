@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709185212) do
+ActiveRecord::Schema.define(version: 20160711172351) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160709185212) do
     t.integer  "service_provider_id"
     t.integer  "item_id"
     t.integer  "service_type_id"
-    t.float    "price"
+    t.integer  "price"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -86,10 +86,12 @@ ActiveRecord::Schema.define(version: 20160709185212) do
     t.float    "total_cost"
     t.float    "change_in_cost"
     t.string   "change_in_cost_reason"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.string   "comment",                  default: ""
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "service_provider_chooser"
     t.integer  "status_id",                default: 1
+    t.integer  "reference_id"
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id"
@@ -133,10 +135,10 @@ ActiveRecord::Schema.define(version: 20160709185212) do
   create_table "schedules", force: :cascade do |t|
     t.integer  "order_id"
     t.date     "date"
-    t.datetime "from_time"
     t.time     "to_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "from_time"
   end
 
   add_index "schedules", ["order_id"], name: "index_schedules_on_order_id"
@@ -195,6 +197,7 @@ ActiveRecord::Schema.define(version: 20160709185212) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "status"
+    t.integer  "reference_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

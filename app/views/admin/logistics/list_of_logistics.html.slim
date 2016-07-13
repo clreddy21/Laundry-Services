@@ -15,6 +15,10 @@
       thead
         tr
           th
+            | S No
+          th
+            | Reference Id
+          th
             | Name
           th
             | Mobile
@@ -37,8 +41,12 @@
           th
             | Details
       tbody.text-center
-        - @logistics.each do |logistic|
+        - @logistics.each_with_index do |logistic, i|
           tr
+            td
+              = i
+            td
+              = logistic.reference_id
             td
               = logistic.full_name
             td
