@@ -58,7 +58,7 @@ module Customers
             order_item = OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id],
               :quantity => item[:quantity], :amount => item[:amount])
             OrderComment.create(order_id: order.id, body: item[:comment], comment_by_type: commenter.type,
-            comment_by: commenter.id, order_item_id: order_item.id)
+            comment_by_id: commenter.id, order_item_id: order_item.id)
           end
 
 
@@ -148,7 +148,7 @@ module Customers
 
           order_item.order_comments.each do |comment|
             order_comments_hash << {:order_comment_id => comment.id, :comment_body => comment.body, :comment_by_type => comment.comment_by_type,
-              :comment_by_id => comment.comment_by, :comment_by_name => User.find(comment.comment_by).full_name}
+              :comment_by_id => comment.comment_by_id, :comment_by_name => User.find(comment.comment_by_id).full_name}
           end
           order_items_comments_hash << {order_item_hash: order_item_hash, order_comments_hash: order_comments_hash}
         end

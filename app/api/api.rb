@@ -3,6 +3,7 @@ class API < Grape::API
   version 'v1', using: :path
   mount Users::Login
   mount Users::Signup
+  mount Users::Orders
   mount Customers::ServiceProviders
   mount Customers::Orders
   mount ServiceProviderDetails::Orders

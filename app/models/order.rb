@@ -184,7 +184,7 @@ class Order < ActiveRecord::Base
 	end
 	
 	def add_comment(comment, commenter)
-		self.order_comments.create(comment_by: commenter.id, comment_by_type: commenter.type, body: comment)
+		self.order_comments.create(comment_by_id: commenter.id, comment_by_type: commenter.type, body: comment)
 	end
 
 
