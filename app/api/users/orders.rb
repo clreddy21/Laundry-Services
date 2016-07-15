@@ -16,7 +16,7 @@ module Users
 		    	comment = params[:comment]
 		    	order_item = OrderItem.includes(:order).find_by(id: params[:order_item_id])
 		    	
-		    	order_item.order_comments.create(order_id: order_item.order.id, body: comment,
+		    	order_item.order_comments.create(order_id: order_item.order_id, body: comment,
 		    	 comment_by_type: user.type, comment_by_id: user.id)
 
 		    	{success: true, message: 'Comment added successfully.'}
