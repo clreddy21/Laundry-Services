@@ -11,9 +11,9 @@ class ServiceProvider < User
     {orders_count: orders_count, total_cost: total_cost}
   end
 
-  # def build_item_prices
-  #   raise self.id
-  # end
+  def build_item_prices
+    raise self.id
+  end
 
 
 end
