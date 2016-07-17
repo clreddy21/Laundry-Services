@@ -8,6 +8,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 # Use SCSS for stylesheets
+gem 'bootstrap-sass', github: 'twbs/bootstrap-sass', ref: 'bf9b497538b8c74e9cb29ba8a754184ebee499dd'
+
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -94,3 +96,7 @@ gem 'jquery-datatables-rails'
 #for turbolinks problem
 gem 'jquery-turbolinks'
 
+
+gem "font-awesome-rails"
+
+gem 'best_in_place', '~> 3.0.1'

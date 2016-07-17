@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715042111) do
+ActiveRecord::Schema.define(version: 20160716073320) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160715042111) do
     t.integer  "service_provider_id"
     t.integer  "item_id"
     t.integer  "service_type_id"
-    t.float    "price"
+    t.integer  "price"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -86,8 +86,9 @@ ActiveRecord::Schema.define(version: 20160715042111) do
     t.float    "total_cost"
     t.float    "change_in_cost"
     t.string   "change_in_cost_reason"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.string   "comment",                  default: ""
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "service_provider_chooser"
     t.integer  "status_id",                default: 1
     t.integer  "reference_id"
@@ -134,10 +135,10 @@ ActiveRecord::Schema.define(version: 20160715042111) do
   create_table "schedules", force: :cascade do |t|
     t.integer  "order_id"
     t.date     "date"
-    t.datetime "from_time"
     t.time     "to_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "from_time"
   end
 
   add_index "schedules", ["order_id"], name: "index_schedules_on_order_id"
@@ -197,6 +198,14 @@ ActiveRecord::Schema.define(version: 20160715042111) do
     t.string   "last_sign_in_ip"
     t.string   "status"
     t.integer  "reference_id"
+    t.integer  "experience"
+    t.string   "shop_name"
+    t.time     "open_time"
+    t.time     "close_time"
+    t.boolean  "is_open_on_sunday"
+    t.integer  "capacity"
+    t.integer  "max_workload"
+    t.boolean  "is_partner"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

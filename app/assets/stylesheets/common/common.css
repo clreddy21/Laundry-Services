@@ -107,3 +107,36 @@ input{
 .container-fluid{
     padding: 0px !important;
 }
+
+.m-t-minus-4{
+    margin-top: -4px !important;
+}
+
+.p-h-0{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+
+.right-inner-addon {
+    position: relative;
+}
+
+.right-inner-addon input{
+    padding-right: 30px;
+}
+
+.right-inner-addon i{
+
+    position:absolute;
+    /*text-indent: -15px;
+    bottom: -8px;
+    font-size: 1.3em;*/
+    right: 0px !important;
+    padding: 10px 10px !important;
+    margin-top: 0px !important;
+}
+
+.fa-calendar, .fa-clock-o{
+    cursor: pointer !important;
+}

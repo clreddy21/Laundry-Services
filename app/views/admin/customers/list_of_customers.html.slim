@@ -11,6 +11,8 @@
       thead
         tr
           th
+            | S No
+          th
             | Name
           th
             | Mobile
@@ -33,8 +35,10 @@
           th
             | Details
       tbody.text-center
-        - @customers.each do |customer|
+        - @customers.each_with_index do |customer, i|
           tr
+            td
+              = i + 1
             td
               = customer.full_name
             td

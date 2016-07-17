@@ -15,6 +15,10 @@
       thead
         tr
           th
+            | S No
+          th
+            | Reference Id
+          th
             | Name
           th
             | Mobile
@@ -37,8 +41,12 @@
           th
             | Details
       tbody.text-center
-        - @service_providers.each do |service_provider|
+        - @service_providers.each_with_index do |service_provider, i|
           tr
+            td
+              = i + 1
+            td
+              = service_provider.reference_id
             td
               = service_provider.full_name
             td

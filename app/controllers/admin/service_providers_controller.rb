@@ -20,8 +20,10 @@ class Admin::ServiceProvidersController < ApplicationController
   end
 
   def create
+    # raise params.inspect
     service_provider = ServiceProvider.create(service_provider_params)
     if service_provider.save!
+      Address.create(address: params[:service_provider][:address], :addressable  => service_provider)
       redirect_to list_of_admin_service_providers_path, notice: 'Service Provider added successfully.'
     else
       redirect_to new_admin_service_provider_path, notice: 'Failed to add Service Provider, please try again.'
@@ -40,7 +42,8 @@ class Admin::ServiceProvidersController < ApplicationController
 
   def service_provider_params
     params.require(:service_provider).permit(:first_name, :last_name, :email, :mobile, :average_review,
-     :reviews_count, :avatar).merge(password: 'testtest1', :password_confirmation => 'testtest1')
+     :reviews_count, :avatar, :shop_name, :experience, :capacity, :max_workload, :open_time, :close_time,
+     :is_partner, :is_open_on_sunday).merge(password: 'testtest1', :password_confirmation => 'testtest1', status: 'active')
   end
 
 end

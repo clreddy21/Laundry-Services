@@ -6,8 +6,8 @@ Rails.application.routes.draw do
       sessions: 'users/sessions', registrations: 'users/registrations'
     }
   end
-  get 'welcome/index'
-  root 'welcome#index'
+  # get 'welcome/index'
+  root 'admin/orders#index'
 
 
   resources :users do
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   # Configuring routes under Admin namespace
+  resources :item_prices
   namespace :admin do
     resources :orders, path: '' do
       collection do

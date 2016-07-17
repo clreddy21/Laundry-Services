@@ -13,7 +13,9 @@
       thead
         tr
           th
-            | Order Id
+            | S No
+          th
+            | Reference Id
           th
             | Customer
           th
@@ -33,10 +35,12 @@
           th
             | Details
       tbody.text-center
-        - @orders.each do |order|
+        - @orders.each_with_index do |order, i|
           tr
             td
-              = order.id
+              = i + 1
+            td
+              = order.reference_id
             td
               = order.customer.full_name
             td

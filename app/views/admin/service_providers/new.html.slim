@@ -1,10 +1,92 @@
-= form_for @service_provider, url: admin_service_providers_path do |f|
-  = f.text_field :first_name, placeholder: 'First Name', required: true
-  br
-  = f.text_field :last_name, placeholder: 'Last Name', required: true
-  br
-  = f.email_field :email, placeholder: 'Email', required: true
-  br
-  = f.text_field :mobile, placeholder: 'Mobile', required: true
-  br
-  = f.submit 'Create'
+.row.center.m-t-60
+  .col-md-2
+  .col-md-8
+    = form_for @service_provider, url: admin_service_providers_path do |f|
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label :first_name, :class => "control-label"
+        .col-sm-7
+          = f.text_field :first_name, :class => "form-control", placeholder: "First Name", required: true
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label:last_name, :class => "control-label"
+        .col-sm-7
+          = f.text_field:last_name, :class => "form-control", placeholder: "Last Name"
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label:shop_name, :class => "control-label"
+        .col-sm-7
+          = f.text_field:shop_name, :class => "form-control", placeholder: "Shop Name"
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label:email, :class => "control-label"
+        .col-sm-7
+          = f.text_field:email, :class => "form-control", placeholder: "Email"
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label:mobile, :class => "control-label"
+        .col-sm-7
+          = f.text_field:mobile, :class => "form-control", placeholder: "Mobile Number", required: true
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label:'Experience(in years)', :class => "control-label"
+        .col-sm-7
+          = f.number_field:experience, :class => "form-control", placeholder: "Experience(in years)", min: 0, max: 50, required: true
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label:'Capacity(number of employees)', :class => "control-label"
+        .col-sm-7
+          = f.number_field:capacity, :class => "form-control", placeholder: "Capacity", min: 0, max: 50, required: true
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label:'Max Workload(number of pairs)', :class => "control-label"
+        .col-sm-7
+          = f.number_field:max_workload, :class => "form-control", placeholder: "Max Workload", min: 0, max: 50, required: true
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label:address, :class => "control-label"
+        .col-sm-7
+          = f.text_field:address, :class => "form-control", placeholder: "Address"
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label:'Open Timings', :class => "control-label"
+        .col-sm-7
+          .col-sm-6.p-h-0
+            .col-sm-4.p-h-0
+              | Open Time
+            .col-sm-7.p-h-0.right-inner-addon.date
+              i.fa.fa-clock-o
+              = f.text_field:open_time, :class => "form-control", placeholder: "Open Time", id: "open-time", required: true
+          .col-sm-6.p-h-0
+            .col-sm-4.p-h-0
+              | Close Time
+            .col-sm-7.p-h-0.right-inner-addon.date
+              i.fa.fa-clock-o
+              = f.text_field:close_time, :class => "form-control", placeholder: "Close Time", id: "close-time", required: true
+      .form-group.row
+        .col-sm-1
+        .col-sm-3.m-t-5
+          = f.label:'Extras', :class => "control-label"
+        .col-sm-7
+          .col-sm-6
+            = f.label :is_partner, class: "checkbox" do
+              = f.check_box :is_partner, class: "checkbox m-t-minus-4"
+              = "Is Partner"
+          .col-sm-6
+            = f.label :is_open_on_sunday, :class => "checkbox" do
+              = f.check_box :is_open_on_sunday, :class => "checkbox m-t-minus-4"
+              = "Is Open on sunday"
+      .form-group.row
+        .col-md-offset-6.col-md-3
+          = f.submit 'Save', class: 'btn btn-info'
+  .col-md-2
