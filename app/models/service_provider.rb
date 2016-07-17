@@ -10,10 +10,10 @@ class ServiceProvider < User
     total_cost = self.orders.pluck(:total_cost).sum
     {orders_count: orders_count, total_cost: total_cost}
   end
-
-  def build_item_prices
-    raise self.id
-  end
+  #
+  # def build_item_prices
+  #   raise self.id
+  # end
 
 
 end
