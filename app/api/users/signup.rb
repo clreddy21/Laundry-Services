@@ -57,6 +57,9 @@ module Users
 						Wallet.create(amount: 0.0, user_id: user.id)
 						gcm = GCM.new('AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM')
 						registration_id = params[:device_id]
+						if user.type == 'ServiceProvider'
+							user.build_item_prices
+						end
 						options = {data: {score: '123'}, collapse_key: 'updated_score'}
 						response = gcm.send(registration_id, options)
 						message = 'Registration successful.'

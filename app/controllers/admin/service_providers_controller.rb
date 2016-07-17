@@ -24,6 +24,7 @@ class Admin::ServiceProvidersController < ApplicationController
     service_provider = ServiceProvider.create(service_provider_params)
     if service_provider.save!
       Address.create(address: params[:service_provider][:address], :addressable  => service_provider)
+      service_provider.build_item_prices
       redirect_to list_of_admin_service_providers_path, notice: 'Service Provider added successfully.'
     else
       redirect_to new_admin_service_provider_path, notice: 'Failed to add Service Provider, please try again.'
