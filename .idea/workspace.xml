@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added lot of things i dont remember the list">
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\.sprockets-manifest-4d794354d1e32e54ab35bc6e757f558f.json" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\FontAwesome-7961070f76a33c1307de19ce2a93dc2b26d6747fa759aee5045118644c758acc.otf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\FontAwesome-7961070f76a33c1307de19ce2a93dc2b26d6747fa759aee5045118644c758acc.otf.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-25513953c0644335839036da54a1b293a355dfcdb70458a922af98f694627be8.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-25513953c0644335839036da54a1b293a355dfcdb70458a922af98f694627be8.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-33091a743f606376ff32e703869dc7987a2efed6f6dc763d1aebe8870e41e4da.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-33091a743f606376ff32e703869dc7987a2efed6f6dc763d1aebe8870e41e4da.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-3506dba9fbc4c7b9a8d98b0bc3d4ad69706f3802e0e68d3cad1257243dca1e69.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-3506dba9fbc4c7b9a8d98b0bc3d4ad69706f3802e0e68d3cad1257243dca1e69.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-45d78ffbffb7d874236595a10c7034e0e27cd56e6b716f1c497ba2c227781fdc.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-45d78ffbffb7d874236595a10c7034e0e27cd56e6b716f1c497ba2c227781fdc.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-4d67df41a8b7c5fe89c51e19fa70b59ceeabdffe7049123b612cb3184334360c.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-4d67df41a8b7c5fe89c51e19fa70b59ceeabdffe7049123b612cb3184334360c.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-701f903de18d57b1aefdb921a2fd1275222ae93299e55f04467c3b66f6a95904.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-701f903de18d57b1aefdb921a2fd1275222ae93299e55f04467c3b66f6a95904.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-bb79160d3e965248c29a11ad2dbf83d5c07a1bbc370673f64edbd91cfa288331.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-bb79160d3e965248c29a11ad2dbf83d5c07a1bbc370673f64edbd91cfa288331.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-c65643d28484468b38d42bef54f2e24d9c287c47db66864b02b87ae4176df5ba.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-c65643d28484468b38d42bef54f2e24d9c287c47db66864b02b87ae4176df5ba.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-cde5427d7c56781d5c166d65976eeebd2f98491d4e4b1196139423da64a395e9.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-cde5427d7c56781d5c166d65976eeebd2f98491d4e4b1196139423da64a395e9.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-f241dcc23ea5271200bcccb2e0f8055eafd20b81687555e3df28f95e31a9c0a9.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\application-f241dcc23ea5271200bcccb2e0f8055eafd20b81687555e3df28f95e31a9c0a9.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\bootstrap\glyphicons-halflings-regular-13634da87d9e23f8c3ed9108ce1724d183a39ad072e73e1b3d8cbf646d2d0407.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\bootstrap\glyphicons-halflings-regular-13634da87d9e23f8c3ed9108ce1724d183a39ad072e73e1b3d8cbf646d2d0407.eot.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\bootstrap\glyphicons-halflings-regular-42f60659d265c1a3c30f9fa42abcbb56bd4a53af4d83d316d6dd7a36903c43e5.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\bootstrap\glyphicons-halflings-regular-42f60659d265c1a3c30f9fa42abcbb56bd4a53af4d83d316d6dd7a36903c43e5.svg.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\bootstrap\glyphicons-halflings-regular-a26394f7ede100ca118eff2eda08596275a9839b959c226e15439557a5a80742.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\bootstrap\glyphicons-halflings-regular-e395044093757d82afcb138957d06a1ea9361bdcf0b442d06a18a8051af57456.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\bootstrap\glyphicons-halflings-regular-e395044093757d82afcb138957d06a1ea9361bdcf0b442d06a18a8051af57456.ttf.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\bootstrap\glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\dataTables\sort_asc-ee6010bb0a8d17e58307136a0fbf0b196d949ab6c50eb66d1ff8f0a7d2a4d48b.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\dataTables\sort_asc_disabled-50f0e16f8289b1f09eb0d0494d0eee7ae4717e857a4ed77997bb06cefecb2528.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\dataTables\sort_both-624f0a471a2535c4754e1f6974b0e64ee70d6907738346e2a11d0bff20258b8c.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\dataTables\sort_desc-26da8e7eaf746a08dec2928977be21aa67212484540a12042b86aa2d904b80e8.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\dataTables\sort_desc_disabled-3450cc1e5a1585690226a713a726753b3fa2d177e41338a36e0a3188e3f02663.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\fontawesome-webfont-1b7f3de49d68b01f415574ebb82e6110a1d09cda2071ad8451bdb5124131a292.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\fontawesome-webfont-1b7f3de49d68b01f415574ebb82e6110a1d09cda2071ad8451bdb5124131a292.ttf.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\fontawesome-webfont-3c4a1bb7ce3234407184f0d80cc4dec075e4ad616b44dcc5778e1cfb1bc24019.woff2" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\fontawesome-webfont-7414288c272f6cc10304aa18e89bf24fb30f40afd644623f425c2c3d71fbe06a.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\fontawesome-webfont-7414288c272f6cc10304aa18e89bf24fb30f40afd644623f425c2c3d71fbe06a.svg.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\fontawesome-webfont-a7c7e4930090e038a280fd61d88f0dc03dad4aeaedbd8c9be3dd9aa4c3b6f8d1.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\fontawesome-webfont-d4f5a99224154f2a808e42a441ddc9248ffe78b7a4083684ce159270b30b912a.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\fontawesome-webfont-d4f5a99224154f2a808e42a441ddc9248ffe78b7a4083684ce159270b30b912a.eot.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\glyphicons-halflings-regular-13634da87d9e23f8c3ed9108ce1724d183a39ad072e73e1b3d8cbf646d2d0407.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\glyphicons-halflings-regular-13634da87d9e23f8c3ed9108ce1724d183a39ad072e73e1b3d8cbf646d2d0407.eot.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\glyphicons-halflings-regular-42f60659d265c1a3c30f9fa42abcbb56bd4a53af4d83d316d6dd7a36903c43e5.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\glyphicons-halflings-regular-42f60659d265c1a3c30f9fa42abcbb56bd4a53af4d83d316d6dd7a36903c43e5.svg.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\glyphicons-halflings-regular-a26394f7ede100ca118eff2eda08596275a9839b959c226e15439557a5a80742.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\glyphicons-halflings-regular-e395044093757d82afcb138957d06a1ea9361bdcf0b442d06a18a8051af57456.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\glyphicons-halflings-regular-e395044093757d82afcb138957d06a1ea9361bdcf0b442d06a18a8051af57456.ttf.gz" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\home_bg-e48ac3d684b232ba862d6f5afd71e4fcecaed1d577d47d9f6364d206ff2e61e3.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sites\Freelance\laundry_services\public\assets\ok-b99bfa11eade140560d80c679f1742fbd4c284bfdc2b633cbdddd2c1474b1824.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/common.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/service_provider.rb" afterPath="$PROJECT_DIR$/app/models/service_provider.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -58,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service_provider.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="service_provider.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/service_provider.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16088328" vertical-offset="0" max-vertical-offset="634">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -98,11 +154,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.1340694" vertical-offset="0" max-vertical-offset="634">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,10 +168,8 @@
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -184,11 +238,11 @@
         <option value="$PROJECT_DIR$/app/views/admin/item_prices/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/item_prices/index.html.slim" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/common.js" />
         <option value="$PROJECT_DIR$/app/controllers/item_prices_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/common/common.js" />
         <option value="$PROJECT_DIR$/app/models/service_provider.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/common.js" />
       </list>
     </option>
   </component>
@@ -1209,12 +1263,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00074" summary="minor refactoring&#10;">
-      <created>1467302329781</created>
-      <option name="number" value="00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1467302329789</updated>
-    </task>
     <task id="LOCAL-00075" summary="minor refactoring&#10;">
       <created>1467304189636</created>
       <option name="number" value="00075" />
@@ -1503,7 +1551,13 @@
       <option name="project" value="LOCAL" />
       <updated>1468722933087</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="minor refactoring">
+      <created>1468725939498</created>
+      <option name="number" value="00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1468725939498</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1567,12 +1621,12 @@
     <MESSAGE value="added pagination functionality for notifications" />
     <MESSAGE value="added datatables to customers index page" />
     <MESSAGE value="added table ui to few pages" />
-    <MESSAGE value="minor refactoring" />
     <MESSAGE value="added status to users" />
     <MESSAGE value="minor refactroing" />
     <MESSAGE value="ADDED SERVICE TO GET COMMENTS RELATED TO ORDER ITEM" />
     <MESSAGE value="added lot of things i dont remember the list" />
-    <option name="LAST_COMMIT_MESSAGE" value="added lot of things i dont remember the list" />
+    <MESSAGE value="minor refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1910,36 +1964,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/common/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1962,8 +1990,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/service_provider.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16088328" vertical-offset="0" max-vertical-offset="634">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/common/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1340694" vertical-offset="0" max-vertical-offset="634">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>

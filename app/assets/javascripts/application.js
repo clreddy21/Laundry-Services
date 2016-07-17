@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require dataTables/jquery.dataTables
 //= require best_in_place
+//= require jquery_ujs
 //= require best_in_place.jquery-ui
+//= require dataTables/jquery.dataTables
 //= require turbolinks
 //= require jquery.turbolinks
 //= require_tree .
