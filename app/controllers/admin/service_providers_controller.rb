@@ -20,7 +20,7 @@ class Admin::ServiceProvidersController < ApplicationController
   end
 
   def create
-    # raise params.inspect
+
     service_provider = ServiceProvider.create(service_provider_params)
     if service_provider.save!
       Address.create(address: params[:service_provider][:address], :addressable  => service_provider)
