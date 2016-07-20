@@ -23,7 +23,7 @@ module Complaints
           complaint.create_reference_id
           Message.create(body: params[:message], user_id: user.id, messageable: complaint)
           {success: true, message: 'Complaint created and a Message added successfully to complaint.',
-           complaint_reference_id: complaint.reference_id, complaint_status: complaint.status}
+           complaint_reference_id: complaint.reference_id, complaint_id: complaint.id, complaint_status: complaint.status}
         end
       end
     end
