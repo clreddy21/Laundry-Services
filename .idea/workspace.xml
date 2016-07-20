@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added services for creating complaints and adding messages to them by different users">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/complaint_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/complaints.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/message_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/messages.yml" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/complaints/complaints.rb" afterPath="$PROJECT_DIR$/app/api/complaints/complaints.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -1213,12 +1209,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00080" summary="minor refactoring">
-      <created>1467311497087</created>
-      <option name="number" value="00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1467311497087</updated>
-    </task>
     <task id="LOCAL-00081" summary="minor refactoring">
       <created>1467312035441</created>
       <option name="number" value="00081" />
@@ -1507,7 +1497,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469037782326</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="added services for creating complaints and adding messages to them by different users">
+      <created>1469037796141</created>
+      <option name="number" value="00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1469037796142</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="ToolWindowManager">
