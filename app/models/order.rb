@@ -7,7 +7,9 @@ class Order < ActiveRecord::Base
   has_one :payment
   has_one :schedule
   has_one :address, as: :addressable
-  delegate :address, to: :address, prefix: true
+	has_many :complaints
+
+	delegate :address, to: :address, prefix: true
   delegate :amount, :status, :mode, to: :payment, prefix: true
   delegate :date, to: :schedule, prefix: true
   delegate :from_time, to: :schedule, prefix: true

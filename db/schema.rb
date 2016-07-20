@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716073320) do
+ActiveRecord::Schema.define(version: 20160720153337) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20160716073320) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  create_table "complaints", force: :cascade do |t|
+    t.integer  "order_id"
+    t.string   "title"
+    t.string   "status"
+    t.integer  "reference_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "complaints", ["order_id"], name: "index_complaints_on_order_id"
 
   create_table "item_prices", force: :cascade do |t|
     t.integer  "service_provider_id"
@@ -40,6 +51,17 @@ ActiveRecord::Schema.define(version: 20160716073320) do
     t.datetime "updated_at",                null: false
     t.boolean  "is_active",  default: true
   end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "body"
+    t.integer  "messageable_id"
+    t.string   "messageable_type"
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "messages", ["messageable_type", "messageable_id"], name: "index_messages_on_messageable_type_and_messageable_id"
 
   create_table "notifications", force: :cascade do |t|
     t.string   "subject"

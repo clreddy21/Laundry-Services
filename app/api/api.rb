@@ -11,4 +11,5 @@ class API < Grape::API
   mount ServiceProviderDetails::Reviews
   mount ServiceProviderDetails::Wallets
   mount Logistics::Orders
+  mount Complaints::Complaints
 end

@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :refunds
   has_many :notifications
   has_many :transactions
+  has_many :messages
 
   after_create :send_otp_to_user, :create_wallet
   after_create :add_reference_id
