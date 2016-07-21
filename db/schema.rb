@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160720153337) do
     t.integer  "service_provider_id"
     t.integer  "item_id"
     t.integer  "service_type_id"
-    t.integer  "price"
+    t.float    "price"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -108,9 +108,8 @@ ActiveRecord::Schema.define(version: 20160720153337) do
     t.float    "total_cost"
     t.float    "change_in_cost"
     t.string   "change_in_cost_reason"
-    t.string   "comment",                  default: ""
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "service_provider_chooser"
     t.integer  "status_id",                default: 1
     t.integer  "reference_id"
@@ -157,10 +156,10 @@ ActiveRecord::Schema.define(version: 20160720153337) do
   create_table "schedules", force: :cascade do |t|
     t.integer  "order_id"
     t.date     "date"
+    t.datetime "from_time"
     t.time     "to_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "from_time"
   end
 
   add_index "schedules", ["order_id"], name: "index_schedules_on_order_id"
