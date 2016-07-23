@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/items/_edit_item.html.slim" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/service_types/_edit_service_type.html.slim" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/orders/_orders.html.slim" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added popups for item details edits&#10;added popups for service type details edits&#10;added list of orders tables for all users&#10;added list of order items in order show&#10;added item price last updated date in item prices list&#10;added mobile number while assigning sp or logistic">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -1209,12 +1206,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00084" summary="minor refactoring">
-      <created>1467439499138</created>
-      <option name="number" value="00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1467439499148</updated>
-    </task>
     <task id="LOCAL-00085" summary="minor refactoring">
       <created>1467450164366</created>
       <option name="number" value="00085" />
@@ -1503,7 +1494,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469266521186</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="added popups for item details edits&#10;added popups for service type details edits&#10;added list of orders tables for all users&#10;added list of order items in order show&#10;added item price last updated date in item prices list&#10;added mobile number while assigning sp or logistic">
+      <created>1469266560709</created>
+      <option name="number" value="00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1469266560709</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="ToolWindowManager">
