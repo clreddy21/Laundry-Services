@@ -29,4 +29,8 @@
               td
                 - @item_price = @admin_sp.item_prices.where(service_type_id: service_type.id, item_id: item.id).first
                 = best_in_place @item_price, :price
+                br
+                = " ("
+                = @item_price.updated_at.strftime('%d/%m/%y')
+                = ")"
   .col-md-3

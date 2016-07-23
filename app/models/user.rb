@@ -92,6 +92,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def assign_details
+    self.full_name + ' (' + self.mobile + ')'
+  end
+
   private
 
   def send_message(body)

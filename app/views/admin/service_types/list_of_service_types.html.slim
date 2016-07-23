@@ -16,18 +16,26 @@
       thead
         tr
           th
+            | S No
+          th
             | Name
           th
             | Edit
       tbody.text-center
-        - @service_types.each do |service_type|
+        - @service_types.each_with_index do |service_type, i|
           tr
+            td
+              = i + 1
             td
               = service_type.name
             td
-              = link_to 'Edit Service Type', edit_admin_service_type_path(service_type), class: 'btn btn-info'
+              a data-target="#edit_service_type_id_#{i}" data-toggle= "modal" class= "btn btn-info"
+                i.fa.fa-pencil-square-o.edit-address
+                = " Edit"
+              /= link_to 'Edit Service Type', edit_admin_service_type_path(service_type), class: 'btn btn-info'
   .col-md-3
   = render 'add_service_type'
+  = render 'edit_service_type'
 /.row
 /  .section.p-t-0
 /    .container

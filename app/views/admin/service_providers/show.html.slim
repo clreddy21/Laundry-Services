@@ -1,6 +1,7 @@
 .row
-  .col-md-11
-    .center
+  .col-md-1
+  .col-md-10
+    .row.center
       h2
         = "Service Provider Details"
     .row
@@ -38,63 +39,7 @@
         = "Total funds in wallet"
       .col-md-3
         = @service_provider.wallet.amount
+    .row
+      = render 'admin/orders/orders', orders: @orders
   .col-md-1.m-t-60
     = link_to 'Back', list_of_admin_service_providers_path, class: 'btn btn-info'
-    br
-    br
-    br
-    br
-h2.center
-  = "List of Orders"
-.row
-  - @service_provider.orders.each do |order|
-    a href=admin_order_path(order)
-      .col-md-offset-1.col-md-5.order_box
-        .row
-          .col-md-6
-            = "Customer:"
-          .col-md-6
-            = order.customer.full_name.capitalize
-          br
-        .row
-          .col-md-6
-            = "Service Provider:"
-          .col-md-6
-            - if order.service_provider
-              = order.service_provider.full_name.capitalize
-            - else
-              = "Not assignet yet"
-          br
-        .row
-          .col-md-6
-            = "Logistic:"
-          .col-md-6
-            - if order.logistic
-              = order.logistic.full_name.capitalize
-            - else
-              = "Not assigned yet"
-          br
-        .row
-          .col-md-6
-            = "Total Cost:"
-          .col-md-6
-            = order.total_cost
-          br
-        .row
-          .col-md-6
-            = "Service Provider Chooser"
-          .col-md-6
-            = order.service_provider_chooser.capitalize
-          br
-        .row
-          .col-md-6
-            = "Status:"
-          .col-md-6
-            = Status.find(order.status_id).name.capitalize
-          br
-        .row
-          .col-md-6
-            = "Number of Items:"
-          .col-md-6
-            = order.order_items.count
-          br

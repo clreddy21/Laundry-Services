@@ -1,6 +1,7 @@
 .row
-  .col-md-11
-    .center
+  .col-md-1
+  .col-md-9
+    .row.center
       h2
         = "Customer Details"
     .row
@@ -30,78 +31,29 @@
         = "Total funds in wallet"
       .col-md-3
         = @customer.wallet.amount
+
+
+    .row
+      h2.center
+        = "Add funds to customer"
+      .row
+        .center.m-t-60
+          = form_for @customer.wallet, url: add_funds_admin_customer_path(@customer), method: 'put' do |f|
+            .row
+              .col-md-offset-3.col-md-3
+                = f.label :amount, class: 'control-label'
+              .col-md-3
+                = f.number_field :amount, required: true, class: 'form-control'
+            .row
+              .col-md-offset-6.col-md-3
+                = f.submit 'Add Funds', class: 'btn btn-info'
+
+    .row
+
+      = render 'admin/orders/orders', orders: @customer.orders
   .col-md-1.m-t-60
     = link_to 'Back', list_of_admin_customers_path, class: 'btn btn-info'
     br
     br
     br
     br
-h2.center
-  = "Add funds to customer"
-.row
-  .center.m-t-60
-    = form_for @customer.wallet, url: add_funds_admin_customer_path(@customer), method: 'put' do |f|
-      .row
-        .col-md-offset-3.col-md-3
-          = f.label :amount, class: 'control-label'
-        .col-md-3
-          = f.number_field :amount, required: true, class: 'form-control'
-      .row
-        .col-md-offset-6.col-md-3
-          = f.submit 'Add Funds', class: 'btn btn-info'
-
-
-h2.center
-  = "List of Orders"
-.row
-  - @customer.orders.each do |order|
-    a href=admin_order_path(order)
-      .col-md-offset-1.col-md-5.order_box
-        .row
-          .col-md-6
-            = "Customer:"
-          .col-md-6
-            = order.customer.full_name.capitalize
-          br
-        .row
-          .col-md-6
-            = "Service Provider:"
-          .col-md-6
-            - if order.service_provider
-              = order.service_provider.full_name.capitalize
-            - else
-              = "Not assignet yet"
-          br
-        .row
-          .col-md-6
-            = "Logistic:"
-          .col-md-6
-            - if order.logistic
-              = order.logistic.full_name.capitalize
-            - else
-              = "Not assigned yet"
-          br
-        .row
-          .col-md-6
-            = "Total Cost:"
-          .col-md-6
-            = order.total_cost
-          br
-        .row
-          .col-md-6
-            = "Service Provider Chooser"
-          .col-md-6
-            = order.service_provider_chooser.capitalize
-          br
-        .row
-          .col-md-6
-            = "Status:"
-          .col-md-6
-            = Status.find(order.status_id).name.capitalize
-          br
-        .row
-          .col-md-6
-            = "Number of Items:"
-          .col-md-6
-            = order.order_items.count
-          br

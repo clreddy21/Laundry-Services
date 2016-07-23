@@ -16,3 +16,6 @@
  *= require_tree .
  *= require_tree ./common
  */
+body{
+    font-size: 12px !important;
+}
