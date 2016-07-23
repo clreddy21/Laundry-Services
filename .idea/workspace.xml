@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added popups for item details edits&#10;added popups for service type details edits&#10;added list of orders tables for all users&#10;added list of order items in order show&#10;added item price last updated date in item prices list&#10;added mobile number while assigning sp or logistic">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/orders/_orders.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/orders/_orders.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/common.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/customers/show.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/customers/show.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/logistics/show.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/logistics/show.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/service_providers/show.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/service_providers/show.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -1215,12 +1208,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00085" summary="minor refactoring">
-      <created>1467450164366</created>
-      <option name="number" value="00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1467450164366</updated>
-    </task>
     <task id="LOCAL-00086" summary="minor refactoring">
       <created>1467452488774</created>
       <option name="number" value="00086" />
@@ -1509,7 +1496,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469266560709</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="separated orders as completed orders and current orders for all users&#10;implemented double jquery datatables in single pages&#10;added few fields in list of service providers page&#10;minor refactoring in orders partial">
+      <created>1469272358431</created>
+      <option name="number" value="00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1469272358431</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1553,7 +1546,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="adding views for service provider details and orders" />
     <MESSAGE value="added address and lat longs for everyone" />
     <MESSAGE value="added notifications in high level" />
     <MESSAGE value="added forgot password" />
@@ -1578,7 +1570,8 @@
     <MESSAGE value="added services for creating complaints and adding messages to them by different users" />
     <MESSAGE value="minor refactoring" />
     <MESSAGE value="added popups for item details edits&#10;added popups for service type details edits&#10;added list of orders tables for all users&#10;added list of order items in order show&#10;added item price last updated date in item prices list&#10;added mobile number while assigning sp or logistic" />
-    <option name="LAST_COMMIT_MESSAGE" value="added popups for item details edits&#10;added popups for service type details edits&#10;added list of orders tables for all users&#10;added list of order items in order show&#10;added item price last updated date in item prices list&#10;added mobile number while assigning sp or logistic" />
+    <MESSAGE value="separated orders as completed orders and current orders for all users&#10;implemented double jquery datatables in single pages&#10;added few fields in list of service providers page&#10;minor refactoring in orders partial" />
+    <option name="LAST_COMMIT_MESSAGE" value="separated orders as completed orders and current orders for all users&#10;implemented double jquery datatables in single pages&#10;added few fields in list of service providers page&#10;minor refactoring in orders partial" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
