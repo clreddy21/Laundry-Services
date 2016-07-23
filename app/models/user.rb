@@ -96,6 +96,14 @@ class User < ActiveRecord::Base
     self.full_name + ' (' + self.mobile + ')'
   end
 
+  def completed_orders
+    self.orders.where(:status_id => [6, 7])
+  end
+
+  def current_orders
+    self.orders.where.not(:status_id => [6, 7])
+  end
+
   private
 
   def send_message(body)

@@ -31,8 +31,21 @@
         = "Total funds in wallet"
       .col-md-3
         = @customer.wallet.amount
+    .row
+      ul.nav.nav-tabs
+        li.active
+          a[data-toggle="tab" href="#current_orders"]
+            | Current Orders
+        li
+          a[data-toggle="tab" href="#completed_orders"]
+            | Completed Orders
 
-
+      .tab-content
+        #current_orders.tab-pane.fade.in.active
+          = render 'admin/orders/orders', orders: @customer.current_orders
+        #completed_orders.tab-pane.fade
+          = render 'admin/orders/orders', orders: @customer.completed_orders
+      /= render 'admin/orders/orders', orders: @customer.orders
     .row
       h2.center
         = "Add funds to customer"
@@ -45,15 +58,8 @@
               .col-md-3
                 = f.number_field :amount, required: true, class: 'form-control'
             .row
-              .col-md-offset-6.col-md-3
+              .col-md-offset-6.col-md-3.m-t-25
                 = f.submit 'Add Funds', class: 'btn btn-info'
 
-    .row
-
-      = render 'admin/orders/orders', orders: @customer.orders
   .col-md-1.m-t-60
     = link_to 'Back', list_of_admin_customers_path, class: 'btn btn-info'
-    br
-    br
-    br
-    br

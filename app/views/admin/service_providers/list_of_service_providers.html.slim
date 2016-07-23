@@ -7,8 +7,8 @@
   .col-md-2
     = link_to 'Back', root_path, class: 'btn btn-info'
 .row
-  .col-md-1
-  .col-md-10
+  /.col-md-1
+  .col-md-11
     table#customers
       caption
         | List of Service Providers
@@ -19,11 +19,17 @@
           th
             | Reference Id
           th
-            | Name
+            | Shop Name
+          th
+            | Contact
           th
             | Mobile
           th
             | Email
+          th
+            | Open Time
+          th
+            | Close Time
           th
             | Reg Date
           th
@@ -39,6 +45,16 @@
           th
             | Change Status
           th
+            | Experience
+          th
+            | Is Partner
+          th
+            | Open on Sunday
+          th
+            | Capacity
+          th
+            | Max Workload
+          th
             | Details
       tbody.text-center
         - @service_providers.each_with_index do |service_provider, i|
@@ -48,11 +64,19 @@
             td
               = service_provider.reference_id
             td
+              = service_provider.shop_name
+            td
               = service_provider.full_name
             td
               = service_provider.mobile
             td
               = service_provider.email
+            td
+              - if service_provider.open_time
+                = service_provider.open_time.strftime('%l:%m %p')
+            td
+              - if service_provider.close_time
+                = service_provider.close_time.strftime('%l:%m %p')
             td
               = service_provider.created_at.strftime('%d/%m/%y')
             td
@@ -77,8 +101,23 @@
               = '/'
               = link_to "#{root_url}users/#{service_provider.id}/change_status/#{alternate_statuses(service_provider)[1]}", method: 'put'
                 = alternate_statuses(service_provider)[1]
+            td
+              = service_provider.experience
+            td
+              - if service_provider.is_partner?
+                | Yes
+              - else
+                | No
 
-
+            td
+              - if service_provider.is_open_on_sunday?
+                | Yes
+              - else
+                | No
+            td
+              = service_provider.capacity
+            td
+              = service_provider.max_workload
             td
               a href=admin_service_provider_path(service_provider) Details
 

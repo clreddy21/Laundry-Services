@@ -40,6 +40,19 @@
       .col-md-3
         = @service_provider.wallet.amount
     .row
-      = render 'admin/orders/orders', orders: @orders
+      ul.nav.nav-tabs
+        li.active
+          a[data-toggle="tab" href="#current_orders"]
+            | Current Orders
+        li
+          a[data-toggle="tab" href="#completed_orders"]
+            | Completed Orders
+
+      .tab-content
+        #current_orders.tab-pane.fade.in.active
+          = render 'admin/orders/orders', orders: @service_provider.current_orders
+        #completed_orders.tab-pane.fade
+          = render 'admin/orders/orders', orders: @service_provider.completed_orders
+      /= render 'admin/orders/orders', orders: @orders
   .col-md-1.m-t-60
     = link_to 'Back', list_of_admin_service_providers_path, class: 'btn btn-info'
