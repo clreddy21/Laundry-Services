@@ -87,10 +87,9 @@
                   td
                     = order_item.amount
                   td
-                    = order_item.remarks
-            br
-            br
-            br
+                    - @order.order_comments.where(order_item_id: order_item.id).each do |comment|
+                      = comment.body
+                      br
         - if @order.service_provider.nil?
           = form_tag(assign_service_provider_to_order_admin_orders_path, method: 'put') do
             .form-group

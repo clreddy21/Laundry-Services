@@ -55,6 +55,11 @@ Rails.application.routes.draw do
       end
     end
     resources :wallets, only: [:show]
+    resources :complaints do
+      collection do
+        get 'list_of_complaints', as: 'list_of'
+      end
+    end
 
   end
 

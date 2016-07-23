@@ -1,0 +1,58 @@
+h2.center
+  = "List of Complaints"
+table.display
+  caption
+    | List of Complaints
+  thead
+    tr
+      th
+        | S No
+      th
+        | Reference Id
+      th
+        | Order Id
+      th
+        | Customer
+      th
+        | Service Provider
+      th
+        | Logistic
+      th
+        | Comments
+      th
+        | Status
+      th
+        | Date
+      th
+        | Details
+  tbody.text-center
+    - complaints.each_with_index do |complaint, i|
+      - order = complaint.order
+      tr
+        td
+          = i + 1
+        td
+          = complaint.reference_id
+        td
+          a href=admin_order_path(order)
+          = order.reference_id
+        td
+          = order.customer.full_name
+        td
+          - if order.service_provider.nil?
+            = 'Not Assigned Yet'
+          - else
+            = order.service_provider.full_name
+        td
+          - if order.logistic.nil?
+            = 'Not Assigned Yet'
+          - else
+            = order.logistic.full_name
+        td
+          = complaint.messages.pluck(:body).join('<br>').html_safe
+        td
+          = complaint.status
+        td
+          = complaint.created_at.strftime('%d/%m/%y')
+        td
+          a href='#' Details

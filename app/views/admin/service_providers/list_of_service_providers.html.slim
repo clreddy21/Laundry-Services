@@ -88,11 +88,11 @@
               a href=admin_wallet_path(service_provider)
                 = number_to_indian_currency(service_provider.wallet.amount)
             td
-              a href='#'
-                = service_provider.orders.where(status_id: 6).count
+              a href=admin_service_provider_path(service_provider)
+                = service_provider.completed_orders.size
             td
-              a href='#'
-                = service_provider.orders.where.not(status_id: 6).count
+              a href=admin_service_provider_path(service_provider)
+                = service_provider.current_orders.size
             td
               = service_provider.status.capitalize
             td
