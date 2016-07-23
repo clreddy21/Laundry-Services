@@ -6,6 +6,12 @@
         = "Order Details"
       .row
         .col-md-offset-3.col-md-3
+          = "Reference Id:"
+        .col-md-3
+          = @order.reference_id
+        br
+      .row
+        .col-md-offset-3.col-md-3
           = "Customer:"
         .col-md-3
           = @order.customer.full_name.capitalize
