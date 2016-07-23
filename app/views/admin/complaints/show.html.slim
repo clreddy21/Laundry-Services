@@ -1,0 +1,117 @@
+.row
+  .col-md-1
+  .col-md-10
+    .order-detail
+      h2.row.center
+        = "Complaint Details"
+      .row
+        .col-md-offset-3.col-md-3
+          = "Customer:"
+        .col-md-3
+          = @order.customer.full_name.capitalize
+        br
+      .row
+        .col-md-offset-3.col-md-3
+          = "Service Provider:"
+        .col-md-3
+          - if @order.service_provider
+            = @order.service_provider.full_name.capitalize
+          - else
+            = "Not assignet yet"
+        br
+      .row
+        .col-md-offset-3.col-md-3
+          = "Logistic:"
+        .col-md-3
+          - if @order.logistic
+            = @order.logistic.full_name.capitalize
+          - else
+            = "Not assigned yet"
+        br
+      .row
+        .col-md-offset-3.col-md-3
+          = "Total Cost:"
+        .col-md-3
+          = @order.total_cost
+        br
+      .row
+        .col-md-offset-3.col-md-3
+          = "Service Provider Chooser"
+        .col-md-3
+          = @order.service_provider_chooser.capitalize
+        br
+      .row
+        .col-md-offset-3.col-md-3
+          = "Status:"
+        .col-md-3
+          = Status.find(@order.status_id).name.capitalize
+        br
+      .row
+        .col-md-offset-3.col-md-3
+          = "Number of Items:"
+        .col-md-3
+          = @order.order_items.count
+        br
+        h2.center
+          = "List of items"
+        br
+
+          table#customers
+            caption
+              | Orders Details
+            thead
+              tr
+                th
+                  | S No
+                th
+                  | Item Name
+                th
+                  | Service Type
+                th
+                  | Number of Items
+                th
+                  | Cost
+                th
+                  | Comments
+            tbody.text-center
+              - @order.order_items.each_with_index do |order_item, i|
+                tr
+                  td
+                    = i + 1
+                  td
+                    = order_item.item.name
+                  td
+                    = order_item.service_type.name
+                  td
+                    = order_item.quantity
+                  td
+                    = order_item.amount
+                  td
+                    - @order.order_comments.where(order_item_id: order_item.id).each do |comment|
+                      = comment.body
+                      br
+        - if @order.service_provider.nil?
+          = form_tag(assign_service_provider_to_order_admin_orders_path, method: 'put') do
+            .form-group
+              .row
+                .col-md-offset-3.col-md-3
+                  = label_tag :select_service_provider, nil, :class => "control-label"
+                .col-md-3
+                  = select_tag :service_provider_id, options_from_collection_for_select(@service_providers, "id", "assign_details", "1"), :class => "form-control"
+                  = hidden_field_tag :order_id, @order.id
+              .form-group.m-t-20
+                .col-md-offset-6.col-md-3
+                  button.btn.btn-success.pull-right type="submit"  Assign Service Provider
+        - if !@order.service_provider.nil? &&  (@order.status_id != 7)
+          - if @order.logistic.nil?
+            = form_tag(assign_logistic_to_order_admin_orders_path, method: 'put') do
+              .form-group
+                .row
+                  .col-md-offset-3.col-md-3
+                    = label_tag :select_logistic, nil, :class => "control-label"
+                  .col-md-3
+                    = select_tag :logistic_id, options_from_collection_for_select(@logistics, "id", "assign_details", "1"), :class => "form-control"
+                    = hidden_field_tag :order_id, @order.id
+                .form-group.m-t-20
+                  .col-md-offset-6.col-md-3
+                    button.btn.btn-success.pull-right type="submit"  Assign Logistic
