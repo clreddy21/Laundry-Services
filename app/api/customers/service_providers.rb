@@ -58,7 +58,7 @@ module Customers
             item_item_prices = item_prices.where(:item_id => item.id)
             item_item_prices.each do |item_item_price|
               prices << {service_type_id: item_item_price.service_type_id, service_type_name: item_item_price.service_type.name,
-               price: item_item_price.price}
+               price: item_item_price.price, last_updated_date: item_item_price.updated_at}
             end
             item_prices_hash << {item_id: item.id, item_name: item.name, prices: prices}
           end
