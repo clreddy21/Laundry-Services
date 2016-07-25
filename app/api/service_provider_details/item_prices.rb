@@ -21,28 +21,6 @@ module ServiceProviderDetails
       end
     end
 
-    resource :get_item_prices_of_service_provider do
-      desc 'Get types and service types of service provider'
-      params do
-        requires :sp_id, type:Integer
-      end
-
-      get do
-        
-        service_types = ServiceType.all.pluck(:id, :name)
-        item_types = Item.all.pluck(:id, :name)
-        service_types_hash = []
-        items_hash =[]
-        service_types.each do |service_type|
-          service_types_hash <<{service_type_id: service_type[0], service_type_name: service_type[1]}
-        end
-        item_types.each do |item_type|
-          items_hash <<{item_type_id: item_type[0], item_type_name: item_type[1]}
-        end
-        {:service_types => service_types_hash,:item_types => items_hash, :success => true}
-      end
-    end
-
     resource :create_item_prices do
       desc 'Creating item prices of Service provider'
       params do
