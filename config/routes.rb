@@ -59,6 +59,10 @@ Rails.application.routes.draw do
       collection do
         get 'list_of_complaints', as: 'list_of'
       end
+
+      member do
+        post 'add_message'
+      end
     end
 
   end

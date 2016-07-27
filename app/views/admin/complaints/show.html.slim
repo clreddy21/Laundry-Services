@@ -1,116 +1,35 @@
 .row
   .container.bootstrap.snippet
     .row
-      .col-md-4.bg-white
-        .row.border-bottom.padding-sm[style="height: 40px;"]
-          |  Member
-        ul.friend-list
-          li.active.bounceInDown
-            a.clearfix[href="#"]
-              img.img-circle[src="http://bootdey.com/img/Content/user_1.jpg" alt=""]
-            .friend-name
-              strong
-                | John Doe
-            .last-message.text-muted
-              | Hello, Are you there?
-            small.time.text-muted
-              | Just now
-            small.chat-alert.label.label-danger
-              | 1
-
-      .col-md-8.bg-white
+      .col-md-12
         .chat-message
-          ul.chat
-            li.left.clearfix
-              span.chat-img.pull-left
-                img[src="http://bootdey.com/img/Content/user_3.jpg" alt="User Avatar"]
-              .chat-body.clearfix
-                .header
-                  strong.primary-font
-                    | John Doe
-                  small.pull-right.text-muted
-                    i.fa.fa-clock-o
-                    |  12 mins ago
-                p
-                  |  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            li.right.clearfix
-              span.chat-img.pull-right
-                img[src="http://bootdey.com/img/Content/user_1.jpg" alt="User Avatar"]
-              .chat-body.clearfix
-                .header
-                  strong.primary-font
-                    | Sarah
-                  small.pull-right.text-muted
-                    i.fa.fa-clock-o
-                    |  13 mins ago
-                p
-                  |  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at.
-            li.left.clearfix
-              span.chat-img.pull-left
-                img[src="http://bootdey.com/img/Content/user_3.jpg" alt="User Avatar"]
-              .chat-body.clearfix
-                .header
-                  strong.primary-font
-                    | John Doe
-                  small.pull-right.text-muted
-                    i.fa.fa-clock-o
-                    |  12 mins ago
-                p
-                  |  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            li.right.clearfix
-              span.chat-img.pull-right
-                img[src="http://bootdey.com/img/Content/user_1.jpg" alt="User Avatar"]
-              .chat-body.clearfix
-                .header
-                  strong.primary-font
-                    | Sarah
-                  small.pull-right.text-muted
-                    i.fa.fa-clock-o
-                    |  13 mins ago
-                p
-                  |  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at.
-            li.left.clearfix
-              span.chat-img.pull-left
-                img[src="http://bootdey.com/img/Content/user_3.jpg" alt="User Avatar"]
-              .chat-body.clearfix
-                .header
-                  strong.primary-font
-                    | John Doe
-                  small.pull-right.text-muted
-                    i.fa.fa-clock-o
-                    |  12 mins ago
-                p
-                  |  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            li.right.clearfix
-              span.chat-img.pull-right
-                img[src="http://bootdey.com/img/Content/user_1.jpg" alt="User Avatar"]
-              .chat-body.clearfix
-                .header
-                  strong.primary-font
-                    | Sarah
-                  small.pull-right.text-muted
-                    i.fa.fa-clock-o
-                    |  13 mins ago
-                p
-                  |  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at.
-            li.right.clearfix
-              span.chat-img.pull-right
-                img[src="http://bootdey.com/img/Content/user_1.jpg" alt="User Avatar"]
-              .chat-body.clearfix
-                .header
-                  strong.primary-font
-                    | Sarah
-                  small.pull-right.text-muted
-                    i.fa.fa-clock-o
-                    |  13 mins ago
-                p
-                  |  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at.
-        .chat-box.bg-white
-          .input-group
-            input.form-control.border.no-shadow.no-rounded[placeholder="Type your message here"]
-            span.input-group-btn
-              button.btn.btn-success.no-rounded[type="button"]
-                | Send
+          ul.chat#total-chat-history
+            - @complaint.messages.each do |message|
+              - if message.user == current_user
+                  = render 'message', message: message
+              - else
+                li.right.clearfix
+                  span.chat-img.pull-right
+                    img[src="http://bootdey.com/img/Content/user_1.jpg" alt="User Avatar"]
+                  .chat-body.clearfix
+                    .header
+                      strong.primary-font
+                        = "#{message.user.full_name} (#{message.user.type})"
+                      small.pull-right.text-muted
+                        i.fa.fa-clock-o
+                        = " #{time_ago_in_words(message.created_at)} ago"
+                    p
+                      = message.body
+
+
+          .chat-box.bg-white
+            input#message-data data= {type: 'hidden', sender: current_user.id, complaint_id: @complaint.id}
+            .input-group
+              input#message-to-send.form-control.border.no-shadow.no-rounded[placeholder="Type your message here"]
+              span.input-group-btn
+                button#send-message-btn.btn.btn-success.no-rounded[type="button"]
+                  | Send
+
   - order = @complaint.order
   .col-md-1
   .col-md-10

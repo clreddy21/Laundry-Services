@@ -9,4 +9,13 @@ class Admin::ComplaintsController < ApplicationController
     @complaint = Complaint.find_by(id: params[:id])
     redirect_to list_of_admin_complaints_path if @complaint.nil?
   end
+
+  def add_message
+    # raise params.inspect
+    complaint = Complaint.find_by(id: params[:complaint_id])
+    message = Message.create(body: params[:body], user_id: params[:sender_id], messageable: complaint)
+
+    render partial: 'message', locals: {message: message}
+
+  end
 end
