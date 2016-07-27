@@ -33,12 +33,12 @@ module Complaints
         else
           if order.complaints.present?
             complaint = order.complaints.includes(:messages).last
+            complaint_messages = complaint.messages.select(:body, :user_id)
+            {id: complaint.id, reference_id: complaint.reference_id, status: complaint.status, order_id: complaint.order_id,
+             title: complaint.title, comments: complaint_messages}
           else
-            complaint = order.complaints.create(status: 'pending')
+            {success: false, message: 'no support yet for this order'}
           end
-          complaint_messages = complaint.messages.select(:body, :user_id)
-          {id: complaint.id, reference_id: complaint.reference_id, status: complaint.status, order_id: complaint.order_id,
-           title: complaint.title, comments: complaint_messages}
 
         end
       end
