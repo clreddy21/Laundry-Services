@@ -33,7 +33,13 @@ module Complaints
         else
           if order.complaints.present?
             complaint = order.complaints.includes(:messages).last
-            complaint_messages = complaint.messages.select(:body, :user_id)
+            complaint_messages []
+
+            complaint.messages.each do |message|
+              complaint_messages << {body: message.body, user_id: message.user_id, user_name: message.user.full_name,
+              user_type: message.user.type, created_at: message.created_at}
+            end
+
             {id: complaint.id, reference_id: complaint.reference_id, status: complaint.status, order_id: complaint.order_id,
              title: complaint.title, comments: complaint_messages}
           else
