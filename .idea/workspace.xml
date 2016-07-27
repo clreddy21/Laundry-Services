@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/complaints_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/complaints_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/messages.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/messages.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/complaints/show.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/complaints/show.html.slim" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added ui to messages of complaint&#10;added complaints functionality">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/complaints/_message.html.slim" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/messages.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -44,8 +42,8 @@
       <file leaf-file-name="show.html.slim" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/complaints/show.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85714287" vertical-offset="34" max-vertical-offset="2414">
-              <caret line="32" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4857143" vertical-offset="34" max-vertical-offset="2414">
+              <caret line="19" column="73" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -1236,12 +1234,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00098" summary="minor refactoring&#10;added wallet to customer">
-      <created>1467656305356</created>
-      <option name="number" value="00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1467656305356</updated>
-    </task>
     <task id="LOCAL-00099" summary="added refund request service for service provider&#10;added get wallet amount for all users&#10;changed code to delete order amount for customer on order create&#10;added refund model for storing refund requests from service provider">
       <created>1467740253039</created>
       <option name="number" value="00099" />
@@ -1530,7 +1522,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469640929844</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="added ui to messages of complaint&#10;added complaints functionality">
+      <created>1469642494863</created>
+      <option name="number" value="00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1469642494863</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1574,7 +1572,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="minor refactoring&#10;added wallet to customer" />
     <MESSAGE value="added refund request service for service provider&#10;added get wallet amount for all users&#10;changed code to delete order amount for customer on order create&#10;added refund model for storing refund requests from service provider" />
     <MESSAGE value="adding money to wallets of service provider and logistic on order completions" />
     <MESSAGE value="added a way for admin to add funds to customer wallet&#10;added a way for customer to see the amount present in customer and service provider's wallet" />
@@ -1599,7 +1596,8 @@
     <MESSAGE value="did some changes in adding comment to complaint and creating it for a order" />
     <MESSAGE value="minor changes in adding complaint" />
     <MESSAGE value="minor changes in complaint details" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes in complaint details" />
+    <MESSAGE value="added ui to messages of complaint&#10;added complaints functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ui to messages of complaint&#10;added complaints functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1976,8 +1974,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/complaints/show.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85714287" vertical-offset="34" max-vertical-offset="2414">
-          <caret line="32" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4857143" vertical-offset="34" max-vertical-offset="2414">
+          <caret line="19" column="73" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
           <folding />
         </state>
       </provider>

@@ -1,0 +1,12 @@
+li.left.clearfix
+  span.chat-img.pull-left
+    img[src="http://bootdey.com/img/Content/user_3.jpg" alt="User Avatar"]
+  .chat-body.clearfix
+    .header
+      strong.primary-font
+        = "#{message.user.full_name} (#{message.user.type})"
+      small.pull-right.text-muted
+        i.fa.fa-clock-o
+        = " #{time_ago_in_words(message.created_at)} ago"
+    p
+      = message.body
