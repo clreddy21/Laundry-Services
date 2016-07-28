@@ -104,6 +104,12 @@ class User < ActiveRecord::Base
     self.orders.where.not(:status_id => [6, 7])
   end
 
+  def add_funds(amount)
+    amount = self.wallet.amount + amount
+    self.wallet.update(amount: amount)
+  end
+
+
   private
 
   def send_message(body)

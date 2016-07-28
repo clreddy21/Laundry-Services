@@ -5,6 +5,12 @@
   .col-md-2.m-t-20
     = link_to 'Back', root_path, class: 'btn btn-info'
 .row
+  .col-md-offset-1.col-md-4
+    h3
+      = link_to 'Assign Service Provider', assign_service_provider_admin_orders_path, class: 'btn btn-info'
+    h3
+      = link_to 'Assign Logistic', assign_logistic_admin_orders_path, class: 'btn btn-info'
+.row
   .col-md-1
   .col-md-10
     table#customers

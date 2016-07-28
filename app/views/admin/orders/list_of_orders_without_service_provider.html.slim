@@ -1,52 +1,76 @@
 .row
-  - @orders.each do |order|
-    a href=admin_order_path(order)
-      .col-md-offset-1.col-md-5.order_box
-        .row
-          .col-md-6
-            = "Customer:"
-          .col-md-6
-            = order.customer.full_name.capitalize
-          br
-        .row
-          .col-md-6
-            = "Service Provider:"
-          .col-md-6
-            - if order.service_provider
-              = order.service_provider.full_name.capitalize
-            - else
-              = "Not assignet yet"
-          br
-        .row
-          .col-md-6
-            = "Logistic:"
-          .col-md-6
-            - if order.logistic
-              = order.logistic.full_name.capitalize
-            - else
-              = "Not assigned yet"
-          br
-        .row
-          .col-md-6
-            = "Total Cost:"
-          .col-md-6
-            = order.total_cost
-          br
-        .row
-          .col-md-6
-            = "Service Provider Chooser"
-          .col-md-6
-            = order.service_provider_chooser.capitalize
-          br
-        .row
-          .col-md-6
-            = "Status:"
-          .col-md-6
-            = Status.find(order.status_id).name.capitalize
-          br
-        .row
-          .col-md-6
-            = "Number of Items:"
-          .col-md-6
-            = order.order_items.count
-          br
+  .col-md-offset-1.col-md-9
+    h3
+      | List of Orders
+  .col-md-2.m-t-20
+    = link_to 'Back', root_path, class: 'btn btn-info'
+.row
+  .col-md-offset-1.col-md-4
+    h3
+      = link_to 'All Orders', root_path, class: 'btn btn-info'
+    h3
+      = link_to 'Assign Logistic', assign_logistic_admin_orders_path, class: 'btn btn-info'
+.row
+  .col-md-1
+  .col-md-10
+    table#customers
+      caption
+        | List of Orders
+      thead
+        tr
+          th
+            | S No
+          th
+            | Reference Id
+          th
+            | Customer
+          th
+            | Service Provider
+          th
+            | Logistic
+          th
+            | Total Cost
+          th
+            | Service Provider Chooser
+          th
+            | Status
+          th
+            | Date
+          th
+            | Mode
+          th
+            | Details
+      tbody.text-center
+        - @orders.each_with_index do |order, i|
+          tr
+            td
+              = i + 1
+            td
+              = order.reference_id
+            td
+              = order.customer.full_name
+            td
+              - if order.service_provider.nil?
+                = 'Not Assigned Yet'
+              - else
+                = order.service_provider.full_name
+            td
+              - if order.logistic.nil?
+                = 'Not Assigned Yet'
+              - else
+                = order.logistic.full_name
+            td
+              = number_to_indian_currency(order.total_cost)
+            td
+              = order.service_provider_chooser
+            td
+              = Status.find_by(id: order.status_id).name
+            td
+              = order.created_at.strftime('%d/%m/%y')
+            td
+              - if order.payment
+                = order.payment_mode
+            td
+              a href=admin_order_path(order) Details
+
+  .col-md-1
