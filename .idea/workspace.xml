@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added ui to messages of complaint&#10;added complaints functionality">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/common/common.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/common/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/complaints_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/complaints_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/complaints/show.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/complaints/show.html.slim" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added complaints status change to approved and rejected and a way to add funds to customer">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/complaints.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -1236,12 +1233,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00102" summary="minor refactoring">
-      <created>1467740993105</created>
-      <option name="number" value="00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1467740993105</updated>
-    </task>
     <task id="LOCAL-00103" summary="minor refactoring">
       <created>1467741200183</created>
       <option name="number" value="00103" />
@@ -1530,7 +1521,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469729627054</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="added complaints status change to approved and rejected and a way to add funds to customer">
+      <created>1469729674670</created>
+      <option name="number" value="00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1469729674670</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1574,7 +1571,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="added a way for admin to add funds to customer wallet&#10;added a way for customer to see the amount present in customer and service provider's wallet" />
     <MESSAGE value="added notifications functionality and related views and tables" />
     <MESSAGE value="added pagination functionality for notifications" />
     <MESSAGE value="added datatables to customers index page" />
@@ -1599,7 +1595,8 @@
     <MESSAGE value="added ui to messages of complaint&#10;added complaints functionality" />
     <MESSAGE value="moved code from controller to model&#10;added different types of orders links in all kinds of orders pages" />
     <MESSAGE value="added notifications link in header" />
-    <option name="LAST_COMMIT_MESSAGE" value="added notifications link in header" />
+    <MESSAGE value="added complaints status change to approved and rejected and a way to add funds to customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="added complaints status change to approved and rejected and a way to add funds to customer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
