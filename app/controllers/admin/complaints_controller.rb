@@ -18,4 +18,19 @@ class Admin::ComplaintsController < ApplicationController
     render partial: 'message', locals: {message: message}
 
   end
+
+  def approve_complaint_and_add_funds
+
+    complaint = Complaint.find(params[:id])
+    amount = params[:amount].to_f
+    complaint.order.customer.add_funds(amount)
+    complaint.update(status: 'approved')
+    redirect_to :back, notice: 'Complaint approved.'
+  end
+
+  def reject_complaint
+    complaint = Complaint.find(params[:id])
+    complaint.update(status: 'rejected')
+    redirect_to :back, notice: 'Complaint rejected.'
+  end
 end

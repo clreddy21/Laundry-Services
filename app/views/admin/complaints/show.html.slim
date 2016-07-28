@@ -2,6 +2,38 @@
   .container.bootstrap.snippet
     .row
       .col-md-12
+        .pull-right
+          - if @complaint.status == "pending"
+            = link_to 'Mark as Resolved', "#", class: 'btn btn-info complaint-change-status'
+          - elsif @complaint.status == "approved"
+            = link_to 'Approved', "#", class: 'btn btn-info complaint-change-status-approved disabled'
+          - elsif @complaint.status == "rejected"
+            = link_to 'Rejected', "#", class: 'btn btn-info complaint-change-status-rejected disabled'
+
+      .col-md-12.resolve_issue.hide
+        .col-md-3
+        .col-md-3
+          = link_to 'Approve Complaint', "#", class: 'btn btn-info complaint-approved'
+        .col-md-3
+          = link_to 'Reject Complaint', reject_complaint_admin_complaint_path(@complaint), :method=> :post, class: 'btn btn-info complaint-rejected'
+        .col-md-3
+      .col-md-12.add_money_to_customer.hide
+        .row
+          h2.center
+            = "Add funds to customer"
+          .row
+            .center.m-t-60
+              = form_tag(approve_complaint_and_add_funds_admin_complaint_path(@complaint), method: 'post') do
+                .form-group
+                  .row
+                    .col-md-offset-3.col-md-3
+                      = label_tag :add_funds, nil, :class => "control-label"
+                    .col-md-3
+                      = number_field_tag :amount,nil, :class => "form-control"
+
+                  .form-group.m-t-20
+                    .col-md-offset-6.col-md-3
+                      button.btn.btn-success.pull-right type="submit"  Add Funds
         .chat-message
           ul.chat#total-chat-history
             - @complaint.messages.each do |message|

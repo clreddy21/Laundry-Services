@@ -62,6 +62,8 @@ Rails.application.routes.draw do
 
       member do
         post 'add_message'
+        post 'approve_complaint_and_add_funds'
+        post 'reject_complaint'
       end
     end
 
