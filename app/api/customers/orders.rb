@@ -95,10 +95,19 @@ module Customers
   	  end
 
       post do
-      	order_item = OrderItem.find(params[:order_item_id])
-        order_item.update(is_active: false)
+        order_item = OrderItem.find(params[:order_item_id])
+        if !order_item.nil?
+          if order_item.order.status_id < 2
+            order_item.update(is_active: false)
 
-        {:message => 'Item successfully removed from the order', :success => true}
+            {:message => 'Item successfully removed from the order', :success => true}
+          else
+            {:message => 'Item cannot be removed as it is already picked by logistic.', :success => true}
+          end
+        else
+          {:message => 'Invalid order item id.', :success => false}
+        end
+
       end
     end
 
@@ -120,9 +129,18 @@ module Customers
         quantity = params[:item_id]
         amount = params[:item_id]
 
-        order_item = OrderItem.create(:order_id => order.id,:item_id => item_id,:service_type_id => service_type_id,
-                                      :quantity => quantity, :amount => amount)
-        {:message => 'Item successfully added to the order', :success => true}
+        if !order.nil?
+          if order_item.order.status_id < 2
+
+            order_item = OrderItem.create(:order_id => order.id,:item_id => item_id,:service_type_id => service_type_id,
+                                          :quantity => quantity, :amount => amount)
+            {:message => 'Item successfully added to the order', :success => true}
+          else
+            {:message => 'Item cannot be added as order is already picked by logistic.', :success => true}
+          end
+        else
+          {:message => 'Invalid order id.', :success => false}
+        end
 
       end
     end
