@@ -200,11 +200,14 @@ module Customers
       	order = Order.includes(:order_items, :order_comments, :payment, :schedule, :address).find(params[:order_id])
         order_items_comments_hash = []
 
-        if order.status_id < 2
-          order_items = order.order_items
-        else
-          order_items = order.order_items.active
-        end
+        # if order.status_id < 2
+        #   order_items = order.order_items
+        # else
+        #   order_items = order.order_items.active
+        # end
+
+        order_items = order.order_items
+
         order_items.includes(:service_type).each do |order_item|
           order_item_hash = []
           order_comments_hash = []

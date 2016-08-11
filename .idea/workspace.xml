@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/order_item.rb" afterPath="$PROJECT_DIR$/app/models/order_item.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/customers/orders.rb" afterPath="$PROJECT_DIR$/app/api/customers/orders.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -92,8 +91,8 @@
       <file leaf-file-name="orders.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6267123" vertical-offset="1780" max-vertical-offset="4811">
-              <caret line="137" column="46" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.4520548" vertical-offset="3157" max-vertical-offset="4862">
+              <caret line="209" column="0" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1256,12 +1255,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00108" summary="minor refactoring">
-      <created>1467828717543</created>
-      <option name="number" value="00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1467828717543</updated>
-    </task>
     <task id="LOCAL-00109" summary="added datatables to customers index page">
       <created>1467897964318</created>
       <option name="number" value="00109" />
@@ -1550,7 +1543,13 @@
       <option name="project" value="LOCAL" />
       <updated>1470906698355</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="minor refactoring">
+      <created>1470907858649</created>
+      <option name="number" value="00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1470907858649</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1603,7 +1602,6 @@
     <MESSAGE value="separated orders as completed orders and current orders for all users&#10;implemented double jquery datatables in single pages&#10;added few fields in list of service providers page&#10;minor refactoring in orders partial" />
     <MESSAGE value="added header links&#10;added complaints index page&#10;added complaints show page&#10;added complaints index functionality&#10;added dummy code in show page" />
     <MESSAGE value="added links to complaints show page in complaints index page&#10;added basic order details in complaints show page&#10;added reference id in order show page" />
-    <MESSAGE value="minor refactoring" />
     <MESSAGE value="added list of complaints of user and complaint details services for complaints" />
     <MESSAGE value="added order_schedule in order_details" />
     <MESSAGE value="added last updated date for service provider item_ prices service" />
@@ -1619,7 +1617,8 @@
     <MESSAGE value="added a way to remove and add order items from and to order" />
     <MESSAGE value="moved lohic to model of updating service provider and logistic amounts&#10;sending only one last updated date for service providers item_prices" />
     <MESSAGE value="added limitations for adding and removing items to a order" />
-    <option name="LAST_COMMIT_MESSAGE" value="added limitations for adding and removing items to a order" />
+    <MESSAGE value="minor refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2013,8 +2012,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6267123" vertical-offset="1780" max-vertical-offset="4811">
-          <caret line="137" column="46" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.4520548" vertical-offset="3157" max-vertical-offset="4862">
+          <caret line="209" column="0" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
           <folding />
         </state>
       </provider>
