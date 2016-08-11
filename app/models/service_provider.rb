@@ -8,7 +8,8 @@ class ServiceProvider < User
   def service_provider_stats
     orders_count = self.orders.size
     total_cost = self.orders.pluck(:total_cost).sum
-    {orders_count: orders_count, total_cost: total_cost}
+    current_wallet_amount = self.wallet.amount
+    {orders_count: orders_count, total_cost: total_cost, current_wallet_amount: current_wallet_amount}
   end
 
   def build_item_prices

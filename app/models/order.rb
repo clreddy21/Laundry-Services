@@ -125,10 +125,11 @@ class Order < ActiveRecord::Base
 		end
 
 	  if self.status_id == 3
-  		self.update(status_id: 4)
+			self.update(status_id: 4)
   		message = 'Service is completed by service provider and ready for pickup by logistic.'
 			    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
     'orderId' => self.id}}
+			self.service_provider.wallet.increment!(:amount, by = self.total_cost)
 
 			send_mobile_notifications(options)
 			message
@@ -169,6 +170,7 @@ class Order < ActiveRecord::Base
   		message = 'Logistic delivered the order items to customer.'
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
     'orderId' => self.id}}
+			self.logistic.wallet.increment!(:amount, by = self.total_cost)
 
 			send_mobile_notifications(options)
 			message
