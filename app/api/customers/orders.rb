@@ -99,6 +99,7 @@ module Customers
         if !order_item.nil?
           if order_item.order.status_id < 2
             order_item.update(is_active: false)
+            order_item.order.decrement!(total_cost: by = order_item.amount)
 
             {:message => 'Item successfully removed from the order', :success => true}
           else
@@ -134,6 +135,8 @@ module Customers
 
             order_item = OrderItem.create(:order_id => order.id,:item_id => item_id,:service_type_id => service_type_id,
                                           :quantity => quantity, :amount => amount)
+            order.increment!(total_cost: by = amount)
+
             {:message => 'Item successfully added to the order', :success => true}
           else
             {:message => 'Item cannot be added as order is already picked by logistic.', :success => true}
@@ -196,7 +199,13 @@ module Customers
       get do
       	order = Order.includes(:order_items, :order_comments, :payment, :schedule, :address).find(params[:order_id])
         order_items_comments_hash = []
-        order.order_items.includes(:service_type).each do |order_item|
+
+        if order.status_id < 2
+          order_items = order.order_items
+        else
+          order_items = order.order_items.active
+        end
+        order_items.includes(:service_type).each do |order_item|
           order_item_hash = []
           order_comments_hash = []
 

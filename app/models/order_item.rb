@@ -6,4 +6,6 @@ class OrderItem < ActiveRecord::Base
   delegate :name, to: :service_type, prefix: true
   delegate :name, to: :order, prefix: true
   delegate :name, to: :item, prefix: true
+
+  scope :active, -> { where(:is_active => true) }
 end
