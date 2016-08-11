@@ -88,6 +88,46 @@ module Customers
       end
     end
 
+    resource :remove_order_item do
+      desc 'Remove order item from order'
+      params do
+        requires :order_item_id, type:Integer
+  	  end
+
+      post do
+      	order_item = OrderItem.find(params[:order_item_id])
+        order_item.update(is_active: false)
+
+        {:message => 'Item successfully removed from the order', :success => true}
+      end
+    end
+
+    resource :add_order_item do
+      desc 'Add order item to order'
+      params do
+        requires :order_id, type:Integer
+        requires :item_id, type: Integer
+        requires :service_type_id, type: Integer
+        requires :quantity, type: Integer
+        requires :amount, type: Integer
+
+  	  end
+
+      post do
+      	order = Order.find(params[:order_id])
+        item_id = params[:item_id]
+        service_type_id = params[:item_id]
+        quantity = params[:item_id]
+        amount = params[:item_id]
+
+        order_item = OrderItem.create(:order_id => order.id,:item_id => item_id,:service_type_id => service_type_id,
+                                      :quantity => quantity, :amount => amount)
+        {:message => 'Item successfully added to the order', :success => true}
+
+      end
+    end
+
+
     resource :list_of_orders_of_customer do
       desc 'List of orders of customers'
       params do
@@ -144,7 +184,7 @@ module Customers
 
           order_item_hash << {:order_item_id => order_item.id, :item_id => order_item.item_id, :item_type => order_item.item_name,
            :service_type_id => order_item.service_type_id, :service_type_name => order_item.service_type_name, :quantity => order_item.quantity,
-           :amount => order_item.amount.to_i}
+           :amount => order_item.amount.to_i, order_item_status: order_item.is_active}
 
           order_item.order_comments.each do |comment|
             order_comments_hash << {:order_comment_id => comment.id, :comment_body => comment.body, :comment_by_type => comment.comment_by_type,
