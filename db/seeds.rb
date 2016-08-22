@@ -43,8 +43,8 @@ Logistic.create(first_name: 'Logistic', last_name: '2', email: 'l2@gmail.com',
 puts 'creating service types'
 service_type_1 = ServiceType.create(name: 'wash')
 service_type_2 = ServiceType.create(name: 'iron')
-service_type_3 = ServiceType.create(name: 'wash iron')
-service_type_4 = ServiceType.create(name: 'dry cleaning')
+service_type_3 = ServiceType.create(name: 'wash_iron')
+service_type_4 = ServiceType.create(name: 'dry_cleaning')
 
 puts 'creating items'
 item_1 = Item.create(name: 'Jeans')
