@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811072813) do
+ActiveRecord::Schema.define(version: 20160827045120) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
     t.string   "addressable_type"
     t.integer  "addressable_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "is_active",        default: true
   end
 
   create_table "complaints", force: :cascade do |t|

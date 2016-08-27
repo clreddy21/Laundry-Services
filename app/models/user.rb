@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :login
 
-  has_one :address, as: :addressable
+  has_many :addresses, as: :addressable
   has_one :wallet
   has_many :refunds
   has_many :notifications

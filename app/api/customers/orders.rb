@@ -244,8 +244,8 @@ module Customers
 
         if !order.service_provider.nil?
           service_provider_mobile = order.service_provider.mobile
-          if order.service_provider.address
-            service_provider_address = order.service_provider.address.address
+          if order.service_provider.addresses.present?
+            service_provider_address = order.service_provider.addresses.first.address
           else
             service_provider_address = ''
           end
@@ -258,7 +258,7 @@ module Customers
         if !order.logistic.nil?
           logistic_mobile = order.logistic.mobile
           if order.logistic.address
-            logistic_address = order.logistic.address.address
+            logistic_address = order.logistic.addresses.first.address
           else
             logistic_address = ''
           end

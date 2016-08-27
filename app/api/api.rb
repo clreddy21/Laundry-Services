@@ -4,6 +4,7 @@ class API < Grape::API
   mount Users::Login
   mount Users::Signup
   mount Users::Orders
+  mount Users::UserAddress
   mount Customers::ServiceProviders
   mount Customers::Orders
   mount ServiceProviderDetails::Orders
