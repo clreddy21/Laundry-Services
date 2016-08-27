@@ -96,13 +96,16 @@ module Customers
 
       post do
         order_item = OrderItem.find(params[:order_item_id])
+        order = order_item.order
+
         if !order_item.nil?
-          if order_item.order.status_id < 2
+          if order.status_id < 2
             order_item.update(is_active: false)
+            updated_cost = order.total_cost - order_item.amount
+            order.update(total_cost: updated_cost)
+            order.save!
 
-            updated_cost = order_item.order.total_cost - order_item.amount
-            order_item.order.update(total_cost: updated_cost)
-
+            order.payment.update(amount:updated_cost)
             {:message => 'Item successfully removed from the order', :success => true}
           else
             {:message => 'Item cannot be removed as it is already picked by logistic.', :success => true}
@@ -140,6 +143,7 @@ module Customers
             updated_cost = order.total_cost + amount
             order.update(total_cost: updated_cost)
             order.save!
+            order.payment.update(amount:updated_cost)
 
             {:message => 'Item successfully added to the order', :success => true}
           else
