@@ -99,7 +99,9 @@ module Customers
         if !order_item.nil?
           if order_item.order.status_id < 2
             order_item.update(is_active: false)
-            order_item.order.decrement!(total_cost: by = order_item.amount)
+
+            updated_cost = order.total_cost - order_item.amount
+            order.update(total_cost: updated_cost)
 
             {:message => 'Item successfully removed from the order', :success => true}
           else
