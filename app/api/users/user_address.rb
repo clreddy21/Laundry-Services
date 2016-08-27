@@ -12,7 +12,7 @@ module Users
 
         if User.exists?(id: params[:user_id])
           user = User.includes(:addresses).find_by(id: params[:user_id])
-          addresses = user.addresses.select(:id, :address, :is_active)
+          addresses = user.addresses.is_active.select(:id, :address, :is_active)
           {:success => true, addresses: addresses}
 
         else
