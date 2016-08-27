@@ -131,9 +131,9 @@ module Customers
       post do
       	order = Order.find(params[:order_id])
         item_id = params[:item_id]
-        service_type_id = params[:item_id]
-        quantity = params[:item_id]
-        amount = params[:item_id]
+        service_type_id = params[:service_type_id]
+        quantity = params[:quantity]
+        amount = params[:amount]
 
         if !order.nil?
           if order.status_id < 2
