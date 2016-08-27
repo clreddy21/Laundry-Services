@@ -257,7 +257,7 @@ module Customers
 
         if !order.logistic.nil?
           logistic_mobile = order.logistic.mobile
-          if order.logistic.address
+          if order.logistic.addresses.first
             logistic_address = order.logistic.addresses.first.address
           else
             logistic_address = ''
