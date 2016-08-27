@@ -210,7 +210,7 @@ module Customers
         #   order_items = order.order_items.active
         # end
 
-        order_items = order.order_items
+        order_items = order.order_items.active
 
         order_items.includes(:service_type).each do |order_item|
           order_item_hash = []
