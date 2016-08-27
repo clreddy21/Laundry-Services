@@ -131,11 +131,13 @@ module Customers
         amount = params[:item_id]
 
         if !order.nil?
-          if order_item.order.status_id < 2
+          if order.status_id < 2
 
             order_item = OrderItem.create(:order_id => order.id,:item_id => item_id,:service_type_id => service_type_id,
                                           :quantity => quantity, :amount => amount)
-            order.increment!(total_cost: by = amount)
+            updated_cost = order.total_cost + amount
+            order.update(total_cost: updated_cost)
+            order.save!
 
             {:message => 'Item successfully added to the order', :success => true}
           else
