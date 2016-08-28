@@ -20,6 +20,8 @@
           th
             | Name
           th
+            | Image
+          th
             | Edit
       tbody.text-center
         - @items.each_with_index do |item, i|
@@ -28,6 +30,9 @@
               = i + 1
             td
               = item.name
+            td
+              /= item.name
+              = image_tag item.avatar_url(:thumb) if item.avatar?
             td
               a data-target="#edit_item_id_#{i}" data-toggle= "modal" class= "btn btn-info"
                 i.fa.fa-pencil-square-o.edit-address

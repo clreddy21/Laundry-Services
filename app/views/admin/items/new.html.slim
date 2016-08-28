@@ -6,5 +6,11 @@
       .col-md-3
         = f.text_field :name, required: true, class: 'form-control'
     .row
+      .col-md-offset-3.col-md-3
+        = f.label :name, class: 'control-label'
+      .col-md-3
+        = f.file_field :avatar, class: 'form-control'
+        /= f.text_field :name, required: true, class: 'form-control'
+    .row
       .col-md-offset-6.col-md-3
         = f.submit 'Add New Item', class: 'btn btn-info'

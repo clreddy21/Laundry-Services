@@ -15,7 +15,9 @@ class Admin::ItemsController < ApplicationController
   end
 
   def create
-    item = Item.create(name: params[:name])
+    # raise params.inspect
+    item = Item.create(name: params[:item][:name], avatar: params[:item][:avatar])
+
     if item.save!
       redirect_to list_of_admin_items_path, notice: 'Item added successfully.'
     else

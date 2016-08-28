@@ -100,3 +100,15 @@ gem 'jquery-turbolinks'
 gem "font-awesome-rails"
 
 gem 'best_in_place', '~> 3.0.1'
+
+#for file uploads
+gem 'carrierwave'
+
+group :development do
+  gem 'mini_magick'
+end
+
+group :production do
+  gem "rmagick"
+end
+
