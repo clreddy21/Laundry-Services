@@ -208,7 +208,7 @@ module Customers
       	items = Item.all
         items_hash = []
         items.each do |item|
-          items_hash << {item_id: item.id, item_name: item.name, item_image: item.avatar.url}
+          items_hash << {item_id: item.id, item_name: item.name, item_image: item.avatar.url.to_s}
         end
         if order_item.nil?
           {:message => 'Invalid order item id', :success => false}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added avatar upload functioanlity in api and have to test it in mproduction">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/customers/orders.rb" afterPath="$PROJECT_DIR$/app/api/customers/orders.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -82,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6312785" vertical-offset="3017" max-vertical-offset="5355">
-              <caret line="210" column="92" selection-start-line="210" selection-start-column="92" selection-end-line="210" selection-end-column="92" />
+              <caret line="210" column="97" selection-start-line="210" selection-start-column="97" selection-end-line="210" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -763,12 +763,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00120" summary="ADDED SERVICE TO GET COMMENTS RELATED TO ORDER ITEM">
-      <created>1468339084429</created>
-      <option name="number" value="00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1468339084430</updated>
-    </task>
     <task id="LOCAL-00121" summary="added lot of things i dont remember the list">
       <created>1468722655863</created>
       <option name="number" value="00121" />
@@ -1057,7 +1051,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472365594954</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="added avatar upload functioanlity in api and have to test it in mproduction">
+      <created>1472366419097</created>
+      <option name="number" value="00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1472366419097</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1101,7 +1101,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="added lot of things i dont remember the list" />
     <MESSAGE value="added services for creating complaints and adding messages to them by different users" />
     <MESSAGE value="added popups for item details edits&#10;added popups for service type details edits&#10;added list of orders tables for all users&#10;added list of order items in order show&#10;added item price last updated date in item prices list&#10;added mobile number while assigning sp or logistic" />
     <MESSAGE value="separated orders as completed orders and current orders for all users&#10;implemented double jquery datatables in single pages&#10;added few fields in list of service providers page&#10;minor refactoring in orders partial" />
@@ -1126,7 +1125,8 @@
     <MESSAGE value="minor refactoring&#10;" />
     <MESSAGE value="minor refactoring" />
     <MESSAGE value="added avatar upload functioanlity and have to test it in mproduction" />
-    <option name="LAST_COMMIT_MESSAGE" value="added avatar upload functioanlity and have to test it in mproduction" />
+    <MESSAGE value="added avatar upload functioanlity in api and have to test it in mproduction" />
+    <option name="LAST_COMMIT_MESSAGE" value="added avatar upload functioanlity in api and have to test it in mproduction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1507,7 +1507,7 @@
     <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6312785" vertical-offset="3017" max-vertical-offset="5355">
-          <caret line="210" column="92" selection-start-line="210" selection-start-column="92" selection-end-line="210" selection-end-column="92" />
+          <caret line="210" column="97" selection-start-line="210" selection-start-column="97" selection-end-line="210" selection-end-column="97" />
           <folding />
         </state>
       </provider>
