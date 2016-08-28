@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added avatar upload functioanlity in api and have to test it in mproduction">
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/customers/orders.rb" afterPath="$PROJECT_DIR$/app/api/customers/orders.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -28,16 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="item_prices.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/api/service_provider_details/item_prices.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
-              <caret line="48" column="58" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="orders.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/api/service_provider_details/orders.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -82,7 +72,17 @@
         <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6312785" vertical-offset="3017" max-vertical-offset="5355">
-              <caret line="210" column="97" selection-start-line="210" selection-start-column="97" selection-end-line="210" selection-end-column="97" />
+              <caret line="210" column="100" selection-start-line="210" selection-start-column="100" selection-end-line="210" selection-end-column="100" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_of_items.html.slim" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/items/list_of_items.html.slim">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.23077" vertical-offset="0" max-vertical-offset="1241">
+              <caret line="34" column="49" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -763,12 +763,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00121" summary="added lot of things i dont remember the list">
-      <created>1468722655863</created>
-      <option name="number" value="00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1468722655867</updated>
-    </task>
     <task id="LOCAL-00122" summary="added lot of things i dont remember the list">
       <created>1468722933086</created>
       <option name="number" value="00122" />
@@ -1057,7 +1051,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472366419097</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="added avatar upload functioanlity in api and have to test it in mproduction">
+      <created>1472366539742</created>
+      <option name="number" value="00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1472366539742</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1384,14 +1384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/items/list_of_items.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.23077" vertical-offset="0" max-vertical-offset="1241">
-          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/carrier_wave.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="889">
@@ -1504,10 +1496,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/items/list_of_items.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.23077" vertical-offset="0" max-vertical-offset="1241">
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6312785" vertical-offset="3017" max-vertical-offset="5355">
-          <caret line="210" column="97" selection-start-line="210" selection-start-column="97" selection-end-line="210" selection-end-column="97" />
+          <caret line="210" column="100" selection-start-line="210" selection-start-column="100" selection-end-line="210" selection-end-column="100" />
           <folding />
         </state>
       </provider>
