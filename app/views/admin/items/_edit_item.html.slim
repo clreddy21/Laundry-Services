@@ -16,5 +16,11 @@
               .col-sm-7
                 = f.text_field :name, :class => "form-control", placeholder: "Item Name", required: true
             .form-group.row
+              .col-sm-1
+              .col-sm-3.m-t-5
+                = f.label :avatar, nil, :class => "control-label"
+              .col-sm-7
+                = f.file_field :avatar, :class => "form-control", placeholder: "Add Image"
+            .form-group.row
               .col-md-offset-9.col-md-3
                 = f.submit 'Update Item', class: 'btn btn-info'
