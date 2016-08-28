@@ -71,8 +71,8 @@
       <file leaf-file-name="orders.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6312785" vertical-offset="3017" max-vertical-offset="5355">
-              <caret line="210" column="100" selection-start-line="210" selection-start-column="100" selection-end-line="210" selection-end-column="100" />
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="3312" max-vertical-offset="5270">
+              <caret line="212" column="29" selection-start-line="212" selection-start-column="29" selection-end-line="212" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -763,12 +763,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00122" summary="added lot of things i dont remember the list">
-      <created>1468722933086</created>
-      <option name="number" value="00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1468722933087</updated>
-    </task>
     <task id="LOCAL-00123" summary="minor refactoring">
       <created>1468725939498</created>
       <option name="number" value="00123" />
@@ -1057,7 +1051,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472366539742</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="minor refactoring">
+      <created>1472366635708</created>
+      <option name="number" value="00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1472366635708</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1123,10 +1123,10 @@
     <MESSAGE value="added limitations for adding and removing items to a order" />
     <MESSAGE value="added multiple address functionality" />
     <MESSAGE value="minor refactoring&#10;" />
-    <MESSAGE value="minor refactoring" />
     <MESSAGE value="added avatar upload functioanlity and have to test it in mproduction" />
     <MESSAGE value="added avatar upload functioanlity in api and have to test it in mproduction" />
-    <option name="LAST_COMMIT_MESSAGE" value="added avatar upload functioanlity in api and have to test it in mproduction" />
+    <MESSAGE value="minor refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1506,8 +1506,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6312785" vertical-offset="3017" max-vertical-offset="5355">
-          <caret line="210" column="100" selection-start-line="210" selection-start-column="100" selection-end-line="210" selection-end-column="100" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="3312" max-vertical-offset="5270">
+          <caret line="212" column="29" selection-start-line="212" selection-start-column="29" selection-end-line="212" selection-end-column="29" />
           <folding />
         </state>
       </provider>

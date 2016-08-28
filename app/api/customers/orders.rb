@@ -210,12 +210,7 @@ module Customers
         items.each do |item|
           items_hash << {item_id: item.id, item_name: item.name, item_image: item.avatar_url(:thumb)}
         end
-        if order_item.nil?
-          {:message => 'Invalid order item id', :success => false}
-        else
-          comments = order_item.order_comments.pluck(:body)
-          {comments: comments, success: true}
-        end
+        {:items => items_hash, :success => false}
       end
     end
 
