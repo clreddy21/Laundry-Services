@@ -198,6 +198,27 @@ module Customers
       end
     end
 
+    resource :get_list_of_items do
+      desc 'List of all items'
+      params do
+
+  	  end
+
+      get do
+      	items = Item.all
+        items_hash = []
+        items.each do |item|
+          items_hash << {item_id: item.id, item_name: item.name, item_image: item.avatar.url}
+        end
+        if order_item.nil?
+          {:message => 'Invalid order item id', :success => false}
+        else
+          comments = order_item.order_comments.pluck(:body)
+          {comments: comments, success: true}
+        end
+      end
+    end
+
     resource :order_details do
       desc 'Order Details'
       params do
