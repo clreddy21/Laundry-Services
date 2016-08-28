@@ -208,9 +208,9 @@ module Customers
       	items = Item.all
         items_hash = []
         items.each do |item|
-          items_hash << {item_id: item.id, item_name: item.name, item_image: item.avatar_url(:thumb)}
+          items_hash << {item_id: item.id, item_name: item.name, item_image: (item.avatar_url(:thumb)).to_s}
         end
-        {:items => items_hash, :success => false}
+        {:items => items_hash, :success => true}
       end
     end
 

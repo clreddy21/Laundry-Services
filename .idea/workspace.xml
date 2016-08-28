@@ -71,8 +71,8 @@
       <file leaf-file-name="orders.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="3312" max-vertical-offset="5270">
-              <caret line="212" column="29" selection-start-line="212" selection-start-column="29" selection-end-line="212" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.29452056" vertical-offset="3312" max-vertical-offset="5270">
+              <caret line="210" column="107" selection-start-line="210" selection-start-column="107" selection-end-line="210" selection-end-column="107" />
               <folding />
             </state>
           </provider>
@@ -763,12 +763,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00123" summary="minor refactoring">
-      <created>1468725939498</created>
-      <option name="number" value="00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1468725939498</updated>
-    </task>
     <task id="LOCAL-00124" summary="minor refactoring">
       <created>1468728284860</created>
       <option name="number" value="00124" />
@@ -1057,7 +1051,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472366635708</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="minor refactoring">
+      <created>1472366801657</created>
+      <option name="number" value="00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1472366801657</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1506,8 +1506,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/customers/orders.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="3312" max-vertical-offset="5270">
-          <caret line="212" column="29" selection-start-line="212" selection-start-column="29" selection-end-line="212" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.29452056" vertical-offset="3312" max-vertical-offset="5270">
+          <caret line="210" column="107" selection-start-line="210" selection-start-column="107" selection-end-line="210" selection-end-column="107" />
           <folding />
         </state>
       </provider>
