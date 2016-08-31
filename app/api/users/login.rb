@@ -18,7 +18,7 @@ module Users
 						rsa_public = rsa_private.public_key
 						token = JWT.encode payload, rsa_private, 'RS256'
 						user.update(jwt: token)
-						address = user.addresses.present ? user.addresses.first.address : ''
+						address = user.addresses.present? ? user.addresses.first.address : ''
 
 						if user.is_customer?
 							wallet_amount = user.wallet.amount.to_i
