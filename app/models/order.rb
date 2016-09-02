@@ -179,6 +179,15 @@ class Order < ActiveRecord::Base
   	end
 	end
 
+	def self.filter_by_status(status_id)
+		if status_id == '0' || status_id.nil?
+			self.all
+		else
+			self.where(status_id: status_id.to_i)
+		end
+	end
+
+
 	protected
 
 	def send_mobile_notifications(options)

@@ -3,7 +3,9 @@ class Admin::OrdersController < ApplicationController
 
 
   def index
-    @orders = Order.includes(:service_provider, :customer, :logistic, :payment).all
+    status_id = params[:status_id]
+    @orders = Order.includes(:service_provider, :customer, :logistic, :payment).all.filter_by_status(status_id)
+    @statuses = get_statuses
   end
 
   def show
@@ -54,6 +56,11 @@ class Admin::OrdersController < ApplicationController
     order.service_provider.send_mobile_notification(options)
     order.logistic.send_mobile_notification(options)
   end
+
+  def get_statuses
+    [[0, 'All']] +  Status.pluck(:id, :name)
+  end
+
 
 
 end

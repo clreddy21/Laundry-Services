@@ -109,6 +109,6 @@ group :development do
 end
 
 group :production do
-  gem "rmagick"
+  # gem "rmagick"
 end
 

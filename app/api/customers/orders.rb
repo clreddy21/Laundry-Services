@@ -10,7 +10,7 @@ module Customers
       post do
         gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
 
-        registration_id = ['edJlZqoorVE:APA91bEfVGWlr61Rn85SqRmJvVpaHJhrTbRWGAOnX3dKMFf9rYCrHEPryB-2GYFTwzN5PrEwpxBXOK-cqa0TMgji2HmvqdhogorwFY8iqpB53t7GCcEI62WlaFplLPkJJzzAB5HPptlD']
+        registration_id = ['c1PJDIc9kkk:APA91bFLmDuNCWNKG4zA4Cxnt5AeG8FVq9ZxwKUCLQEbgkIy5iPmG9ufjq5sLr75iBXRGYcJqZDPGvEfvMOtFa2kWbV5-hCXLGROxqHtBdQF0ypQP8i3XvI8Yg_G8hG0URy9KySo5hNk']
 
         options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services','statusId' => '4','orderId' => 59},
                    notification: { "click_action" => "OPEN_ACTIVITY_1"}}

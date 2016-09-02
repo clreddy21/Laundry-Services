@@ -10,6 +10,12 @@
       = link_to 'Assign Service Provider', assign_service_provider_admin_orders_path, class: 'btn btn-info'
     h3
       = link_to 'Assign Logistic', assign_logistic_admin_orders_path, class: 'btn btn-info'
+  .col-md-offset-3.col-md-3
+    .form-group.m-r-20.m-t-20
+      = form_tag(admin_orders_path, method: :get) do
+        - status_id = params[:status_id].nil?? 0 : params[:status_id]
+        = select_tag :status_id, options_from_collection_for_select(@statuses, :first, :last, status_id), :onchange => "this.form.submit()",
+                     :class => "form-control"
 .row
   .col-md-1
   .col-md-10
