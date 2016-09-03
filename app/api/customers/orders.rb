@@ -13,7 +13,24 @@ module Customers
         registration_id = ['c1PJDIc9kkk:APA91bFLmDuNCWNKG4zA4Cxnt5AeG8FVq9ZxwKUCLQEbgkIy5iPmG9ufjq5sLr75iBXRGYcJqZDPGvEfvMOtFa2kWbV5-hCXLGROxqHtBdQF0ypQP8i3XvI8Yg_G8hG0URy9KySo5hNk']
 
         options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services','statusId' => '4','orderId' => 59},
-                   notification: { "click_action" => "OPEN_ACTIVITY_1"}}
+                   notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, serviceProviderId: 3, statusId: 6}}
+
+        response = gcm.send(registration_id, options)
+      end
+    end
+
+    resource :test_gcm1 do
+      desc 'testing gcm'
+      params do
+        # requires :id, type: String
+      end
+      post do
+        gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
+
+        registration_id = ['c1PJDIc9kkk:APA91bFLmDuNCWNKG4zA4Cxnt5AeG8FVq9ZxwKUCLQEbgkIy5iPmG9ufjq5sLr75iBXRGYcJqZDPGvEfvMOtFa2kWbV5-hCXLGROxqHtBdQF0ypQP8i3XvI8Yg_G8hG0URy9KySo5hNk']
+
+        options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services','statusId' => '4','orderId' => 59},
+                   notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => false, serviceProviderId: 3, statusId: 5}}
 
         response = gcm.send(registration_id, options)
       end
