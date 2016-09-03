@@ -807,12 +807,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00131" summary="minor refactoring">
-      <created>1469038368349</created>
-      <option name="number" value="00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1469038368349</updated>
-    </task>
     <task id="LOCAL-00132" summary="added popups for item details edits&#10;added popups for service type details edits&#10;added list of orders tables for all users&#10;added list of order items in order show&#10;added item price last updated date in item prices list&#10;added mobile number while assigning sp or logistic">
       <created>1469266521179</created>
       <option name="number" value="00132" />
@@ -1101,7 +1095,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472878742883</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="added progress status bar for order with status changed dates">
+      <created>1472878775711</created>
+      <option name="number" value="00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1472878775712</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="ToolWindowManager">
