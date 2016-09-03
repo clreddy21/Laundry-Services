@@ -13,7 +13,7 @@ module Customers
         registration_id = ['d5ngZnZjhtk:APA91bGODyGeHolNIyqA9AM0eB4yzrGVlel5bZE8wMYu2tHr7AfNHByxDlpAjJcE2RI-oh4XuHkbQ7sOgPvv-s_Bzl4aS7d3IzWSU1m_OQpk0I076hCb7w9LaQO9-IhbSmeQZNcLbMhW']
 
         options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services','statusId' => '4','orderId' => 59},
-                   notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, serviceProviderId: 3, statusId: 6}}
+                   notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, 'serviceProviderId' => 3, 'statusId'=> 6}}
 
         response = gcm.send(registration_id, options)
       end
@@ -30,7 +30,7 @@ module Customers
         registration_id = ['d5ngZnZjhtk:APA91bGODyGeHolNIyqA9AM0eB4yzrGVlel5bZE8wMYu2tHr7AfNHByxDlpAjJcE2RI-oh4XuHkbQ7sOgPvv-s_Bzl4aS7d3IzWSU1m_OQpk0I076hCb7w9LaQO9-IhbSmeQZNcLbMhW']
 
         options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services','statusId' => '4','orderId' => 59},
-                   notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => false, serviceProviderId: 3, statusId: 5}}
+                   notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => false, 'serviceProviderId' => 3, 'statusId' => 5}}
 
         response = gcm.send(registration_id, options)
       end
@@ -315,7 +315,7 @@ module Customers
          :order_pickup_time => pickup_time, :order_schedule => order.created_at.to_date,
         :order_payment => {:amount => order_payment_amount, :payment_status => order_payment_status, :mode => order_payment_mode},
         :order_address => order_address, customer_mobile: order.customer.mobile,
-        service_provider_mobile: service_provider_mobile, service_provider_id: order.service_provider.id, service_provider_address: order.service_provider_address,
+        service_provider_mobile: service_provider_mobile, service_provider_id: order.service_provider.id, service_provider_address: service_provider_address,
         logistic_mobile: logistic_mobile, logistic_address: logistic_address, order_comments: order_comments}
       end
     end
