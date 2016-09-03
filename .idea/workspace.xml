@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="added progress status bar for order with status changed dates">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/orders/show.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/orders/show.html.slim" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laundry_services.iws" />
@@ -803,12 +802,6 @@
       <option name="number" value="Default" />
       <updated>1464020315982</updated>
     </task>
-    <task id="LOCAL-00132" summary="added popups for item details edits&#10;added popups for service type details edits&#10;added list of orders tables for all users&#10;added list of order items in order show&#10;added item price last updated date in item prices list&#10;added mobile number while assigning sp or logistic">
-      <created>1469266521179</created>
-      <option name="number" value="00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1469266521186</updated>
-    </task>
     <task id="LOCAL-00133" summary="added popups for item details edits&#10;added popups for service type details edits&#10;added list of orders tables for all users&#10;added list of order items in order show&#10;added item price last updated date in item prices list&#10;added mobile number while assigning sp or logistic">
       <created>1469266560709</created>
       <option name="number" value="00133" />
@@ -1097,7 +1090,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472878775712</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="minor refactoring">
+      <created>1472879314121</created>
+      <option name="number" value="00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1472879314121</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1164,9 +1163,9 @@
     <MESSAGE value="added avatar upload functioanlity in api and have to test it in mproduction" />
     <MESSAGE value="added edit functionality to item avatar" />
     <MESSAGE value="added filters by current status" />
-    <MESSAGE value="minor refactoring" />
     <MESSAGE value="added progress status bar for order with status changed dates" />
-    <option name="LAST_COMMIT_MESSAGE" value="added progress status bar for order with status changed dates" />
+    <MESSAGE value="minor refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
