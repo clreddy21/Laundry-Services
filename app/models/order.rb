@@ -177,7 +177,7 @@ class Order < ActiveRecord::Base
 			self.create_status_date(6)
 			message = 'Logistic delivered the order items to customer.'
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
-    'orderId' => self.id, 'isFromNotification' => true}}
+    'orderId' => self.id, 'isFromNotification' => true, serviceProviderId: self.service_provider.id, statusId: self.status_id}}
 			self.logistic.wallet.increment!(:amount, by = self.total_cost)
 
 			send_mobile_notifications(options)

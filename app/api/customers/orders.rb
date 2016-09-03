@@ -298,7 +298,7 @@ module Customers
          :order_pickup_time => pickup_time, :order_schedule => order.created_at.to_date,
         :order_payment => {:amount => order_payment_amount, :payment_status => order_payment_status, :mode => order_payment_mode},
         :order_address => order_address, customer_mobile: order.customer.mobile,
-        service_provider_mobile: service_provider_mobile, service_provider_address: service_provider_address,
+        service_provider_mobile: service_provider_mobile, service_provider_id: service_provider.id, service_provider_address: order.service_provider_address,
         logistic_mobile: logistic_mobile, logistic_address: logistic_address, order_comments: order_comments}
       end
     end
