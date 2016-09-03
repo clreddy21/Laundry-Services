@@ -81,6 +81,8 @@ module Customers
           options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
              'orderId' => order.id}}
 
+          order.create_status_date(1)
+
           customer.send_mobile_notification(options)
           {:message => message, :success => true, :order_id => order.id, status_id: order.status_id, wallet_amount: customer.wallet}
 

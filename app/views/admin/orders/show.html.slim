@@ -58,6 +58,137 @@
         .col-md-3
           = @order.order_items.count
         br
+
+        .status-dates.m-v-20
+        .stepwizard.m-v-20
+          .stepwizard-row
+            .stepwizard-step
+              - if @order.status_id == 1
+                button.btn.btn-primary.btn-circle
+                  = 1
+                p
+                  = Status.find(1).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 1).present?
+                    = @order.status_dates.find_by(status_id: 1).date
+              - else
+                button.btn.btn-default.btn-circle
+                  = 1
+                p
+                  = Status.find(1).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 1).present?
+                    = @order.status_dates.find_by(status_id: 1).date
+            .stepwizard-step
+              - if @order.status_id == 8
+                button.btn.btn-primary.btn-circle
+                  = 2
+                p
+                  = Status.find(8).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 8).present?
+                    = @order.status_dates.find_by(status_id: 8).date
+              - elsif @order.status_id == 7
+                button.btn.btn-danger.btn-circle
+                  = 2
+                p
+                  = Status.find(7).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 7).present?
+                    = @order.status_dates.find_by(status_id: 7).date
+              - else
+                button.btn.btn-default.btn-circle
+                  = 2
+                p
+                  = Status.find(8).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 8).present?
+                    = @order.status_dates.find_by(status_id: 8).date
+            .stepwizard-step
+              - if @order.status_id == 2
+                button.btn.btn-primary.btn-circle
+                  = 3
+                p
+                  = Status.find(2).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 2).present?
+                    = @order.status_dates.find_by(status_id: 2).date
+              - else
+                button.btn.btn-default.btn-circle
+                  = 3
+                p
+                  = Status.find(2).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 2).present?
+                    = @order.status_dates.find_by(status_id: 2).date
+            .stepwizard-step
+              - if @order.status_id == 3
+                button.btn.btn-primary.btn-circle
+                  = 4
+                p
+                  = Status.find(3).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 3).present?
+                    = @order.status_dates.find_by(status_id: 3).date
+              - else
+                button.btn.btn-default.btn-circle
+                  = 4
+                p
+                  = Status.find(3).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 3).present?
+                    = @order.status_dates.find_by(status_id: 3).date
+            .stepwizard-step
+              - if @order.status_id == 4
+                button.btn.btn-primary.btn-circle
+                  = 5
+                p
+                  = Status.find(4).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 4).present?
+                    = @order.status_dates.find_by(status_id: 4).date
+              - else
+                button.btn.btn-default.btn-circle
+                  = 5
+                p
+                  = Status.find(4).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 4).present?
+                    = @order.status_dates.find_by(status_id: 4).date
+            .stepwizard-step
+              - if @order.status_id == 5
+                button.btn.btn-primary.btn-circle
+                  = 6
+                p
+                  = Status.find(5).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 5).present?
+                    = @order.status_dates.find_by(status_id: 5).date
+              - else
+                button.btn.btn-default.btn-circle
+                  = 6
+                p
+                  = Status.find(5).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 5).present?
+                    = @order.status_dates.find_by(status_id: 5).date
+            .stepwizard-step
+              - if @order.status_id == 6
+                button.btn.btn-primary.btn-circle
+                  = 7
+                p
+                  = Status.find(6).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 6).present?
+                    = @order.status_dates.find_by(status_id: 6).date
+              - else
+                button.btn.btn-default.btn-circle
+                  = 7
+                p
+                  = Status.find(6).name.capitalize
+                  br
+                  - if @order.status_dates.find_by(status_id: 6).present?
+                    = @order.status_dates.find_by(status_id: 6).date
         h2.center
           = "List of items"
         br

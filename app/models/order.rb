@@ -8,6 +8,7 @@ class Order < ActiveRecord::Base
   has_one :schedule
   has_one :address, as: :addressable
 	has_many :complaints
+	has_many :status_dates
 
 	delegate :address, to: :address, prefix: true
   delegate :amount, :status, :mode, to: :payment, prefix: true
@@ -47,10 +48,12 @@ class Order < ActiveRecord::Base
 	  if self.status_id == 1
 	  	if response
 	  		self.update(status_id: 8)
+				self.create_status_date(8)
 	  		message = 'Service Provider accepted order'
 	  	else
 	  		self.update(status_id: 7)
-			  message = 'Service Provider declined order'
+				self.create_status_date(7)
+				message = 'Service Provider declined order'
 			end
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
 	    'orderId' => self.id}}
@@ -87,7 +90,8 @@ class Order < ActiveRecord::Base
 
 	  if self.status_id == 8
   		self.update(status_id: 2)
-  		message = 'Logistic picked order items from customer.'
+			self.create_status_date(2)
+			message = 'Logistic picked order items from customer.'
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id, 'orderId' => self.id}}
 
 			send_mobile_notifications(options)
@@ -106,7 +110,8 @@ class Order < ActiveRecord::Base
 
 	  if self.status_id == 2
   		self.update(status_id: 3)
-  		message = 'Logistic delivered order items to service provider and service started.'
+			self.create_status_date(3)
+			message = 'Logistic delivered order items to service provider and service started.'
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
     'orderId' => self.id}}
 
@@ -126,7 +131,8 @@ class Order < ActiveRecord::Base
 
 	  if self.status_id == 3
 			self.update(status_id: 4)
-  		message = 'Service is completed by service provider and ready for pickup by logistic.'
+			self.create_status_date(4)
+			message = 'Service is completed by service provider and ready for pickup by logistic.'
 			    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
     'orderId' => self.id}}
 			self.service_provider.wallet.increment!(:amount, by = self.total_cost)
@@ -147,7 +153,8 @@ class Order < ActiveRecord::Base
 
 	  if self.status_id == 4
   		self.update(status_id: 5)
-  		message = 'Logistic picked up the order items from service provider and is ready to deliver to customer.'
+			self.create_status_date(5)
+			message = 'Logistic picked up the order items from service provider and is ready to deliver to customer.'
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
     'orderId' => self.id}}
 
@@ -167,7 +174,8 @@ class Order < ActiveRecord::Base
 
 		if self.status_id == 5
   		self.update(status_id: 6)
-  		message = 'Logistic delivered the order items to customer.'
+			self.create_status_date(6)
+			message = 'Logistic delivered the order items to customer.'
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
     'orderId' => self.id}}
 			self.logistic.wallet.increment!(:amount, by = self.total_cost)
@@ -186,6 +194,12 @@ class Order < ActiveRecord::Base
 			self.where(status_id: status_id.to_i)
 		end
 	end
+
+
+	def create_status_date(status_id)
+		self.status_dates.create(status_id: status_id, status_name: Status.find(status_id).name, date: Date.today)
+	end
+
 
 
 	protected

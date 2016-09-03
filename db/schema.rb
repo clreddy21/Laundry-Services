@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827160323) do
+ActiveRecord::Schema.define(version: 20160903025428) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
@@ -175,6 +175,17 @@ ActiveRecord::Schema.define(version: 20160827160323) do
     t.datetime "updated_at",                null: false
     t.boolean  "is_active",  default: true
   end
+
+  create_table "status_dates", force: :cascade do |t|
+    t.integer  "status_id"
+    t.string   "status_name"
+    t.integer  "order_id"
+    t.date     "date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "status_dates", ["order_id"], name: "index_status_dates_on_order_id"
 
   create_table "statuses", force: :cascade do |t|
     t.string   "name"
