@@ -62,7 +62,7 @@ module Users
 				if user.valid_password?(params[:old_password])
 					user.update(password: params[:new_password])
 					message = 'Password changed successfully'
-			    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services'}}
+			    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'isFromNotification' => false}}
 					user.send_mobile_notification(options)
 					{message:'Password changed successfully', :success => true}
 				else

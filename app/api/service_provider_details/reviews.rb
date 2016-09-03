@@ -29,7 +29,7 @@ module ServiceProviderDetails
           :review_by_id => review.review_by_id, :review_by_name => User.find(review.review_by_id).full_name}
         end
         message = 'Successfully submitted the rating to service provider'
-        options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services'}}
+        options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'isFromNotification' => false}}
 
         service_provider.send_mobile_notification(options)
         {:message => message, :success => true,

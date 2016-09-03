@@ -60,10 +60,10 @@ module Users
 						if user.type == 'ServiceProvider'
 							user.build_item_prices
 						end
-						options = {data: {score: '123'}, collapse_key: 'updated_score'}
+						options = {data: {score: '123', 'isFromNotification' => false}, collapse_key: 'updated_score'}
 						response = gcm.send(registration_id, options)
 						message = 'Registration successful.'
-				    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services'}}
+				    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'isFromNotification' => false}}
 
 						user.send_mobile_notification(options)
 						{:message => message, :success => true, :user_id => user.id}

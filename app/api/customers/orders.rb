@@ -79,7 +79,7 @@ module Customers
 
           message = 'Order Created Successfully'
           options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-             'orderId' => order.id}}
+             'orderId' => order.id, 'isFromNotification' => false}}
 
           order.create_status_date(1)
 

@@ -30,7 +30,7 @@ class Admin::OrdersController < ApplicationController
 
     message = 'Successfully assigned service provider to the order.'
     options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-                      'orderId' => order.id}}
+                      'orderId' => order.id, 'isFromNotification' => false}}
 
     send_mobile_notifications(order, options)
     redirect_to :back, notice: message
@@ -42,7 +42,7 @@ class Admin::OrdersController < ApplicationController
 
     message = 'Successfully assigned logistic to the order.'
     options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-                      'orderId' => order.id}}
+                      'orderId' => order.id, 'isFromNotification' => false}}
 
     send_mobile_notifications(order, options)
 
