@@ -60,7 +60,7 @@ module Customers
               prices << {service_type_id: item_item_price.service_type_id, service_type_name: item_item_price.service_type.name,
                price: item_item_price.price}
             end
-            item_prices_hash << {item_id: item.id, item_name: item.name, prices: prices, last_updated_date: item_prices.pluck(:updated_at).max}
+            item_prices_hash << {item_id: item.id, item_name: item.name, prices: prices, item_image: (item.avatar_url(:thumb)).to_s, last_updated_date: item_prices.pluck(:updated_at).max}
           end
           item_prices_hash
         end
