@@ -1,0 +1,38 @@
+.row
+  .col-md-3
+  .col-md-6
+    .update_profile
+      h3.m-b-25
+        | Update Profile 
+      = form_for(current_user, url: update_profile_path(current_user), html: { method: :put }) do |f|
+        .row.form-group.m-h-0
+          .col-sm-4
+            = f.label :email, :class => "control-label"
+          .col-sm-8
+            = f.email_field :email, :class => "form-control", placeholder: "", id: "email", required: true, disabled: true
+        .row.form-group.m-h-0
+            .col-sm-4
+              = f.label :first_name, :class => "control-label"
+            .col-sm-8
+              = f.text_field :first_name, :class => "form-control", placeholder: "", id: "name", required: true, disabled: true
+        .row.form-group.m-h-0
+            .col-sm-4
+              = f.label :current_password, :class => "control-label"
+            .col-sm-8
+              = f.password_field :current_password, :class => "form-control", placeholder: "", id: "current_password", required: true
+        .row.form-group.m-h-0
+            .col-sm-4
+              = f.label :password, :class => "control-label"
+            .col-sm-8
+              = f.password_field :password, :class => "form-control", placeholder: "", id: "password", required: true
+        .row.form-group.m-h-0
+            .col-sm-4
+              = f.label :password_confirmation, :class => "control-label"
+            .col-sm-8
+              = f.password_field :password_confirmation, :class => "form-control", placeholder: "", id: "password_confirmation", required: true
+
+        .form-group.m-t-20
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-success.pull-right type="submit"  Update
+  .col-md-3
+    = link_to "Back", :root

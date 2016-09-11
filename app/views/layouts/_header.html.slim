@@ -40,6 +40,9 @@
             a[href=list_of_admin_complaints_path]
               | Complaints
           li
+            a.home-color[href=edit_profile_path(current_user)]
+              | Password
+          li
             = link_to "Sign out", destroy_user_session_path, :method => :delete
 /!
   #nav-collapse2.collapse.nav.navbar-nav.nav-collapse

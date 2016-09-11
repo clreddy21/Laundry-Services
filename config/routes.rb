@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # get 'welcome/index'
   root 'admin/orders#index'
 
+  get 'users/edit_profile/:user_id' => 'users#edit_profile', :as => 'edit_profile'
+  put 'users/update_profile/:user_id' => 'users#update_profile', :as => 'update_profile'
 
   resources :users do
     put '/change_status/:status' => 'users#change_status', as: 'change_status'
