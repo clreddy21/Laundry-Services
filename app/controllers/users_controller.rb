@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     user = User.find_by(id: params[:user_id])
     if user == current_user
     else
-      redirect_to root_path
+      redirect_to root_path, :alert => 'Invalid path.'
     end
   end
 
