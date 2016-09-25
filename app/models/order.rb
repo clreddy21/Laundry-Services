@@ -56,7 +56,7 @@ class Order < ActiveRecord::Base
 				message = 'Service Provider declined order'
 			end
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
-	    'orderId' => self.id, 'isFromNotification' => false}, notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, 'serviceProviderId' => 3, 'statusId'=> 6}}
+	    'orderId' => self.id, 'isFromNotification' => false}}
 
 			send_mobile_notifications(options)
 			message
@@ -71,7 +71,7 @@ class Order < ActiveRecord::Base
 		  message = 'Assigned logistic to order'
 
       options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
-    'orderId' => self.id, 'isFromNotification' => false}, notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, 'serviceProviderId' => 3, 'statusId'=> 6}}
+    'orderId' => self.id, 'isFromNotification' => false}}
 
 			send_mobile_notifications(options)
 			message
@@ -92,7 +92,7 @@ class Order < ActiveRecord::Base
   		self.update(status_id: 2)
 			self.create_status_date(2)
 			message = 'Logistic picked order items from customer.'
-	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id, 'orderId' => self.id, 'isFromNotification' => false}, notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, 'serviceProviderId' => 3, 'statusId'=> 6}}
+	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id, 'orderId' => self.id, 'isFromNotification' => false}}
 
 			send_mobile_notifications(options)
 			message
@@ -113,7 +113,7 @@ class Order < ActiveRecord::Base
 			self.create_status_date(3)
 			message = 'Logistic delivered order items to service provider and service started.'
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
-    'orderId' => self.id, 'isFromNotification' => false}, notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, 'serviceProviderId' => 3, 'statusId'=> 6}}
+    'orderId' => self.id, 'isFromNotification' => false}}
 
 			send_mobile_notifications(options)
 			message
@@ -134,7 +134,7 @@ class Order < ActiveRecord::Base
 			self.create_status_date(4)
 			message = 'Service is completed by service provider and ready for pickup by logistic.'
 			    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
-    'orderId' => self.id, 'isFromNotification' => false}, notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, 'serviceProviderId' => 3, 'statusId'=> 6}}
+    'orderId' => self.id, 'isFromNotification' => false}}
 			self.service_provider.wallet.increment!(:amount, by = self.total_cost)
 
 			send_mobile_notifications(options)
@@ -156,7 +156,7 @@ class Order < ActiveRecord::Base
 			self.create_status_date(5)
 			message = 'Logistic picked up the order items from service provider and is ready to deliver to customer.'
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
-    'orderId' => self.id, 'isFromNotification' => false}, notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, 'serviceProviderId' => 3, 'statusId'=> 6}}
+    'orderId' => self.id, 'isFromNotification' => false}}
 
 			send_mobile_notifications(options)
 			message
@@ -177,8 +177,7 @@ class Order < ActiveRecord::Base
 			self.create_status_date(6)
 			message = 'Logistic delivered the order items to customer.'
 	    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => self.status_id,
-    'orderId' => self.id, 'isFromNotification' => true, serviceProviderId: self.service_provider.id, statusId: self.status_id},
-								 notification: { "click_action" => "OPEN_ACTIVITY_2", 'isFromNotification' => true, 'serviceProviderId' => 3, 'statusId'=> 6}}
+    'orderId' => self.id, 'isFromNotification' => true, serviceProviderId: self.service_provider.id, statusId: self.status_id}}
 			self.logistic.wallet.increment!(:amount, by = self.total_cost)
 
 			send_mobile_notifications(options)

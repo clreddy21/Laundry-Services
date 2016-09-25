@@ -96,7 +96,7 @@ module Customers
 
           message = 'Order Created Successfully'
           options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
-             'orderId' => order.id, 'isFromNotification' => false}, notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, 'serviceProviderId' => 3, 'statusId'=> 6}}
+             'orderId' => order.id, 'isFromNotification' => false}}
 
           order.create_status_date(1)
 
