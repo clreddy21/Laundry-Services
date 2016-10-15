@@ -15,6 +15,7 @@ class Order < ActiveRecord::Base
   delegate :date, to: :schedule, prefix: true
   delegate :from_time, to: :schedule, prefix: true
   delegate :mode, to: :payment, prefix: true
+  delegate :name, to: :service_provider, prefix: true
 
 	after_create :add_reference_id
 

@@ -133,7 +133,7 @@ module Users
 				elsif user.otp.blank?
 					{:message => 'User already verified.', :success => true}
 				elsif user.otp.to_s == params[:otp]
-					user.update(:otp => '', :is_active => true)
+					user.update(:otp => '', :is_active => true, :is_verified => true)
 					user.save!
 		    	payload = {:email => user.email}
 		    	rsa_private = OpenSSL::PKey::RSA.generate 2048
