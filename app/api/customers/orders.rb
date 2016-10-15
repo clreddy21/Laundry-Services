@@ -10,7 +10,7 @@ module Customers
       post do
         gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
 
-        registration_id = ['d5ngZnZjhtk:APA91bGODyGeHolNIyqA9AM0eB4yzrGVlel5bZE8wMYu2tHr7AfNHByxDlpAjJcE2RI-oh4XuHkbQ7sOgPvv-s_Bzl4aS7d3IzWSU1m_OQpk0I076hCb7w9LaQO9-IhbSmeQZNcLbMhW']
+        registration_id = ['f35EpRroH-k:APA91bH5KJAXo2iKLNkJRvLgCrZDAHUCd3IMoD0ZC5PjOLO0VfoijtLE3bHRzoKvAzCcYqeTZ3Jr3ADHBLJlE-TNyXLB2MLfJyiGH-ZpksXcrY1jIyfDwQL6xFSl5bf3efyB8GNSTfCt']
 
         options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services','statusId' => '4','orderId' => 59},
                    notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => true, 'serviceProviderId' => 3, 'statusId'=> 6}}
@@ -27,7 +27,7 @@ module Customers
       post do
         gcm = GCM.new('AIzaSyDl8MnvUMrn2XvaLqnWlXQGBGcwv3Urz3I')
 
-        registration_id = ['d5ngZnZjhtk:APA91bGODyGeHolNIyqA9AM0eB4yzrGVlel5bZE8wMYu2tHr7AfNHByxDlpAjJcE2RI-oh4XuHkbQ7sOgPvv-s_Bzl4aS7d3IzWSU1m_OQpk0I076hCb7w9LaQO9-IhbSmeQZNcLbMhW']
+        registration_id = ['f35EpRroH-k:APA91bH5KJAXo2iKLNkJRvLgCrZDAHUCd3IMoD0ZC5PjOLO0VfoijtLE3bHRzoKvAzCcYqeTZ3Jr3ADHBLJlE-TNyXLB2MLfJyiGH-ZpksXcrY1jIyfDwQL6xFSl5bf3efyB8GNSTfCt']
 
         options = {data: {'messageType' => 'list','message' => 'boom','title' => 'Laundry Services','statusId' => '4','orderId' => 59},
                    notification: { "click_action" => "OPEN_ACTIVITY_1", 'isFromNotification' => false, 'serviceProviderId' => 3, 'statusId' => 5}}
