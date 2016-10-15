@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/customers/orders.rb" afterPath="$PROJECT_DIR$/app/api/customers/orders.rb" />
     </list>
     <ignored path="laundry_services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -469,14 +467,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464020315982</updated>
-      <workItem from="1476509184868" duration="620000" />
-    </task>
-    <task id="LOCAL-00147" summary="added ui to messages of complaint&#10;added complaints functionality">
-      <created>1469642494863</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1469642494863</updated>
+      <workItem from="1476509184868" duration="626000" />
     </task>
     <task id="LOCAL-00148" summary="added ui to messages of complaint&#10;added complaints functionality">
       <created>1469642628582</created>
@@ -814,11 +805,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476509226670</updated>
     </task>
-    <option name="localTasksCounter" value="196" />
+    <task id="LOCAL-00196" summary="minor refactoring">
+      <created>1476517428785</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1476517428786</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="620000" />
+    <option name="totallyTimeSpent" value="626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
