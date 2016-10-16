@@ -93,7 +93,7 @@ module Customers
           message = ''
           Notification.send_notification('New Group Created', message, order)
 
-          service_provider_name = order.service_provider ? order.service_provider.name : ''
+          service_provider_name = order.service_provider ? order.service_provider.full_name : ''
           message = 'Order Created Successfully'
           options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
              'orderId' => order.id, 'isFromNotification' => false, 'ServiceProvideName' => service_provider_name}}
