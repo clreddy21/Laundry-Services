@@ -14,7 +14,7 @@ module Users
 			  requires :password, type:String, regexp: /\A[a-z0-9]{6,128}+\z/
 
 			  requires :mobile, type:String
-			  requires :address, type:String
+			  # requires :address, type:String
 			  # requires :avatar, type:String
 			  requires :type, type:String
 			  requires :device_id, type:String
@@ -53,7 +53,7 @@ module Users
 
 					user = User.find_by(:email => params[:email])
 				  if user.present?
-						Address.create(address: params[:address], :addressable  => user)
+						# Address.create(address: params[:address], :addressable  => user)
 						Wallet.create(amount: 0.0, user_id: user.id)
 						gcm = GCM.new('AIzaSyCEVI-nKDlS-QieHzg75HCjodx4GlOr3CM')
 						registration_id = params[:device_id]

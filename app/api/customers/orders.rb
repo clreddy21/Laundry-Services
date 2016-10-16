@@ -74,8 +74,10 @@ module Customers
           params[:items].each do |item|
             order_item = OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id],
               :quantity => item[:quantity], :amount => item[:amount])
-            OrderComment.create(order_id: order.id, body: item[:comment], comment_by_type: commenter.type,
-            comment_by_id: commenter.id, order_item_id: order_item.id)
+            if (!item[:comment] == "null") || !(item[:comment].nil?)
+              OrderComment.create(order_id: order.id, body: item[:comment], comment_by_type: commenter.type,
+              comment_by_id: commenter.id, order_item_id: order_item.id)
+            end
           end
 
 
