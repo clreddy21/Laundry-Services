@@ -60,13 +60,13 @@
               - if order.service_provider.nil?
                 = 'Not Assigned Yet'
               - else
-                a href=user_path(order.service_provider
+                a href=user_path(order.service_provider)
                   = order.service_provider.full_name
             td
               - if order.logistic.nil?
                 = 'Not Assigned Yet'
               - else
-                a href=user_path(order.logistic
+                a href=user_path(order.logistic)
                   = order.logistic.full_name
             td
               = number_to_indian_currency(order.total_cost)
