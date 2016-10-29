@@ -1,6 +1,8 @@
 class Complaint < ActiveRecord::Base
   belongs_to :order
   has_many :messages, as: :messageable
+  scope :by_id, -> { order('id DESC')}
+
 
   # before_save :create_reference_id
 

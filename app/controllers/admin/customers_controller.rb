@@ -2,7 +2,7 @@ class Admin::CustomersController < ApplicationController
   before_action :authenticate_user!
 
   def list_of_customers
-    @customers = Customer.includes(:orders, :wallet).all
+    @customers = Customer.includes(:orders, :wallet).all.by_id
   end
 
   def new

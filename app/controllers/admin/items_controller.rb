@@ -2,7 +2,7 @@ class Admin::ItemsController < ApplicationController
   before_action :authenticate_user!
 
   def list_of_items
-    @items = Item.all
+    @items = Item.all.by_id
     @item = Item.new
   end
 

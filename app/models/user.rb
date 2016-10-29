@@ -24,6 +24,8 @@ class User < ActiveRecord::Base
 
   has_many :items
   has_many :item_prices
+  scope :by_id, -> { order('id DESC')}
+
 
 
   def full_name

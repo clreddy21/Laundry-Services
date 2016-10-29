@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160903025428) do
+ActiveRecord::Schema.define(version: 20161015181025) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
@@ -34,16 +34,15 @@ ActiveRecord::Schema.define(version: 20160903025428) do
   add_index "complaints", ["order_id"], name: "index_complaints_on_order_id"
 
   create_table "item_prices", force: :cascade do |t|
-    t.integer  "service_provider_id"
     t.integer  "item_id"
     t.integer  "service_type_id"
+    t.integer  "service_provider_id"
     t.integer  "price"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
 
   add_index "item_prices", ["item_id"], name: "index_item_prices_on_item_id"
-  add_index "item_prices", ["service_provider_id"], name: "index_item_prices_on_service_provider_id"
   add_index "item_prices", ["service_type_id"], name: "index_item_prices_on_service_type_id"
 
   create_table "items", force: :cascade do |t|
@@ -111,7 +110,7 @@ ActiveRecord::Schema.define(version: 20160903025428) do
     t.float    "total_cost"
     t.float    "change_in_cost"
     t.string   "change_in_cost_reason"
-    t.string   "comment",                  default: ""
+    t.string   "comment"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.string   "service_provider_chooser"
@@ -119,10 +118,6 @@ ActiveRecord::Schema.define(version: 20160903025428) do
     t.integer  "reference_id"
     t.boolean  "is_active",                default: true
   end
-
-  add_index "orders", ["customer_id"], name: "index_orders_on_customer_id"
-  add_index "orders", ["logistic_id"], name: "index_orders_on_logistic_id"
-  add_index "orders", ["service_provider_id"], name: "index_orders_on_service_provider_id"
 
   create_table "payments", force: :cascade do |t|
     t.float    "amount"
@@ -221,14 +216,14 @@ ActiveRecord::Schema.define(version: 20160903025428) do
     t.float    "longitude"
     t.string   "gcm_id"
     t.string   "otp"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.string   "email",                  default: "",  null: false
-    t.string   "encrypted_password",     default: "",  null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,   null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -243,6 +238,7 @@ ActiveRecord::Schema.define(version: 20160903025428) do
     t.integer  "capacity"
     t.integer  "max_workload"
     t.boolean  "is_partner"
+    t.boolean  "is_verified",            default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

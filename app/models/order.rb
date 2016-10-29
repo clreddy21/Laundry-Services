@@ -17,8 +17,11 @@ class Order < ActiveRecord::Base
   delegate :mode, to: :payment, prefix: true
 
 	after_create :add_reference_id
+	scope :by_id, -> { order('id DESC')}
 
-  def self.without_logistic
+
+
+	def self.without_logistic
     self.where(logistic_id: nil).where.not(status_id: 7)
   end
 

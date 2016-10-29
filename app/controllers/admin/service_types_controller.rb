@@ -2,7 +2,7 @@ class Admin::ServiceTypesController < ApplicationController
   before_action :authenticate_user!
 
   def list_of_service_types
-    @service_types = ServiceType.all
+    @service_types = ServiceType.all.by_id
     @service_type = ServiceType.new
   end
 

@@ -8,4 +8,6 @@ class OrderItem < ActiveRecord::Base
   delegate :name, to: :item, prefix: true
 
   scope :active, -> { where(:is_active => true) }
+  scope :by_id, -> { order('id DESC')}
+
 end

@@ -4,7 +4,7 @@ class Admin::LogisticsController < ApplicationController
   before_action :authenticate_user!
 
   def list_of_logistics
-    @logistics = Logistic.all
+    @logistics = Logistic.all.by_id
   end
 
   def new

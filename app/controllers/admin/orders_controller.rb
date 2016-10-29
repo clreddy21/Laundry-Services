@@ -4,7 +4,7 @@ class Admin::OrdersController < ApplicationController
 
   def index
     status_id = params[:status_id]
-    @orders = Order.includes(:service_provider, :customer, :logistic, :payment).all.filter_by_status(status_id)
+    @orders = Order.includes(:service_provider, :customer, :logistic, :payment).all.filter_by_status(status_id).by_id
     @statuses = get_statuses
   end
 

@@ -2,7 +2,7 @@ class Admin::ServiceProvidersController < ApplicationController
   before_action :authenticate_user!
 
   def list_of_service_providers
-    @service_providers = ServiceProvider.all
+    @service_providers = ServiceProvider.all.by_id
   end
 
   def new

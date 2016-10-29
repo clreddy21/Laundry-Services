@@ -5,7 +5,7 @@ class ItemPricesController < ApplicationController
 
   def index
     @admin_sp = User.find_by(email: 'admin_sp@ls.com')
-    @item_prices = @admin_sp.item_prices.all
+    @item_prices = @admin_sp.item_prices.by_id
     service_type_ids = ItemPrice.all.pluck(:service_type_id).uniq
 
     @service_types =  ServiceType.where(id: service_type_ids)

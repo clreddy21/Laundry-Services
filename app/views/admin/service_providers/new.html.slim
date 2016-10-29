@@ -51,6 +51,11 @@
         .col-sm-7
           = f.number_field:max_workload, :class => "form-control", placeholder: "Max Workload", min: 0, max: 50, required: true
       .form-group.row
+        fieldset#user-addresses
+          ol
+            = f.fields_for :addresses do |quantity|
+              = render 'quantity_fields', f: quantity
+        = link_to_add_association 'add ingredient', f, :quantities, 'data-association-insertion-node' => "#recipe-ingredients ol", 'data-association-insertion-method' => "append", :wrap_object => Proc.new { |quantity| quantity.build_ingredient; quantity }
         .col-sm-1
         .col-sm-3.m-t-5
           = f.label:address, :class => "control-label"
