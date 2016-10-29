@@ -54,19 +54,19 @@
             td
               = order.reference_id
             td
-              a href=customer_path(order.customer)
+              a href=admin_customer_path(order.customer)
                 = order.customer.full_name
             td
               - if order.service_provider.nil?
                 = 'Not Assigned Yet'
               - else
-                a href=service_provider_path(order.service_provider)
+                a href=admin_service_provider_path(order.service_provider)
                   = order.service_provider.full_name
             td
               - if order.logistic.nil?
                 = 'Not Assigned Yet'
               - else
-                a href=logistic_path(order.logistic)
+                a href=admin_logistic_path(order.logistic)
                   = order.logistic.full_name
             td
               = number_to_indian_currency(order.total_cost)
