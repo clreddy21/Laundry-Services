@@ -1,0 +1,55 @@
+h2.center
+  = "List of Reviews"
+table.display
+  caption
+    | List of Reviews
+  thead
+    tr
+      th
+        | S No
+      th
+        | Order Reference Id
+      th
+        | Customer
+      th
+        | Logistic
+      th
+        | Total Cost
+      th
+        | Date
+      th
+        | Rating
+      th
+        | Review
+  tbody.text-center
+    - reviews.each_with_index do |review, i|
+      tr
+        td
+          = i + 1
+        td
+          = review.order.reference_id
+        td
+          = order.customer.full_name
+        td
+          - if order.service_provider.nil?
+            = 'Not Assigned Yet'
+          - else
+            = order.service_provider.full_name
+        td
+          - if order.logistic.nil?
+            = 'Not Assigned Yet'
+          - else
+            = order.logistic.full_name
+        td
+          = number_to_indian_currency(order.total_cost)
+        td
+          = order.service_provider_chooser
+        td
+          = Status.find_by(id: order.status_id).name
+        td
+          = order.created_at.strftime('%d/%m/%y')
+        td
+          - if order.payment
+            = order.payment_mode
+        td
+          a href=admin_order_path(order) Details

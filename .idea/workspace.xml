@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="minor refactoring&#10;">
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/latest.dump" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.haml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161126065615_add_order_id_to_review.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/api/service_provider_details/reviews.rb" afterPath="$PROJECT_DIR$/app/api/service_provider_details/reviews.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/customers/list_of_customers.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/customers/list_of_customers.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/service_providers/new.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/service_providers/new.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/service_providers/show.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/service_providers/show.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="laundry_services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -826,14 +821,7 @@
       <workItem from="1478314033046" duration="237000" />
       <workItem from="1478422827069" duration="442000" />
       <workItem from="1479262984418" duration="668000" />
-      <workItem from="1480142291246" duration="1107000" />
-    </task>
-    <task id="LOCAL-00158" summary="minor refactoring">
-      <created>1470907968869</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1470907968869</updated>
+      <workItem from="1480142291246" duration="1122000" />
     </task>
     <task id="LOCAL-00159" summary="added multiple address functionality">
       <created>1472286089434</created>
@@ -1171,11 +1159,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477710988074</updated>
     </task>
-    <option name="localTasksCounter" value="207" />
+    <task id="LOCAL-00207" summary="minor refactoring&#10;">
+      <created>1480143655325</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1480143655326</updated>
+    </task>
+    <option name="localTasksCounter" value="208" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13544000" />
+    <option name="totallyTimeSpent" value="13559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
