@@ -6,11 +6,6 @@
         = "Service Provider Details"
     .row
       .col-md-offset-3.col-md-3
-        = "Name"
-      .col-md-3
-        = @service_provider.full_name
-    .row
-      .col-md-offset-3.col-md-3
         = "Email"
       .col-md-3
         = @service_provider.email
@@ -53,6 +48,8 @@
           = render 'admin/orders/orders', orders: @service_provider.current_orders
         #completed_orders.tab-pane.fade
           = render 'admin/orders/orders', orders: @service_provider.completed_orders
+        #service_provider_ratings.tab-pane.fade
+          = render 'admin/service_providers/reviews', reviews: @service_provider.reviews
       /= render 'admin/orders/orders', orders: @orders
   .col-md-1.m-t-60
     = link_to 'Back', list_of_admin_service_providers_path, class: 'btn btn-info'

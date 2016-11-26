@@ -12,8 +12,10 @@ module ServiceProviderDetails
 
       post do
         service_provider = ServiceProvider.find(params[:service_provider_id])
+        customer_id = params[:review_by_id]
+        order_id = service_provider.orders.where(customer_id: customer_id).last
         Review.create(:rating => params[:rating], :review_by_id => params[:review_by_id],
-                      :body => params[:body], :reviewable=> service_provider)
+                      :body => params[:body], :reviewable=> service_provider, :order_id => order_id)
 
         ratings = service_provider.reviews.pluck(:rating)
 

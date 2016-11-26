@@ -53,7 +53,9 @@
       .form-group.row
         fieldset#user-addresses
           ol
-            = f.fields_for :addresses do |quantity|
+            f.fields_for :addresses do |address_fields|
+                Address: addresses.text_field :address
+            /= f.fields_for :addresses do |quantity|
               = render 'quantity_fields', f: quantity
         = link_to_add_association 'add ingredient', f, :quantities, 'data-association-insertion-node' => "#recipe-ingredients ol", 'data-association-insertion-method' => "append", :wrap_object => Proc.new { |quantity| quantity.build_ingredient; quantity }
         .col-sm-1
