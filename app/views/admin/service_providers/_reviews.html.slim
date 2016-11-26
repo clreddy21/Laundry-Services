@@ -25,7 +25,8 @@ table.display
         td
           = i + 1
         td
-          = a href=admin_order_path(review.order) review.order.reference_id
+          a href=admin_order_path(review.order)
+            = review.order.reference_id
         td
           = review.order.customer.full_name
         td
