@@ -12,8 +12,6 @@ table.display
       th
         | Customer
       th
-        | Logistic
-      th
         | Total Cost
       th
         | Date
@@ -27,29 +25,14 @@ table.display
         td
           = i + 1
         td
-          = review.order.reference_id
+          = a href=admin_order_path(review.order) review.order.reference_id
         td
-          = order.customer.full_name
+          = review.order.customer.full_name
         td
-          - if order.service_provider.nil?
-            = 'Not Assigned Yet'
-          - else
-            = order.service_provider.full_name
+          = number_to_indian_currency(review.order.total_cost)
         td
-          - if order.logistic.nil?
-            = 'Not Assigned Yet'
-          - else
-            = order.logistic.full_name
+          = review.order.created_at.strftime('%d/%m/%y')
         td
-          = number_to_indian_currency(order.total_cost)
+          = review.rating
         td
-          = order.service_provider_chooser
-        td
-          = Status.find_by(id: order.status_id).name
-        td
-          = order.created_at.strftime('%d/%m/%y')
-        td
-          - if order.payment
-            = order.payment_mode
-        td
-          a href=admin_order_path(order) Details
+          = review.body

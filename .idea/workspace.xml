@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/order.rb" afterPath="$PROJECT_DIR$/app/models/order.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/review.rb" afterPath="$PROJECT_DIR$/app/models/review.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim" />
     </list>
     <ignored path="laundry_services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +24,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="order.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/order.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -75,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schedule.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/schedule.rb">
+      <file leaf-file-name="list_of_service_providers.html.slim" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="556">
+              <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,66 +114,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_reviews.html.slim" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_reviews.html.slim" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-              <folding>
-                <marker date="1480143208000" expanded="true" signature="0:31" ph="h2.center" />
-                <marker date="1480143208000" expanded="true" signature="12:31" ph="= &quot;List of Reviews&quot;" />
-                <marker date="1480143208000" expanded="true" signature="32:1181" ph="table.display" />
-                <marker date="1480143208000" expanded="true" signature="48:77" ph="caption" />
-                <marker date="1480143208000" expanded="true" signature="60:77" ph="| List of Reviews" />
-                <marker date="1480143208000" expanded="true" signature="80:316" ph="thead" />
-                <marker date="1480143208000" expanded="true" signature="90:316" ph="tr" />
-                <marker date="1480143208000" expanded="true" signature="99:116" ph="th" />
-                <marker date="1480143208000" expanded="true" signature="110:116" ph="| S No" />
-                <marker date="1480143208000" expanded="true" signature="123:154" ph="th" />
-                <marker date="1480143208000" expanded="true" signature="134:154" ph="| Order Reference Id" />
-                <marker date="1480143208000" expanded="true" signature="161:182" ph="th" />
-                <marker date="1480143208000" expanded="true" signature="172:182" ph="| Customer" />
-                <marker date="1480143208000" expanded="true" signature="189:210" ph="th" />
-                <marker date="1480143208000" expanded="true" signature="200:210" ph="| Logistic" />
-                <marker date="1480143208000" expanded="true" signature="217:240" ph="th" />
-                <marker date="1480143208000" expanded="true" signature="228:240" ph="| Total Cost" />
-                <marker date="1480143208000" expanded="true" signature="247:264" ph="th" />
-                <marker date="1480143208000" expanded="true" signature="258:264" ph="| Date" />
-                <marker date="1480143208000" expanded="true" signature="271:290" ph="th" />
-                <marker date="1480143208000" expanded="true" signature="282:290" ph="| Rating" />
-                <marker date="1480143208000" expanded="true" signature="297:316" ph="th" />
-                <marker date="1480143208000" expanded="true" signature="308:316" ph="| Review" />
-                <marker date="1480143208000" expanded="true" signature="319:1181" ph="tbody.text-center" />
-                <marker date="1480143208000" expanded="true" signature="341:1181" ph="- reviews.each_with_index do |review, i|" />
-                <marker date="1480143208000" expanded="true" signature="367:1181" ph="do ... end" />
-                <marker date="1480143208000" expanded="true" signature="388:1181" ph="tr" />
-                <marker date="1480143208000" expanded="true" signature="399:419" ph="td" />
-                <marker date="1480143208000" expanded="true" signature="412:419" ph="= i + 1" />
-                <marker date="1480143208000" expanded="true" signature="428:468" ph="td" />
-                <marker date="1480143208000" expanded="true" signature="441:468" ph="= review.order.reference_id" />
-                <marker date="1480143208000" expanded="true" signature="477:516" ph="td" />
-                <marker date="1480143208000" expanded="true" signature="490:516" ph="= order.customer.full_name" />
-                <marker date="1480143208000" expanded="true" signature="540:668" ph="if ... end" />
-                <marker date="1480143208000" expanded="true" signature="583:603" ph="= 'Not Assigned Yet'" />
-                <marker date="1480143208000" expanded="true" signature="614:667" ph="- else" />
-                <marker date="1480143208000" expanded="true" signature="633:667" ph="= order.service_provider.full_name" />
-                <marker date="1480143208000" expanded="true" signature="691:803" ph="if ... end" />
-                <marker date="1480143208000" expanded="true" signature="726:746" ph="= 'Not Assigned Yet'" />
-                <marker date="1480143208000" expanded="true" signature="757:802" ph="- else" />
-                <marker date="1480143208000" expanded="true" signature="776:802" ph="= order.logistic.full_name" />
-                <marker date="1480143208000" expanded="true" signature="811:869" ph="td" />
-                <marker date="1480143208000" expanded="true" signature="824:869" ph="= number_to_indian_currency(order.total_cost)" />
-                <marker date="1480143208000" expanded="true" signature="878:923" ph="td" />
-                <marker date="1480143208000" expanded="true" signature="891:923" ph="= order.service_provider_chooser" />
-                <marker date="1480143208000" expanded="true" signature="932:987" ph="td" />
-                <marker date="1480143208000" expanded="true" signature="945:987" ph="= Status.find_by(id: order.status_id).name" />
-                <marker date="1480143208000" expanded="true" signature="996:1048" ph="td" />
-                <marker date="1480143208000" expanded="true" signature="1009:1048" ph="= order.created_at.strftime('%d/%m/%y')" />
-                <marker date="1480143208000" expanded="true" signature="1072:1122" ph="if ... end" />
-                <marker date="1480143208000" expanded="true" signature="1101:1121" ph="= order.payment_mode" />
-                <marker date="1480143208000" expanded="true" signature="1130:1181" ph="td" />
-                <marker date="1480143208000" expanded="true" signature="1143:1181" ph="a href=admin_order_path(order) Details" />
-              </folding>
+            <state relative-caret-position="405">
+              <caret line="27" column="75" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/admin/orders/show.html.slim" />
         <option value="$PROJECT_DIR$/app/api/service_provider_details/item_prices.rb" />
         <option value="$PROJECT_DIR$/app/api/service_provider_details/wallets.rb" />
         <option value="$PROJECT_DIR$/app/api/customers/service_providers.rb" />
@@ -238,6 +182,7 @@
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
         <option value="$PROJECT_DIR$/app/models/order.rb" />
+        <option value="$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim" />
       </list>
     </option>
   </component>
@@ -874,14 +819,7 @@
       <workItem from="1478314033046" duration="237000" />
       <workItem from="1478422827069" duration="442000" />
       <workItem from="1479262984418" duration="668000" />
-      <workItem from="1480142291246" duration="1684000" />
-    </task>
-    <task id="LOCAL-00162" summary="minor refactoring&#10;">
-      <created>1472295609191</created>
-      <option name="number" value="00162" />
-      <option name="presentableId" value="LOCAL-00162" />
-      <option name="project" value="LOCAL" />
-      <updated>1472295609191</updated>
+      <workItem from="1480142291246" duration="1979000" />
     </task>
     <task id="LOCAL-00163" summary="minor refactoring&#10;">
       <created>1472295825413</created>
@@ -1219,11 +1157,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480146583054</updated>
     </task>
-    <option name="localTasksCounter" value="211" />
+    <task id="LOCAL-00211" summary="minor refactoring&#10;">
+      <created>1480146790750</created>
+      <option name="number" value="00211" />
+      <option name="presentableId" value="LOCAL-00211" />
+      <option name="project" value="LOCAL" />
+      <updated>1480146790750</updated>
+    </task>
+    <option name="localTasksCounter" value="212" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14121000" />
+    <option name="totallyTimeSpent" value="14416000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1554,14 +1499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="97" column="79" selection-start-line="97" selection-start-column="79" selection-end-line="97" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/new.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
@@ -1602,68 +1539,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding>
-            <marker date="1480143208000" expanded="true" signature="0:31" ph="h2.center" />
-            <marker date="1480143208000" expanded="true" signature="12:31" ph="= &quot;List of Reviews&quot;" />
-            <marker date="1480143208000" expanded="true" signature="32:1181" ph="table.display" />
-            <marker date="1480143208000" expanded="true" signature="48:77" ph="caption" />
-            <marker date="1480143208000" expanded="true" signature="60:77" ph="| List of Reviews" />
-            <marker date="1480143208000" expanded="true" signature="80:316" ph="thead" />
-            <marker date="1480143208000" expanded="true" signature="90:316" ph="tr" />
-            <marker date="1480143208000" expanded="true" signature="99:116" ph="th" />
-            <marker date="1480143208000" expanded="true" signature="110:116" ph="| S No" />
-            <marker date="1480143208000" expanded="true" signature="123:154" ph="th" />
-            <marker date="1480143208000" expanded="true" signature="134:154" ph="| Order Reference Id" />
-            <marker date="1480143208000" expanded="true" signature="161:182" ph="th" />
-            <marker date="1480143208000" expanded="true" signature="172:182" ph="| Customer" />
-            <marker date="1480143208000" expanded="true" signature="189:210" ph="th" />
-            <marker date="1480143208000" expanded="true" signature="200:210" ph="| Logistic" />
-            <marker date="1480143208000" expanded="true" signature="217:240" ph="th" />
-            <marker date="1480143208000" expanded="true" signature="228:240" ph="| Total Cost" />
-            <marker date="1480143208000" expanded="true" signature="247:264" ph="th" />
-            <marker date="1480143208000" expanded="true" signature="258:264" ph="| Date" />
-            <marker date="1480143208000" expanded="true" signature="271:290" ph="th" />
-            <marker date="1480143208000" expanded="true" signature="282:290" ph="| Rating" />
-            <marker date="1480143208000" expanded="true" signature="297:316" ph="th" />
-            <marker date="1480143208000" expanded="true" signature="308:316" ph="| Review" />
-            <marker date="1480143208000" expanded="true" signature="319:1181" ph="tbody.text-center" />
-            <marker date="1480143208000" expanded="true" signature="341:1181" ph="- reviews.each_with_index do |review, i|" />
-            <marker date="1480143208000" expanded="true" signature="367:1181" ph="do ... end" />
-            <marker date="1480143208000" expanded="true" signature="388:1181" ph="tr" />
-            <marker date="1480143208000" expanded="true" signature="399:419" ph="td" />
-            <marker date="1480143208000" expanded="true" signature="412:419" ph="= i + 1" />
-            <marker date="1480143208000" expanded="true" signature="428:468" ph="td" />
-            <marker date="1480143208000" expanded="true" signature="441:468" ph="= review.order.reference_id" />
-            <marker date="1480143208000" expanded="true" signature="477:516" ph="td" />
-            <marker date="1480143208000" expanded="true" signature="490:516" ph="= order.customer.full_name" />
-            <marker date="1480143208000" expanded="true" signature="540:668" ph="if ... end" />
-            <marker date="1480143208000" expanded="true" signature="583:603" ph="= 'Not Assigned Yet'" />
-            <marker date="1480143208000" expanded="true" signature="614:667" ph="- else" />
-            <marker date="1480143208000" expanded="true" signature="633:667" ph="= order.service_provider.full_name" />
-            <marker date="1480143208000" expanded="true" signature="691:803" ph="if ... end" />
-            <marker date="1480143208000" expanded="true" signature="726:746" ph="= 'Not Assigned Yet'" />
-            <marker date="1480143208000" expanded="true" signature="757:802" ph="- else" />
-            <marker date="1480143208000" expanded="true" signature="776:802" ph="= order.logistic.full_name" />
-            <marker date="1480143208000" expanded="true" signature="811:869" ph="td" />
-            <marker date="1480143208000" expanded="true" signature="824:869" ph="= number_to_indian_currency(order.total_cost)" />
-            <marker date="1480143208000" expanded="true" signature="878:923" ph="td" />
-            <marker date="1480143208000" expanded="true" signature="891:923" ph="= order.service_provider_chooser" />
-            <marker date="1480143208000" expanded="true" signature="932:987" ph="td" />
-            <marker date="1480143208000" expanded="true" signature="945:987" ph="= Status.find_by(id: order.status_id).name" />
-            <marker date="1480143208000" expanded="true" signature="996:1048" ph="td" />
-            <marker date="1480143208000" expanded="true" signature="1009:1048" ph="= order.created_at.strftime('%d/%m/%y')" />
-            <marker date="1480143208000" expanded="true" signature="1072:1122" ph="if ... end" />
-            <marker date="1480143208000" expanded="true" signature="1101:1121" ph="= order.payment_mode" />
-            <marker date="1480143208000" expanded="true" signature="1130:1181" ph="td" />
-            <marker date="1480143208000" expanded="true" signature="1143:1181" ph="a href=admin_order_path(order) Details" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1727,6 +1602,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="75" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
           <folding />
         </state>
       </provider>
