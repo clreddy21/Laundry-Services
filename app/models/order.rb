@@ -8,6 +8,7 @@ class Order < ActiveRecord::Base
   has_one :schedule
   has_one :address, as: :addressable
 	has_many :complaints
+	has_many :reviews
 	has_many :status_dates
 
 	delegate :address, to: :address, prefix: true
