@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/service_providers/show.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/service_providers/show.html.slim" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim" />
     </list>
     <ignored path="laundry_services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,17 +104,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_reviews.html.slim" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_reviews.html.slim" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+            <state relative-caret-position="465">
+              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.slim" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.html.slim" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/show.html.slim">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="517">
@@ -181,8 +181,8 @@
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
         <option value="$PROJECT_DIR$/app/models/order.rb" />
-        <option value="$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim" />
         <option value="$PROJECT_DIR$/app/views/admin/service_providers/show.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim" />
       </list>
     </option>
   </component>
@@ -845,14 +845,7 @@
       <workItem from="1478314033046" duration="237000" />
       <workItem from="1478422827069" duration="442000" />
       <workItem from="1479262984418" duration="668000" />
-      <workItem from="1480142291246" duration="2279000" />
-    </task>
-    <task id="LOCAL-00165" summary="minor refactoring&#10;">
-      <created>1472297328873</created>
-      <option name="number" value="00165" />
-      <option name="presentableId" value="LOCAL-00165" />
-      <option name="project" value="LOCAL" />
-      <updated>1472297328873</updated>
+      <workItem from="1480142291246" duration="2371000" />
     </task>
     <task id="LOCAL-00166" summary="minor refactoring">
       <created>1472298887403</created>
@@ -1190,11 +1183,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480147312388</updated>
     </task>
-    <option name="localTasksCounter" value="214" />
+    <task id="LOCAL-00214" summary="minor refactoring&#10;">
+      <created>1480147452677</created>
+      <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
+      <option name="project" value="LOCAL" />
+      <updated>1480147452677</updated>
+    </task>
+    <option name="localTasksCounter" value="215" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14716000" />
+    <option name="totallyTimeSpent" value="14808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1632,18 +1632,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/show.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
           <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
           <folding />
         </state>
       </provider>

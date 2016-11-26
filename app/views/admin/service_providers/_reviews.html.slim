@@ -28,7 +28,8 @@ table.display
           a href=admin_order_path(review.order)
             = review.order.reference_id
         td
-          = review.order.customer.full_name
+          a href=admin_customer_path(review.order.customer)
+            = review.order.customer.full_name
         td
           = number_to_indian_currency(review.order.total_cost)
         td
