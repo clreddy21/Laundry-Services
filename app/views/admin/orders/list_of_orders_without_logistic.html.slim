@@ -21,6 +21,8 @@
           th
             | S No
           th
+            | Date
+          th
             | Reference Id
           th
             | Customer
@@ -35,8 +37,6 @@
           th
             | Status
           th
-            | Date
-          th
             | Mode
           th
             | Details
@@ -45,6 +45,8 @@
           tr
             td
               = i + 1
+            td
+              = order.created_at.strftime('%d/%m/%y')
             td
               = order.reference_id
             td
@@ -65,8 +67,6 @@
               = order.service_provider_chooser
             td
               = Status.find_by(id: order.status_id).name
-            td
-              = order.created_at.strftime('%d/%m/%y')
             td
               - if order.payment
                 = order.payment_mode

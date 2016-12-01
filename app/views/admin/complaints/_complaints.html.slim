@@ -8,6 +8,8 @@ table.display
       th
         | S No
       th
+        | Date
+      th
         | Reference Id
       th
         | Order Id
@@ -21,8 +23,7 @@ table.display
         | Comments
       th
         | Status
-      th
-        | Date
+
       th
         | Details
   tbody.text-center
@@ -31,6 +32,8 @@ table.display
       tr
         td
           = i + 1
+        td
+          = complaint.created_at.strftime('%d/%m/%y')
         td
           = complaint.reference_id
         td
@@ -52,7 +55,5 @@ table.display
           = complaint.messages.pluck(:body).join('<br>').html_safe
         td
           = complaint.status
-        td
-          = complaint.created_at.strftime('%d/%m/%y')
         td
           a href=admin_complaint_path(complaint) Details
