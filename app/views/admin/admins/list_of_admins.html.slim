@@ -1,0 +1,95 @@
+.row.m-t-20
+  .col-md-offset-1.col-md-3
+    h3
+      | List of admins
+  .col-md-offset-4.col-md-2
+    = link_to 'Add New admin', new_admin_admin_path, class: 'btn btn-info'
+  .col-md-2
+    = link_to 'Back', root_path, class: 'btn btn-info'
+.row
+  .col-md-1
+  .col-md-10
+    table#customers
+      caption
+        | List of admins
+      thead
+        tr
+          th
+            | S No
+          th
+            | Reference Id
+          th
+            | Name
+          th
+            | Mobile
+          th
+            | Email
+          th
+            | Reg Date
+          th
+            | Status
+          th
+            | Level
+          th
+            | Change Status
+          th
+            | Details
+      tbody.text-center
+        - @admins.each_with_index do |admin, i|
+          tr
+            td
+              = i + 1
+            td
+              = admin.reference_id
+            td
+              = admin.full_name
+            td
+              = admin.mobile
+            td
+              = admin.email
+            td
+              = admin.created_at.strftime('%d/%m/%y')
+            td
+              = admin.status.capitalize
+            td
+              = admin.level.capitalize
+            td
+              = link_to "#{root_url}users/#{admin.id}/change_status/#{alternate_statuses(admin)[0]}", method: 'put'
+                = alternate_statuses(admin)[0]
+              = '/'
+              = link_to "#{root_url}users/#{admin.id}/change_status/#{alternate_statuses(admin)[1]}", method: 'put'
+                = alternate_statuses(admin)[1]
+            td
+              a href=admin_admin_path(admin) Details
+
+  .col-md-1
+/.row
+/  .col-md-8
+/    h1
+/      = 'List of admins'
+/  .col-md-4.m-t-25
+/    = link_to 'Add New admin', new_admin_admin_path, class: 'btn btn-info'
+/
+/- @admins.each do |admin|
+/  .col-md-offset-1.col-md-5.center
+/    .player-div
+/      a href=admin_admin_path(admin)
+/        .row
+/          .col-md-4
+/            = "Name"
+/          .col-md-8
+/            = admin.full_name
+/        .row
+/          .col-md-4
+/            = "Mobile"
+/          .col-md-8
+/            = admin.mobile
+/        .row
+/          .col-md-4
+/            = "Email"
+/          .col-md-8
+/            = admin.email
+/
+/.row
+/  .col-md-4
+/    = link_to 'Back', root_path, class: 'btn btn-info'

@@ -1,0 +1,26 @@
+.row
+  .col-md-1
+  .col-md-9
+    .row.center
+      h2
+        = "admin Details"
+    .row
+      .col-md-offset-3.col-md-3
+        = "Name"
+      .col-md-3
+        = @admin.full_name
+    .row
+      .col-md-offset-3.col-md-3
+        = "Email"
+      .col-md-3
+        = @admin.email
+    .row
+      .col-md-offset-3.col-md-3
+        = "Mobile"
+      .col-md-3
+        = @admin.mobile
+
+  .col-md-1.m-t-60.pull-right
+    = link_to 'Edit', edit_admin_admin_path(@admin), class: 'btn btn-info'
+  .col-md-1.m-t-60.pull-left
+    = link_to 'Back', list_of_admin_admins_path, class: 'btn btn-info'
