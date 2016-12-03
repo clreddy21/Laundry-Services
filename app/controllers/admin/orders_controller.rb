@@ -41,7 +41,7 @@ class Admin::OrdersController < ApplicationController
 
   def assign_logistic_to_order
     order = Order.find(params[:order_id])
-    order.update(logistic_id: params[:logistic_id])
+    order.update(logistic_id: params[:logistic_id], status_id: 9)
 
     message = 'Successfully assigned logistic to the order.'
     options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
@@ -62,10 +62,24 @@ class Admin::OrdersController < ApplicationController
 
   def get_statuses
     s = [[0, "All (#{Order.count})"]]
-    Status.all.each do |status|
-      s << [status.id, "#{status.name.capitalize} (#{status.orders.count})"]
-    end
+    s << [1, "Order Requested (#{get_status(1).orders.count})"]
+    s << [7, "#{get_status(7).name.capitalize} (#{get_status(7).orders.count})"]
+    s << [8, "#{get_status(8).name.capitalize} (#{get_status(8).orders.count})"]
+    s << [9, "#{get_status(9).name.capitalize} (#{get_status(9).orders.count})"]
+    s << [2.id, "Material Collected (#{get_status(2).orders.count})"]
+    s << [3, "#{get_status(3).name.capitalize} (#{get_status(3).orders.count})"]
+    s << [4, "#{get_status(4).name.capitalize} (#{get_status(4).orders.count})"]
+    s << [5, "Picked from Service Provider (#{get_status(5).orders.count})"]
+    s << [10, "#{get_status(10).name.capitalize} (#{get_status(10).orders.count})"]
+    s << [6, "Delivered (#{get_status(6).orders.count})"]
+    # Status.all.each do |status|
+    #   s << [status.id, "#{status.name.capitalize} (#{status.orders.count})"]
+    # end
     s
+  end
+
+  def get_status(id)
+    Status.find(id)
   end
 
 
