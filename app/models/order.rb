@@ -19,7 +19,7 @@ class Order < ActiveRecord::Base
 
 	after_create :add_reference_id
 	scope :by_id, -> { order('id DESC')}
-	scope :pending, -> { where(status_id => 6)}
+	scope :pending, -> { where(:status_id => 6)}
 
 
 
