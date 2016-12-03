@@ -1,6 +1,6 @@
 .row
   .col-md-1
-  .col-md-10
+  .col-md-9
     .row.center
       h2
         = "Service Provider Details"
@@ -14,6 +14,11 @@
         = "Mobile"
       .col-md-3
         = @service_provider.mobile
+    .row
+      .col-md-offset-3.col-md-3
+        = "Address"
+      .col-md-3
+        = @service_provider.addresses.last.address
     .row
       .col-md-offset-3.col-md-3
         = "Average Review"
@@ -54,5 +59,7 @@
         #service_provider_ratings.tab-pane.fade
           = render 'admin/service_providers/reviews', reviews: @service_provider.reviews
       /= render 'admin/orders/orders', orders: @orders
-  .col-md-1.m-t-60
+  .col-md-1.m-t-60.pull-right
+    = link_to 'Edit', edit_admin_service_provider_path(@service_provider), class: 'btn btn-info'
+  .col-md-1.m-t-60.pull-left
     = link_to 'Back', list_of_admin_service_providers_path, class: 'btn btn-info'

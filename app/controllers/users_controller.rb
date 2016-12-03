@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_current_user
+  # before_action :check_current_user, except: change_status
 
 
   def edit_profile
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
 
   def update_profile
-
+    check_current_user
     user = User.find_by(id: params[:user_id]).type.downcase
     old_password = params[user][:current_password]
     new_password = params[user][:password]

@@ -1,6 +1,6 @@
 .row
   .col-md-1
-  .col-md-10
+  .col-md-9
     .row.center
       h2
         = "Logistic Details"
@@ -40,5 +40,7 @@
           = render 'admin/orders/orders', orders: @logistic.completed_orders
 
       /= render 'admin/orders/orders', orders: @logistic.orders
-  .col-md-1.m-t-60
+  .col-md-1.m-t-60.pull-right
+    = link_to 'Edit', edit_admin_logistic_path(@logistic), class: 'btn btn-info'
+  .col-md-1.m-t-60.pull-left
     = link_to 'Back', list_of_admin_logistics_path, class: 'btn btn-info'

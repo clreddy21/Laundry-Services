@@ -36,6 +36,10 @@
           li
             a[href=notifications_path]
               | Notifications
+          - if current_user.is_admin?
+            li
+              a[href=list_of_admin_admins_path]
+                | Moderators
           li
             a[href=list_of_admin_complaints_path]
               | Complaints

@@ -20,20 +20,25 @@ class Admin::ServiceProvidersController < ApplicationController
   end
 
   def create
-
-    service_provider = ServiceProvider.create(service_provider_params)
-    if service_provider.save!
-      Address.create(address: params[:service_provider][:address], :addressable  => service_provider)
-      service_provider.build_item_prices
-      redirect_to list_of_admin_service_providers_path, notice: 'Service Provider added successfully.'
+    user = User.find_by(:email => params[:service_provider][:email])
+    if user.present?
+      redirect_to new_admin_service_provider_path, notice: 'The given mail id is already used, please try again.'
     else
-      redirect_to new_admin_service_provider_path, notice: 'Failed to add Service Provider, please try again.'
+      service_provider = ServiceProvider.create(service_provider_params)
+      if service_provider.save!
+        Address.create(address: params[:address], :addressable  => service_provider)
+        service_provider.build_item_prices
+        redirect_to list_of_admin_service_providers_path, notice: 'Service Provider added successfully.'
+      else
+        redirect_to new_admin_service_provider_path, notice: 'Failed to add Service Provider, please try again.'
+      end
     end
   end
 
   def update
     service_provider = ServiceProvider.find(params[:id])
     service_provider.update(service_provider_params)
+    service_provider.addresses.last.update(address: params[:address])
     if service_provider.save!
       redirect_to admin_service_provider_path(service_provider), notice: 'Service Provider updated successfully.'
     else

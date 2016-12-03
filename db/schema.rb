@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126065615) do
+ActiveRecord::Schema.define(version: 20161203082312) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
@@ -240,6 +240,7 @@ ActiveRecord::Schema.define(version: 20161126065615) do
     t.integer  "max_workload"
     t.boolean  "is_partner"
     t.boolean  "is_verified",            default: false
+    t.string   "level"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

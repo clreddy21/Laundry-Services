@@ -25,13 +25,13 @@
         .col-sm-3.m-t-5
           = f.label:email, :class => "control-label"
         .col-sm-7
-          = f.text_field:email, :class => "form-control", placeholder: "Email"
+          = f.email_field:email, :class => "form-control", placeholder: "Email"
       .form-group.row
         .col-sm-1
         .col-sm-3.m-t-5
           = f.label:mobile, :class => "control-label"
         .col-sm-7
-          = f.text_field:mobile, :class => "form-control", placeholder: "Mobile Number", required: true
+          = f.number_field:mobile, :class => "form-control service-provider-mobile-number", placeholder: "Mobile Number", required: true
       .form-group.row
         .col-sm-1
         .col-sm-3.m-t-5
@@ -51,18 +51,11 @@
         .col-sm-7
           = f.number_field:max_workload, :class => "form-control", placeholder: "Max Workload", min: 0, max: 50, required: true
       .form-group.row
-        fieldset#user-addresses
-          ol
-            f.fields_for :addresses do |address_fields|
-                Address: addresses.text_field :address
-            /= f.fields_for :addresses do |quantity|
-              = render 'quantity_fields', f: quantity
-        = link_to_add_association 'add ingredient', f, :quantities, 'data-association-insertion-node' => "#recipe-ingredients ol", 'data-association-insertion-method' => "append", :wrap_object => Proc.new { |quantity| quantity.build_ingredient; quantity }
         .col-sm-1
         .col-sm-3.m-t-5
-          = f.label:address, :class => "control-label"
+          = label_tag :address,"Address", :class => "control-label"
         .col-sm-7
-          = f.text_field:address, :class => "form-control", placeholder: "Address"
+          = text_field_tag :address,"", :class => "form-control", placeholder: "Address", required: true
       .form-group.row
         .col-sm-1
         .col-sm-3.m-t-5
