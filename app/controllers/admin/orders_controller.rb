@@ -52,9 +52,9 @@ class Admin::OrdersController < ApplicationController
   protected
 
   def send_mobile_notifications(order, options)
-    order.customer.send_mobile_notification(options) if order.customer?
-    order.service_provider.send_mobile_notification(options) if order.service_provider?
-    order.logistic.send_mobile_notification(options) if order.logistic?
+    order.customer.send_mobile_notification(options) if order.customer
+    order.service_provider.send_mobile_notification(options) if order.service_provider
+    order.logistic.send_mobile_notification(options) if order.logistic
   end
 
   def get_statuses
