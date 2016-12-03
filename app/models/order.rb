@@ -10,6 +10,7 @@ class Order < ActiveRecord::Base
 	has_many :complaints
 	has_many :reviews
 	has_many :status_dates
+  belongs_to :status
 
 	delegate :address, to: :address, prefix: true
   delegate :amount, :status, :mode, to: :payment, prefix: true

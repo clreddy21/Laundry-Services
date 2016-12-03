@@ -5,6 +5,9 @@ class Admin::OrdersController < ApplicationController
   def index
     status_id = params[:status_id]
     @orders = Order.includes(:service_provider, :customer, :logistic, :payment).all.filter_by_status(status_id).by_id
+    @orders_without_sp_count = Order.without_service_provider.count
+    @orders_without_logistic_count = Order.without_logistic.count
+    @orders_count = Order.count
     @statuses = get_statuses
   end
 
@@ -58,7 +61,11 @@ class Admin::OrdersController < ApplicationController
   end
 
   def get_statuses
-    [[0, 'All']] +  Status.pluck(:id, :name)
+    s = [[0, "All (#{Order.count})"]]
+    Status.all.each do |status|
+      s << [status.id, "#{status.name.capitalize} (#{status.orders.count})"]
+    end
+    s
   end
 
 
