@@ -95,7 +95,7 @@ class User < ActiveRecord::Base
   end
 
   def assign_details
-    self.full_name + ' (' + self.mobile + ')' + ' (' + self.orders.pending + ' )'
+    self.full_name + ' (' + self.mobile + ')' + ' (' + self.orders.pending.count.to_s + ' )'
   end
 
   def completed_orders
