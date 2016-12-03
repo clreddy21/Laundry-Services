@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="changed statuses names etc,.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161203164558_add_two_statuses_to_status_table.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/orders_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/orders_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="laundry_services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -909,14 +907,7 @@
       <workItem from="1479262984418" duration="668000" />
       <workItem from="1480142291246" duration="3204000" />
       <workItem from="1480599972738" duration="1370000" />
-      <workItem from="1480741865393" duration="15562000" />
-    </task>
-    <task id="LOCAL-00179" summary="added progress status bar for order with status changed dates">
-      <created>1472878742857</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1472878742883</updated>
+      <workItem from="1480741865393" duration="15738000" />
     </task>
     <task id="LOCAL-00180" summary="added progress status bar for order with status changed dates">
       <created>1472878775711</created>
@@ -1254,11 +1245,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480781723404</updated>
     </task>
-    <option name="localTasksCounter" value="228" />
+    <task id="LOCAL-00228" summary="changed statuses names etc,.">
+      <created>1480785160991</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1480785160991</updated>
+    </task>
+    <option name="localTasksCounter" value="229" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32573000" />
+    <option name="totallyTimeSpent" value="32749000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1298,7 +1296,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="minor changes in adding complaint" />
     <MESSAGE value="minor changes in complaint details" />
     <MESSAGE value="added ui to messages of complaint&#10;added complaints functionality" />
     <MESSAGE value="moved code from controller to model&#10;added different types of orders links in all kinds of orders pages" />
@@ -1323,7 +1320,8 @@
     <MESSAGE value="minor refactoring&#10;" />
     <MESSAGE value="pushed date to second column in all order, reviews, complaints tables" />
     <MESSAGE value="did a lot of things" />
-    <option name="LAST_COMMIT_MESSAGE" value="did a lot of things" />
+    <MESSAGE value="changed statuses names etc,." />
+    <option name="LAST_COMMIT_MESSAGE" value="changed statuses names etc,." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
