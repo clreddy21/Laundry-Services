@@ -4,8 +4,6 @@
     <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/complaints/_complaints.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/complaints/_complaints.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/complaints/show.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/complaints/show.html.slim" />
     </list>
     <ignored path="laundry_services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.slim" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.html.slim" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/complaints/show.html.slim">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="577">
@@ -76,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="77" column="12" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
+              <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -182,9 +180,9 @@
         <option value="$PROJECT_DIR$/app/views/admin/orders/index.html.slim" />
         <option value="$PROJECT_DIR$/db/migrate/20161203164558_add_two_statuses_to_status_table.rb" />
         <option value="$PROJECT_DIR$/app/controllers/admin/orders_controller.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/views/admin/complaints/_complaints.html.slim" />
         <option value="$PROJECT_DIR$/app/views/admin/complaints/show.html.slim" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -909,14 +907,7 @@
       <workItem from="1479262984418" duration="668000" />
       <workItem from="1480142291246" duration="3204000" />
       <workItem from="1480599972738" duration="1370000" />
-      <workItem from="1480741865393" duration="17181000" />
-    </task>
-    <task id="LOCAL-00183" summary="added iFromNotification into mobile notification responses">
-      <created>1472900465222</created>
-      <option name="number" value="00183" />
-      <option name="presentableId" value="LOCAL-00183" />
-      <option name="project" value="LOCAL" />
-      <updated>1472900465224</updated>
+      <workItem from="1480741865393" duration="17323000" />
     </task>
     <task id="LOCAL-00184" summary="added iFromNotification into mobile notification responses">
       <created>1472900530397</created>
@@ -1254,11 +1245,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480787446112</updated>
     </task>
-    <option name="localTasksCounter" value="232" />
+    <task id="LOCAL-00232" summary="messages in complaints">
+      <created>1480788391499</created>
+      <option name="number" value="00232" />
+      <option name="presentableId" value="LOCAL-00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1480788391499</updated>
+    </task>
+    <option name="localTasksCounter" value="233" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34192000" />
+    <option name="totallyTimeSpent" value="34334000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1298,7 +1296,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="minor changes in complaint details" />
     <MESSAGE value="added ui to messages of complaint&#10;added complaints functionality" />
     <MESSAGE value="moved code from controller to model&#10;added different types of orders links in all kinds of orders pages" />
     <MESSAGE value="added notifications link in header" />
@@ -1323,7 +1320,8 @@
     <MESSAGE value="pushed date to second column in all order, reviews, complaints tables" />
     <MESSAGE value="did a lot of things" />
     <MESSAGE value="changed statuses names etc,." />
-    <option name="LAST_COMMIT_MESSAGE" value="changed statuses names etc,." />
+    <MESSAGE value="messages in complaints" />
+    <option name="LAST_COMMIT_MESSAGE" value="messages in complaints" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1706,14 +1704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="77" column="12" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/complaints/list_of_complaints.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1734,6 +1724,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="577">
           <caret line="174" column="63" selection-start-line="174" selection-start-column="63" selection-end-line="174" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
           <folding />
         </state>
       </provider>
