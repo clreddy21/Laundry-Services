@@ -233,7 +233,7 @@
               .row
                 .col-md-offset-3.col-md-3
                   = label_tag :select_service_provider, nil, :class => "control-label"
-                .col-md-3
+                .col-md-4
                   = select_tag :service_provider_id, options_from_collection_for_select(@service_providers, "id", "assign_details", "1"), :class => "form-control"
                   = hidden_field_tag :order_id, @order.id
               .form-group.m-t-20
@@ -246,7 +246,7 @@
                 .row
                   .col-md-offset-3.col-md-3
                     = label_tag :select_logistic, nil, :class => "control-label"
-                  .col-md-3
+                  .col-md-4
                     = select_tag :logistic_id, options_from_collection_for_select(@logistics, "id", "assign_details", "1"), :class => "form-control"
                     = hidden_field_tag :order_id, @order.id
                 .form-group.m-t-20
