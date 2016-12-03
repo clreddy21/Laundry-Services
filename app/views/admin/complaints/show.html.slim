@@ -10,6 +10,7 @@
           - elsif @complaint.status == "rejected"
             = link_to 'Rejected', "#", class: 'btn btn-info complaint-change-status-rejected disabled'
 
+    .row
       .col-md-12.resolve_issue.hide
         .col-md-3
         .col-md-3
@@ -17,6 +18,7 @@
         .col-md-3
           = link_to 'Reject Complaint', reject_complaint_admin_complaint_path(@complaint), :method=> :post, class: 'btn btn-info complaint-rejected'
         .col-md-3
+    .row
       .col-md-12.add_money_to_customer.hide
         .row
           h2.center
@@ -34,33 +36,34 @@
                   .form-group.m-t-20
                     .col-md-offset-6.col-md-3
                       button.btn.btn-success.pull-right type="submit"  Add Funds
-        .chat-message
-          ul.chat#total-chat-history
-            - @complaint.messages.each do |message|
-              - if message.user == current_user
-                  = render 'message', message: message
-              - else
-                li.right.clearfix
-                  span.chat-img.pull-right
-                    img[src="http://bootdey.com/img/Content/user_1.jpg" alt="User Avatar"]
-                  .chat-body.clearfix
-                    .header
-                      strong.primary-font
-                        = "#{message.user.full_name} (#{message.user.type})"
-                      small.pull-right.text-muted
-                        i.fa.fa-clock-o
-                        = " #{time_ago_in_words(message.created_at)} ago"
-                    p
-                      = message.body
+        .row
+          .chat-message
+            ul.chat#total-chat-history
+              - @complaint.messages.each do |message|
+                - if message.user == current_user
+                    = render 'message', message: message
+                - else
+                  li.right.clearfix
+                    span.chat-img.pull-right
+                      img[src="http://bootdey.com/img/Content/user_1.jpg" alt="User Avatar"]
+                    .chat-body.clearfix
+                      .header
+                        strong.primary-font
+                          = "#{message.user.full_name} (#{message.user.type})"
+                        small.pull-right.text-muted
+                          i.fa.fa-clock-o
+                          = " #{time_ago_in_words(message.created_at)} ago"
+                      p
+                        = message.body
 
 
-          .chat-box.bg-white
-            input#message-data data= {type: 'hidden', sender: current_user.id, complaint_id: @complaint.id}
-            .input-group
-              input#message-to-send.form-control.border.no-shadow.no-rounded[placeholder="Type your message here"]
-              span.input-group-btn
-                button#send-message-btn.btn.btn-success.no-rounded[type="button"]
-                  | Send
+            .chat-box.bg-white
+              input#message-data data= {type: 'hidden', sender: current_user.id, complaint_id: @complaint.id}
+              .input-group
+                input#message-to-send.form-control.border.no-shadow.no-rounded[placeholder="Type your message here"]
+                span.input-group-btn
+                  button#send-message-btn.btn.btn-success.no-rounded[type="button"]
+                    | Send
 
   - order = @complaint.order
   .col-md-1
