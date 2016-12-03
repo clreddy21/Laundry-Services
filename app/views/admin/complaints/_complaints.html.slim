@@ -40,7 +40,7 @@ table.display
           a href=admin_order_path(order)
           = order.reference_id
         td
-          = order.customer.full_name
+          = order.customer.full_name if order.customer
         td
           - if order.service_provider.nil?
             = 'Not Assigned Yet'
