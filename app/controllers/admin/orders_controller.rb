@@ -66,7 +66,7 @@ class Admin::OrdersController < ApplicationController
     s << [7, "#{get_status(7).name.capitalize} (#{get_status(7).orders.count})"]
     s << [8, "#{get_status(8).name.capitalize} (#{get_status(8).orders.count})"]
     s << [9, "#{get_status(9).name.capitalize} (#{get_status(9).orders.count})"]
-    s << [2.id, "Material Collected (#{get_status(2).orders.count})"]
+    s << [2, "Material Collected (#{get_status(2).orders.count})"]
     s << [3, "#{get_status(3).name.capitalize} (#{get_status(3).orders.count})"]
     s << [4, "#{get_status(4).name.capitalize} (#{get_status(4).orders.count})"]
     s << [5, "Picked from Service Provider (#{get_status(5).orders.count})"]

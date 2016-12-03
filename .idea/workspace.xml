@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="changed statuses names etc,.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161203164558_add_two_statuses_to_status_table.rb" />
+    <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/orders_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/orders_controller.rb" />
     </list>
     <ignored path="laundry_services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/admin/orders_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="379">
-              <caret line="68" column="35" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+              <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -87,8 +87,8 @@
       <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="77" column="11" selection-start-line="77" selection-start-column="11" selection-end-line="77" selection-end-column="11" />
+            <state relative-caret-position="105">
+              <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -180,8 +180,8 @@
         <option value="$PROJECT_DIR$/app/models/status.rb" />
         <option value="$PROJECT_DIR$/app/models/order.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/orders/index.html.slim" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/db/migrate/20161203164558_add_two_statuses_to_status_table.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/controllers/admin/orders_controller.rb" />
       </list>
     </option>
@@ -907,14 +907,7 @@
       <workItem from="1479262984418" duration="668000" />
       <workItem from="1480142291246" duration="3204000" />
       <workItem from="1480599972738" duration="1370000" />
-      <workItem from="1480741865393" duration="15738000" />
-    </task>
-    <task id="LOCAL-00180" summary="added progress status bar for order with status changed dates">
-      <created>1472878775711</created>
-      <option name="number" value="00180" />
-      <option name="presentableId" value="LOCAL-00180" />
-      <option name="project" value="LOCAL" />
-      <updated>1472878775712</updated>
+      <workItem from="1480741865393" duration="15886000" />
     </task>
     <task id="LOCAL-00181" summary="minor refactoring">
       <created>1472879314121</created>
@@ -1252,11 +1245,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480785160991</updated>
     </task>
-    <option name="localTasksCounter" value="229" />
+    <task id="LOCAL-00229" summary="changed statuses names etc,.">
+      <created>1480785455633</created>
+      <option name="number" value="00229" />
+      <option name="presentableId" value="LOCAL-00229" />
+      <option name="project" value="LOCAL" />
+      <updated>1480785455633</updated>
+    </task>
+    <option name="localTasksCounter" value="230" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32749000" />
+    <option name="totallyTimeSpent" value="32897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1688,14 +1688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="77" column="11" selection-start-line="77" selection-start-column="11" selection-end-line="77" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20161203164558_add_two_statuses_to_status_table.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1728,10 +1720,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admin/orders_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
-          <caret line="68" column="35" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
           <folding />
         </state>
       </provider>
