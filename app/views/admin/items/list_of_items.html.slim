@@ -22,6 +22,12 @@
           th
             | Image
           th
+            | Last Updated
+          th
+            | Status
+          th
+            | Update Status
+          th
             | Edit
       tbody.text-center
         - @items.each_with_index do |item, i|
@@ -31,8 +37,21 @@
             td
               = item.name
             td
-              /= item.name
               = image_tag item.avatar_url(:thumb) if item.avatar?
+            td
+              = item.updated_at.strftime('%d/%m/%y')
+            td
+              - if item.is_active
+                = "Active"
+              - else
+                = "Not Active"
+            td
+              - if item.is_active
+                = link_to admin_item_deactivate_path(item), method: 'put'
+                  = "Deactivate"
+              - else
+                = link_to admin_item_activate_path(item), method: 'put'
+                  = "Activate"
             td
               a data-target="#edit_item_id_#{i}" data-toggle= "modal" class= "btn btn-info"
                 i.fa.fa-pencil-square-o.edit-address

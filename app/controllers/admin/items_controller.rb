@@ -35,6 +35,26 @@ class Admin::ItemsController < ApplicationController
     end
   end
 
+  def deactivate
+    item = Item.find(params[:item_id])
+    item.update(is_active: false)
+    if item.save!
+      redirect_to list_of_admin_items_path, notice: 'Item deactivated successfully.'
+    else
+      redirect_to :back, notice: 'Failed to deactivate item, please try again.'
+    end
+  end
+
+  def activate
+    item = Item.find(params[:item_id])
+    item.update(is_active: true)
+    if item.save!
+      redirect_to list_of_admin_items_path, notice: 'Item activated successfully.'
+    else
+      redirect_to :back, notice: 'Failed to activate item, please try again.'
+    end
+  end
+
   def item_params
     params.require(:item).permit(:name, :avatar)
   end

@@ -20,6 +20,12 @@
           th
             | Name
           th
+            | Last Updated
+          th
+            | Status
+          th
+            | Update Status
+          th
             | Edit
       tbody.text-center
         - @service_types.each_with_index do |service_type, i|
@@ -28,6 +34,20 @@
               = i + 1
             td
               = service_type.name
+            td
+              = service_type.updated_at.strftime('%d/%m/%y')
+            td
+              - if service_type.is_active
+                = "Active"
+              - else
+                = "Not Active"
+            td
+              - if service_type.is_active
+                - link_to admin_service_type_deactivate_path(service_type), method: 'put'
+                  = "Deactivate"
+              - else
+                - link_to admin_service_type_activate_path(service_type), method: 'put'
+                  = "Activate"
             td
               a data-target="#edit_service_type_id_#{i}" data-toggle= "modal" class= "btn btn-info"
                 i.fa.fa-pencil-square-o.edit-address

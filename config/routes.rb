@@ -53,11 +53,15 @@ Rails.application.routes.draw do
       end
     end
     resources :service_types do
+      put 'deactivate'
+      put 'activate'
       collection do
         get 'list_of_service_types', as: 'list_of'
       end
     end
     resources :items do
+      put 'deactivate'
+      put 'activate'
       collection do
         get 'list_of_items', as: 'list_of'
       end
