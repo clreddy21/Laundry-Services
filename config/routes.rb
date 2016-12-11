@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     end
 
     resources :orders, path: '' do
+      put 'out_for_delivery'
       collection do
         get 'list_of_orders_without_service_provider', as: 'assign_service_provider'
         get 'list_of_orders_without_logistic', as: 'assign_logistic'

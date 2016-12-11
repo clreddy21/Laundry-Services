@@ -2,62 +2,71 @@
   .col-md-1
   .col-md-10
     .order-detail
-      h2.row.center
-        = "Order Details"
       .row
-        .col-md-offset-3.col-md-3
-          = "Reference Id:"
-        .col-md-3
-          = @order.reference_id
-        br
-      .row
-        .col-md-offset-3.col-md-3
-          = "Customer:"
-        .col-md-3
-          = @order.customer.full_name.capitalize
-        br
-      .row
-        .col-md-offset-3.col-md-3
-          = "Service Provider:"
-        .col-md-3
-          - if @order.service_provider
-            = @order.service_provider.full_name.capitalize
-          - else
-            = "Not assignet yet"
-        br
-      .row
-        .col-md-offset-3.col-md-3
-          = "Logistic:"
-        .col-md-3
-          - if @order.logistic
-            = @order.logistic.full_name.capitalize
-          - else
-            = "Not assigned yet"
-        br
-      .row
-        .col-md-offset-3.col-md-3
-          = "Total Cost:"
-        .col-md-3
-          = @order.total_cost
-        br
-      .row
-        .col-md-offset-3.col-md-3
-          = "Service Provider Chooser"
-        .col-md-3
-          = @order.service_provider_chooser.capitalize
-        br
-      .row
-        .col-md-offset-3.col-md-3
-          = "Status:"
-        .col-md-3
-          = Status.find(@order.status_id).name.capitalize
-        br
-      .row
-        .col-md-offset-3.col-md-3
-          = "Number of Items:"
-        .col-md-3
-          = @order.order_items.count
-        br
+        h2.row.center
+          = "Order Details"
+        .row
+          - if @order.status_id == 5
+            = form_tag(admin_order_out_for_delivery_path(@order), method: 'put') do
+              .form-group.m-t-20
+                .col-md-offset-6.col-md-3
+                  button.btn.btn-success.pull-right type="submit"  Out For Delivery
+        .row
+          .col-md-offset-3.col-md-3
+            = "Reference Id:"
+          .col-md-3
+            = @order.reference_id
+          br
+        .row
+          .col-md-offset-3.col-md-3
+            = "Customer:"
+          .col-md-3
+            = @order.customer.full_name.capitalize
+          br
+        .row
+          .col-md-offset-3.col-md-3
+            = "Service Provider:"
+          .col-md-3
+            - if @order.service_provider
+              = @order.service_provider.full_name.capitalize
+            - else
+              = "Not assignet yet"
+          br
+        .row
+          .col-md-offset-3.col-md-3
+            = "Logistic:"
+          .col-md-3
+            - if @order.logistic
+              = @order.logistic.full_name.capitalize
+            - else
+              = "Not assigned yet"
+          br
+        .row
+          .col-md-offset-3.col-md-3
+            = "Total Cost:"
+          .col-md-3
+            = @order.total_cost
+          br
+        .row
+          .col-md-offset-3.col-md-3
+            = "Service Provider Chooser"
+          .col-md-3
+            = @order.service_provider_chooser.capitalize
+          br
+        .row
+          .col-md-offset-3.col-md-3
+            = "Status:"
+          .col-md-3
+            = Status.find(@order.status_id).name.capitalize
+          br
+        .row
+          .col-md-offset-3.col-md-3
+            = "Number of Items:"
+          .col-md-3
+            = @order.order_items.count
+          br
+
+
 
         .status-dates.m-v-20
         .stepwizard.m-v-20

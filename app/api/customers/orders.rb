@@ -90,7 +90,7 @@ module Customers
           status: params[:payment_status])
           customer.wallet.amount = customer.wallet.amount - params[:total_cost]
           customer.wallet.save!
-          customer.payments.create(amount: params[:total_cost], mode: params[:mode], remarks: 'New order.')
+          Payment.create(amount: params[:total_cost], mode: params[:mode], order_id: order.id)
           customer.transactions.create(amount: params[:total_cost], type: '',mode: params[:mode], remarks: 'New order.', balance: customer.wallet.amount)
           # message = "A new order has been created. You can see the details <a href=#{admin_order_path(order)}>here</a>."
           message = ''

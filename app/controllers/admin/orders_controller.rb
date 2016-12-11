@@ -52,6 +52,20 @@ class Admin::OrdersController < ApplicationController
     redirect_to :back, notice: message
   end
 
+  def out_for_delivery
+    order = Order.find(params[:order_id])
+    order.update(status_id: 10)
+
+    message = 'Order is out for delivery.'
+    options = {data: {'messageType' => 'list','message' => message,'title' => 'Laundry Services', 'statusId' => order.status_id,
+                      'orderId' => order.id, 'isFromNotification' => false}}
+
+    send_mobile_notifications(order, options)
+
+    redirect_to :back, notice: message
+
+  end
+
   protected
 
   def send_mobile_notifications(order, options)
