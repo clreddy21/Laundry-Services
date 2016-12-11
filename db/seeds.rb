@@ -155,5 +155,8 @@ Status.create(name: 'picked for delivery')
 Status.create(name: 'order completed')
 Status.create(name: 'order denied by service provider')
 Status.create(name: 'order accepted by service provider')
+Status.create(name: 'Logistic Assigned')
+Status.create(name: 'Out for Delivery')
+
 
 puts 'completed seeding of the data'

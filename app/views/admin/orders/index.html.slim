@@ -60,8 +60,9 @@
             td
               = order.reference_id
             td
-              a href=admin_customer_path(order.customer)
-                = order.customer.full_name
+              - if order.customer
+                a href=admin_customer_path(order.customer)
+                  = order.customer.full_name
             td
               - if order.service_provider.nil?
                 = 'Not Assigned Yet'
