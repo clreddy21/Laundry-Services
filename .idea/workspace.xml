@@ -107,8 +107,8 @@
       <file leaf-file-name="service_providers_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/admin/service_providers_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+            <state relative-caret-position="451">
+              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -1439,14 +1439,7 @@
       <workItem from="1480599972738" duration="1370000" />
       <workItem from="1480741865393" duration="21530000" />
       <workItem from="1481427209756" duration="3724000" />
-      <workItem from="1481968849835" duration="372000" />
-    </task>
-    <task id="LOCAL-00190" summary="minor refactoring">
-      <created>1473526190901</created>
-      <option name="number" value="00190" />
-      <option name="presentableId" value="LOCAL-00190" />
-      <option name="project" value="LOCAL" />
-      <updated>1473526190902</updated>
+      <workItem from="1481968849835" duration="462000" />
     </task>
     <task id="LOCAL-00191" summary="added link in header and a separate view for password change.">
       <created>1473560515002</created>
@@ -1784,11 +1777,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481969129829</updated>
     </task>
-    <option name="localTasksCounter" value="239" />
+    <task id="LOCAL-00239" summary="out for delivery logic">
+      <created>1481969335110</created>
+      <option name="number" value="00239" />
+      <option name="presentableId" value="LOCAL-00239" />
+      <option name="project" value="LOCAL" />
+      <updated>1481969335110</updated>
+    </task>
+    <option name="localTasksCounter" value="240" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42637000" />
+    <option name="totallyTimeSpent" value="42727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1950,6 +1950,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2221,8 +2222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admin/service_providers_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+        <state relative-caret-position="451">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
           <folding />
         </state>
       </provider>

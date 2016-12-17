@@ -38,7 +38,7 @@ class Admin::ServiceProvidersController < ApplicationController
   def update
     service_provider = ServiceProvider.find(params[:id])
     service_provider.update(service_provider_params)
-    if service_provider.addersses.present?
+    if service_provider.addresses.present?
       service_provider.addresses.last.update(address: params[:address])
     else
       service_provider.addresses.create(address: params[:address])
