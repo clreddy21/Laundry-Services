@@ -18,7 +18,7 @@
       .col-md-offset-3.col-md-3
         = "Address"
       .col-md-3
-        = @service_provider.addresses.last.address
+        = @service_provider.addresses.last.address if @service_provider.addresses.present?
     .row
       .col-md-offset-3.col-md-3
         = "Average Review"
