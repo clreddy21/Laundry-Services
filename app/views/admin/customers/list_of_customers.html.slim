@@ -58,13 +58,12 @@
               a href=admin_wallet_path(customer)
                 = number_to_indian_currency(customer.wallet.amount)
             td
-              a href='#'
+              a href=admin_customer_path(customer)
                 = customer.orders.where(status_id: 6).count
             td
-              a href='#'
+              a href=admin_customer_path(customer)
                 = customer.orders.where.not(status_id: 6).count
             td
-              /- raise customer.status
               = customer.status.capitalize
             td
               = link_to "#{root_url}users/#{customer.id}/change_status/#{alternate_statuses(customer)[0]}", method: 'put'
