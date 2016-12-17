@@ -38,7 +38,11 @@ class Admin::ServiceProvidersController < ApplicationController
   def update
     service_provider = ServiceProvider.find(params[:id])
     service_provider.update(service_provider_params)
-    service_provider.addresses.last.update(address: params[:address])
+    if service_provider.addersses.present?
+      service_provider.addresses.last.update(address: params[:address])
+    else
+      service_provider.addresses.create(address: params[:address])
+    end
     if service_provider.save!
       redirect_to admin_service_provider_path(service_provider), notice: 'Service Provider updated successfully.'
     else
