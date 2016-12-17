@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e2a7a962-9fea-40a8-912c-c706bf08fab8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/customers/list_of_customers.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/customers/list_of_customers.html.slim" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/logistics/list_of_logistics.html.slim" afterPath="$PROJECT_DIR$/app/views/admin/logistics/list_of_logistics.html.slim" />
     </list>
     <ignored path="laundry_services.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,21 +64,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wallet.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/wallet.rb">
+      <file leaf-file-name="list_of_logistics.html.slim" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/logistics/list_of_logistics.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service_providers_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/admin/service_providers_controller.rb">
+      <file leaf-file-name="wallet.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/wallet.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list_of_customers.html.slim" pinned="false" current-in-tab="true">
+      <file leaf-file-name="list_of_customers.html.slim" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/customers/list_of_customers.html.slim">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="990">
@@ -132,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/admin/service_providers/list_of_service_providers.html.slim" />
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/service_providers/_reviews.html.haml" />
         <option value="$PROJECT_DIR$/db/migrate/20161126065615_add_order_id_to_review.rb" />
@@ -183,6 +182,7 @@
         <option value="$PROJECT_DIR$/app/api/customers/orders.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/views/admin/customers/list_of_customers.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/admin/logistics/list_of_logistics.html.slim" />
       </list>
     </option>
   </component>
@@ -1439,14 +1439,7 @@
       <workItem from="1480599972738" duration="1370000" />
       <workItem from="1480741865393" duration="21530000" />
       <workItem from="1481427209756" duration="3724000" />
-      <workItem from="1481968849835" duration="2259000" />
-    </task>
-    <task id="LOCAL-00194" summary="minor refactoring">
-      <created>1474808993756</created>
-      <option name="number" value="00194" />
-      <option name="presentableId" value="LOCAL-00194" />
-      <option name="project" value="LOCAL" />
-      <updated>1474808993756</updated>
+      <workItem from="1481968849835" duration="2420000" />
     </task>
     <task id="LOCAL-00195" summary="minor refactoring">
       <created>1476509226669</created>
@@ -1784,11 +1777,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481971083007</updated>
     </task>
-    <option name="localTasksCounter" value="243" />
+    <task id="LOCAL-00243" summary="ge">
+      <created>1481971618725</created>
+      <option name="number" value="00243" />
+      <option name="presentableId" value="LOCAL-00243" />
+      <option name="project" value="LOCAL" />
+      <updated>1481971618727</updated>
+    </task>
+    <option name="localTasksCounter" value="244" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44524000" />
+    <option name="totallyTimeSpent" value="44685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1860,14 +1860,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20161126065615_add_order_id_to_review.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20161203082312_add_level_to_user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2228,6 +2220,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/logistics/list_of_logistics.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
           <folding />
         </state>
       </provider>

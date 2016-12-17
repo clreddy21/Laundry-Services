@@ -64,10 +64,10 @@
               a href=admin_wallet_path(logistic)
                 = number_to_indian_currency(logistic.wallet.amount)
             td
-              a href='#'
+              a href=admin_logistic_path(logistic)
                 = logistic.orders.where(status_id: 6).count
             td
-              a href='#'
+              a href=admin_logistic_path(logistic)
                 = logistic.orders.where.not(status_id: 6).count
             td
               = logistic.status.capitalize
