@@ -106,9 +106,10 @@ class User < ActiveRecord::Base
     self.orders.where.not(:status_id => [6, 7])
   end
 
-  def add_funds(amount)
+  def add_funds(amount, remarks = '')
     amount = self.wallet.amount + amount
-    self.wallet.update(amount: amount)
+    wallet.update(amount: amount)
+    transactions.create(amount: amount, type: 'Credit',mode: 'wallet', remarks: remarks, balance: wallet.amount)
   end
 
 

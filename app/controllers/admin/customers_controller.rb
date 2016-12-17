@@ -40,7 +40,8 @@ class Admin::CustomersController < ApplicationController
   def add_funds_to_wallet
     customer = Customer.find(params[:id])
     amount = params[:wallet][:amount].to_f
-    customer.add_funds(amount)
+    remarks = params[:wallet][:remarks]
+    customer.add_funds(amount, remarks)
 
     redirect_to :back, notice: 'Funds added to customer successfully.'
   end

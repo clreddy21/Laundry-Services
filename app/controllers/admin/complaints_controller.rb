@@ -23,7 +23,8 @@ class Admin::ComplaintsController < ApplicationController
 
     complaint = Complaint.find(params[:id])
     amount = params[:amount].to_f
-    complaint.order.customer.add_funds(amount)
+    remarks = params[:remarks]
+    complaint.order.customer.add_funds(amount, remarks)
     complaint.update(status: 'approved')
     redirect_to :back, notice: 'Complaint approved.'
   end
