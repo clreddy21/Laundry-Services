@@ -65,15 +65,16 @@ module Customers
             service_provider = ServiceProvider.find(params[:service_provider_id])
           end
           service_provider_id = (params[:service_provider_chooser] == 'admin') ? nil : params[:service_provider_id]
+          total_cost = params[:total_cost].to_f.round(2)
           order = Order.create(service_provider_id: service_provider_id, customer_id: customer.id,
-                 total_cost: params[:total_cost], status_id: params[:status].to_i,
+                 total_cost: total_cost, status_id: params[:status].to_i,
                  :service_provider_chooser => params[:service_provider_chooser])
 
           items = []
           commenter = customer
           params[:items].each do |item|
             order_item = OrderItem.create(:order_id => order.id,:item_id => item[:item_id],:service_type_id => item[:service_type_id],
-              :quantity => item[:quantity], :amount => item[:amount])
+              :quantity => item[:quantity], :amount => (item[:amount]).to_f.round(2))
             if (!item[:comment] == "null") || !(item[:comment].nil?)
               OrderComment.create(order_id: order.id, body: item[:comment], comment_by_type: commenter.type,
               comment_by_id: commenter.id, order_item_id: order_item.id)
@@ -88,10 +89,10 @@ module Customers
           Address.create(address: params[:address], :addressable  => order)
           Payment.create(order_id: order.id, amount: params[:total_cost], mode: params[:payment_mode],
           status: params[:payment_status])
-          customer.wallet.amount = customer.wallet.amount - params[:total_cost]
+          customer.wallet.amount = customer.wallet.amount.round(2) - (params[:total_cost]).to_f.round(2)
           customer.wallet.save!
-          Payment.create(amount: params[:total_cost], mode: params[:mode], order_id: order.id)
-          customer.transactions.create(amount: params[:total_cost], type: 'Debit',mode: params[:mode], remarks: 'New order.', balance: customer.wallet.amount)
+          Payment.create(amount: (params[:total_cost]).to_f.round(2), mode: params[:mode], order_id: order.id)
+          customer.transactions.create(amount: (params[:total_cost]).to_f.amount, type: 'Debit',mode: params[:mode], remarks: 'New order.', balance: customer.wallet.amount.round(2))
           # message = "A new order has been created. You can see the details <a href=#{admin_order_path(order)}>here</a>."
           message = ''
           Notification.send_notification('New Order Created', message, order)
@@ -104,7 +105,7 @@ module Customers
           order.create_status_date(1)
 
           customer.send_mobile_notification(options)
-          {:message => message, :success => true, :order_id => order.id, status_id: order.status_id, wallet_amount: customer.wallet}
+          {:message => message, :success => true, :order_id => order.id, status_id: order.status_id, wallet_amount: customer.wallet.amount.round(2)}
 
         end
       end
@@ -123,7 +124,7 @@ module Customers
         if !order_item.nil?
           if order.status_id < 2
             order_item.update(is_active: false)
-            updated_cost = order.total_cost - order_item.amount
+            updated_cost = order.total_cost.round(2) - order_item.amount.round(2)
             order.update(total_cost: updated_cost)
             order.save!
 
@@ -155,7 +156,7 @@ module Customers
         item_id = params[:item_id]
         service_type_id = params[:service_type_id]
         quantity = params[:quantity]
-        amount = params[:amount]
+        amount = (params[:amount]).to_f.round(2)
 
         if !order.nil?
           if order.status_id < 2

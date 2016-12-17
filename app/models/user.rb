@@ -107,7 +107,7 @@ class User < ActiveRecord::Base
   end
 
   def add_funds(amount, remarks = '')
-    amount = self.wallet.amount + amount
+    amount = self.wallet.amount.round(2) + amount.round(2)
     wallet.update(amount: amount)
     transactions.create(amount: amount, type: 'Credit',mode: 'wallet', remarks: remarks, balance: wallet.amount)
   end
